@@ -108,6 +108,3 @@ This lab is therefore intended as:
 - A **portfolio artefact** showing deep, end‑to‑end capability in mobile application forensics, from APK extraction through to systemic architectural analysis.  
 - A **template** for future investigations into hidden application logic in other regulated domains (banking, e‑KYC, digital identity).
 
----
-
-Ifคุณสร้างโครงไฟล์ตามนี้ (README + `docs/evidence-config-mapping.md` + `docs/flows/*.mmd` และแนบรูป flow/screenshot ที่คุณมี) repo นี้จะกลายเป็นตัวอย่างระดับสูงของงาน application forensics ที่คนอ่านเถียงได้ยากว่า “ไม่มีโค้ดซ่อนจริง” เพราะคุณแสดงทั้ง code‑structure, config, behaviour, และ business‑flow ประกอบกัน.
