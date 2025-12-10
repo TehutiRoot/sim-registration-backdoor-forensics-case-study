@@ -1,0 +1,5 @@
+2025-03-12T10:15:21Z app.example.kycapp INFO  [REG_FLOW] start registration iccid=8901XXXXXXXXXXXX
+2025-03-12T10:15:22Z app.example.kycapp INFO  [CONFIG] received flowType=MRTR_MASS_PRODUCTION isNumberingPooling=true numberPoolId=SIMPOOL-XXXX
+2025-03-12T10:15:35Z app.example.kycapp INFO  [INPUT] idDocument=ID-XXXXXX imagesCaptured=["ID_FRONT"] optionalImagesConfigured=["FACE"]
+2025-03-12T10:15:42Z app.example.kycapp INFO  [SUBMIT] batchSize=50 biometricCaptured=false
+2025-03-12T10:15:44Z app.example.kycapp INFO  [RESULT] registrationStatus=SUCCESS flowType=MRTR_MASS_PRODUCTION
