@@ -1,0 +1,161 @@
+package androidx.compose.material.icons.sharp;
+
+import androidx.compose.material.icons.Icons;
+import androidx.compose.p003ui.graphics.Color;
+import androidx.compose.p003ui.graphics.SolidColor;
+import androidx.compose.p003ui.graphics.StrokeCap;
+import androidx.compose.p003ui.graphics.StrokeJoin;
+import androidx.compose.p003ui.graphics.vector.ImageVector;
+import androidx.compose.p003ui.graphics.vector.PathBuilder;
+import androidx.compose.p003ui.graphics.vector.VectorKt;
+import androidx.compose.p003ui.unit.C3641Dp;
+import com.tom_roush.pdfbox.pdmodel.common.PDPageLabelRange;
+import kotlin.Metadata;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.SourceDebugExtension;
+import org.jetbrains.annotations.NotNull;
+
+@Metadata(m28851d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\"\u0018\u0010\u0003\u001a\u0004\u0018\u00010\u00008\u0002@\u0002X\u0082\u000e¢\u0006\u0006\n\u0004\b\u0001\u0010\u0002\"\u0015\u0010\u0007\u001a\u00020\u0000*\u00020\u00048F¢\u0006\u0006\u001a\u0004\b\u0005\u0010\u0006¨\u0006\b"}, m28850d2 = {"Landroidx/compose/ui/graphics/vector/ImageVector;", PDPageLabelRange.STYLE_LETTERS_LOWER, "Landroidx/compose/ui/graphics/vector/ImageVector;", "_coronavirus", "Landroidx/compose/material/icons/Icons$Sharp;", "getCoronavirus", "(Landroidx/compose/material/icons/Icons$Sharp;)Landroidx/compose/ui/graphics/vector/ImageVector;", "Coronavirus", "material-icons-extended_release"}, m28849k = 2, m28848mv = {1, 8, 0})
+@SourceDebugExtension({"SMAP\nCoronavirus.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Coronavirus.kt\nandroidx/compose/material/icons/sharp/CoronavirusKt\n+ 2 Icons.kt\nandroidx/compose/material/icons/IconsKt\n+ 3 Dp.kt\nandroidx/compose/ui/unit/DpKt\n+ 4 ImageVector.kt\nandroidx/compose/ui/graphics/vector/ImageVectorKt\n+ 5 Vector.kt\nandroidx/compose/ui/graphics/vector/VectorKt\n*L\n1#1,153:1\n122#2:154\n116#2,3:155\n119#2,3:159\n132#2,18:162\n152#2:199\n174#3:158\n694#4,2:180\n706#4,2:182\n708#4,11:188\n64#5,4:184\n*S KotlinDebug\n*F\n+ 1 Coronavirus.kt\nandroidx/compose/material/icons/sharp/CoronavirusKt\n*L\n29#1:154\n29#1:155,3\n29#1:159,3\n30#1:162,18\n30#1:199\n29#1:158\n30#1:180,2\n30#1:182,2\n30#1:188,11\n30#1:184,4\n*E\n"})
+/* loaded from: classes.dex */
+public final class CoronavirusKt {
+
+    /* renamed from: a */
+    public static ImageVector f21553a;
+
+    @NotNull
+    public static final ImageVector getCoronavirus(@NotNull Icons.Sharp sharp) {
+        Intrinsics.checkNotNullParameter(sharp, "<this>");
+        ImageVector imageVector = f21553a;
+        if (imageVector != null) {
+            Intrinsics.checkNotNull(imageVector);
+            return imageVector;
+        }
+        ImageVector.Builder builder = new ImageVector.Builder("Sharp.Coronavirus", C3641Dp.m73658constructorimpl(24.0f), C3641Dp.m73658constructorimpl(24.0f), 24.0f, 24.0f, 0L, 0, false, 224, null);
+        int defaultFillType = VectorKt.getDefaultFillType();
+        SolidColor solidColor = new SolidColor(Color.Companion.m71761getBlack0d7_KjU(), null);
+        int m72043getButtKaPHkGw = StrokeCap.Companion.m72043getButtKaPHkGw();
+        int m72053getBevelLxFBmk8 = StrokeJoin.Companion.m72053getBevelLxFBmk8();
+        PathBuilder pathBuilder = new PathBuilder();
+        pathBuilder.moveTo(20.5f, 10.5f);
+        pathBuilder.verticalLineToRelative(0.75f);
+        pathBuilder.horizontalLineToRelative(-1.54f);
+        pathBuilder.curveToRelative(-0.15f, -1.37f, -0.69f, -2.63f, -1.52f, -3.65f);
+        pathBuilder.lineToRelative(1.09f, -1.09f);
+        pathBuilder.lineToRelative(0.01f, 0.01f);
+        pathBuilder.lineToRelative(0.53f, 0.53f);
+        pathBuilder.lineToRelative(1.06f, -1.06f);
+        pathBuilder.lineToRelative(-2.12f, -2.12f);
+        pathBuilder.lineToRelative(-1.06f, 1.06f);
+        pathBuilder.lineToRelative(0.52f, 0.52f);
+        pathBuilder.lineToRelative(-1.09f, 1.09f);
+        pathBuilder.curveToRelative(-1.02f, -0.82f, -2.27f, -1.36f, -3.64f, -1.51f);
+        pathBuilder.verticalLineTo(3.5f);
+        pathBuilder.horizontalLineToRelative(0.01f);
+        pathBuilder.horizontalLineToRelative(0.75f);
+        pathBuilder.verticalLineTo(2.0f);
+        pathBuilder.horizontalLineToRelative(-3.0f);
+        pathBuilder.verticalLineToRelative(1.5f);
+        pathBuilder.horizontalLineToRelative(0.74f);
+        pathBuilder.verticalLineToRelative(1.54f);
+        pathBuilder.curveTo(9.87f, 5.19f, 8.62f, 5.74f, 7.6f, 6.56f);
+        pathBuilder.lineTo(6.51f, 5.47f);
+        pathBuilder.lineToRelative(0.01f, -0.01f);
+        pathBuilder.lineToRelative(0.53f, -0.53f);
+        pathBuilder.lineTo(5.99f, 3.87f);
+        pathBuilder.lineTo(3.87f, 5.99f);
+        pathBuilder.lineToRelative(1.06f, 1.06f);
+        pathBuilder.lineToRelative(0.52f, -0.52f);
+        pathBuilder.lineToRelative(1.09f, 1.09f);
+        pathBuilder.curveToRelative(-0.82f, 1.02f, -1.36f, 2.26f, -1.5f, 3.63f);
+        pathBuilder.horizontalLineTo(3.5f);
+        pathBuilder.verticalLineTo(10.5f);
+        pathBuilder.horizontalLineTo(2.0f);
+        pathBuilder.verticalLineToRelative(3.0f);
+        pathBuilder.horizontalLineToRelative(1.5f);
+        pathBuilder.verticalLineToRelative(-0.75f);
+        pathBuilder.horizontalLineToRelative(1.54f);
+        pathBuilder.curveToRelative(0.15f, 1.37f, 0.69f, 2.61f, 1.5f, 3.63f);
+        pathBuilder.lineToRelative(-1.09f, 1.09f);
+        pathBuilder.lineToRelative(-0.52f, -0.52f);
+        pathBuilder.lineToRelative(-1.06f, 1.06f);
+        pathBuilder.lineToRelative(2.12f, 2.12f);
+        pathBuilder.lineToRelative(1.06f, -1.06f);
+        pathBuilder.lineToRelative(-0.53f, -0.53f);
+        pathBuilder.verticalLineToRelative(0.0f);
+        pathBuilder.lineToRelative(-0.01f, -0.01f);
+        pathBuilder.lineToRelative(1.09f, -1.09f);
+        pathBuilder.curveToRelative(1.02f, 0.82f, 2.26f, 1.36f, 3.63f, 1.51f);
+        pathBuilder.verticalLineToRelative(1.54f);
+        pathBuilder.horizontalLineTo(10.5f);
+        pathBuilder.verticalLineTo(22.0f);
+        pathBuilder.horizontalLineToRelative(3.0f);
+        pathBuilder.verticalLineToRelative(-1.5f);
+        pathBuilder.horizontalLineToRelative(-0.75f);
+        pathBuilder.horizontalLineToRelative(-0.01f);
+        pathBuilder.verticalLineToRelative(-1.54f);
+        pathBuilder.curveToRelative(1.37f, -0.14f, 2.62f, -0.69f, 3.64f, -1.51f);
+        pathBuilder.lineToRelative(1.09f, 1.09f);
+        pathBuilder.lineToRelative(-0.52f, 0.52f);
+        pathBuilder.lineToRelative(1.06f, 1.06f);
+        pathBuilder.lineToRelative(2.12f, -2.12f);
+        pathBuilder.lineToRelative(-1.06f, -1.06f);
+        pathBuilder.lineToRelative(-0.53f, 0.53f);
+        pathBuilder.curveToRelative(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f);
+        pathBuilder.lineToRelative(-0.01f, 0.01f);
+        pathBuilder.lineToRelative(-1.09f, -1.09f);
+        pathBuilder.curveToRelative(0.82f, -1.02f, 1.37f, -2.27f, 1.52f, -3.65f);
+        pathBuilder.horizontalLineToRelative(1.54f);
+        pathBuilder.verticalLineToRelative(0.75f);
+        pathBuilder.horizontalLineTo(22.0f);
+        pathBuilder.verticalLineToRelative(-3.0f);
+        pathBuilder.horizontalLineTo(20.5f);
+        pathBuilder.close();
+        pathBuilder.moveTo(13.75f, 8.0f);
+        pathBuilder.curveToRelative(0.55f, 0.0f, 1.0f, 0.45f, 1.0f, 1.0f);
+        pathBuilder.reflectiveCurveToRelative(-0.45f, 1.0f, -1.0f, 1.0f);
+        pathBuilder.reflectiveCurveToRelative(-1.0f, -0.45f, -1.0f, -1.0f);
+        pathBuilder.reflectiveCurveTo(13.2f, 8.0f, 13.75f, 8.0f);
+        pathBuilder.close();
+        pathBuilder.moveTo(10.25f, 8.0f);
+        pathBuilder.curveToRelative(0.55f, 0.0f, 1.0f, 0.45f, 1.0f, 1.0f);
+        pathBuilder.reflectiveCurveToRelative(-0.45f, 1.0f, -1.0f, 1.0f);
+        pathBuilder.reflectiveCurveToRelative(-1.0f, -0.45f, -1.0f, -1.0f);
+        pathBuilder.reflectiveCurveTo(9.7f, 8.0f, 10.25f, 8.0f);
+        pathBuilder.close();
+        pathBuilder.moveTo(8.5f, 13.0f);
+        pathBuilder.curveToRelative(-0.55f, 0.0f, -1.0f, -0.45f, -1.0f, -1.0f);
+        pathBuilder.curveToRelative(0.0f, -0.55f, 0.45f, -1.0f, 1.0f, -1.0f);
+        pathBuilder.reflectiveCurveToRelative(1.0f, 0.45f, 1.0f, 1.0f);
+        pathBuilder.curveTo(9.5f, 12.55f, 9.05f, 13.0f, 8.5f, 13.0f);
+        pathBuilder.close();
+        pathBuilder.moveTo(10.25f, 16.0f);
+        pathBuilder.curveToRelative(-0.55f, 0.0f, -1.0f, -0.45f, -1.0f, -1.0f);
+        pathBuilder.curveToRelative(0.0f, -0.55f, 0.45f, -1.0f, 1.0f, -1.0f);
+        pathBuilder.reflectiveCurveToRelative(1.0f, 0.45f, 1.0f, 1.0f);
+        pathBuilder.curveTo(11.25f, 15.55f, 10.8f, 16.0f, 10.25f, 16.0f);
+        pathBuilder.close();
+        pathBuilder.moveTo(12.0f, 13.0f);
+        pathBuilder.curveToRelative(-0.55f, 0.0f, -1.0f, -0.45f, -1.0f, -1.0f);
+        pathBuilder.curveToRelative(0.0f, -0.55f, 0.45f, -1.0f, 1.0f, -1.0f);
+        pathBuilder.reflectiveCurveToRelative(1.0f, 0.45f, 1.0f, 1.0f);
+        pathBuilder.curveTo(13.0f, 12.55f, 12.55f, 13.0f, 12.0f, 13.0f);
+        pathBuilder.close();
+        pathBuilder.moveTo(13.75f, 16.0f);
+        pathBuilder.curveToRelative(-0.55f, 0.0f, -1.0f, -0.45f, -1.0f, -1.0f);
+        pathBuilder.curveToRelative(0.0f, -0.55f, 0.45f, -1.0f, 1.0f, -1.0f);
+        pathBuilder.reflectiveCurveToRelative(1.0f, 0.45f, 1.0f, 1.0f);
+        pathBuilder.curveTo(14.75f, 15.55f, 14.3f, 16.0f, 13.75f, 16.0f);
+        pathBuilder.close();
+        pathBuilder.moveTo(15.5f, 13.0f);
+        pathBuilder.curveToRelative(-0.55f, 0.0f, -1.0f, -0.45f, -1.0f, -1.0f);
+        pathBuilder.curveToRelative(0.0f, -0.55f, 0.45f, -1.0f, 1.0f, -1.0f);
+        pathBuilder.reflectiveCurveToRelative(1.0f, 0.45f, 1.0f, 1.0f);
+        pathBuilder.curveTo(16.5f, 12.55f, 16.05f, 13.0f, 15.5f, 13.0f);
+        pathBuilder.close();
+        ImageVector build = ImageVector.Builder.m72248addPathoIyEayM$default(builder, pathBuilder.getNodes(), defaultFillType, "", solidColor, 1.0f, null, 1.0f, 1.0f, m72043getButtKaPHkGw, m72053getBevelLxFBmk8, 1.0f, 0.0f, 0.0f, 0.0f, 14336, null).build();
+        f21553a = build;
+        Intrinsics.checkNotNull(build);
+        return build;
+    }
+}

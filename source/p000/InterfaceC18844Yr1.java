@@ -1,0 +1,23 @@
+package p000;
+
+/* renamed from: Yr1  reason: case insensitive filesystem */
+/* loaded from: classes2.dex */
+public interface InterfaceC18844Yr1 {
+    byte[] data();
+
+    byte get(int i);
+
+    double getDouble(int i);
+
+    float getFloat(int i);
+
+    int getInt(int i);
+
+    long getLong(int i);
+
+    short getShort(int i);
+
+    String getString(int i, int i2);
+
+    int limit();
+}

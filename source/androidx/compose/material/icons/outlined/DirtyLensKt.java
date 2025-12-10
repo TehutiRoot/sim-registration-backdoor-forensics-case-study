@@ -1,0 +1,102 @@
+package androidx.compose.material.icons.outlined;
+
+import androidx.compose.material.icons.Icons;
+import androidx.compose.p003ui.graphics.Color;
+import androidx.compose.p003ui.graphics.SolidColor;
+import androidx.compose.p003ui.graphics.StrokeCap;
+import androidx.compose.p003ui.graphics.StrokeJoin;
+import androidx.compose.p003ui.graphics.vector.ImageVector;
+import androidx.compose.p003ui.graphics.vector.PathBuilder;
+import androidx.compose.p003ui.graphics.vector.VectorKt;
+import androidx.compose.p003ui.unit.C3641Dp;
+import com.tom_roush.pdfbox.pdmodel.common.PDPageLabelRange;
+import kotlin.Metadata;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.SourceDebugExtension;
+import org.jetbrains.annotations.NotNull;
+
+@Metadata(m28851d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\"\u0018\u0010\u0003\u001a\u0004\u0018\u00010\u00008\u0002@\u0002X\u0082\u000e¢\u0006\u0006\n\u0004\b\u0001\u0010\u0002\"\u0015\u0010\u0007\u001a\u00020\u0000*\u00020\u00048F¢\u0006\u0006\u001a\u0004\b\u0005\u0010\u0006¨\u0006\b"}, m28850d2 = {"Landroidx/compose/ui/graphics/vector/ImageVector;", PDPageLabelRange.STYLE_LETTERS_LOWER, "Landroidx/compose/ui/graphics/vector/ImageVector;", "_dirtyLens", "Landroidx/compose/material/icons/Icons$Outlined;", "getDirtyLens", "(Landroidx/compose/material/icons/Icons$Outlined;)Landroidx/compose/ui/graphics/vector/ImageVector;", "DirtyLens", "material-icons-extended_release"}, m28849k = 2, m28848mv = {1, 8, 0})
+@SourceDebugExtension({"SMAP\nDirtyLens.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DirtyLens.kt\nandroidx/compose/material/icons/outlined/DirtyLensKt\n+ 2 Icons.kt\nandroidx/compose/material/icons/IconsKt\n+ 3 Dp.kt\nandroidx/compose/ui/unit/DpKt\n+ 4 ImageVector.kt\nandroidx/compose/ui/graphics/vector/ImageVectorKt\n+ 5 Vector.kt\nandroidx/compose/ui/graphics/vector/VectorKt\n*L\n1#1,87:1\n122#2:88\n116#2,3:89\n119#2,3:93\n132#2,18:96\n152#2:133\n132#2,18:134\n152#2:171\n174#3:92\n694#4,2:114\n706#4,2:116\n708#4,11:122\n694#4,2:152\n706#4,2:154\n708#4,11:160\n64#5,4:118\n64#5,4:156\n*S KotlinDebug\n*F\n+ 1 DirtyLens.kt\nandroidx/compose/material/icons/outlined/DirtyLensKt\n*L\n29#1:88\n29#1:89,3\n29#1:93,3\n30#1:96,18\n30#1:133\n74#1:134,18\n74#1:171\n29#1:92\n30#1:114,2\n30#1:116,2\n30#1:122,11\n74#1:152,2\n74#1:154,2\n74#1:160,11\n30#1:118,4\n74#1:156,4\n*E\n"})
+/* loaded from: classes.dex */
+public final class DirtyLensKt {
+
+    /* renamed from: a */
+    public static ImageVector f17392a;
+
+    @NotNull
+    public static final ImageVector getDirtyLens(@NotNull Icons.Outlined outlined) {
+        Intrinsics.checkNotNullParameter(outlined, "<this>");
+        ImageVector imageVector = f17392a;
+        if (imageVector != null) {
+            Intrinsics.checkNotNull(imageVector);
+            return imageVector;
+        }
+        ImageVector.Builder builder = new ImageVector.Builder("Outlined.DirtyLens", C3641Dp.m73658constructorimpl(24.0f), C3641Dp.m73658constructorimpl(24.0f), 24.0f, 24.0f, 0L, 0, false, 224, null);
+        int defaultFillType = VectorKt.getDefaultFillType();
+        Color.Companion companion = Color.Companion;
+        SolidColor solidColor = new SolidColor(companion.m71761getBlack0d7_KjU(), null);
+        StrokeCap.Companion companion2 = StrokeCap.Companion;
+        int m72043getButtKaPHkGw = companion2.m72043getButtKaPHkGw();
+        StrokeJoin.Companion companion3 = StrokeJoin.Companion;
+        int m72053getBevelLxFBmk8 = companion3.m72053getBevelLxFBmk8();
+        PathBuilder pathBuilder = new PathBuilder();
+        pathBuilder.moveTo(20.0f, 5.0f);
+        pathBuilder.horizontalLineToRelative(-3.17f);
+        pathBuilder.lineTo(15.0f, 3.0f);
+        pathBuilder.horizontalLineTo(9.0f);
+        pathBuilder.lineTo(7.17f, 5.0f);
+        pathBuilder.horizontalLineTo(4.0f);
+        pathBuilder.curveTo(2.9f, 5.0f, 2.0f, 5.9f, 2.0f, 7.0f);
+        pathBuilder.verticalLineToRelative(12.0f);
+        pathBuilder.curveToRelative(0.0f, 1.1f, 0.9f, 2.0f, 2.0f, 2.0f);
+        pathBuilder.horizontalLineToRelative(16.0f);
+        pathBuilder.curveToRelative(1.1f, 0.0f, 2.0f, -0.9f, 2.0f, -2.0f);
+        pathBuilder.verticalLineTo(7.0f);
+        pathBuilder.curveTo(22.0f, 5.9f, 21.1f, 5.0f, 20.0f, 5.0f);
+        pathBuilder.close();
+        pathBuilder.moveTo(20.0f, 19.0f);
+        pathBuilder.horizontalLineToRelative(-7.02f);
+        pathBuilder.curveToRelative(-0.22f, -0.84f, -0.52f, -1.76f, -0.13f, -2.33f);
+        pathBuilder.curveToRelative(0.81f, -1.12f, 2.67f, 1.77f, 3.81f, -0.09f);
+        pathBuilder.curveToRelative(0.77f, -1.57f, -1.58f, -1.29f, -1.64f, -2.12f);
+        pathBuilder.curveToRelative(-0.05f, -0.84f, 3.68f, 0.17f, 3.04f, -1.66f);
+        pathBuilder.curveToRelative(-0.61f, -1.73f, -2.42f, 0.48f, -2.76f, -0.53f);
+        pathBuilder.curveToRelative(-0.58f, -1.74f, 4.7f, -1.68f, 2.85f, -4.01f);
+        pathBuilder.curveToRelative(-1.76f, -2.22f, -2.47f, 2.85f, -4.41f, 2.33f);
+        pathBuilder.curveToRelative(-1.34f, -0.36f, -1.01f, -2.88f, -2.65f, -2.44f);
+        pathBuilder.curveToRelative(-1.88f, 0.51f, 1.03f, 2.2f, 0.0f, 2.86f);
+        pathBuilder.curveToRelative(-0.96f, 0.63f, -1.72f, -0.92f, -2.51f, -1.19f);
+        pathBuilder.curveToRelative(-0.2f, -0.07f, -0.69f, -0.05f, -0.91f, 0.19f);
+        pathBuilder.curveToRelative(-0.78f, 0.86f, 0.28f, 1.16f, 0.25f, 1.91f);
+        pathBuilder.curveToRelative(-0.02f, 0.75f, -1.59f, 0.49f, -1.51f, 1.49f);
+        pathBuilder.curveToRelative(0.12f, 1.6f, 2.18f, 0.45f, 2.4f, 1.24f);
+        pathBuilder.curveToRelative(0.55f, 1.98f, -1.89f, 2.15f, -0.5f, 3.27f);
+        pathBuilder.curveToRelative(1.53f, 0.71f, 1.91f, -1.94f, 2.8f, -1.35f);
+        pathBuilder.curveToRelative(0.58f, 0.38f, 0.3f, 1.45f, 0.16f, 2.43f);
+        pathBuilder.horizontalLineTo(4.0f);
+        pathBuilder.verticalLineTo(7.0f);
+        pathBuilder.horizontalLineToRelative(4.05f);
+        pathBuilder.lineToRelative(1.83f, -2.0f);
+        pathBuilder.horizontalLineToRelative(4.24f);
+        pathBuilder.lineToRelative(1.83f, 2.0f);
+        pathBuilder.horizontalLineTo(20.0f);
+        pathBuilder.verticalLineTo(19.0f);
+        pathBuilder.close();
+        ImageVector.Builder.m72248addPathoIyEayM$default(builder, pathBuilder.getNodes(), defaultFillType, "", solidColor, 1.0f, null, 1.0f, 1.0f, m72043getButtKaPHkGw, m72053getBevelLxFBmk8, 1.0f, 0.0f, 0.0f, 0.0f, 14336, null);
+        int defaultFillType2 = VectorKt.getDefaultFillType();
+        SolidColor solidColor2 = new SolidColor(companion.m71761getBlack0d7_KjU(), null);
+        int m72043getButtKaPHkGw2 = companion2.m72043getButtKaPHkGw();
+        int m72053getBevelLxFBmk82 = companion3.m72053getBevelLxFBmk8();
+        PathBuilder pathBuilder2 = new PathBuilder();
+        pathBuilder2.moveTo(17.28f, 17.15f);
+        pathBuilder2.curveToRelative(0.0f, 0.48f, 0.39f, 0.86f, 0.86f, 0.86f);
+        pathBuilder2.curveToRelative(0.48f, 0.0f, 0.86f, -0.38f, 0.86f, -0.86f);
+        pathBuilder2.reflectiveCurveToRelative(-0.39f, -0.86f, -0.86f, -0.86f);
+        pathBuilder2.curveTo(17.66f, 16.29f, 17.28f, 16.67f, 17.28f, 17.15f);
+        pathBuilder2.close();
+        ImageVector build = ImageVector.Builder.m72248addPathoIyEayM$default(builder, pathBuilder2.getNodes(), defaultFillType2, "", solidColor2, 1.0f, null, 1.0f, 1.0f, m72043getButtKaPHkGw2, m72053getBevelLxFBmk82, 1.0f, 0.0f, 0.0f, 0.0f, 14336, null).build();
+        f17392a = build;
+        Intrinsics.checkNotNull(build);
+        return build;
+    }
+}

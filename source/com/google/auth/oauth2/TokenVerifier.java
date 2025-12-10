@@ -1,0 +1,314 @@
+package com.google.auth.oauth2;
+
+import com.google.api.client.http.GenericUrl;
+import com.google.api.client.http.HttpBackOffUnsuccessfulResponseHandler;
+import com.google.api.client.http.HttpRequest;
+import com.google.api.client.json.GenericJson;
+import com.google.api.client.json.webtoken.JsonWebSignature;
+import com.google.api.client.util.Base64;
+import com.google.api.client.util.Clock;
+import com.google.api.client.util.ExponentialBackOff;
+import com.google.api.client.util.Key;
+import com.google.auth.http.HttpTransportFactory;
+import com.google.common.base.Preconditions;
+import com.google.common.cache.CacheBuilder;
+import com.google.common.cache.CacheLoader;
+import com.google.common.cache.LoadingCache;
+import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.ImmutableSet;
+import com.google.common.util.concurrent.UncheckedExecutionException;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.math.BigInteger;
+import java.security.AlgorithmParameters;
+import java.security.GeneralSecurityException;
+import java.security.KeyFactory;
+import java.security.NoSuchAlgorithmException;
+import java.security.PublicKey;
+import java.security.cert.CertificateFactory;
+import java.security.spec.ECGenParameterSpec;
+import java.security.spec.ECParameterSpec;
+import java.security.spec.ECPoint;
+import java.security.spec.ECPublicKeySpec;
+import java.security.spec.InvalidKeySpecException;
+import java.security.spec.InvalidParameterSpecException;
+import java.security.spec.RSAPublicKeySpec;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+
+/* loaded from: classes4.dex */
+public class TokenVerifier {
+
+    /* renamed from: g */
+    public static final Set f52567g = ImmutableSet.m40929of("RS256", "ES256");
+
+    /* renamed from: a */
+    public final String f52568a;
+
+    /* renamed from: b */
+    public final String f52569b;
+
+    /* renamed from: c */
+    public final String f52570c;
+
+    /* renamed from: d */
+    public final PublicKey f52571d;
+
+    /* renamed from: e */
+    public final Clock f52572e;
+
+    /* renamed from: f */
+    public final LoadingCache f52573f;
+
+    /* loaded from: classes4.dex */
+    public static class Builder {
+
+        /* renamed from: a */
+        public String f52574a;
+
+        /* renamed from: b */
+        public String f52575b;
+
+        /* renamed from: c */
+        public String f52576c;
+
+        /* renamed from: d */
+        public PublicKey f52577d;
+
+        /* renamed from: e */
+        public Clock f52578e;
+
+        /* renamed from: f */
+        public HttpTransportFactory f52579f;
+
+        public TokenVerifier build() {
+            return new TokenVerifier(this);
+        }
+
+        public Builder setAudience(String str) {
+            this.f52574a = str;
+            return this;
+        }
+
+        public Builder setCertificatesLocation(String str) {
+            this.f52575b = str;
+            return this;
+        }
+
+        public Builder setClock(Clock clock) {
+            this.f52578e = clock;
+            return this;
+        }
+
+        public Builder setHttpTransportFactory(HttpTransportFactory httpTransportFactory) {
+            this.f52579f = httpTransportFactory;
+            return this;
+        }
+
+        public Builder setIssuer(String str) {
+            this.f52576c = str;
+            return this;
+        }
+
+        public Builder setPublicKey(PublicKey publicKey) {
+            this.f52577d = publicKey;
+            return this;
+        }
+    }
+
+    /* loaded from: classes4.dex */
+    public static class PublicKeyLoader extends CacheLoader {
+
+        /* renamed from: a */
+        public final HttpTransportFactory f52580a;
+
+        /* loaded from: classes4.dex */
+        public static class JsonWebKey {
+            @Key
+            public String alg;
+            @Key
+            public String crv;
+            @Key
+
+            /* renamed from: e */
+            public String f52581e;
+            @Key
+            public String kid;
+            @Key
+            public String kty;
+            @Key
+
+            /* renamed from: n */
+            public String f52582n;
+            @Key
+            public String use;
+            @Key
+
+            /* renamed from: x */
+            public String f52583x;
+            @Key
+
+            /* renamed from: y */
+            public String f52584y;
+        }
+
+        /* loaded from: classes4.dex */
+        public static class JsonWebKeySet extends GenericJson {
+            @Key
+            public List<JsonWebKey> keys;
+        }
+
+        public PublicKeyLoader(HttpTransportFactory httpTransportFactory) {
+            this.f52580a = httpTransportFactory;
+        }
+
+        /* renamed from: c */
+        private PublicKey m41581c(String str) {
+            return CertificateFactory.getInstance("X.509").generateCertificate(new ByteArrayInputStream(str.getBytes("UTF-8"))).getPublicKey();
+        }
+
+        /* renamed from: a */
+        public final PublicKey m41583a(JsonWebKey jsonWebKey) {
+            Preconditions.checkArgument("EC".equals(jsonWebKey.kty));
+            Preconditions.checkArgument("P-256".equals(jsonWebKey.crv));
+            ECPoint eCPoint = new ECPoint(new BigInteger(1, Base64.decodeBase64(jsonWebKey.f52583x)), new BigInteger(1, Base64.decodeBase64(jsonWebKey.f52584y)));
+            AlgorithmParameters algorithmParameters = AlgorithmParameters.getInstance("EC");
+            algorithmParameters.init(new ECGenParameterSpec("secp256r1"));
+            return KeyFactory.getInstance("EC").generatePublic(new ECPublicKeySpec(eCPoint, (ECParameterSpec) algorithmParameters.getParameterSpec(ECParameterSpec.class)));
+        }
+
+        /* renamed from: b */
+        public final PublicKey m41582b(JsonWebKey jsonWebKey) {
+            if ("ES256".equals(jsonWebKey.alg)) {
+                return m41583a(jsonWebKey);
+            }
+            if ("RS256".equals(jsonWebKey.alg)) {
+                return m41580d(jsonWebKey);
+            }
+            return null;
+        }
+
+        /* renamed from: d */
+        public final PublicKey m41580d(JsonWebKey jsonWebKey) {
+            Preconditions.checkArgument("RSA".equals(jsonWebKey.kty));
+            Preconditions.checkNotNull(jsonWebKey.f52581e);
+            Preconditions.checkNotNull(jsonWebKey.f52582n);
+            return KeyFactory.getInstance("RSA").generatePublic(new RSAPublicKeySpec(new BigInteger(1, Base64.decodeBase64(jsonWebKey.f52582n)), new BigInteger(1, Base64.decodeBase64(jsonWebKey.f52581e))));
+        }
+
+        @Override // com.google.common.cache.CacheLoader
+        /* renamed from: e */
+        public Map load(String str) {
+            HttpRequest parser = this.f52580a.create().createRequestFactory().buildGetRequest(new GenericUrl(str)).setParser(CJ0.f695f.createJsonObjectParser());
+            parser.setNumberOfRetries(2);
+            parser.setUnsuccessfulResponseHandler(new HttpBackOffUnsuccessfulResponseHandler(new ExponentialBackOff.Builder().setInitialIntervalMillis(1000).setRandomizationFactor(0.1d).setMultiplier(2.0d).build()).setBackOffRequired(HttpBackOffUnsuccessfulResponseHandler.BackOffRequired.ALWAYS));
+            JsonWebKeySet jsonWebKeySet = (JsonWebKeySet) parser.execute().parseAs((Class<Object>) JsonWebKeySet.class);
+            ImmutableMap.Builder builder = new ImmutableMap.Builder();
+            List<JsonWebKey> list = jsonWebKeySet.keys;
+            if (list == null) {
+                for (String str2 : jsonWebKeySet.keySet()) {
+                    builder.put(str2, m41581c((String) jsonWebKeySet.get(str2)));
+                }
+            } else {
+                for (JsonWebKey jsonWebKey : list) {
+                    try {
+                        builder.put(jsonWebKey.kid, m41582b(jsonWebKey));
+                    } catch (NoSuchAlgorithmException | InvalidKeySpecException | InvalidParameterSpecException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+            ImmutableMap build = builder.build();
+            if (!build.isEmpty()) {
+                return build;
+            }
+            throw new VerificationException("No valid public key returned by the keystore: " + str);
+        }
+    }
+
+    /* loaded from: classes4.dex */
+    public static class VerificationException extends Exception {
+        public VerificationException(String str) {
+            super(str);
+        }
+
+        public VerificationException(String str, Throwable th2) {
+            super(str, th2);
+        }
+    }
+
+    public static Builder newBuilder() {
+        return new Builder().setClock(Clock.SYSTEM).setHttpTransportFactory(CJ0.f694e);
+    }
+
+    /* renamed from: a */
+    public final String m41590a(JsonWebSignature jsonWebSignature) {
+        String str = this.f52569b;
+        if (str != null) {
+            return str;
+        }
+        String algorithm = jsonWebSignature.getHeader().getAlgorithm();
+        algorithm.hashCode();
+        if (!algorithm.equals("ES256")) {
+            if (algorithm.equals("RS256")) {
+                return "https://www.googleapis.com/oauth2/v3/certs";
+            }
+            throw new VerificationException("Unknown algorithm");
+        }
+        return "https://www.gstatic.com/iap/verify/public_key-jwk";
+    }
+
+    public JsonWebSignature verify(String str) throws VerificationException {
+        try {
+            JsonWebSignature parse = JsonWebSignature.parse(CJ0.f695f, str);
+            String str2 = this.f52568a;
+            if (str2 != null && !str2.equals(parse.getPayload().getAudience())) {
+                throw new VerificationException("Expected audience does not match");
+            }
+            String str3 = this.f52570c;
+            if (str3 != null && !str3.equals(parse.getPayload().getIssuer())) {
+                throw new VerificationException("Expected issuer does not match");
+            }
+            Long expirationTimeSeconds = parse.getPayload().getExpirationTimeSeconds();
+            if (expirationTimeSeconds != null && expirationTimeSeconds.longValue() <= this.f52572e.currentTimeMillis() / 1000) {
+                throw new VerificationException("Token is expired");
+            }
+            if (f52567g.contains(parse.getHeader().getAlgorithm())) {
+                PublicKey publicKey = this.f52571d;
+                if (publicKey == null) {
+                    try {
+                        publicKey = (PublicKey) ((Map) this.f52573f.get(m41590a(parse))).get(parse.getHeader().getKeyId());
+                    } catch (UncheckedExecutionException | ExecutionException e) {
+                        throw new VerificationException("Error fetching PublicKey from certificate location", e);
+                    }
+                }
+                if (publicKey != null) {
+                    try {
+                        if (parse.verifySignature(publicKey)) {
+                            return parse;
+                        }
+                        throw new VerificationException("Invalid signature");
+                    } catch (GeneralSecurityException e2) {
+                        throw new VerificationException("Error validating token", e2);
+                    }
+                }
+                throw new VerificationException("Could not find PublicKey for provided keyId: " + parse.getHeader().getKeyId());
+            }
+            throw new VerificationException("Unexpected signing algorithm: expected either RS256 or ES256");
+        } catch (IOException e3) {
+            throw new VerificationException("Error parsing JsonWebSignature token", e3);
+        }
+    }
+
+    public TokenVerifier(Builder builder) {
+        this.f52568a = builder.f52574a;
+        this.f52569b = builder.f52575b;
+        this.f52570c = builder.f52576c;
+        this.f52571d = builder.f52577d;
+        this.f52572e = builder.f52578e;
+        this.f52573f = CacheBuilder.newBuilder().expireAfterWrite(1L, TimeUnit.HOURS).build(new PublicKeyLoader(builder.f52579f));
+    }
+}

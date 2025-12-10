@@ -1,0 +1,156 @@
+package p000;
+
+import ch.qos.logback.core.net.SyslogConstants;
+import com.facebook.stetho.dumpapp.Framer;
+import com.google.common.base.Ascii;
+import com.google.zxing.common.DecoderResult;
+import java.text.DecimalFormat;
+
+/* renamed from: hE */
+/* loaded from: classes5.dex */
+public abstract class AbstractC10368hE {
+
+    /* renamed from: a */
+    public static final String[] f62444a = {"\nABCDEFGHIJKLMNOPQRSTUVWXYZ\ufffa\u001c\u001d\u001e\ufffb ￼\"#$%&'()*+,-./0123456789:\ufff1\ufff2\ufff3\ufff4\ufff8", "`abcdefghijklmnopqrstuvwxyz\ufffa\u001c\u001d\u001e\ufffb{￼}~\u007f;<=>?[\\]^_ ,./:@!|￼\ufff5\ufff6￼\ufff0\ufff2\ufff3\ufff4\ufff7", "ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚ\ufffa\u001c\u001d\u001eÛÜÝÞßª¬±²³µ¹º¼½¾\u0080\u0081\u0082\u0083\u0084\u0085\u0086\u0087\u0088\u0089\ufff7 \ufff9\ufff3\ufff4\ufff8", "àáâãäåæçèéêëìíîïðñòóôõö÷øùú\ufffa\u001c\u001d\u001e\ufffbûüýþÿ¡¨«¯°´·¸»¿\u008a\u008b\u008c\u008d\u008e\u008f\u0090\u0091\u0092\u0093\u0094\ufff7 \ufff2\ufff9\ufff4\ufff8", "\u0000\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\t\n\u000b\f\r\u000e\u000f\u0010\u0011\u0012\u0013\u0014\u0015\u0016\u0017\u0018\u0019\u001a\ufffa￼￼\u001b\ufffb\u001c\u001d\u001e\u001f\u009f ¢£¤¥¦§©\u00ad®¶\u0095\u0096\u0097\u0098\u0099\u009a\u009b\u009c\u009d\u009e\ufff7 \ufff2\ufff3\ufff9\ufff8", "\u0000\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\t\n\u000b\f\r\u000e\u000f\u0010\u0011\u0012\u0013\u0014\u0015\u0016\u0017\u0018\u0019\u001a\u001b\u001c\u001d\u001e\u001f !\"#$%&'()*+,-./0123456789:;<=>?"};
+
+    /* renamed from: a */
+    public static DecoderResult m30911a(byte[] bArr, int i) {
+        String m30904h;
+        StringBuilder sb = new StringBuilder((int) SyslogConstants.LOG_LOCAL2);
+        if (i != 2 && i != 3) {
+            if (i != 4) {
+                if (i == 5) {
+                    sb.append(m30907e(bArr, 1, 77));
+                }
+            } else {
+                sb.append(m30907e(bArr, 1, 93));
+            }
+        } else {
+            if (i == 2) {
+                m30904h = new DecimalFormat("0000000000".substring(0, m30905g(bArr))).format(m30906f(bArr));
+            } else {
+                m30904h = m30904h(bArr);
+            }
+            DecimalFormat decimalFormat = new DecimalFormat("000");
+            String format = decimalFormat.format(m30909c(bArr));
+            String format2 = decimalFormat.format(m30903i(bArr));
+            sb.append(m30907e(bArr, 10, 84));
+            if (sb.toString().startsWith("[)>\u001e01\u001d")) {
+                sb.insert(9, m30904h + (char) 29 + format + (char) 29 + format2 + (char) 29);
+            } else {
+                sb.insert(0, m30904h + (char) 29 + format + (char) 29 + format2 + (char) 29);
+            }
+        }
+        return new DecoderResult(bArr, sb.toString(), null, String.valueOf(i));
+    }
+
+    /* renamed from: b */
+    public static int m30910b(int i, byte[] bArr) {
+        int i2 = i - 1;
+        if (((1 << (5 - (i2 % 6))) & bArr[i2 / 6]) != 0) {
+            return 1;
+        }
+        return 0;
+    }
+
+    /* renamed from: c */
+    public static int m30909c(byte[] bArr) {
+        return m30908d(bArr, new byte[]{53, 54, 43, 44, Framer.STDIN_FRAME_PREFIX, 46, 47, 48, 37, 38});
+    }
+
+    /* renamed from: d */
+    public static int m30908d(byte[] bArr, byte[] bArr2) {
+        if (bArr2.length != 0) {
+            int i = 0;
+            for (int i2 = 0; i2 < bArr2.length; i2++) {
+                i += m30910b(bArr2[i2], bArr) << ((bArr2.length - i2) - 1);
+            }
+            return i;
+        }
+        throw new IllegalArgumentException();
+    }
+
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
+    /* renamed from: e */
+    public static String m30907e(byte[] bArr, int i, int i2) {
+        StringBuilder sb = new StringBuilder();
+        int i3 = i;
+        int i4 = 0;
+        int i5 = -1;
+        int i6 = 0;
+        while (i3 < i + i2) {
+            char charAt = f62444a[i4].charAt(bArr[i3]);
+            switch (charAt) {
+                case 65520:
+                case 65521:
+                case 65522:
+                case 65523:
+                case 65524:
+                    i6 = i4;
+                    i4 = charAt - 65520;
+                    i5 = 1;
+                    break;
+                case 65525:
+                    i5 = 2;
+                    i6 = i4;
+                    i4 = 0;
+                    break;
+                case 65526:
+                    i5 = 3;
+                    i6 = i4;
+                    i4 = 0;
+                    break;
+                case 65527:
+                    i4 = 0;
+                    i5 = -1;
+                    break;
+                case 65528:
+                    i4 = 1;
+                    i5 = -1;
+                    break;
+                case 65529:
+                    i5 = -1;
+                    break;
+                case 65530:
+                default:
+                    sb.append(charAt);
+                    break;
+                case 65531:
+                    i3 += 5;
+                    sb.append(new DecimalFormat("000000000").format((bArr[i3 + 1] << Ascii.CAN) + (bArr[i3 + 2] << 18) + (bArr[i3 + 3] << 12) + (bArr[i3 + 4] << 6) + bArr[i3]));
+                    break;
+            }
+            int i7 = i5 - 1;
+            if (i5 == 0) {
+                i4 = i6;
+            }
+            i3++;
+            i5 = i7;
+        }
+        while (sb.length() > 0 && sb.charAt(sb.length() - 1) == 65532) {
+            sb.setLength(sb.length() - 1);
+        }
+        return sb.toString();
+    }
+
+    /* renamed from: f */
+    public static int m30906f(byte[] bArr) {
+        return m30908d(bArr, new byte[]{Framer.ENTER_FRAME_PREFIX, 34, 35, 36, Ascii.f52684EM, Ascii.SUB, Ascii.ESC, Ascii.f52686FS, Ascii.f52687GS, Ascii.f52691RS, 19, Ascii.DC4, Ascii.NAK, Ascii.SYN, Ascii.ETB, Ascii.CAN, 13, 14, 15, 16, 17, 18, 7, 8, 9, 10, 11, 12, 1, 2});
+    }
+
+    /* renamed from: g */
+    public static int m30905g(byte[] bArr) {
+        return m30908d(bArr, new byte[]{39, 40, 41, 42, Ascii.f52695US, 32});
+    }
+
+    /* renamed from: h */
+    public static String m30904h(byte[] bArr) {
+        String[] strArr = f62444a;
+        return String.valueOf(new char[]{strArr[0].charAt(m30908d(bArr, new byte[]{39, 40, 41, 42, Ascii.f52695US, 32})), strArr[0].charAt(m30908d(bArr, new byte[]{Framer.ENTER_FRAME_PREFIX, 34, 35, 36, Ascii.f52684EM, Ascii.SUB})), strArr[0].charAt(m30908d(bArr, new byte[]{Ascii.ESC, Ascii.f52686FS, Ascii.f52687GS, Ascii.f52691RS, 19, Ascii.DC4})), strArr[0].charAt(m30908d(bArr, new byte[]{Ascii.NAK, Ascii.SYN, Ascii.ETB, Ascii.CAN, 13, 14})), strArr[0].charAt(m30908d(bArr, new byte[]{15, 16, 17, 18, 7, 8})), strArr[0].charAt(m30908d(bArr, new byte[]{9, 10, 11, 12, 1, 2}))});
+    }
+
+    /* renamed from: i */
+    public static int m30903i(byte[] bArr) {
+        return m30908d(bArr, new byte[]{55, 56, 57, 58, 59, 60, Framer.STDOUT_FRAME_PREFIX, Framer.STDERR_FRAME_PREFIX, 51, 52});
+    }
+}

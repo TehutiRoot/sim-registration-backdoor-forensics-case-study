@@ -1,0 +1,71 @@
+package androidx.core.text;
+
+import android.annotation.SuppressLint;
+import android.os.Build;
+import android.text.Html;
+import android.text.Spanned;
+import androidx.annotation.DoNotInline;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
+@SuppressLint({"InlinedApi"})
+/* loaded from: classes2.dex */
+public final class HtmlCompat {
+    public static final int FROM_HTML_MODE_COMPACT = 63;
+    public static final int FROM_HTML_MODE_LEGACY = 0;
+    public static final int FROM_HTML_OPTION_USE_CSS_COLORS = 256;
+    public static final int FROM_HTML_SEPARATOR_LINE_BREAK_BLOCKQUOTE = 32;
+    public static final int FROM_HTML_SEPARATOR_LINE_BREAK_DIV = 16;
+    public static final int FROM_HTML_SEPARATOR_LINE_BREAK_HEADING = 2;
+    public static final int FROM_HTML_SEPARATOR_LINE_BREAK_LIST = 8;
+    public static final int FROM_HTML_SEPARATOR_LINE_BREAK_LIST_ITEM = 4;
+    public static final int FROM_HTML_SEPARATOR_LINE_BREAK_PARAGRAPH = 1;
+    public static final int TO_HTML_PARAGRAPH_LINES_CONSECUTIVE = 0;
+    public static final int TO_HTML_PARAGRAPH_LINES_INDIVIDUAL = 1;
+
+    /* renamed from: androidx.core.text.HtmlCompat$a */
+    /* loaded from: classes2.dex */
+    public static class C4078a {
+        @DoNotInline
+        /* renamed from: a */
+        public static Spanned m57089a(String str, int i) {
+            return Html.fromHtml(str, i);
+        }
+
+        @DoNotInline
+        /* renamed from: b */
+        public static Spanned m57088b(String str, int i, Html.ImageGetter imageGetter, Html.TagHandler tagHandler) {
+            return Html.fromHtml(str, i, imageGetter, tagHandler);
+        }
+
+        @DoNotInline
+        /* renamed from: c */
+        public static String m57087c(Spanned spanned, int i) {
+            return Html.toHtml(spanned, i);
+        }
+    }
+
+    @NonNull
+    public static Spanned fromHtml(@NonNull String str, int i) {
+        if (Build.VERSION.SDK_INT >= 24) {
+            return C4078a.m57089a(str, i);
+        }
+        return Html.fromHtml(str);
+    }
+
+    @NonNull
+    public static String toHtml(@NonNull Spanned spanned, int i) {
+        if (Build.VERSION.SDK_INT >= 24) {
+            return C4078a.m57087c(spanned, i);
+        }
+        return Html.toHtml(spanned);
+    }
+
+    @NonNull
+    public static Spanned fromHtml(@NonNull String str, int i, @Nullable Html.ImageGetter imageGetter, @Nullable Html.TagHandler tagHandler) {
+        if (Build.VERSION.SDK_INT >= 24) {
+            return C4078a.m57088b(str, i, imageGetter, tagHandler);
+        }
+        return Html.fromHtml(str, imageGetter, tagHandler);
+    }
+}

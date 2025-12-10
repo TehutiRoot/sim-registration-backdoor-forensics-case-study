@@ -1,0 +1,170 @@
+package th.p047co.dtac.android.dtacone.databinding;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
+import com.google.android.cameraview.CameraView;
+import th.p047co.dtac.android.dtacone.R;
+import th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView;
+import th.p047co.dtac.android.dtacone.widget.view.DtacTouchView;
+import th.p047co.dtac.android.dtacone.widget.view.ViewFinderView;
+
+/* renamed from: th.co.dtac.android.dtacone.databinding.ZIncludeNewCameraViewBinding */
+/* loaded from: classes7.dex */
+public final class ZIncludeNewCameraViewBinding implements ViewBinding {
+    @NonNull
+    public final ConstraintLayout LayoutMessageInfoLower;
+
+    /* renamed from: a */
+    public final FrameLayout f84639a;
+    @NonNull
+    public final RelativeLayout bottom;
+    @NonNull
+    public final CameraView cameraview;
+    @NonNull
+    public final ImageView imageView31;
+    @NonNull
+    public final ImageView imageView32;
+    @NonNull
+    public final ZIncludeCameraButtonBinding incCameraButton;
+    @NonNull
+    public final ImageView ivTag;
+    @NonNull
+    public final ImageView ivTagAttorney;
+    @NonNull
+    public final ConstraintLayout layoutInfo;
+    @NonNull
+    public final ConstraintLayout layoutMessageInfo;
+    @NonNull
+    public final ConstraintLayout layoutTag;
+    @NonNull
+    public final View top;
+    @NonNull
+    public final DtacFontTextView tvCameraHelper;
+    @NonNull
+    public final DtacFontTextView tvMessageInfo;
+    @NonNull
+    public final DtacFontTextView tvMessageInfoLower;
+    @NonNull
+    public final ViewFinderView viewFinderView;
+    @NonNull
+    public final DtacTouchView viewFocus;
+
+    public ZIncludeNewCameraViewBinding(FrameLayout frameLayout, ConstraintLayout constraintLayout, RelativeLayout relativeLayout, CameraView cameraView, ImageView imageView, ImageView imageView2, ZIncludeCameraButtonBinding zIncludeCameraButtonBinding, ImageView imageView3, ImageView imageView4, ConstraintLayout constraintLayout2, ConstraintLayout constraintLayout3, ConstraintLayout constraintLayout4, View view, DtacFontTextView dtacFontTextView, DtacFontTextView dtacFontTextView2, DtacFontTextView dtacFontTextView3, ViewFinderView viewFinderView, DtacTouchView dtacTouchView) {
+        this.f84639a = frameLayout;
+        this.LayoutMessageInfoLower = constraintLayout;
+        this.bottom = relativeLayout;
+        this.cameraview = cameraView;
+        this.imageView31 = imageView;
+        this.imageView32 = imageView2;
+        this.incCameraButton = zIncludeCameraButtonBinding;
+        this.ivTag = imageView3;
+        this.ivTagAttorney = imageView4;
+        this.layoutInfo = constraintLayout2;
+        this.layoutMessageInfo = constraintLayout3;
+        this.layoutTag = constraintLayout4;
+        this.top = view;
+        this.tvCameraHelper = dtacFontTextView;
+        this.tvMessageInfo = dtacFontTextView2;
+        this.tvMessageInfoLower = dtacFontTextView3;
+        this.viewFinderView = viewFinderView;
+        this.viewFocus = dtacTouchView;
+    }
+
+    @NonNull
+    public static ZIncludeNewCameraViewBinding bind(@NonNull View view) {
+        View findChildViewById;
+        View findChildViewById2;
+        int i = R.id.LayoutMessageInfoLower;
+        ConstraintLayout constraintLayout = (ConstraintLayout) ViewBindings.findChildViewById(view, i);
+        if (constraintLayout != null) {
+            i = R.id.bottom;
+            RelativeLayout relativeLayout = (RelativeLayout) ViewBindings.findChildViewById(view, i);
+            if (relativeLayout != null) {
+                i = R.id.cameraview;
+                CameraView cameraView = (CameraView) ViewBindings.findChildViewById(view, i);
+                if (cameraView != null) {
+                    i = R.id.imageView31;
+                    ImageView imageView = (ImageView) ViewBindings.findChildViewById(view, i);
+                    if (imageView != null) {
+                        i = R.id.imageView32;
+                        ImageView imageView2 = (ImageView) ViewBindings.findChildViewById(view, i);
+                        if (imageView2 != null && (findChildViewById = ViewBindings.findChildViewById(view, (i = R.id.incCameraButton))) != null) {
+                            ZIncludeCameraButtonBinding bind = ZIncludeCameraButtonBinding.bind(findChildViewById);
+                            i = R.id.ivTag;
+                            ImageView imageView3 = (ImageView) ViewBindings.findChildViewById(view, i);
+                            if (imageView3 != null) {
+                                i = R.id.ivTagAttorney;
+                                ImageView imageView4 = (ImageView) ViewBindings.findChildViewById(view, i);
+                                if (imageView4 != null) {
+                                    i = R.id.layoutInfo;
+                                    ConstraintLayout constraintLayout2 = (ConstraintLayout) ViewBindings.findChildViewById(view, i);
+                                    if (constraintLayout2 != null) {
+                                        i = R.id.layoutMessageInfo;
+                                        ConstraintLayout constraintLayout3 = (ConstraintLayout) ViewBindings.findChildViewById(view, i);
+                                        if (constraintLayout3 != null) {
+                                            i = R.id.layout_tag;
+                                            ConstraintLayout constraintLayout4 = (ConstraintLayout) ViewBindings.findChildViewById(view, i);
+                                            if (constraintLayout4 != null && (findChildViewById2 = ViewBindings.findChildViewById(view, (i = R.id.top))) != null) {
+                                                i = R.id.tvCameraHelper;
+                                                DtacFontTextView dtacFontTextView = (DtacFontTextView) ViewBindings.findChildViewById(view, i);
+                                                if (dtacFontTextView != null) {
+                                                    i = R.id.tvMessageInfo;
+                                                    DtacFontTextView dtacFontTextView2 = (DtacFontTextView) ViewBindings.findChildViewById(view, i);
+                                                    if (dtacFontTextView2 != null) {
+                                                        i = R.id.tvMessageInfoLower;
+                                                        DtacFontTextView dtacFontTextView3 = (DtacFontTextView) ViewBindings.findChildViewById(view, i);
+                                                        if (dtacFontTextView3 != null) {
+                                                            i = R.id.viewFinderView;
+                                                            ViewFinderView viewFinderView = (ViewFinderView) ViewBindings.findChildViewById(view, i);
+                                                            if (viewFinderView != null) {
+                                                                i = R.id.viewFocus;
+                                                                DtacTouchView dtacTouchView = (DtacTouchView) ViewBindings.findChildViewById(view, i);
+                                                                if (dtacTouchView != null) {
+                                                                    return new ZIncludeNewCameraViewBinding((FrameLayout) view, constraintLayout, relativeLayout, cameraView, imageView, imageView2, bind, imageView3, imageView4, constraintLayout2, constraintLayout3, constraintLayout4, findChildViewById2, dtacFontTextView, dtacFontTextView2, dtacFontTextView3, viewFinderView, dtacTouchView);
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        throw new NullPointerException("Missing required view with ID: ".concat(view.getResources().getResourceName(i)));
+    }
+
+    @NonNull
+    public static ZIncludeNewCameraViewBinding inflate(@NonNull LayoutInflater layoutInflater) {
+        return inflate(layoutInflater, null, false);
+    }
+
+    @NonNull
+    public static ZIncludeNewCameraViewBinding inflate(@NonNull LayoutInflater layoutInflater, @Nullable ViewGroup viewGroup, boolean z) {
+        View inflate = layoutInflater.inflate(R.layout.z_include_new_camera_view, viewGroup, false);
+        if (z) {
+            viewGroup.addView(inflate);
+        }
+        return bind(inflate);
+    }
+
+    @Override // androidx.viewbinding.ViewBinding
+    @NonNull
+    public FrameLayout getRoot() {
+        return this.f84639a;
+    }
+}

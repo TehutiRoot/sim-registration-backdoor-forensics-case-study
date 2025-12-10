@@ -1,0 +1,10 @@
+package androidx.compose.foundation.pager;
+
+import kotlin.Metadata;
+
+@Metadata(m28851d1 = {"\u0000\n\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\"\u000e\u0010\u0000\u001a\u00020\u0001X\u0080T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0002\u001a\u00020\u0001X\u0080T¢\u0006\u0002\n\u0000¨\u0006\u0003"}, m28850d2 = {"NearestItemsExtraItemCount", "", "NearestItemsSlidingWindowSize", "foundation_release"}, m28849k = 2, m28848mv = {1, 8, 0}, m28846xi = 48)
+/* loaded from: classes.dex */
+public final class PagerScrollPositionKt {
+    public static final int NearestItemsExtraItemCount = 100;
+    public static final int NearestItemsSlidingWindowSize = 30;
+}

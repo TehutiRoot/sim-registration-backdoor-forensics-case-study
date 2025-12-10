@@ -1,0 +1,105 @@
+package com.bumptech.glide.request.target;
+
+import android.graphics.drawable.Animatable;
+import android.graphics.drawable.Drawable;
+import android.widget.ImageView;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import com.bumptech.glide.request.transition.Transition;
+
+/* loaded from: classes3.dex */
+public abstract class ImageViewTarget<Z> extends ViewTarget<ImageView, Z> implements Transition.ViewAdapter {
+
+    /* renamed from: h */
+    public Animatable f42656h;
+
+    public ImageViewTarget(ImageView imageView) {
+        super(imageView);
+    }
+
+    /* renamed from: g */
+    public final void m50017g(Object obj) {
+        if (obj instanceof Animatable) {
+            Animatable animatable = (Animatable) obj;
+            this.f42656h = animatable;
+            animatable.start();
+            return;
+        }
+        this.f42656h = null;
+    }
+
+    @Override // com.bumptech.glide.request.transition.Transition.ViewAdapter
+    @Nullable
+    public Drawable getCurrentDrawable() {
+        return ((ImageView) this.view).getDrawable();
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* renamed from: h */
+    public final void m50016h(Object obj) {
+        setResource(obj);
+        m50017g(obj);
+    }
+
+    @Override // com.bumptech.glide.request.target.ViewTarget, com.bumptech.glide.request.target.BaseTarget, com.bumptech.glide.request.target.Target
+    public void onLoadCleared(@Nullable Drawable drawable) {
+        super.onLoadCleared(drawable);
+        Animatable animatable = this.f42656h;
+        if (animatable != null) {
+            animatable.stop();
+        }
+        m50016h(null);
+        setDrawable(drawable);
+    }
+
+    @Override // com.bumptech.glide.request.target.BaseTarget, com.bumptech.glide.request.target.Target
+    public void onLoadFailed(@Nullable Drawable drawable) {
+        super.onLoadFailed(drawable);
+        m50016h(null);
+        setDrawable(drawable);
+    }
+
+    @Override // com.bumptech.glide.request.target.ViewTarget, com.bumptech.glide.request.target.BaseTarget, com.bumptech.glide.request.target.Target
+    public void onLoadStarted(@Nullable Drawable drawable) {
+        super.onLoadStarted(drawable);
+        m50016h(null);
+        setDrawable(drawable);
+    }
+
+    @Override // com.bumptech.glide.request.target.Target
+    public void onResourceReady(@NonNull Z z, @Nullable Transition<? super Z> transition) {
+        if (transition != null && transition.transition(z, this)) {
+            m50017g(z);
+        } else {
+            m50016h(z);
+        }
+    }
+
+    @Override // com.bumptech.glide.request.target.BaseTarget, com.bumptech.glide.manager.LifecycleListener
+    public void onStart() {
+        Animatable animatable = this.f42656h;
+        if (animatable != null) {
+            animatable.start();
+        }
+    }
+
+    @Override // com.bumptech.glide.request.target.BaseTarget, com.bumptech.glide.manager.LifecycleListener
+    public void onStop() {
+        Animatable animatable = this.f42656h;
+        if (animatable != null) {
+            animatable.stop();
+        }
+    }
+
+    @Override // com.bumptech.glide.request.transition.Transition.ViewAdapter
+    public void setDrawable(Drawable drawable) {
+        ((ImageView) this.view).setImageDrawable(drawable);
+    }
+
+    public abstract void setResource(@Nullable Z z);
+
+    @Deprecated
+    public ImageViewTarget(ImageView imageView, boolean z) {
+        super(imageView, z);
+    }
+}

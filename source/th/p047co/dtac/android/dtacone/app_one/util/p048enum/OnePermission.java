@@ -1,0 +1,61 @@
+package th.p047co.dtac.android.dtacone.app_one.util.p048enum;
+
+import kotlin.Metadata;
+import th.p047co.dtac.android.dtacone.util.constant.PermissionConstant;
+
+@Metadata(m28851d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b5\b\u0086\u0001\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002j\u0002\b\u0003j\u0002\b\u0004j\u0002\b\u0005j\u0002\b\u0006j\u0002\b\u0007j\u0002\b\bj\u0002\b\tj\u0002\b\nj\u0002\b\u000bj\u0002\b\fj\u0002\b\rj\u0002\b\u000ej\u0002\b\u000fj\u0002\b\u0010j\u0002\b\u0011j\u0002\b\u0012j\u0002\b\u0013j\u0002\b\u0014j\u0002\b\u0015j\u0002\b\u0016j\u0002\b\u0017j\u0002\b\u0018j\u0002\b\u0019j\u0002\b\u001aj\u0002\b\u001bj\u0002\b\u001cj\u0002\b\u001dj\u0002\b\u001ej\u0002\b\u001fj\u0002\b j\u0002\b!j\u0002\b\"j\u0002\b#j\u0002\b$j\u0002\b%j\u0002\b&j\u0002\b'j\u0002\b(j\u0002\b)j\u0002\b*j\u0002\b+j\u0002\b,j\u0002\b-j\u0002\b.j\u0002\b/j\u0002\b0j\u0002\b1j\u0002\b2j\u0002\b3j\u0002\b4j\u0002\b5¨\u00066"}, m28850d2 = {"Lth/co/dtac/android/dtacone/app_one/util/enum/OnePermission;", "", "(Ljava/lang/String;I)V", PermissionConstant.M_TOP_UP, PermissionConstant.M_STV, PermissionConstant.M_RECTIFY, PermissionConstant.M_REGS_PRE, "PORTIN", PermissionConstant.M_RTR_PRFRMNCE, PermissionConstant.M_PRE2_POST, PermissionConstant.M_REGS_POST, PermissionConstant.PORTIN_POSTPAID, PermissionConstant.M_XNTL_MNP, PermissionConstant.MNP_PREPAID, PermissionConstant.MNP_POSTPAID, PermissionConstant.M_STAFF_PRMSSN, PermissionConstant.M_STAFF_MANAGE, PermissionConstant.M_CHNG_SIM, "E_PIN", PermissionConstant.M_ONLINE_STORE, PermissionConstant.M_CHNG_OWNR_PRE, "M_BUY_DOL", PermissionConstant.M_BUYDOL_HIST, PermissionConstant.M_RTR_PROFILE, PermissionConstant.M_CHNG_PFL_PIC, PermissionConstant.M_CAMPAIGN, PermissionConstant.M_ACT_SIM, PermissionConstant.M_PROFIT_REP, PermissionConstant.M_TRANS_HIST, PermissionConstant.M_SALES_SUMM, PermissionConstant.M_COMMISSION, PermissionConstant.M_CHNG_PACK, PermissionConstant.M_CHNG_PRE_PACK, PermissionConstant.M_SALE_ORDR, PermissionConstant.M_SALE_ORDR_ONLY, PermissionConstant.M_REGS_DAHM, PermissionConstant.M_FAMI_SIM, PermissionConstant.M_ESIM, PermissionConstant.M_MISSION, PermissionConstant.M_TAKE_PHOT, PermissionConstant.M_CHNG_PWD, PermissionConstant.M_PROMOTER_RTR, PermissionConstant.M_SALE_RCMMND, PermissionConstant.M_HEAL_CHCK, PermissionConstant.M_ENQY_CUST, PermissionConstant.M_FACE_RECO, PermissionConstant.M_3PRV_SERV, PermissionConstant.M_COUP_CHCK, PermissionConstant.M_EXPR_PACK, PermissionConstant.M_ELIGIBLE, PermissionConstant.M_MULT_PRE, PermissionConstant.M_NBTC_RE_IDEN, PermissionConstant.M_TOL, PermissionConstant.M_QR_SCANNER, "app_prodRelease"}, m28849k = 1, m28848mv = {1, 8, 0}, m28846xi = 48)
+/* renamed from: th.co.dtac.android.dtacone.app_one.util.enum.OnePermission */
+/* loaded from: classes7.dex */
+public enum OnePermission {
+    M_TOPUP,
+    M_STV,
+    M_RECTIFY,
+    M_REGS_PRE,
+    PORTIN,
+    M_RTR_PRFRMNCE,
+    M_PRE2_POST,
+    M_REGS_POST,
+    PORTIN_POSTPAID,
+    M_XNTL_MNP,
+    MNP_PREPAID,
+    MNP_POSTPAID,
+    M_STAFF_PRMSSN,
+    M_STAFF_MANAGE,
+    M_CHNG_SIM,
+    E_PIN,
+    M_ONLINE_STORE,
+    M_CHNG_OWNR_PRE,
+    M_BUY_DOL,
+    M_BUYDOL_HIST,
+    M_RTR_PROFILE,
+    M_CHNG_PFL_PIC,
+    M_CAMPAIGN,
+    M_ACT_SIM,
+    M_PROFIT_REP,
+    M_TRANS_HIST,
+    M_SALES_SUMM,
+    M_COMMISSION,
+    M_CHNG_PACK,
+    M_CHNG_PRE_PACK,
+    M_SALE_ORDR,
+    M_SALE_ORDR_ONLY,
+    M_REGS_DAHM,
+    M_FAMI_SIM,
+    M_ESIM,
+    M_MISSION,
+    M_TAKE_PHOT,
+    M_CHNG_PWD,
+    M_PROMOTER_RTR,
+    M_SALE_RCMMND,
+    M_HEAL_CHCK,
+    M_ENQY_CUST,
+    M_FACE_RECO,
+    M_3PRV_SERV,
+    M_COUP_CHCK,
+    M_EXPR_PACK,
+    M_ELIGIBLE,
+    M_MULT_PRE,
+    M_NBTC_RE_IDEN,
+    M_TOL,
+    M_TAKE_PHOTO_QR
+}

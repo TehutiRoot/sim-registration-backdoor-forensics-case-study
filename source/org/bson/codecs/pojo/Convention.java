@@ -1,0 +1,6 @@
+package org.bson.codecs.pojo;
+
+/* loaded from: classes6.dex */
+public interface Convention {
+    void apply(ClassModelBuilder<?> classModelBuilder);
+}

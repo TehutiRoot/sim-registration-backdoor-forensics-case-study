@@ -1,0 +1,30 @@
+package io.reactivex.internal.operators.completable;
+
+import io.reactivex.Completable;
+import io.reactivex.CompletableObserver;
+import io.reactivex.CompletableSource;
+import io.reactivex.exceptions.Exceptions;
+import io.reactivex.internal.disposables.EmptyDisposable;
+import io.reactivex.internal.functions.ObjectHelper;
+import java.util.concurrent.Callable;
+
+/* loaded from: classes5.dex */
+public final class CompletableDefer extends Completable {
+
+    /* renamed from: a */
+    public final Callable f63906a;
+
+    public CompletableDefer(Callable<? extends CompletableSource> callable) {
+        this.f63906a = callable;
+    }
+
+    @Override // io.reactivex.Completable
+    public void subscribeActual(CompletableObserver completableObserver) {
+        try {
+            ((CompletableSource) ObjectHelper.requireNonNull(this.f63906a.call(), "The completableSupplier returned a null CompletableSource")).subscribe(completableObserver);
+        } catch (Throwable th2) {
+            Exceptions.throwIfFatal(th2);
+            EmptyDisposable.error(th2, completableObserver);
+        }
+    }
+}

@@ -1,0 +1,116 @@
+package com.google.android.gms.internal.gtm;
+
+import androidx.annotation.VisibleForTesting;
+import androidx.lifecycle.CoroutineLiveDataKt;
+import ch.qos.logback.core.spi.ComponentTracker;
+import com.google.android.gms.common.internal.ShowFirstParty;
+import com.google.firebase.perf.util.Constants;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
+import org.joda.time.DateTimeConstants;
+
+@ShowFirstParty
+@VisibleForTesting
+/* loaded from: classes3.dex */
+public final class zzew {
+    public static final zzev zzA;
+    public static final zzev zzB;
+    public static final zzev zzC;
+    public static final zzev zzD;
+    public static final zzev zzE;
+    public static final zzev zzF;
+    public static final zzev zzG;
+    public static final zzev zzH;
+    public static final zzev zzI;
+    public static final zzev zzJ;
+    public static final zzev zzK;
+    public static final zzev zzL;
+    public static final zzev zzM;
+    public static final zzev zzN;
+    public static final zzev zzO;
+    public static final zzev zzP;
+    public static final zzev zzQ;
+    public static final zzev zzR;
+    private static final Set zzS = Collections.synchronizedSet(new HashSet());
+    public static final zzev zza;
+    public static final zzev zzb;
+    public static final zzev zzc;
+    public static final zzev zzd;
+    public static final zzev zze;
+    public static final zzev zzf;
+    public static final zzev zzg;
+    public static final zzev zzh;
+    public static final zzev zzi;
+    public static final zzev zzj;
+    public static final zzev zzk;
+    public static final zzev zzl;
+    public static final zzev zzm;
+    public static final zzev zzn;
+    public static final zzev zzo;
+    public static final zzev zzp;
+    public static final zzev zzq;
+    public static final zzev zzr;
+    public static final zzev zzs;
+    public static final zzev zzt;
+    public static final zzev zzu;
+    public static final zzev zzv;
+    public static final zzev zzw;
+    public static final zzev zzx;
+    public static final zzev zzy;
+    public static final zzev zzz;
+
+    static {
+        Boolean bool = Boolean.FALSE;
+        zza = zzev.zza(bool, bool, zzdc.zza);
+        Boolean bool2 = Boolean.TRUE;
+        zzb = zzev.zza(bool2, bool2, zzde.zza);
+        zzc = zzev.zza("GAv4", "GAv4-SVC", zzdq.zza);
+        zzd = zzev.zza(60L, 60L, zzec.zza);
+        Double valueOf = Double.valueOf(0.5d);
+        zze = zzev.zza(valueOf, valueOf, zzeh.zza);
+        Integer valueOf2 = Integer.valueOf((int) Constants.MAX_URL_LENGTH);
+        zzf = zzev.zza(valueOf2, 20000, zzei.zza);
+        zzg = zzev.zza(valueOf2, valueOf2, zzek.zza);
+        zzh = zzev.zza(100, 100, zzel.zza);
+        Long valueOf3 = Long.valueOf((long) ComponentTracker.DEFAULT_TIMEOUT);
+        zzi = zzev.zza(valueOf3, 120000L, zzem.zza);
+        Long valueOf4 = Long.valueOf((long) CoroutineLiveDataKt.DEFAULT_TIMEOUT);
+        zzj = zzev.zza(valueOf4, valueOf4, zzen.zza);
+        zzk = zzev.zza(120000L, 120000L, zzdn.zza);
+        zzl = zzev.zza(7200000L, 7200000L, zzdy.zza);
+        zzm = zzev.zza(7200000L, 7200000L, zzej.zza);
+        zzn = zzev.zza(32400000L, 32400000L, zzeo.zza);
+        zzo = zzev.zza(20, 20, zzep.zza);
+        zzp = zzev.zza(20, 20, zzeq.zza);
+        zzq = zzev.zza("http://www.google-analytics.com", "http://www.google-analytics.com", zzer.zza);
+        zzr = zzev.zza("https://ssl.google-analytics.com", "https://ssl.google-analytics.com", zzes.zza);
+        zzs = zzev.zza("/collect", "/collect", zzet.zza);
+        zzt = zzev.zza("/batch", "/batch", zzdd.zza);
+        zzu = zzev.zza(2036, 2036, zzdf.zza);
+        zzv = zzev.zza("BATCH_BY_COUNT", "BATCH_BY_COUNT", zzdg.zza);
+        zzw = zzev.zza("GZIP", "GZIP", zzdh.zza);
+        zzx = zzev.zza(20, 20, zzdi.zza);
+        zzy = zzev.zza(8192, 8192, zzdj.zza);
+        zzz = zzev.zza(8192, 8192, zzdk.zza);
+        zzA = zzev.zza(8192, 8192, zzdl.zza);
+        zzB = zzev.zza("404,502", "404,502", zzdm.zza);
+        Integer valueOf5 = Integer.valueOf((int) DateTimeConstants.SECONDS_PER_HOUR);
+        zzC = zzev.zza(valueOf5, valueOf5, zzdo.zza);
+        zzD = zzev.zza(86400000L, 86400000L, zzdp.zza);
+        zzE = zzev.zza(60000, 60000, zzdr.zza);
+        zzF = zzev.zza(61000, 61000, zzds.zza);
+        zzG = zzev.zza(86400000L, 86400000L, zzdt.zza);
+        zzH = zzev.zza("", "", zzdu.zza);
+        zzI = zzev.zza(0, 0, zzdv.zza);
+        zzJ = zzev.zza(bool, bool, zzdw.zza);
+        zzK = zzev.zza(10000L, 10000L, zzdx.zza);
+        zzL = zzev.zza(valueOf4, valueOf4, zzdz.zza);
+        zzM = zzev.zza(valueOf4, valueOf4, zzea.zza);
+        zzN = zzev.zza(60000L, 60000L, zzeb.zza);
+        zzO = zzev.zza(valueOf3, valueOf3, zzed.zza);
+        zzP = zzev.zza(86400000L, 86400000L, zzee.zza);
+        zzQ = zzev.zza(valueOf4, valueOf4, zzef.zza);
+        zzR = zzev.zza(bool, bool, zzeg.zza);
+    }
+}

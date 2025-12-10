@@ -1,0 +1,342 @@
+package androidx.datastore.preferences.protobuf;
+
+import androidx.datastore.preferences.protobuf.AbstractMessageLite;
+import androidx.datastore.preferences.protobuf.AbstractMessageLite.Builder;
+import androidx.datastore.preferences.protobuf.ByteString;
+import androidx.datastore.preferences.protobuf.MessageLite;
+import java.io.FilterInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
+/* loaded from: classes2.dex */
+public abstract class AbstractMessageLite<MessageType extends AbstractMessageLite<MessageType, BuilderType>, BuilderType extends Builder<MessageType, BuilderType>> implements MessageLite {
+    protected int memoizedHashCode = 0;
+
+    /* loaded from: classes2.dex */
+    public static abstract class Builder<MessageType extends AbstractMessageLite<MessageType, BuilderType>, BuilderType extends Builder<MessageType, BuilderType>> implements MessageLite.Builder {
+        /* renamed from: a */
+        public static void m56210a(Iterable iterable, List list) {
+            if ((list instanceof ArrayList) && (iterable instanceof Collection)) {
+                ((ArrayList) list).ensureCapacity(list.size() + ((Collection) iterable).size());
+            }
+            int size = list.size();
+            for (Object obj : iterable) {
+                if (obj == null) {
+                    String str = "Element at index " + (list.size() - size) + " is null.";
+                    for (int size2 = list.size() - 1; size2 >= size; size2--) {
+                        list.remove(size2);
+                    }
+                    throw new NullPointerException(str);
+                }
+                list.add(obj);
+            }
+        }
+
+        @Deprecated
+        public static <T> void addAll(Iterable<T> iterable, Collection<? super T> collection) {
+            addAll((Iterable) iterable, (List) collection);
+        }
+
+        public static UninitializedMessageException newUninitializedMessageException(MessageLite messageLite) {
+            return new UninitializedMessageException(messageLite);
+        }
+
+        /* renamed from: b */
+        public final String m56209b(String str) {
+            return "Reading " + getClass().getName() + " from a " + str + " threw an IOException (should never happen).";
+        }
+
+        @Override // androidx.datastore.preferences.protobuf.MessageLite.Builder
+        public abstract BuilderType clone();
+
+        public abstract BuilderType internalMergeFrom(MessageType messagetype);
+
+        @Override // androidx.datastore.preferences.protobuf.MessageLite.Builder
+        public boolean mergeDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
+            int read = inputStream.read();
+            if (read == -1) {
+                return false;
+            }
+            mergeFrom((InputStream) new C4331a(inputStream, CodedInputStream.readRawVarint32(read, inputStream)), extensionRegistryLite);
+            return true;
+        }
+
+        @Override // androidx.datastore.preferences.protobuf.MessageLite.Builder
+        public abstract BuilderType mergeFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException;
+
+        public static <T> void addAll(Iterable<T> iterable, List<? super T> list) {
+            Internal.m55730a(iterable);
+            if (iterable instanceof LazyStringList) {
+                List<?> underlyingElements = ((LazyStringList) iterable).getUnderlyingElements();
+                LazyStringList lazyStringList = (LazyStringList) list;
+                int size = list.size();
+                for (Object obj : underlyingElements) {
+                    if (obj == null) {
+                        String str = "Element at index " + (lazyStringList.size() - size) + " is null.";
+                        for (int size2 = lazyStringList.size() - 1; size2 >= size; size2--) {
+                            lazyStringList.remove(size2);
+                        }
+                        throw new NullPointerException(str);
+                    } else if (obj instanceof ByteString) {
+                        lazyStringList.add((ByteString) obj);
+                    } else {
+                        lazyStringList.add((LazyStringList) ((String) obj));
+                    }
+                }
+            } else if (iterable instanceof InterfaceC17812In1) {
+                list.addAll((Collection) iterable);
+            } else {
+                m56210a(iterable, list);
+            }
+        }
+
+        /* renamed from: androidx.datastore.preferences.protobuf.AbstractMessageLite$Builder$a */
+        /* loaded from: classes2.dex */
+        public static final class C4331a extends FilterInputStream {
+
+            /* renamed from: a */
+            public int f34659a;
+
+            public C4331a(InputStream inputStream, int i) {
+                super(inputStream);
+                this.f34659a = i;
+            }
+
+            @Override // java.io.FilterInputStream, java.io.InputStream
+            public int available() {
+                return Math.min(super.available(), this.f34659a);
+            }
+
+            @Override // java.io.FilterInputStream, java.io.InputStream
+            public int read() {
+                if (this.f34659a <= 0) {
+                    return -1;
+                }
+                int read = super.read();
+                if (read >= 0) {
+                    this.f34659a--;
+                }
+                return read;
+            }
+
+            @Override // java.io.FilterInputStream, java.io.InputStream
+            public long skip(long j) {
+                long skip = super.skip(Math.min(j, this.f34659a));
+                if (skip >= 0) {
+                    this.f34659a = (int) (this.f34659a - skip);
+                }
+                return skip;
+            }
+
+            @Override // java.io.FilterInputStream, java.io.InputStream
+            public int read(byte[] bArr, int i, int i2) {
+                int i3 = this.f34659a;
+                if (i3 <= 0) {
+                    return -1;
+                }
+                int read = super.read(bArr, i, Math.min(i2, i3));
+                if (read >= 0) {
+                    this.f34659a -= read;
+                }
+                return read;
+            }
+        }
+
+        @Override // androidx.datastore.preferences.protobuf.MessageLite.Builder
+        public boolean mergeDelimitedFrom(InputStream inputStream) throws IOException {
+            return mergeDelimitedFrom(inputStream, ExtensionRegistryLite.getEmptyRegistry());
+        }
+
+        @Override // androidx.datastore.preferences.protobuf.MessageLite.Builder
+        public BuilderType mergeFrom(CodedInputStream codedInputStream) throws IOException {
+            return mergeFrom(codedInputStream, ExtensionRegistryLite.getEmptyRegistry());
+        }
+
+        @Override // androidx.datastore.preferences.protobuf.MessageLite.Builder
+        public BuilderType mergeFrom(ByteString byteString) throws InvalidProtocolBufferException {
+            try {
+                CodedInputStream newCodedInput = byteString.newCodedInput();
+                mergeFrom(newCodedInput);
+                newCodedInput.checkLastTagWas(0);
+                return this;
+            } catch (InvalidProtocolBufferException e) {
+                throw e;
+            } catch (IOException e2) {
+                throw new RuntimeException(m56209b("ByteString"), e2);
+            }
+        }
+
+        @Override // androidx.datastore.preferences.protobuf.MessageLite.Builder
+        public BuilderType mergeFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+            try {
+                CodedInputStream newCodedInput = byteString.newCodedInput();
+                mergeFrom(newCodedInput, extensionRegistryLite);
+                newCodedInput.checkLastTagWas(0);
+                return this;
+            } catch (InvalidProtocolBufferException e) {
+                throw e;
+            } catch (IOException e2) {
+                throw new RuntimeException(m56209b("ByteString"), e2);
+            }
+        }
+
+        @Override // androidx.datastore.preferences.protobuf.MessageLite.Builder
+        public BuilderType mergeFrom(byte[] bArr) throws InvalidProtocolBufferException {
+            return mergeFrom(bArr, 0, bArr.length);
+        }
+
+        @Override // androidx.datastore.preferences.protobuf.MessageLite.Builder
+        public BuilderType mergeFrom(byte[] bArr, int i, int i2) throws InvalidProtocolBufferException {
+            try {
+                CodedInputStream newInstance = CodedInputStream.newInstance(bArr, i, i2);
+                mergeFrom(newInstance);
+                newInstance.checkLastTagWas(0);
+                return this;
+            } catch (InvalidProtocolBufferException e) {
+                throw e;
+            } catch (IOException e2) {
+                throw new RuntimeException(m56209b("byte array"), e2);
+            }
+        }
+
+        @Override // androidx.datastore.preferences.protobuf.MessageLite.Builder
+        public BuilderType mergeFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+            return mergeFrom(bArr, 0, bArr.length, extensionRegistryLite);
+        }
+
+        @Override // androidx.datastore.preferences.protobuf.MessageLite.Builder
+        public BuilderType mergeFrom(byte[] bArr, int i, int i2, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+            try {
+                CodedInputStream newInstance = CodedInputStream.newInstance(bArr, i, i2);
+                mergeFrom(newInstance, extensionRegistryLite);
+                newInstance.checkLastTagWas(0);
+                return this;
+            } catch (InvalidProtocolBufferException e) {
+                throw e;
+            } catch (IOException e2) {
+                throw new RuntimeException(m56209b("byte array"), e2);
+            }
+        }
+
+        @Override // androidx.datastore.preferences.protobuf.MessageLite.Builder
+        public BuilderType mergeFrom(InputStream inputStream) throws IOException {
+            CodedInputStream newInstance = CodedInputStream.newInstance(inputStream);
+            mergeFrom(newInstance);
+            newInstance.checkLastTagWas(0);
+            return this;
+        }
+
+        @Override // androidx.datastore.preferences.protobuf.MessageLite.Builder
+        public BuilderType mergeFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
+            CodedInputStream newInstance = CodedInputStream.newInstance(inputStream);
+            mergeFrom(newInstance, extensionRegistryLite);
+            newInstance.checkLastTagWas(0);
+            return this;
+        }
+
+        /* JADX WARN: Multi-variable type inference failed */
+        @Override // androidx.datastore.preferences.protobuf.MessageLite.Builder
+        public BuilderType mergeFrom(MessageLite messageLite) {
+            if (getDefaultInstanceForType().getClass().isInstance(messageLite)) {
+                return (BuilderType) internalMergeFrom((AbstractMessageLite) messageLite);
+            }
+            throw new IllegalArgumentException("mergeFrom(MessageLite) can only merge messages of the same type.");
+        }
+    }
+
+    /* loaded from: classes2.dex */
+    public interface InternalOneOfEnum {
+        int getNumber();
+    }
+
+    @Deprecated
+    public static <T> void addAll(Iterable<T> iterable, Collection<? super T> collection) {
+        Builder.addAll((Iterable) iterable, (List) collection);
+    }
+
+    public static void checkByteStringIsUtf8(ByteString byteString) throws IllegalArgumentException {
+        if (byteString.isValidUtf8()) {
+            return;
+        }
+        throw new IllegalArgumentException("Byte string is not UTF-8.");
+    }
+
+    /* renamed from: a */
+    public int mo55770a() {
+        throw new UnsupportedOperationException();
+    }
+
+    /* renamed from: b */
+    public int m56213b(InterfaceC4454v interfaceC4454v) {
+        int mo55770a = mo55770a();
+        if (mo55770a == -1) {
+            int mo55017f = interfaceC4454v.mo55017f(this);
+            mo55769e(mo55017f);
+            return mo55017f;
+        }
+        return mo55770a;
+    }
+
+    /* renamed from: c */
+    public final String m56212c(String str) {
+        return "Serializing " + getClass().getName() + " to a " + str + " threw an IOException (should never happen).";
+    }
+
+    /* renamed from: d */
+    public UninitializedMessageException m56211d() {
+        return new UninitializedMessageException(this);
+    }
+
+    /* renamed from: e */
+    public void mo55769e(int i) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.MessageLite
+    public byte[] toByteArray() {
+        try {
+            byte[] bArr = new byte[getSerializedSize()];
+            CodedOutputStream newInstance = CodedOutputStream.newInstance(bArr);
+            writeTo(newInstance);
+            newInstance.checkNoSpaceLeft();
+            return bArr;
+        } catch (IOException e) {
+            throw new RuntimeException(m56212c("byte array"), e);
+        }
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.MessageLite
+    public ByteString toByteString() {
+        try {
+            ByteString.C4340f newCodedBuilder = ByteString.newCodedBuilder(getSerializedSize());
+            writeTo(newCodedBuilder.m56099b());
+            return newCodedBuilder.m56100a();
+        } catch (IOException e) {
+            throw new RuntimeException(m56212c("ByteString"), e);
+        }
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.MessageLite
+    public void writeDelimitedTo(OutputStream outputStream) throws IOException {
+        int serializedSize = getSerializedSize();
+        CodedOutputStream newInstance = CodedOutputStream.newInstance(outputStream, CodedOutputStream.m56047g(CodedOutputStream.computeRawVarint32Size(serializedSize) + serializedSize));
+        newInstance.writeRawVarint32(serializedSize);
+        writeTo(newInstance);
+        newInstance.flush();
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.MessageLite
+    public void writeTo(OutputStream outputStream) throws IOException {
+        CodedOutputStream newInstance = CodedOutputStream.newInstance(outputStream, CodedOutputStream.m56047g(getSerializedSize()));
+        writeTo(newInstance);
+        newInstance.flush();
+    }
+
+    public static <T> void addAll(Iterable<T> iterable, List<? super T> list) {
+        Builder.addAll((Iterable) iterable, (List) list);
+    }
+}

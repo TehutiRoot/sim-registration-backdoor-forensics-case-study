@@ -1,0 +1,244 @@
+package androidx.datastore.preferences.protobuf;
+
+import androidx.datastore.preferences.protobuf.ByteString;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InvalidObjectException;
+import java.io.ObjectInputStream;
+import java.io.OutputStream;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+import java.nio.InvalidMarkException;
+import java.nio.charset.Charset;
+import java.util.Collections;
+import java.util.List;
+
+/* JADX INFO: Access modifiers changed from: package-private */
+/* loaded from: classes2.dex */
+public final class NioByteString extends ByteString.LeafByteString {
+    private final ByteBuffer buffer;
+
+    public NioByteString(ByteBuffer byteBuffer) {
+        Internal.m55729b(byteBuffer, "buffer");
+        this.buffer = byteBuffer.slice().order(ByteOrder.nativeOrder());
+    }
+
+    private void readObject(ObjectInputStream objectInputStream) throws IOException {
+        throw new InvalidObjectException("NioByteString instances are not to be serialized directly");
+    }
+
+    private ByteBuffer slice(int i, int i2) {
+        if (i >= this.buffer.position() && i2 <= this.buffer.limit() && i <= i2) {
+            ByteBuffer slice = this.buffer.slice();
+            slice.position(i - this.buffer.position());
+            slice.limit(i2 - this.buffer.position());
+            return slice;
+        }
+        throw new IllegalArgumentException(String.format("Invalid indices [%d, %d]", Integer.valueOf(i), Integer.valueOf(i2)));
+    }
+
+    private Object writeReplace() {
+        return ByteString.copyFrom(this.buffer.slice());
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.ByteString
+    public ByteBuffer asReadOnlyByteBuffer() {
+        return this.buffer.asReadOnlyBuffer();
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.ByteString
+    public List<ByteBuffer> asReadOnlyByteBufferList() {
+        return Collections.singletonList(asReadOnlyByteBuffer());
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.ByteString
+    public byte byteAt(int i) {
+        try {
+            return this.buffer.get(i);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            throw e;
+        } catch (IndexOutOfBoundsException e2) {
+            throw new ArrayIndexOutOfBoundsException(e2.getMessage());
+        }
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.ByteString
+    public void copyTo(ByteBuffer byteBuffer) {
+        byteBuffer.put(this.buffer.slice());
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.ByteString
+    public void copyToInternal(byte[] bArr, int i, int i2, int i3) {
+        ByteBuffer slice = this.buffer.slice();
+        slice.position(i);
+        slice.get(bArr, i2, i3);
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.ByteString
+    public boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (!(obj instanceof ByteString)) {
+            return false;
+        }
+        ByteString byteString = (ByteString) obj;
+        if (size() != byteString.size()) {
+            return false;
+        }
+        if (size() == 0) {
+            return true;
+        }
+        if (obj instanceof NioByteString) {
+            return this.buffer.equals(((NioByteString) obj).buffer);
+        }
+        if (obj instanceof RopeByteString) {
+            return obj.equals(this);
+        }
+        return this.buffer.equals(byteString.asReadOnlyByteBuffer());
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.ByteString.LeafByteString
+    public boolean equalsRange(ByteString byteString, int i, int i2) {
+        return substring(0, i2).equals(byteString.substring(i, i2 + i));
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.ByteString
+    public byte internalByteAt(int i) {
+        return byteAt(i);
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.ByteString
+    public boolean isValidUtf8() {
+        return Utf8.m55424s(this.buffer);
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.ByteString
+    public CodedInputStream newCodedInput() {
+        return CodedInputStream.m56090b(this.buffer, true);
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.ByteString
+    public InputStream newInput() {
+        return new C4389a();
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.ByteString
+    public int partialHash(int i, int i2, int i3) {
+        for (int i4 = i2; i4 < i2 + i3; i4++) {
+            i = (i * 31) + this.buffer.get(i4);
+        }
+        return i;
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.ByteString
+    public int partialIsValidUtf8(int i, int i2, int i3) {
+        return Utf8.m55421v(i, this.buffer, i2, i3 + i2);
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.ByteString
+    public int size() {
+        return this.buffer.remaining();
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.ByteString
+    public ByteString substring(int i, int i2) {
+        try {
+            return new NioByteString(slice(i, i2));
+        } catch (ArrayIndexOutOfBoundsException e) {
+            throw e;
+        } catch (IndexOutOfBoundsException e2) {
+            throw new ArrayIndexOutOfBoundsException(e2.getMessage());
+        }
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.ByteString
+    public String toStringInternal(Charset charset) {
+        byte[] byteArray;
+        int length;
+        int i;
+        if (this.buffer.hasArray()) {
+            byteArray = this.buffer.array();
+            i = this.buffer.arrayOffset() + this.buffer.position();
+            length = this.buffer.remaining();
+        } else {
+            byteArray = toByteArray();
+            length = byteArray.length;
+            i = 0;
+        }
+        return new String(byteArray, i, length, charset);
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.ByteString
+    public void writeTo(OutputStream outputStream) throws IOException {
+        outputStream.write(toByteArray());
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.ByteString
+    public void writeToInternal(OutputStream outputStream, int i, int i2) throws IOException {
+        if (this.buffer.hasArray()) {
+            outputStream.write(this.buffer.array(), this.buffer.arrayOffset() + this.buffer.position() + i, i2);
+            return;
+        }
+        AbstractC1192Qf.m66545g(slice(i, i2 + i), outputStream);
+    }
+
+    /* renamed from: androidx.datastore.preferences.protobuf.NioByteString$a */
+    /* loaded from: classes2.dex */
+    public class C4389a extends InputStream {
+
+        /* renamed from: a */
+        public final ByteBuffer f34853a;
+
+        public C4389a() {
+            this.f34853a = NioByteString.this.buffer.slice();
+        }
+
+        @Override // java.io.InputStream
+        public int available() {
+            return this.f34853a.remaining();
+        }
+
+        @Override // java.io.InputStream
+        public void mark(int i) {
+            this.f34853a.mark();
+        }
+
+        @Override // java.io.InputStream
+        public boolean markSupported() {
+            return true;
+        }
+
+        @Override // java.io.InputStream
+        public int read() {
+            if (this.f34853a.hasRemaining()) {
+                return this.f34853a.get() & 255;
+            }
+            return -1;
+        }
+
+        @Override // java.io.InputStream
+        public void reset() {
+            try {
+                this.f34853a.reset();
+            } catch (InvalidMarkException e) {
+                throw new IOException(e);
+            }
+        }
+
+        @Override // java.io.InputStream
+        public int read(byte[] bArr, int i, int i2) {
+            if (this.f34853a.hasRemaining()) {
+                int min = Math.min(i2, this.f34853a.remaining());
+                this.f34853a.get(bArr, i, min);
+                return min;
+            }
+            return -1;
+        }
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.ByteString
+    public void writeTo(ByteOutput byteOutput) throws IOException {
+        byteOutput.writeLazy(this.buffer.slice());
+    }
+}

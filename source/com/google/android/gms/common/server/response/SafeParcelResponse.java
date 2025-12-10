@@ -1,0 +1,620 @@
+package com.google.android.gms.common.server.response;
+
+import android.os.Bundle;
+import android.os.Parcel;
+import android.os.Parcelable;
+import android.util.SparseArray;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import com.google.android.gms.common.annotation.KeepForSdk;
+import com.google.android.gms.common.internal.Preconditions;
+import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
+import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
+import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
+import com.google.android.gms.common.server.response.FastJsonResponse;
+import com.google.android.gms.common.util.ArrayUtils;
+import com.google.android.gms.common.util.Base64Utils;
+import com.google.android.gms.common.util.JsonUtils;
+import com.google.android.gms.common.util.MapUtils;
+import com.tom_roush.pdfbox.contentstream.operator.OperatorName;
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+
+@KeepForSdk
+@SafeParcelable.Class(creator = "SafeParcelResponseCreator")
+/* loaded from: classes3.dex */
+public class SafeParcelResponse extends FastSafeParcelableJsonResponse {
+    @NonNull
+    @KeepForSdk
+    public static final Parcelable.Creator<SafeParcelResponse> CREATOR = new zaq();
+
+    /* renamed from: a */
+    public final int f45264a;
+
+    /* renamed from: b */
+    public final Parcel f45265b;
+
+    /* renamed from: c */
+    public final int f45266c;
+
+    /* renamed from: d */
+    public final zan f45267d;
+
+    /* renamed from: e */
+    public final String f45268e;
+
+    /* renamed from: f */
+    public int f45269f;
+
+    /* renamed from: g */
+    public int f45270g;
+
+    public SafeParcelResponse(int i, Parcel parcel, zan zanVar) {
+        this.f45264a = i;
+        this.f45265b = (Parcel) Preconditions.checkNotNull(parcel);
+        this.f45266c = 2;
+        this.f45267d = zanVar;
+        this.f45268e = zanVar == null ? null : zanVar.zaa();
+        this.f45269f = 2;
+    }
+
+    /* renamed from: d */
+    public static void m48334d(zan zanVar, FastJsonResponse fastJsonResponse) {
+        Class<?> cls = fastJsonResponse.getClass();
+        if (!zanVar.zaf(cls)) {
+            Map<String, FastJsonResponse.Field<?, ?>> fieldMappings = fastJsonResponse.getFieldMappings();
+            zanVar.zae(cls, fieldMappings);
+            for (String str : fieldMappings.keySet()) {
+                FastJsonResponse.Field<?, ?> field = fieldMappings.get(str);
+                Class cls2 = field.zag;
+                if (cls2 != null) {
+                    try {
+                        m48334d(zanVar, (FastJsonResponse) cls2.newInstance());
+                    } catch (IllegalAccessException e) {
+                        throw new IllegalStateException("Could not access object of type ".concat(String.valueOf(((Class) Preconditions.checkNotNull(field.zag)).getCanonicalName())), e);
+                    } catch (InstantiationException e2) {
+                        throw new IllegalStateException("Could not instantiate an object of type ".concat(String.valueOf(((Class) Preconditions.checkNotNull(field.zag)).getCanonicalName())), e2);
+                    }
+                }
+            }
+        }
+    }
+
+    @NonNull
+    @KeepForSdk
+    public static <T extends FastJsonResponse & SafeParcelable> SafeParcelResponse from(@NonNull T t) {
+        zan zanVar = new zan(t.getClass());
+        m48334d(zanVar, t);
+        zanVar.zac();
+        zanVar.zad();
+        return new SafeParcelResponse(t, zanVar, (String) Preconditions.checkNotNull(t.getClass().getCanonicalName()));
+    }
+
+    /* renamed from: g */
+    public static final void m48331g(StringBuilder sb, int i, Object obj) {
+        switch (i) {
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+            case 6:
+                sb.append(obj);
+                return;
+            case 7:
+                sb.append(OperatorName.SHOW_TEXT_LINE_AND_SPACE);
+                sb.append(JsonUtils.escapeString(Preconditions.checkNotNull(obj).toString()));
+                sb.append(OperatorName.SHOW_TEXT_LINE_AND_SPACE);
+                return;
+            case 8:
+                sb.append(OperatorName.SHOW_TEXT_LINE_AND_SPACE);
+                sb.append(Base64Utils.encode((byte[]) obj));
+                sb.append(OperatorName.SHOW_TEXT_LINE_AND_SPACE);
+                return;
+            case 9:
+                sb.append(OperatorName.SHOW_TEXT_LINE_AND_SPACE);
+                sb.append(Base64Utils.encodeUrlSafe((byte[]) obj));
+                sb.append(OperatorName.SHOW_TEXT_LINE_AND_SPACE);
+                return;
+            case 10:
+                MapUtils.writeStringMapToJson(sb, (HashMap) Preconditions.checkNotNull(obj));
+                return;
+            case 11:
+                throw new IllegalArgumentException("Method does not accept concrete type.");
+            default:
+                throw new IllegalArgumentException("Unknown type = " + i);
+        }
+    }
+
+    /* renamed from: h */
+    public static final void m48330h(StringBuilder sb, FastJsonResponse.Field field, Object obj) {
+        if (field.zab) {
+            ArrayList arrayList = (ArrayList) obj;
+            sb.append("[");
+            int size = arrayList.size();
+            for (int i = 0; i < size; i++) {
+                if (i != 0) {
+                    sb.append(",");
+                }
+                m48331g(sb, field.zaa, arrayList.get(i));
+            }
+            sb.append("]");
+            return;
+        }
+        m48331g(sb, field.zaa, obj);
+    }
+
+    @Override // com.google.android.gms.common.server.response.FastJsonResponse
+    public final <T extends FastJsonResponse> void addConcreteTypeArrayInternal(@NonNull FastJsonResponse.Field field, @NonNull String str, @Nullable ArrayList<T> arrayList) {
+        m48333e(field);
+        ArrayList arrayList2 = new ArrayList();
+        ((ArrayList) Preconditions.checkNotNull(arrayList)).size();
+        int size = arrayList.size();
+        for (int i = 0; i < size; i++) {
+            arrayList2.add(((SafeParcelResponse) arrayList.get(i)).zaE());
+        }
+        SafeParcelWriter.writeParcelList(this.f45265b, field.getSafeParcelableFieldId(), arrayList2, true);
+    }
+
+    @Override // com.google.android.gms.common.server.response.FastJsonResponse
+    public final <T extends FastJsonResponse> void addConcreteTypeInternal(@NonNull FastJsonResponse.Field field, @NonNull String str, @NonNull T t) {
+        m48333e(field);
+        SafeParcelWriter.writeParcel(this.f45265b, field.getSafeParcelableFieldId(), ((SafeParcelResponse) t).zaE(), true);
+    }
+
+    /* renamed from: e */
+    public final void m48333e(FastJsonResponse.Field field) {
+        if (field.zaf != -1) {
+            Parcel parcel = this.f45265b;
+            if (parcel != null) {
+                int i = this.f45269f;
+                if (i != 0) {
+                    if (i == 1) {
+                        return;
+                    }
+                    throw new IllegalStateException("Attempted to parse JSON with a SafeParcelResponse object that is already filled with data.");
+                }
+                this.f45270g = SafeParcelWriter.beginObjectHeader(parcel);
+                this.f45269f = 1;
+                return;
+            }
+            throw new IllegalStateException("Internal Parcel object is null.");
+        }
+        throw new IllegalStateException("Field does not have a valid safe parcelable field id.");
+    }
+
+    /* renamed from: f */
+    public final void m48332f(StringBuilder sb, Map map, Parcel parcel) {
+        SparseArray sparseArray = new SparseArray();
+        for (Map.Entry entry : map.entrySet()) {
+            sparseArray.put(((FastJsonResponse.Field) entry.getValue()).getSafeParcelableFieldId(), entry);
+        }
+        sb.append('{');
+        int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
+        boolean z = false;
+        while (parcel.dataPosition() < validateObjectHeader) {
+            int readHeader = SafeParcelReader.readHeader(parcel);
+            Map.Entry entry2 = (Map.Entry) sparseArray.get(SafeParcelReader.getFieldId(readHeader));
+            if (entry2 != null) {
+                if (z) {
+                    sb.append(",");
+                }
+                FastJsonResponse.Field field = (FastJsonResponse.Field) entry2.getValue();
+                sb.append(OperatorName.SHOW_TEXT_LINE_AND_SPACE);
+                sb.append((String) entry2.getKey());
+                sb.append("\":");
+                if (field.zaj()) {
+                    int i = field.zac;
+                    switch (i) {
+                        case 0:
+                            m48330h(sb, field, FastJsonResponse.zaD(field, Integer.valueOf(SafeParcelReader.readInt(parcel, readHeader))));
+                            break;
+                        case 1:
+                            m48330h(sb, field, FastJsonResponse.zaD(field, SafeParcelReader.createBigInteger(parcel, readHeader)));
+                            break;
+                        case 2:
+                            m48330h(sb, field, FastJsonResponse.zaD(field, Long.valueOf(SafeParcelReader.readLong(parcel, readHeader))));
+                            break;
+                        case 3:
+                            m48330h(sb, field, FastJsonResponse.zaD(field, Float.valueOf(SafeParcelReader.readFloat(parcel, readHeader))));
+                            break;
+                        case 4:
+                            m48330h(sb, field, FastJsonResponse.zaD(field, Double.valueOf(SafeParcelReader.readDouble(parcel, readHeader))));
+                            break;
+                        case 5:
+                            m48330h(sb, field, FastJsonResponse.zaD(field, SafeParcelReader.createBigDecimal(parcel, readHeader)));
+                            break;
+                        case 6:
+                            m48330h(sb, field, FastJsonResponse.zaD(field, Boolean.valueOf(SafeParcelReader.readBoolean(parcel, readHeader))));
+                            break;
+                        case 7:
+                            m48330h(sb, field, FastJsonResponse.zaD(field, SafeParcelReader.createString(parcel, readHeader)));
+                            break;
+                        case 8:
+                        case 9:
+                            m48330h(sb, field, FastJsonResponse.zaD(field, SafeParcelReader.createByteArray(parcel, readHeader)));
+                            break;
+                        case 10:
+                            Bundle createBundle = SafeParcelReader.createBundle(parcel, readHeader);
+                            HashMap hashMap = new HashMap();
+                            for (String str : createBundle.keySet()) {
+                                hashMap.put(str, (String) Preconditions.checkNotNull(createBundle.getString(str)));
+                            }
+                            m48330h(sb, field, FastJsonResponse.zaD(field, hashMap));
+                            break;
+                        case 11:
+                            throw new IllegalArgumentException("Method does not accept concrete type.");
+                        default:
+                            throw new IllegalArgumentException("Unknown field out type = " + i);
+                    }
+                } else if (field.zad) {
+                    sb.append("[");
+                    switch (field.zac) {
+                        case 0:
+                            ArrayUtils.writeArray(sb, SafeParcelReader.createIntArray(parcel, readHeader));
+                            break;
+                        case 1:
+                            ArrayUtils.writeArray(sb, SafeParcelReader.createBigIntegerArray(parcel, readHeader));
+                            break;
+                        case 2:
+                            ArrayUtils.writeArray(sb, SafeParcelReader.createLongArray(parcel, readHeader));
+                            break;
+                        case 3:
+                            ArrayUtils.writeArray(sb, SafeParcelReader.createFloatArray(parcel, readHeader));
+                            break;
+                        case 4:
+                            ArrayUtils.writeArray(sb, SafeParcelReader.createDoubleArray(parcel, readHeader));
+                            break;
+                        case 5:
+                            ArrayUtils.writeArray(sb, SafeParcelReader.createBigDecimalArray(parcel, readHeader));
+                            break;
+                        case 6:
+                            ArrayUtils.writeArray(sb, SafeParcelReader.createBooleanArray(parcel, readHeader));
+                            break;
+                        case 7:
+                            ArrayUtils.writeStringArray(sb, SafeParcelReader.createStringArray(parcel, readHeader));
+                            break;
+                        case 8:
+                        case 9:
+                        case 10:
+                            throw new UnsupportedOperationException("List of type BASE64, BASE64_URL_SAFE, or STRING_MAP is not supported");
+                        case 11:
+                            Parcel[] createParcelArray = SafeParcelReader.createParcelArray(parcel, readHeader);
+                            int length = createParcelArray.length;
+                            for (int i2 = 0; i2 < length; i2++) {
+                                if (i2 > 0) {
+                                    sb.append(",");
+                                }
+                                createParcelArray[i2].setDataPosition(0);
+                                m48332f(sb, field.zah(), createParcelArray[i2]);
+                            }
+                            break;
+                        default:
+                            throw new IllegalStateException("Unknown field type out.");
+                    }
+                    sb.append("]");
+                } else {
+                    switch (field.zac) {
+                        case 0:
+                            sb.append(SafeParcelReader.readInt(parcel, readHeader));
+                            break;
+                        case 1:
+                            sb.append(SafeParcelReader.createBigInteger(parcel, readHeader));
+                            break;
+                        case 2:
+                            sb.append(SafeParcelReader.readLong(parcel, readHeader));
+                            break;
+                        case 3:
+                            sb.append(SafeParcelReader.readFloat(parcel, readHeader));
+                            break;
+                        case 4:
+                            sb.append(SafeParcelReader.readDouble(parcel, readHeader));
+                            break;
+                        case 5:
+                            sb.append(SafeParcelReader.createBigDecimal(parcel, readHeader));
+                            break;
+                        case 6:
+                            sb.append(SafeParcelReader.readBoolean(parcel, readHeader));
+                            break;
+                        case 7:
+                            String createString = SafeParcelReader.createString(parcel, readHeader);
+                            sb.append(OperatorName.SHOW_TEXT_LINE_AND_SPACE);
+                            sb.append(JsonUtils.escapeString(createString));
+                            sb.append(OperatorName.SHOW_TEXT_LINE_AND_SPACE);
+                            break;
+                        case 8:
+                            byte[] createByteArray = SafeParcelReader.createByteArray(parcel, readHeader);
+                            sb.append(OperatorName.SHOW_TEXT_LINE_AND_SPACE);
+                            sb.append(Base64Utils.encode(createByteArray));
+                            sb.append(OperatorName.SHOW_TEXT_LINE_AND_SPACE);
+                            break;
+                        case 9:
+                            byte[] createByteArray2 = SafeParcelReader.createByteArray(parcel, readHeader);
+                            sb.append(OperatorName.SHOW_TEXT_LINE_AND_SPACE);
+                            sb.append(Base64Utils.encodeUrlSafe(createByteArray2));
+                            sb.append(OperatorName.SHOW_TEXT_LINE_AND_SPACE);
+                            break;
+                        case 10:
+                            Bundle createBundle2 = SafeParcelReader.createBundle(parcel, readHeader);
+                            Set<String> keySet = createBundle2.keySet();
+                            sb.append("{");
+                            boolean z2 = true;
+                            for (String str2 : keySet) {
+                                if (!z2) {
+                                    sb.append(",");
+                                }
+                                sb.append(OperatorName.SHOW_TEXT_LINE_AND_SPACE);
+                                sb.append(str2);
+                                sb.append("\":\"");
+                                sb.append(JsonUtils.escapeString(createBundle2.getString(str2)));
+                                sb.append(OperatorName.SHOW_TEXT_LINE_AND_SPACE);
+                                z2 = false;
+                            }
+                            sb.append("}");
+                            break;
+                        case 11:
+                            Parcel createParcel = SafeParcelReader.createParcel(parcel, readHeader);
+                            createParcel.setDataPosition(0);
+                            m48332f(sb, field.zah(), createParcel);
+                            break;
+                        default:
+                            throw new IllegalStateException("Unknown field type out");
+                    }
+                }
+                z = true;
+            }
+        }
+        if (parcel.dataPosition() == validateObjectHeader) {
+            sb.append('}');
+            return;
+        }
+        throw new SafeParcelReader.ParseException("Overread allowed size end=" + validateObjectHeader, parcel);
+    }
+
+    @Override // com.google.android.gms.common.server.response.FastJsonResponse
+    @Nullable
+    public final Map<String, FastJsonResponse.Field<?, ?>> getFieldMappings() {
+        zan zanVar = this.f45267d;
+        if (zanVar == null) {
+            return null;
+        }
+        return zanVar.zab((String) Preconditions.checkNotNull(this.f45268e));
+    }
+
+    @Override // com.google.android.gms.common.server.response.FastSafeParcelableJsonResponse, com.google.android.gms.common.server.response.FastJsonResponse
+    @NonNull
+    public final Object getValueObject(@NonNull String str) {
+        throw new UnsupportedOperationException("Converting to JSON does not require this method.");
+    }
+
+    @Override // com.google.android.gms.common.server.response.FastSafeParcelableJsonResponse, com.google.android.gms.common.server.response.FastJsonResponse
+    public final boolean isPrimitiveFieldSet(@NonNull String str) {
+        throw new UnsupportedOperationException("Converting to JSON does not require this method.");
+    }
+
+    @Override // com.google.android.gms.common.server.response.FastJsonResponse
+    public final void setBooleanInternal(@NonNull FastJsonResponse.Field<?, ?> field, @NonNull String str, boolean z) {
+        m48333e(field);
+        SafeParcelWriter.writeBoolean(this.f45265b, field.getSafeParcelableFieldId(), z);
+    }
+
+    @Override // com.google.android.gms.common.server.response.FastJsonResponse
+    public final void setDecodedBytesInternal(@NonNull FastJsonResponse.Field<?, ?> field, @NonNull String str, @Nullable byte[] bArr) {
+        m48333e(field);
+        SafeParcelWriter.writeByteArray(this.f45265b, field.getSafeParcelableFieldId(), bArr, true);
+    }
+
+    @Override // com.google.android.gms.common.server.response.FastJsonResponse
+    public final void setIntegerInternal(@NonNull FastJsonResponse.Field<?, ?> field, @NonNull String str, int i) {
+        m48333e(field);
+        SafeParcelWriter.writeInt(this.f45265b, field.getSafeParcelableFieldId(), i);
+    }
+
+    @Override // com.google.android.gms.common.server.response.FastJsonResponse
+    public final void setLongInternal(@NonNull FastJsonResponse.Field<?, ?> field, @NonNull String str, long j) {
+        m48333e(field);
+        SafeParcelWriter.writeLong(this.f45265b, field.getSafeParcelableFieldId(), j);
+    }
+
+    @Override // com.google.android.gms.common.server.response.FastJsonResponse
+    public final void setStringInternal(@NonNull FastJsonResponse.Field<?, ?> field, @NonNull String str, @Nullable String str2) {
+        m48333e(field);
+        SafeParcelWriter.writeString(this.f45265b, field.getSafeParcelableFieldId(), str2, true);
+    }
+
+    @Override // com.google.android.gms.common.server.response.FastJsonResponse
+    public final void setStringMapInternal(@NonNull FastJsonResponse.Field<?, ?> field, @NonNull String str, @Nullable Map<String, String> map) {
+        m48333e(field);
+        Bundle bundle = new Bundle();
+        for (String str2 : ((Map) Preconditions.checkNotNull(map)).keySet()) {
+            bundle.putString(str2, map.get(str2));
+        }
+        SafeParcelWriter.writeBundle(this.f45265b, field.getSafeParcelableFieldId(), bundle, true);
+    }
+
+    @Override // com.google.android.gms.common.server.response.FastJsonResponse
+    public final void setStringsInternal(@NonNull FastJsonResponse.Field<?, ?> field, @NonNull String str, @Nullable ArrayList<String> arrayList) {
+        m48333e(field);
+        int size = ((ArrayList) Preconditions.checkNotNull(arrayList)).size();
+        String[] strArr = new String[size];
+        for (int i = 0; i < size; i++) {
+            strArr[i] = arrayList.get(i);
+        }
+        SafeParcelWriter.writeStringArray(this.f45265b, field.getSafeParcelableFieldId(), strArr, true);
+    }
+
+    @Override // com.google.android.gms.common.server.response.FastJsonResponse
+    @NonNull
+    public final String toString() {
+        Preconditions.checkNotNull(this.f45267d, "Cannot convert to JSON on client side.");
+        Parcel zaE = zaE();
+        zaE.setDataPosition(0);
+        StringBuilder sb = new StringBuilder(100);
+        m48332f(sb, (Map) Preconditions.checkNotNull(this.f45267d.zab((String) Preconditions.checkNotNull(this.f45268e))), zaE);
+        return sb.toString();
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(@NonNull Parcel parcel, int i) {
+        zan zanVar;
+        int i2 = this.f45264a;
+        int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
+        SafeParcelWriter.writeInt(parcel, 1, i2);
+        SafeParcelWriter.writeParcel(parcel, 2, zaE(), false);
+        int i3 = this.f45266c;
+        if (i3 != 0) {
+            if (i3 != 1) {
+                zanVar = this.f45267d;
+            } else {
+                zanVar = this.f45267d;
+            }
+        } else {
+            zanVar = null;
+        }
+        SafeParcelWriter.writeParcelable(parcel, 3, zanVar, i, false);
+        SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    }
+
+    @NonNull
+    public final Parcel zaE() {
+        int i = this.f45269f;
+        if (i != 0) {
+            if (i == 1) {
+                SafeParcelWriter.finishObjectHeader(this.f45265b, this.f45270g);
+                this.f45269f = 2;
+            }
+        } else {
+            int beginObjectHeader = SafeParcelWriter.beginObjectHeader(this.f45265b);
+            this.f45270g = beginObjectHeader;
+            SafeParcelWriter.finishObjectHeader(this.f45265b, beginObjectHeader);
+            this.f45269f = 2;
+        }
+        return this.f45265b;
+    }
+
+    @Override // com.google.android.gms.common.server.response.FastJsonResponse
+    public final void zab(@NonNull FastJsonResponse.Field field, @NonNull String str, @Nullable BigDecimal bigDecimal) {
+        m48333e(field);
+        SafeParcelWriter.writeBigDecimal(this.f45265b, field.getSafeParcelableFieldId(), bigDecimal, true);
+    }
+
+    @Override // com.google.android.gms.common.server.response.FastJsonResponse
+    public final void zad(@NonNull FastJsonResponse.Field field, @NonNull String str, @Nullable ArrayList arrayList) {
+        m48333e(field);
+        int size = ((ArrayList) Preconditions.checkNotNull(arrayList)).size();
+        BigDecimal[] bigDecimalArr = new BigDecimal[size];
+        for (int i = 0; i < size; i++) {
+            bigDecimalArr[i] = (BigDecimal) arrayList.get(i);
+        }
+        SafeParcelWriter.writeBigDecimalArray(this.f45265b, field.getSafeParcelableFieldId(), bigDecimalArr, true);
+    }
+
+    @Override // com.google.android.gms.common.server.response.FastJsonResponse
+    public final void zaf(@NonNull FastJsonResponse.Field field, @NonNull String str, @Nullable BigInteger bigInteger) {
+        m48333e(field);
+        SafeParcelWriter.writeBigInteger(this.f45265b, field.getSafeParcelableFieldId(), bigInteger, true);
+    }
+
+    @Override // com.google.android.gms.common.server.response.FastJsonResponse
+    public final void zah(@NonNull FastJsonResponse.Field field, @NonNull String str, @Nullable ArrayList arrayList) {
+        m48333e(field);
+        int size = ((ArrayList) Preconditions.checkNotNull(arrayList)).size();
+        BigInteger[] bigIntegerArr = new BigInteger[size];
+        for (int i = 0; i < size; i++) {
+            bigIntegerArr[i] = (BigInteger) arrayList.get(i);
+        }
+        SafeParcelWriter.writeBigIntegerArray(this.f45265b, field.getSafeParcelableFieldId(), bigIntegerArr, true);
+    }
+
+    @Override // com.google.android.gms.common.server.response.FastJsonResponse
+    public final void zak(@NonNull FastJsonResponse.Field field, @NonNull String str, @Nullable ArrayList arrayList) {
+        m48333e(field);
+        int size = ((ArrayList) Preconditions.checkNotNull(arrayList)).size();
+        boolean[] zArr = new boolean[size];
+        for (int i = 0; i < size; i++) {
+            zArr[i] = ((Boolean) arrayList.get(i)).booleanValue();
+        }
+        SafeParcelWriter.writeBooleanArray(this.f45265b, field.getSafeParcelableFieldId(), zArr, true);
+    }
+
+    @Override // com.google.android.gms.common.server.response.FastJsonResponse
+    public final void zan(@NonNull FastJsonResponse.Field field, @NonNull String str, double d) {
+        m48333e(field);
+        SafeParcelWriter.writeDouble(this.f45265b, field.getSafeParcelableFieldId(), d);
+    }
+
+    @Override // com.google.android.gms.common.server.response.FastJsonResponse
+    public final void zap(@NonNull FastJsonResponse.Field field, @NonNull String str, @Nullable ArrayList arrayList) {
+        m48333e(field);
+        int size = ((ArrayList) Preconditions.checkNotNull(arrayList)).size();
+        double[] dArr = new double[size];
+        for (int i = 0; i < size; i++) {
+            dArr[i] = ((Double) arrayList.get(i)).doubleValue();
+        }
+        SafeParcelWriter.writeDoubleArray(this.f45265b, field.getSafeParcelableFieldId(), dArr, true);
+    }
+
+    @Override // com.google.android.gms.common.server.response.FastJsonResponse
+    public final void zar(@NonNull FastJsonResponse.Field field, @NonNull String str, float f) {
+        m48333e(field);
+        SafeParcelWriter.writeFloat(this.f45265b, field.getSafeParcelableFieldId(), f);
+    }
+
+    @Override // com.google.android.gms.common.server.response.FastJsonResponse
+    public final void zat(@NonNull FastJsonResponse.Field field, @NonNull String str, @Nullable ArrayList arrayList) {
+        m48333e(field);
+        int size = ((ArrayList) Preconditions.checkNotNull(arrayList)).size();
+        float[] fArr = new float[size];
+        for (int i = 0; i < size; i++) {
+            fArr[i] = ((Float) arrayList.get(i)).floatValue();
+        }
+        SafeParcelWriter.writeFloatArray(this.f45265b, field.getSafeParcelableFieldId(), fArr, true);
+    }
+
+    @Override // com.google.android.gms.common.server.response.FastJsonResponse
+    public final void zaw(@NonNull FastJsonResponse.Field field, @NonNull String str, @Nullable ArrayList arrayList) {
+        m48333e(field);
+        int size = ((ArrayList) Preconditions.checkNotNull(arrayList)).size();
+        int[] iArr = new int[size];
+        for (int i = 0; i < size; i++) {
+            iArr[i] = ((Integer) arrayList.get(i)).intValue();
+        }
+        SafeParcelWriter.writeIntArray(this.f45265b, field.getSafeParcelableFieldId(), iArr, true);
+    }
+
+    @Override // com.google.android.gms.common.server.response.FastJsonResponse
+    public final void zaz(@NonNull FastJsonResponse.Field field, @NonNull String str, @Nullable ArrayList arrayList) {
+        m48333e(field);
+        int size = ((ArrayList) Preconditions.checkNotNull(arrayList)).size();
+        long[] jArr = new long[size];
+        for (int i = 0; i < size; i++) {
+            jArr[i] = ((Long) arrayList.get(i)).longValue();
+        }
+        SafeParcelWriter.writeLongArray(this.f45265b, field.getSafeParcelableFieldId(), jArr, true);
+    }
+
+    public SafeParcelResponse(SafeParcelable safeParcelable, zan zanVar, String str) {
+        this.f45264a = 1;
+        Parcel obtain = Parcel.obtain();
+        this.f45265b = obtain;
+        safeParcelable.writeToParcel(obtain, 0);
+        this.f45266c = 1;
+        this.f45267d = (zan) Preconditions.checkNotNull(zanVar);
+        this.f45268e = (String) Preconditions.checkNotNull(str);
+        this.f45269f = 2;
+    }
+
+    public SafeParcelResponse(zan zanVar, String str) {
+        this.f45264a = 1;
+        this.f45265b = Parcel.obtain();
+        this.f45266c = 0;
+        this.f45267d = (zan) Preconditions.checkNotNull(zanVar);
+        this.f45268e = (String) Preconditions.checkNotNull(str);
+        this.f45269f = 0;
+    }
+}

@@ -1,0 +1,84 @@
+package kotlinx.serialization.internal;
+
+import com.google.firebase.analytics.FirebaseAnalytics;
+import kotlin.ExperimentalUnsignedTypes;
+import kotlin.Metadata;
+import kotlin.PublishedApi;
+import kotlin.UShort;
+import kotlin.UShortArray;
+import kotlin.jvm.internal.Intrinsics;
+import kotlinx.serialization.ExperimentalSerializationApi;
+import kotlinx.serialization.KSerializer;
+import kotlinx.serialization.builtins.BuiltinSerializersKt;
+import kotlinx.serialization.encoding.CompositeDecoder;
+import kotlinx.serialization.encoding.CompositeEncoder;
+import org.jetbrains.annotations.NotNull;
+
+@Metadata(m28851d1 = {"\u0000@\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u000b\bÁ\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u00012\u0014\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u00050\u0003B\u0007\b\u0002¢\u0006\u0002\u0010\u0006J\u0015\u0010\u0007\u001a\u00020\u0002H\u0014ø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\b\b\u0010\tJ(\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u00052\u0006\u0010\u0011\u001a\u00020\u0012H\u0014J*\u0010\u0013\u001a\u00020\u000b2\u0006\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u00022\u0006\u0010\u0017\u001a\u00020\u000fH\u0014ø\u0001\u0001¢\u0006\u0004\b\u0018\u0010\u0019J\u0016\u0010\u001a\u001a\u00020\u000f*\u00020\u0002H\u0014ø\u0001\u0001¢\u0006\u0004\b\u001b\u0010\u001cJ\u0016\u0010\u001d\u001a\u00020\u0005*\u00020\u0002H\u0014ø\u0001\u0001¢\u0006\u0004\b\u001e\u0010\u001f\u0082\u0002\u000b\n\u0002\b!\n\u0005\b¡\u001e0\u0001¨\u0006 "}, m28850d2 = {"Lkotlinx/serialization/internal/UShortArraySerializer;", "Lkotlinx/serialization/KSerializer;", "Lkotlin/UShortArray;", "Lkotlinx/serialization/internal/PrimitiveArraySerializer;", "Lkotlin/UShort;", "Lkotlinx/serialization/internal/UShortArrayBuilder;", "()V", "empty", "empty-amswpOA", "()[S", "readElement", "", "decoder", "Lkotlinx/serialization/encoding/CompositeDecoder;", FirebaseAnalytics.Param.INDEX, "", "builder", "checkIndex", "", "writeContent", "encoder", "Lkotlinx/serialization/encoding/CompositeEncoder;", "content", "size", "writeContent-eny0XGE", "(Lkotlinx/serialization/encoding/CompositeEncoder;[SI)V", "collectionSize", "collectionSize-rL5Bavg", "([S)I", "toBuilder", "toBuilder-rL5Bavg", "([S)Lkotlinx/serialization/internal/UShortArrayBuilder;", "kotlinx-serialization-core"}, m28849k = 1, m28848mv = {1, 9, 0}, m28846xi = 48)
+@ExperimentalSerializationApi
+@ExperimentalUnsignedTypes
+@PublishedApi
+/* loaded from: classes6.dex */
+public final class UShortArraySerializer extends PrimitiveArraySerializer<UShort, UShortArray, UShortArrayBuilder> implements KSerializer<UShortArray> {
+    @NotNull
+    public static final UShortArraySerializer INSTANCE = new UShortArraySerializer();
+
+    public UShortArraySerializer() {
+        super(BuiltinSerializersKt.serializer(UShort.Companion));
+    }
+
+    @Override // kotlinx.serialization.internal.AbstractCollectionSerializer
+    public /* bridge */ /* synthetic */ int collectionSize(Object obj) {
+        return m74750collectionSizerL5Bavg(((UShortArray) obj).m74192unboximpl());
+    }
+
+    /* renamed from: collectionSize-rL5Bavg  reason: not valid java name */
+    public int m74750collectionSizerL5Bavg(@NotNull short[] collectionSize) {
+        Intrinsics.checkNotNullParameter(collectionSize, "$this$collectionSize");
+        return UShortArray.m74184getSizeimpl(collectionSize);
+    }
+
+    @Override // kotlinx.serialization.internal.PrimitiveArraySerializer
+    public /* bridge */ /* synthetic */ UShortArray empty() {
+        return UShortArray.m74176boximpl(m74751emptyamswpOA());
+    }
+
+    @NotNull
+    /* renamed from: empty-amswpOA  reason: not valid java name */
+    public short[] m74751emptyamswpOA() {
+        return UShortArray.m74177constructorimpl(0);
+    }
+
+    @Override // kotlinx.serialization.internal.AbstractCollectionSerializer
+    public /* bridge */ /* synthetic */ Object toBuilder(Object obj) {
+        return m74752toBuilderrL5Bavg(((UShortArray) obj).m74192unboximpl());
+    }
+
+    @NotNull
+    /* renamed from: toBuilder-rL5Bavg  reason: not valid java name */
+    public UShortArrayBuilder m74752toBuilderrL5Bavg(@NotNull short[] toBuilder) {
+        Intrinsics.checkNotNullParameter(toBuilder, "$this$toBuilder");
+        return new UShortArrayBuilder(toBuilder, null);
+    }
+
+    @Override // kotlinx.serialization.internal.PrimitiveArraySerializer
+    public /* bridge */ /* synthetic */ void writeContent(CompositeEncoder compositeEncoder, UShortArray uShortArray, int i) {
+        m74753writeContenteny0XGE(compositeEncoder, uShortArray.m74192unboximpl(), i);
+    }
+
+    /* renamed from: writeContent-eny0XGE  reason: not valid java name */
+    public void m74753writeContenteny0XGE(@NotNull CompositeEncoder encoder, @NotNull short[] content, int i) {
+        Intrinsics.checkNotNullParameter(encoder, "encoder");
+        Intrinsics.checkNotNullParameter(content, "content");
+        for (int i2 = 0; i2 < i; i2++) {
+            encoder.encodeInlineElement(getDescriptor(), i2).encodeShort(UShortArray.m74183getMh2AYeg(content, i2));
+        }
+    }
+
+    @Override // kotlinx.serialization.internal.PrimitiveArraySerializer
+    public void readElement(@NotNull CompositeDecoder decoder, int i, @NotNull UShortArrayBuilder builder, boolean z) {
+        Intrinsics.checkNotNullParameter(decoder, "decoder");
+        Intrinsics.checkNotNullParameter(builder, "builder");
+        builder.m74748appendxj2QHRw$kotlinx_serialization_core(UShort.m74170constructorimpl(decoder.decodeInlineElement(getDescriptor(), i).decodeShort()));
+    }
+}

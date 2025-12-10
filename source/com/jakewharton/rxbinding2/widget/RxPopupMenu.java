@@ -1,0 +1,25 @@
+package com.jakewharton.rxbinding2.widget;
+
+import android.view.MenuItem;
+import android.widget.PopupMenu;
+import androidx.annotation.CheckResult;
+import androidx.annotation.NonNull;
+import com.jakewharton.rxbinding2.internal.Preconditions;
+import io.reactivex.Observable;
+
+/* loaded from: classes5.dex */
+public final class RxPopupMenu {
+    @NonNull
+    @CheckResult
+    public static Observable<Object> dismisses(@NonNull PopupMenu popupMenu) {
+        Preconditions.checkNotNull(popupMenu, "view == null");
+        return new C18828Yk1(popupMenu);
+    }
+
+    @NonNull
+    @CheckResult
+    public static Observable<MenuItem> itemClicks(@NonNull PopupMenu popupMenu) {
+        Preconditions.checkNotNull(popupMenu, "view == null");
+        return new C19054al1(popupMenu);
+    }
+}

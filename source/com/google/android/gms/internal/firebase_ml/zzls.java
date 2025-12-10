@@ -1,0 +1,33 @@
+package com.google.android.gms.internal.firebase_ml;
+
+import org.checkerframework.checker.nullness.compatqual.NullableDecl;
+
+/* loaded from: classes3.dex */
+final class zzls<T> extends zzmf<T> {
+    static final zzls<Object> zzakp = new zzls<>();
+
+    private zzls() {
+    }
+
+    public final boolean equals(@NullableDecl Object obj) {
+        return obj == this;
+    }
+
+    @Override // com.google.android.gms.internal.firebase_ml.zzmf
+    public final T get() {
+        throw new IllegalStateException("Optional.get() cannot be called on an absent value");
+    }
+
+    public final int hashCode() {
+        return 2040732332;
+    }
+
+    @Override // com.google.android.gms.internal.firebase_ml.zzmf
+    public final boolean isPresent() {
+        return false;
+    }
+
+    public final String toString() {
+        return "Optional.absent()";
+    }
+}

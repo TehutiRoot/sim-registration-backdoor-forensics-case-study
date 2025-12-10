@@ -1,0 +1,25 @@
+package androidx.compose.foundation.lazy.grid;
+
+import androidx.compose.animation.core.FiniteAnimationSpec;
+import androidx.compose.foundation.ExperimentalFoundationApi;
+import androidx.compose.p003ui.Modifier;
+import androidx.compose.p003ui.unit.IntOffset;
+import kotlin.Metadata;
+import kotlin.jvm.internal.Intrinsics;
+import org.jetbrains.annotations.NotNull;
+
+@Metadata(m28851d1 = {"\u0000\u001c\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\bÀ\u0002\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u001d\u0010\u0003\u001a\u00020\u0004*\u00020\u00042\f\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00070\u0006H\u0017ø\u0001\u0000\u0082\u0002\u0004\n\u0002\b\u0019¨\u0006\b"}, m28850d2 = {"Landroidx/compose/foundation/lazy/grid/LazyGridItemScopeImpl;", "Landroidx/compose/foundation/lazy/grid/LazyGridItemScope;", "()V", "animateItemPlacement", "Landroidx/compose/ui/Modifier;", "animationSpec", "Landroidx/compose/animation/core/FiniteAnimationSpec;", "Landroidx/compose/ui/unit/IntOffset;", "foundation_release"}, m28849k = 1, m28848mv = {1, 8, 0}, m28846xi = 48)
+/* loaded from: classes.dex */
+public final class LazyGridItemScopeImpl implements LazyGridItemScope {
+    @NotNull
+    public static final LazyGridItemScopeImpl INSTANCE = new LazyGridItemScopeImpl();
+
+    @Override // androidx.compose.foundation.lazy.grid.LazyGridItemScope
+    @ExperimentalFoundationApi
+    @NotNull
+    public Modifier animateItemPlacement(@NotNull Modifier modifier, @NotNull FiniteAnimationSpec<IntOffset> animationSpec) {
+        Intrinsics.checkNotNullParameter(modifier, "<this>");
+        Intrinsics.checkNotNullParameter(animationSpec, "animationSpec");
+        return modifier.then(new AnimateItemPlacementElement(animationSpec));
+    }
+}

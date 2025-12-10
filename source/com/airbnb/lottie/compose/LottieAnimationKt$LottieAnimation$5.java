@@ -1,0 +1,63 @@
+package com.airbnb.lottie.compose;
+
+import androidx.compose.p003ui.Alignment;
+import androidx.compose.p003ui.Modifier;
+import androidx.compose.p003ui.layout.ContentScale;
+import androidx.compose.runtime.Composer;
+import com.airbnb.lottie.LottieComposition;
+import com.airbnb.lottie.RenderMode;
+import kotlin.Metadata;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function2;
+import kotlin.jvm.internal.Lambda;
+import org.jetbrains.annotations.Nullable;
+
+@Metadata(m28849k = 3, m28848mv = {1, 6, 0}, m28846xi = 48)
+/* loaded from: classes3.dex */
+public final class LottieAnimationKt$LottieAnimation$5 extends Lambda implements Function2<Composer, Integer, Unit> {
+    final /* synthetic */ int $$changed;
+    final /* synthetic */ int $$changed1;
+    final /* synthetic */ int $$default;
+    final /* synthetic */ Alignment $alignment;
+    final /* synthetic */ boolean $applyOpacityToLayers;
+    final /* synthetic */ boolean $clipToCompositionBounds;
+    final /* synthetic */ LottieComposition $composition;
+    final /* synthetic */ ContentScale $contentScale;
+    final /* synthetic */ LottieDynamicProperties $dynamicProperties;
+    final /* synthetic */ boolean $enableMergePaths;
+    final /* synthetic */ boolean $maintainOriginalImageBounds;
+    final /* synthetic */ Modifier $modifier;
+    final /* synthetic */ boolean $outlineMasksAndMattes;
+    final /* synthetic */ float $progress;
+    final /* synthetic */ RenderMode $renderMode;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public LottieAnimationKt$LottieAnimation$5(LottieComposition lottieComposition, float f, Modifier modifier, boolean z, boolean z2, boolean z3, RenderMode renderMode, boolean z4, LottieDynamicProperties lottieDynamicProperties, Alignment alignment, ContentScale contentScale, boolean z5, int i, int i2, int i3) {
+        super(2);
+        this.$composition = lottieComposition;
+        this.$progress = f;
+        this.$modifier = modifier;
+        this.$outlineMasksAndMattes = z;
+        this.$applyOpacityToLayers = z2;
+        this.$enableMergePaths = z3;
+        this.$renderMode = renderMode;
+        this.$maintainOriginalImageBounds = z4;
+        this.$dynamicProperties = lottieDynamicProperties;
+        this.$alignment = alignment;
+        this.$contentScale = contentScale;
+        this.$clipToCompositionBounds = z5;
+        this.$$changed = i;
+        this.$$changed1 = i2;
+        this.$$default = i3;
+    }
+
+    @Override // kotlin.jvm.functions.Function2
+    public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
+        invoke(composer, num.intValue());
+        return Unit.INSTANCE;
+    }
+
+    public final void invoke(@Nullable Composer composer, int i) {
+        LottieAnimationKt.LottieAnimation(this.$composition, this.$progress, this.$modifier, this.$outlineMasksAndMattes, this.$applyOpacityToLayers, this.$enableMergePaths, this.$renderMode, this.$maintainOriginalImageBounds, this.$dynamicProperties, this.$alignment, this.$contentScale, this.$clipToCompositionBounds, composer, this.$$changed | 1, this.$$changed1, this.$$default);
+    }
+}

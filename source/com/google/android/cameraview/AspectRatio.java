@@ -1,0 +1,162 @@
+package com.google.android.cameraview;
+
+import android.os.Parcel;
+import android.os.Parcelable;
+import androidx.annotation.NonNull;
+import androidx.collection.SparseArrayCompat;
+
+/* loaded from: classes3.dex */
+public class AspectRatio implements Comparable<AspectRatio>, Parcelable {
+
+    /* renamed from: a */
+    public final int f43799a;
+
+    /* renamed from: b */
+    public final int f43800b;
+
+    /* renamed from: c */
+    public static final SparseArrayCompat f43798c = new SparseArrayCompat(16);
+    public static final Parcelable.Creator<AspectRatio> CREATOR = new C6188a();
+
+    /* renamed from: com.google.android.cameraview.AspectRatio$a */
+    /* loaded from: classes3.dex */
+    public class C6188a implements Parcelable.Creator {
+        @Override // android.os.Parcelable.Creator
+        /* renamed from: a */
+        public AspectRatio createFromParcel(Parcel parcel) {
+            return AspectRatio.m49248of(parcel.readInt(), parcel.readInt());
+        }
+
+        @Override // android.os.Parcelable.Creator
+        /* renamed from: b */
+        public AspectRatio[] newArray(int i) {
+            return new AspectRatio[i];
+        }
+    }
+
+    public AspectRatio(int i, int i2) {
+        this.f43799a = i;
+        this.f43800b = i2;
+    }
+
+    /* renamed from: a */
+    public static int m49249a(int i, int i2) {
+        while (true) {
+            int i3 = i2;
+            int i4 = i;
+            i = i3;
+            if (i != 0) {
+                i2 = i4 % i;
+            } else {
+                return i4;
+            }
+        }
+    }
+
+    /* renamed from: of */
+    public static AspectRatio m49248of(int i, int i2) {
+        int m49249a = m49249a(i, i2);
+        int i3 = i / m49249a;
+        int i4 = i2 / m49249a;
+        SparseArrayCompat sparseArrayCompat = f43798c;
+        SparseArrayCompat sparseArrayCompat2 = (SparseArrayCompat) sparseArrayCompat.get(i3);
+        if (sparseArrayCompat2 == null) {
+            AspectRatio aspectRatio = new AspectRatio(i3, i4);
+            SparseArrayCompat sparseArrayCompat3 = new SparseArrayCompat();
+            sparseArrayCompat3.put(i4, aspectRatio);
+            sparseArrayCompat.put(i3, sparseArrayCompat3);
+            return aspectRatio;
+        }
+        AspectRatio aspectRatio2 = (AspectRatio) sparseArrayCompat2.get(i4);
+        if (aspectRatio2 == null) {
+            AspectRatio aspectRatio3 = new AspectRatio(i3, i4);
+            sparseArrayCompat2.put(i4, aspectRatio3);
+            return aspectRatio3;
+        }
+        return aspectRatio2;
+    }
+
+    public static AspectRatio parse(String str) {
+        int indexOf = str.indexOf(58);
+        if (indexOf != -1) {
+            try {
+                return m49248of(Integer.parseInt(str.substring(0, indexOf)), Integer.parseInt(str.substring(indexOf + 1)));
+            } catch (NumberFormatException e) {
+                throw new IllegalArgumentException("Malformed aspect ratio: " + str, e);
+            }
+        }
+        throw new IllegalArgumentException("Malformed aspect ratio: " + str);
+    }
+
+    @Override // android.os.Parcelable
+    public int describeContents() {
+        return 0;
+    }
+
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof AspectRatio)) {
+            return false;
+        }
+        AspectRatio aspectRatio = (AspectRatio) obj;
+        if (this.f43799a != aspectRatio.f43799a || this.f43800b != aspectRatio.f43800b) {
+            return false;
+        }
+        return true;
+    }
+
+    public int getX() {
+        return this.f43799a;
+    }
+
+    public int getY() {
+        return this.f43800b;
+    }
+
+    public int hashCode() {
+        int i = this.f43800b;
+        int i2 = this.f43799a;
+        return i ^ ((i2 >>> 16) | (i2 << 16));
+    }
+
+    public AspectRatio inverse() {
+        return m49248of(this.f43800b, this.f43799a);
+    }
+
+    public boolean matches(Size size) {
+        int m49249a = m49249a(size.getWidth(), size.getHeight());
+        int width = size.getWidth() / m49249a;
+        int height = size.getHeight() / m49249a;
+        if (this.f43799a == width && this.f43800b == height) {
+            return true;
+        }
+        return false;
+    }
+
+    public float toFloat() {
+        return this.f43799a / this.f43800b;
+    }
+
+    public String toString() {
+        return this.f43799a + ":" + this.f43800b;
+    }
+
+    @Override // android.os.Parcelable
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeInt(this.f43799a);
+        parcel.writeInt(this.f43800b);
+    }
+
+    @Override // java.lang.Comparable
+    public int compareTo(@NonNull AspectRatio aspectRatio) {
+        if (equals(aspectRatio)) {
+            return 0;
+        }
+        return toFloat() - aspectRatio.toFloat() > 0.0f ? 1 : -1;
+    }
+}

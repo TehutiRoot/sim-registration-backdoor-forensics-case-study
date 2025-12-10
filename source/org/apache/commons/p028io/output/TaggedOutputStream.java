@@ -1,0 +1,33 @@
+package org.apache.commons.p028io.output;
+
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.Serializable;
+import java.util.UUID;
+import org.apache.commons.p028io.TaggedIOException;
+
+/* renamed from: org.apache.commons.io.output.TaggedOutputStream */
+/* loaded from: classes6.dex */
+public class TaggedOutputStream extends ProxyOutputStream {
+
+    /* renamed from: a */
+    public final Serializable f73571a;
+
+    public TaggedOutputStream(OutputStream outputStream) {
+        super(outputStream);
+        this.f73571a = UUID.randomUUID();
+    }
+
+    @Override // org.apache.commons.p028io.output.ProxyOutputStream
+    public void handleIOException(IOException iOException) throws IOException {
+        throw new TaggedIOException(iOException, this.f73571a);
+    }
+
+    public boolean isCauseOf(Exception exc) {
+        return TaggedIOException.isTaggedWith(exc, this.f73571a);
+    }
+
+    public void throwIfCauseOf(Exception exc) throws IOException {
+        TaggedIOException.throwCauseIfTaggedWith(exc, this.f73571a);
+    }
+}

@@ -1,0 +1,27 @@
+package kotlinx.parcelize;
+
+import android.os.Parcelable;
+import kotlin.Metadata;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Reflection;
+
+@Metadata(m28851d1 = {"\u0000\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\u001a\u001b\u0010\u0000\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\n\b\u0000\u0010\u0002\u0018\u0001*\u00020\u0003H\u0086\b¨\u0006\u0004"}, m28850d2 = {"parcelableCreator", "Landroid/os/Parcelable$Creator;", "T", "Landroid/os/Parcelable;", "parcelize-runtime"}, m28849k = 2, m28848mv = {1, 8, 0}, m28846xi = 48)
+/* loaded from: classes6.dex */
+public final class ParcelableCreatorKt {
+    public static final /* synthetic */ <T extends Parcelable> Parcelable.Creator<T> parcelableCreator() {
+        Intrinsics.reifiedOperationMarker(4, "T");
+        Parcelable.Creator<T> creator = null;
+        Object obj = Parcelable.class.getDeclaredField("CREATOR").get(null);
+        if (obj instanceof Parcelable.Creator) {
+            creator = (Parcelable.Creator) obj;
+        }
+        if (creator != null) {
+            return creator;
+        }
+        StringBuilder sb = new StringBuilder();
+        sb.append("Could not access CREATOR field in class ");
+        Intrinsics.reifiedOperationMarker(4, "T");
+        sb.append(Reflection.getOrCreateKotlinClass(Parcelable.class).getSimpleName());
+        throw new IllegalArgumentException(sb.toString());
+    }
+}

@@ -1,0 +1,33 @@
+package androidx.compose.p003ui.node;
+
+import kotlin.Metadata;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function1;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Lambda;
+import org.jetbrains.annotations.NotNull;
+
+@Metadata(m28851d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n¢\u0006\u0002\b\u0004"}, m28850d2 = {"<anonymous>", "", "it", "Landroidx/compose/ui/node/ObserverNodeOwnerScope;", "invoke"}, m28849k = 3, m28848mv = {1, 8, 0}, m28846xi = 48)
+/* renamed from: androidx.compose.ui.node.ObserverNodeOwnerScope$Companion$OnObserveReadsChanged$1 */
+/* loaded from: classes2.dex */
+public final class ObserverNodeOwnerScope$Companion$OnObserveReadsChanged$1 extends Lambda implements Function1<ObserverNodeOwnerScope, Unit> {
+    public static final ObserverNodeOwnerScope$Companion$OnObserveReadsChanged$1 INSTANCE = new ObserverNodeOwnerScope$Companion$OnObserveReadsChanged$1();
+
+    public ObserverNodeOwnerScope$Companion$OnObserveReadsChanged$1() {
+        super(1);
+    }
+
+    @Override // kotlin.jvm.functions.Function1
+    public /* bridge */ /* synthetic */ Unit invoke(ObserverNodeOwnerScope observerNodeOwnerScope) {
+        invoke2(observerNodeOwnerScope);
+        return Unit.INSTANCE;
+    }
+
+    /* renamed from: invoke  reason: avoid collision after fix types in other method */
+    public final void invoke2(@NotNull ObserverNodeOwnerScope it) {
+        Intrinsics.checkNotNullParameter(it, "it");
+        if (it.isValidOwnerScope()) {
+            it.getObserverNode$ui_release().onObservedReadsChanged();
+        }
+    }
+}

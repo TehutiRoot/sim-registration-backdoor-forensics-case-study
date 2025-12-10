@@ -1,0 +1,18 @@
+package p000;
+
+import com.tom_roush.pdfbox.pdmodel.common.function.type4.ExecutionContext;
+import com.tom_roush.pdfbox.pdmodel.common.function.type4.Operator;
+
+/* renamed from: p6 */
+/* loaded from: classes5.dex */
+public class C13062p6 implements Operator {
+    @Override // com.tom_roush.pdfbox.pdmodel.common.function.type4.Operator
+    public void execute(ExecutionContext executionContext) {
+        Number popNumber = executionContext.popNumber();
+        if (popNumber instanceof Integer) {
+            executionContext.getStack().push(Integer.valueOf(Math.abs(popNumber.intValue())));
+        } else {
+            executionContext.getStack().push(Float.valueOf(Math.abs(popNumber.floatValue())));
+        }
+    }
+}

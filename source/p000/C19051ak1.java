@@ -1,0 +1,33 @@
+package p000;
+
+import android.os.PersistableBundle;
+import androidx.annotation.DoNotInline;
+import kotlin.jvm.JvmStatic;
+import kotlin.jvm.internal.Intrinsics;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+/* renamed from: ak1  reason: case insensitive filesystem */
+/* loaded from: classes2.dex */
+public final class C19051ak1 {
+
+    /* renamed from: a */
+    public static final C19051ak1 f8417a = new C19051ak1();
+
+    @JvmStatic
+    @DoNotInline
+    /* renamed from: a */
+    public static final void m65053a(@NotNull PersistableBundle persistableBundle, @Nullable String str, boolean z) {
+        Intrinsics.checkNotNullParameter(persistableBundle, "persistableBundle");
+        persistableBundle.putBoolean(str, z);
+    }
+
+    @JvmStatic
+    @DoNotInline
+    /* renamed from: b */
+    public static final void m65052b(@NotNull PersistableBundle persistableBundle, @Nullable String str, @NotNull boolean[] value) {
+        Intrinsics.checkNotNullParameter(persistableBundle, "persistableBundle");
+        Intrinsics.checkNotNullParameter(value, "value");
+        persistableBundle.putBooleanArray(str, value);
+    }
+}

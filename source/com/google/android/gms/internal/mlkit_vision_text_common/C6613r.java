@@ -1,0 +1,37 @@
+package com.google.android.gms.internal.mlkit_vision_text_common;
+
+import java.util.AbstractCollection;
+import java.util.Iterator;
+import java.util.Map;
+
+/* renamed from: com.google.android.gms.internal.mlkit_vision_text_common.r */
+/* loaded from: classes3.dex */
+public final class C6613r extends AbstractCollection {
+
+    /* renamed from: a */
+    public final /* synthetic */ zzba f47295a;
+
+    public C6613r(zzba zzbaVar) {
+        this.f47295a = zzbaVar;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final void clear() {
+        this.f47295a.clear();
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+    public final Iterator iterator() {
+        zzba zzbaVar = this.f47295a;
+        Map zzl = zzbaVar.zzl();
+        if (zzl != null) {
+            return zzl.values().iterator();
+        }
+        return new C6608m(zzbaVar);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final int size() {
+        return this.f47295a.size();
+    }
+}

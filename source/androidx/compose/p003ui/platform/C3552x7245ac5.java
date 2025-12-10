@@ -1,0 +1,32 @@
+package androidx.compose.p003ui.platform;
+
+import androidx.compose.p003ui.node.LayoutNode;
+import androidx.compose.p003ui.semantics.SemanticsConfiguration;
+import kotlin.Metadata;
+import kotlin.jvm.functions.Function1;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Lambda;
+import org.jetbrains.annotations.NotNull;
+
+@Metadata(m28851d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n¢\u0006\u0004\b\u0004\u0010\u0005"}, m28850d2 = {"<anonymous>", "", "it", "Landroidx/compose/ui/node/LayoutNode;", "invoke", "(Landroidx/compose/ui/node/LayoutNode;)Ljava/lang/Boolean;"}, m28849k = 3, m28848mv = {1, 8, 0}, m28846xi = 48)
+/* renamed from: androidx.compose.ui.platform.AndroidComposeViewAccessibilityDelegateCompat$sendSubtreeChangeAccessibilityEvents$1 */
+/* loaded from: classes2.dex */
+public final class C3552x7245ac5 extends Lambda implements Function1<LayoutNode, Boolean> {
+    public static final C3552x7245ac5 INSTANCE = new C3552x7245ac5();
+
+    public C3552x7245ac5() {
+        super(1);
+    }
+
+    @Override // kotlin.jvm.functions.Function1
+    @NotNull
+    public final Boolean invoke(@NotNull LayoutNode it) {
+        Intrinsics.checkNotNullParameter(it, "it");
+        SemanticsConfiguration collapsedSemantics$ui_release = it.getCollapsedSemantics$ui_release();
+        boolean z = false;
+        if (collapsedSemantics$ui_release != null && collapsedSemantics$ui_release.isMergingSemanticsOfDescendants()) {
+            z = true;
+        }
+        return Boolean.valueOf(z);
+    }
+}

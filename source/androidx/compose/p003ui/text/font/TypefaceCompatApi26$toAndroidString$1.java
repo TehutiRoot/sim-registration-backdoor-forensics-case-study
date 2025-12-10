@@ -1,0 +1,30 @@
+package androidx.compose.p003ui.text.font;
+
+import androidx.compose.p003ui.text.font.FontVariation;
+import androidx.compose.p003ui.unit.Density;
+import ch.qos.logback.core.CoreConstants;
+import kotlin.Metadata;
+import kotlin.jvm.functions.Function1;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Lambda;
+import org.jetbrains.annotations.NotNull;
+
+@Metadata(m28851d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010\r\n\u0000\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n¢\u0006\u0002\b\u0004"}, m28850d2 = {"<anonymous>", "", "setting", "Landroidx/compose/ui/text/font/FontVariation$Setting;", "invoke"}, m28849k = 3, m28848mv = {1, 8, 0}, m28846xi = 48)
+/* renamed from: androidx.compose.ui.text.font.TypefaceCompatApi26$toAndroidString$1 */
+/* loaded from: classes2.dex */
+public final class TypefaceCompatApi26$toAndroidString$1 extends Lambda implements Function1<FontVariation.Setting, CharSequence> {
+    final /* synthetic */ Density $density;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public TypefaceCompatApi26$toAndroidString$1(Density density) {
+        super(1);
+        this.$density = density;
+    }
+
+    @Override // kotlin.jvm.functions.Function1
+    @NotNull
+    public final CharSequence invoke(@NotNull FontVariation.Setting setting) {
+        Intrinsics.checkNotNullParameter(setting, "setting");
+        return CoreConstants.SINGLE_QUOTE_CHAR + setting.getAxisName() + "' " + setting.toVariationValue(this.$density);
+    }
+}

@@ -1,0 +1,37 @@
+package kotlin.reflect.jvm.internal.impl.load.java.lazy.descriptors;
+
+import java.util.Collection;
+import kotlin.collections.CollectionsKt___CollectionsKt;
+import kotlin.jvm.functions.Function1;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Lambda;
+import kotlin.reflect.jvm.internal.impl.descriptors.SimpleFunctionDescriptor;
+import kotlin.reflect.jvm.internal.impl.name.Name;
+import org.jetbrains.annotations.NotNull;
+
+/* loaded from: classes6.dex */
+public final class LazyJavaClassMemberScope$isVisibleAsFunctionInCurrentClass$1$1$1 extends Lambda implements Function1<Name, Collection<? extends SimpleFunctionDescriptor>> {
+    final /* synthetic */ SimpleFunctionDescriptor $function;
+    final /* synthetic */ LazyJavaClassMemberScope this$0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public LazyJavaClassMemberScope$isVisibleAsFunctionInCurrentClass$1$1$1(SimpleFunctionDescriptor simpleFunctionDescriptor, LazyJavaClassMemberScope lazyJavaClassMemberScope) {
+        super(1);
+        this.$function = simpleFunctionDescriptor;
+        this.this$0 = lazyJavaClassMemberScope;
+    }
+
+    @Override // kotlin.jvm.functions.Function1
+    @NotNull
+    public final Collection<SimpleFunctionDescriptor> invoke(@NotNull Name accessorName) {
+        Collection m28366R;
+        Collection m28365S;
+        Intrinsics.checkNotNullParameter(accessorName, "accessorName");
+        if (!Intrinsics.areEqual(this.$function.getName(), accessorName)) {
+            m28366R = this.this$0.m28366R(accessorName);
+            m28365S = this.this$0.m28365S(accessorName);
+            return CollectionsKt___CollectionsKt.plus(m28366R, (Iterable) m28365S);
+        }
+        return AbstractC10108ds.listOf(this.$function);
+    }
+}

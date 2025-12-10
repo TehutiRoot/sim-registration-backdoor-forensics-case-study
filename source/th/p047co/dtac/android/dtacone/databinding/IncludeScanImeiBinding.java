@@ -1,0 +1,78 @@
+package th.p047co.dtac.android.dtacone.databinding;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.constraintlayout.widget.Guideline;
+import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
+import th.p047co.dtac.android.dtacone.R;
+import th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView;
+
+/* renamed from: th.co.dtac.android.dtacone.databinding.IncludeScanImeiBinding */
+/* loaded from: classes7.dex */
+public final class IncludeScanImeiBinding implements ViewBinding {
+
+    /* renamed from: a */
+    public final ConstraintLayout f84290a;
+    @NonNull
+    public final FrameLayout contentCamera;
+    @NonNull
+    public final Guideline guidelineTextHelper;
+    @NonNull
+    public final IncludeSwitchModeWithDeviceBinding layoutSwitchModeWithDevice;
+    @NonNull
+    public final DtacFontTextView tvScanHelper;
+
+    public IncludeScanImeiBinding(ConstraintLayout constraintLayout, FrameLayout frameLayout, Guideline guideline, IncludeSwitchModeWithDeviceBinding includeSwitchModeWithDeviceBinding, DtacFontTextView dtacFontTextView) {
+        this.f84290a = constraintLayout;
+        this.contentCamera = frameLayout;
+        this.guidelineTextHelper = guideline;
+        this.layoutSwitchModeWithDevice = includeSwitchModeWithDeviceBinding;
+        this.tvScanHelper = dtacFontTextView;
+    }
+
+    @NonNull
+    public static IncludeScanImeiBinding bind(@NonNull View view) {
+        View findChildViewById;
+        int i = R.id.contentCamera;
+        FrameLayout frameLayout = (FrameLayout) ViewBindings.findChildViewById(view, i);
+        if (frameLayout != null) {
+            i = R.id.guidelineTextHelper;
+            Guideline guideline = (Guideline) ViewBindings.findChildViewById(view, i);
+            if (guideline != null && (findChildViewById = ViewBindings.findChildViewById(view, (i = R.id.layoutSwitchModeWithDevice))) != null) {
+                IncludeSwitchModeWithDeviceBinding bind = IncludeSwitchModeWithDeviceBinding.bind(findChildViewById);
+                i = R.id.tvScanHelper;
+                DtacFontTextView dtacFontTextView = (DtacFontTextView) ViewBindings.findChildViewById(view, i);
+                if (dtacFontTextView != null) {
+                    return new IncludeScanImeiBinding((ConstraintLayout) view, frameLayout, guideline, bind, dtacFontTextView);
+                }
+            }
+        }
+        throw new NullPointerException("Missing required view with ID: ".concat(view.getResources().getResourceName(i)));
+    }
+
+    @NonNull
+    public static IncludeScanImeiBinding inflate(@NonNull LayoutInflater layoutInflater) {
+        return inflate(layoutInflater, null, false);
+    }
+
+    @NonNull
+    public static IncludeScanImeiBinding inflate(@NonNull LayoutInflater layoutInflater, @Nullable ViewGroup viewGroup, boolean z) {
+        View inflate = layoutInflater.inflate(R.layout.include_scan_imei, viewGroup, false);
+        if (z) {
+            viewGroup.addView(inflate);
+        }
+        return bind(inflate);
+    }
+
+    @Override // androidx.viewbinding.ViewBinding
+    @NonNull
+    public ConstraintLayout getRoot() {
+        return this.f84290a;
+    }
+}

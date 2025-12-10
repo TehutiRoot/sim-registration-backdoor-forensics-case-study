@@ -1,0 +1,70 @@
+package th.p047co.dtac.android.dtacone.databinding;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
+import th.p047co.dtac.android.dtacone.R;
+import th.p047co.dtac.android.dtacone.widget.view.DtacFontButton;
+import th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView;
+
+/* renamed from: th.co.dtac.android.dtacone.databinding.ZDialogInfoBinding */
+/* loaded from: classes7.dex */
+public final class ZDialogInfoBinding implements ViewBinding {
+
+    /* renamed from: a */
+    public final ConstraintLayout f84598a;
+    @NonNull
+    public final DtacFontButton btnOk;
+    @NonNull
+    public final ConstraintLayout linearLayout2;
+    @NonNull
+    public final DtacFontTextView messageInfomation;
+
+    public ZDialogInfoBinding(ConstraintLayout constraintLayout, DtacFontButton dtacFontButton, ConstraintLayout constraintLayout2, DtacFontTextView dtacFontTextView) {
+        this.f84598a = constraintLayout;
+        this.btnOk = dtacFontButton;
+        this.linearLayout2 = constraintLayout2;
+        this.messageInfomation = dtacFontTextView;
+    }
+
+    @NonNull
+    public static ZDialogInfoBinding bind(@NonNull View view) {
+        int i = R.id.btnOk;
+        DtacFontButton dtacFontButton = (DtacFontButton) ViewBindings.findChildViewById(view, i);
+        if (dtacFontButton != null) {
+            ConstraintLayout constraintLayout = (ConstraintLayout) view;
+            int i2 = R.id.messageInfomation;
+            DtacFontTextView dtacFontTextView = (DtacFontTextView) ViewBindings.findChildViewById(view, i2);
+            if (dtacFontTextView != null) {
+                return new ZDialogInfoBinding(constraintLayout, dtacFontButton, constraintLayout, dtacFontTextView);
+            }
+            i = i2;
+        }
+        throw new NullPointerException("Missing required view with ID: ".concat(view.getResources().getResourceName(i)));
+    }
+
+    @NonNull
+    public static ZDialogInfoBinding inflate(@NonNull LayoutInflater layoutInflater) {
+        return inflate(layoutInflater, null, false);
+    }
+
+    @NonNull
+    public static ZDialogInfoBinding inflate(@NonNull LayoutInflater layoutInflater, @Nullable ViewGroup viewGroup, boolean z) {
+        View inflate = layoutInflater.inflate(R.layout.z_dialog_info, viewGroup, false);
+        if (z) {
+            viewGroup.addView(inflate);
+        }
+        return bind(inflate);
+    }
+
+    @Override // androidx.viewbinding.ViewBinding
+    @NonNull
+    public ConstraintLayout getRoot() {
+        return this.f84598a;
+    }
+}

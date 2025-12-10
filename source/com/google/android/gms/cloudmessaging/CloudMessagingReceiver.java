@@ -1,0 +1,206 @@
+package com.google.android.gms.cloudmessaging;
+
+import android.app.PendingIntent;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Parcelable;
+import android.text.TextUtils;
+import android.util.Log;
+import androidx.annotation.NonNull;
+import androidx.annotation.WorkerThread;
+import com.google.android.gms.common.util.concurrent.NamedThreadFactory;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.Tasks;
+import com.google.firebase.messaging.Constants;
+import java.lang.ref.SoftReference;
+import java.util.Objects;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+
+/* loaded from: classes3.dex */
+public abstract class CloudMessagingReceiver extends BroadcastReceiver {
+
+    /* renamed from: a */
+    public static SoftReference f44600a;
+
+    /* renamed from: b */
+    public static SoftReference f44601b;
+
+    /* loaded from: classes3.dex */
+    public static final class IntentActionKeys {
+        @NonNull
+        public static final String NOTIFICATION_DISMISS = "com.google.firebase.messaging.NOTIFICATION_DISMISS";
+        @NonNull
+        public static final String NOTIFICATION_OPEN = "com.google.firebase.messaging.NOTIFICATION_OPEN";
+    }
+
+    /* loaded from: classes3.dex */
+    public static final class IntentKeys {
+        @NonNull
+        public static final String PENDING_INTENT = "pending_intent";
+        @NonNull
+        public static final String WRAPPED_INTENT = "wrapped_intent";
+    }
+
+    /* renamed from: a */
+    public final /* synthetic */ void m48681a(Intent intent, final Context context, boolean z, BroadcastReceiver.PendingResult pendingResult) {
+        Intent intent2;
+        int i;
+        try {
+            Parcelable parcelableExtra = intent.getParcelableExtra(IntentKeys.WRAPPED_INTENT);
+            Executor executor = null;
+            if (parcelableExtra instanceof Intent) {
+                intent2 = (Intent) parcelableExtra;
+            } else {
+                intent2 = null;
+            }
+            if (intent2 != null) {
+                i = m48680b(context, intent2);
+            } else if (intent.getExtras() == null) {
+                i = 500;
+            } else {
+                final CloudMessage cloudMessage = new CloudMessage(intent);
+                final CountDownLatch countDownLatch = new CountDownLatch(1);
+                synchronized (CloudMessagingReceiver.class) {
+                    SoftReference softReference = f44601b;
+                    if (softReference != null) {
+                        executor = (Executor) softReference.get();
+                    }
+                    if (executor == null) {
+                        com.google.android.gms.internal.cloudmessaging.zze.zza();
+                        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(1, 1, 60L, TimeUnit.SECONDS, new LinkedBlockingQueue(), new NamedThreadFactory("pscm-ack-executor"));
+                        threadPoolExecutor.allowCoreThreadTimeOut(true);
+                        executor = Executors.unconfigurableExecutorService(threadPoolExecutor);
+                        f44601b = new SoftReference(executor);
+                    }
+                }
+                executor.execute(new Runnable() { // from class: com.google.android.gms.cloudmessaging.zzg
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        Task zzc;
+                        CloudMessage cloudMessage2 = cloudMessage;
+                        if (TextUtils.isEmpty(cloudMessage2.getMessageId())) {
+                            zzc = Tasks.forResult(null);
+                        } else {
+                            Bundle bundle = new Bundle();
+                            bundle.putString(Constants.MessagePayloadKeys.MSGID, cloudMessage2.getMessageId());
+                            Integer m48683b = cloudMessage2.m48683b();
+                            if (m48683b != null) {
+                                bundle.putInt(Constants.MessagePayloadKeys.PRODUCT_ID, m48683b.intValue());
+                            }
+                            Context context2 = context;
+                            bundle.putBoolean("supports_message_handled", true);
+                            zzc = zzv.zzb(context2).zzc(2, bundle);
+                        }
+                        final CountDownLatch countDownLatch2 = countDownLatch;
+                        zzc.addOnCompleteListener(zze.zza, new OnCompleteListener() { // from class: com.google.android.gms.cloudmessaging.zzf
+                            @Override // com.google.android.gms.tasks.OnCompleteListener
+                            public final void onComplete(Task task) {
+                                countDownLatch2.countDown();
+                            }
+                        });
+                    }
+                });
+                int onMessageReceive = onMessageReceive(context, cloudMessage);
+                try {
+                    if (!countDownLatch.await(TimeUnit.SECONDS.toMillis(1L), TimeUnit.MILLISECONDS)) {
+                        Log.w("CloudMessagingReceiver", "Message ack timed out");
+                    }
+                } catch (InterruptedException e) {
+                    Log.w("CloudMessagingReceiver", "Message ack failed: ".concat(e.toString()));
+                }
+                i = onMessageReceive;
+            }
+            if (z && pendingResult != null) {
+                pendingResult.setResultCode(i);
+            }
+            if (pendingResult != null) {
+                pendingResult.finish();
+            }
+        } catch (Throwable th2) {
+            if (pendingResult != null) {
+                pendingResult.finish();
+            }
+            throw th2;
+        }
+    }
+
+    /* renamed from: b */
+    public final int m48680b(Context context, Intent intent) {
+        PendingIntent pendingIntent = (PendingIntent) intent.getParcelableExtra(IntentKeys.PENDING_INTENT);
+        if (pendingIntent != null) {
+            try {
+                pendingIntent.send();
+            } catch (PendingIntent.CanceledException unused) {
+            }
+        }
+        Bundle extras = intent.getExtras();
+        if (extras != null) {
+            extras.remove(IntentKeys.PENDING_INTENT);
+        } else {
+            extras = new Bundle();
+        }
+        if (Objects.equals(intent.getAction(), IntentActionKeys.NOTIFICATION_DISMISS)) {
+            onNotificationDismissed(context, extras);
+            return -1;
+        }
+        return 500;
+    }
+
+    @NonNull
+    public Executor getBroadcastExecutor() {
+        ExecutorService executorService;
+        synchronized (CloudMessagingReceiver.class) {
+            try {
+                SoftReference softReference = f44600a;
+                if (softReference != null) {
+                    executorService = (ExecutorService) softReference.get();
+                } else {
+                    executorService = null;
+                }
+                if (executorService == null) {
+                    com.google.android.gms.internal.cloudmessaging.zze.zza();
+                    executorService = Executors.unconfigurableExecutorService(Executors.newCachedThreadPool(new NamedThreadFactory("firebase-iid-executor")));
+                    f44600a = new SoftReference(executorService);
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+        return executorService;
+    }
+
+    @WorkerThread
+    public abstract int onMessageReceive(@NonNull Context context, @NonNull CloudMessage cloudMessage);
+
+    @WorkerThread
+    public void onNotificationDismissed(@NonNull Context context, @NonNull Bundle bundle) {
+    }
+
+    @Override // android.content.BroadcastReceiver
+    public final void onReceive(@NonNull final Context context, @NonNull final Intent intent) {
+        if (intent == null) {
+            return;
+        }
+        final boolean isOrderedBroadcast = isOrderedBroadcast();
+        final BroadcastReceiver.PendingResult goAsync = goAsync();
+        getBroadcastExecutor().execute(new Runnable() { // from class: com.google.android.gms.cloudmessaging.zzh
+            {
+                CloudMessagingReceiver.this = this;
+            }
+
+            @Override // java.lang.Runnable
+            public final void run() {
+                CloudMessagingReceiver.this.m48681a(intent, context, isOrderedBroadcast, goAsync);
+            }
+        });
+    }
+}

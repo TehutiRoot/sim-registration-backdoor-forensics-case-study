@@ -1,0 +1,52 @@
+package ch.qos.logback.classic.util;
+
+import ch.qos.logback.classic.ClassicConstants;
+import ch.qos.logback.classic.LoggerContext;
+import ch.qos.logback.classic.selector.ContextSelector;
+import ch.qos.logback.classic.selector.DefaultContextSelector;
+import ch.qos.logback.core.util.Loader;
+import ch.qos.logback.core.util.OptionHelper;
+import java.lang.reflect.InvocationTargetException;
+
+/* loaded from: classes.dex */
+public class ContextSelectorStaticBinder {
+
+    /* renamed from: c */
+    public static ContextSelectorStaticBinder f39690c = new ContextSelectorStaticBinder();
+
+    /* renamed from: a */
+    public ContextSelector f39691a;
+
+    /* renamed from: b */
+    public Object f39692b;
+
+    /* renamed from: a */
+    public static ContextSelector m51555a(LoggerContext loggerContext, String str) {
+        return (ContextSelector) Loader.loadClass(str).getConstructor(LoggerContext.class).newInstance(loggerContext);
+    }
+
+    public static ContextSelectorStaticBinder getSingleton() {
+        return f39690c;
+    }
+
+    public ContextSelector getContextSelector() {
+        return this.f39691a;
+    }
+
+    public void init(LoggerContext loggerContext, Object obj) throws ClassNotFoundException, NoSuchMethodException, InstantiationException, IllegalAccessException, InvocationTargetException {
+        Object obj2 = this.f39692b;
+        if (obj2 == null) {
+            this.f39692b = obj;
+        } else if (obj2 != obj) {
+            throw new IllegalAccessException("Only certain classes can access this method.");
+        }
+        String systemProperty = OptionHelper.getSystemProperty(ClassicConstants.LOGBACK_CONTEXT_SELECTOR);
+        if (systemProperty == null) {
+            this.f39691a = new DefaultContextSelector(loggerContext);
+        } else if (systemProperty.equals("JNDI")) {
+            throw new RuntimeException("JNDI not supported");
+        } else {
+            this.f39691a = m51555a(loggerContext, systemProperty);
+        }
+    }
+}

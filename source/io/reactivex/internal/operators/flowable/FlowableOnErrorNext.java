@@ -1,0 +1,109 @@
+package io.reactivex.internal.operators.flowable;
+
+import io.reactivex.Flowable;
+import io.reactivex.FlowableSubscriber;
+import io.reactivex.exceptions.CompositeException;
+import io.reactivex.exceptions.Exceptions;
+import io.reactivex.functions.Function;
+import io.reactivex.internal.functions.ObjectHelper;
+import io.reactivex.internal.subscriptions.SubscriptionArbiter;
+import io.reactivex.plugins.RxJavaPlugins;
+import org.reactivestreams.Publisher;
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
+
+/* loaded from: classes5.dex */
+public final class FlowableOnErrorNext<T> extends AbstractC0567I {
+
+    /* renamed from: b */
+    public final Function f64408b;
+
+    /* renamed from: c */
+    public final boolean f64409c;
+
+    /* loaded from: classes5.dex */
+    public static final class OnErrorNextSubscriber<T> extends SubscriptionArbiter implements FlowableSubscriber<T> {
+        private static final long serialVersionUID = 4063763155303814625L;
+        final boolean allowFatal;
+        boolean done;
+        final Subscriber<? super T> downstream;
+        final Function<? super Throwable, ? extends Publisher<? extends T>> nextSupplier;
+        boolean once;
+        long produced;
+
+        public OnErrorNextSubscriber(Subscriber<? super T> subscriber, Function<? super Throwable, ? extends Publisher<? extends T>> function, boolean z) {
+            super(false);
+            this.downstream = subscriber;
+            this.nextSupplier = function;
+            this.allowFatal = z;
+        }
+
+        @Override // org.reactivestreams.Subscriber
+        public void onComplete() {
+            if (this.done) {
+                return;
+            }
+            this.done = true;
+            this.once = true;
+            this.downstream.onComplete();
+        }
+
+        @Override // org.reactivestreams.Subscriber
+        public void onError(Throwable th2) {
+            if (this.once) {
+                if (this.done) {
+                    RxJavaPlugins.onError(th2);
+                    return;
+                } else {
+                    this.downstream.onError(th2);
+                    return;
+                }
+            }
+            this.once = true;
+            if (this.allowFatal && !(th2 instanceof Exception)) {
+                this.downstream.onError(th2);
+                return;
+            }
+            try {
+                Publisher publisher = (Publisher) ObjectHelper.requireNonNull(this.nextSupplier.apply(th2), "The nextSupplier returned a null Publisher");
+                long j = this.produced;
+                if (j != 0) {
+                    produced(j);
+                }
+                publisher.subscribe(this);
+            } catch (Throwable th3) {
+                Exceptions.throwIfFatal(th3);
+                this.downstream.onError(new CompositeException(th2, th3));
+            }
+        }
+
+        @Override // org.reactivestreams.Subscriber
+        public void onNext(T t) {
+            if (this.done) {
+                return;
+            }
+            if (!this.once) {
+                this.produced++;
+            }
+            this.downstream.onNext(t);
+        }
+
+        @Override // io.reactivex.FlowableSubscriber
+        public void onSubscribe(Subscription subscription) {
+            setSubscription(subscription);
+        }
+    }
+
+    public FlowableOnErrorNext(Flowable<T> flowable, Function<? super Throwable, ? extends Publisher<? extends T>> function, boolean z) {
+        super(flowable);
+        this.f64408b = function;
+        this.f64409c = z;
+    }
+
+    @Override // io.reactivex.Flowable
+    public void subscribeActual(Subscriber<? super T> subscriber) {
+        OnErrorNextSubscriber onErrorNextSubscriber = new OnErrorNextSubscriber(subscriber, this.f64408b, this.f64409c);
+        subscriber.onSubscribe(onErrorNextSubscriber);
+        this.source.subscribe((FlowableSubscriber<? super Object>) onErrorNextSubscriber);
+    }
+}

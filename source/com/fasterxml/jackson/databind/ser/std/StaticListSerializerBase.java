@@ -1,0 +1,124 @@
+package com.fasterxml.jackson.databind.ser.std;
+
+import com.fasterxml.jackson.core.JsonGenerator;
+import com.fasterxml.jackson.databind.BeanProperty;
+import com.fasterxml.jackson.databind.JavaType;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.JsonSerializer;
+import com.fasterxml.jackson.databind.SerializerProvider;
+import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonArrayFormatVisitor;
+import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonFormatVisitorWrapper;
+import com.fasterxml.jackson.databind.jsontype.TypeSerializer;
+import com.fasterxml.jackson.databind.ser.ContextualSerializer;
+import com.google.firebase.analytics.FirebaseAnalytics;
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.Collection;
+
+/* loaded from: classes3.dex */
+public abstract class StaticListSerializerBase<T extends Collection<?>> extends StdSerializer<T> implements ContextualSerializer {
+    protected final Boolean _unwrapSingle;
+
+    public StaticListSerializerBase(Class<?> cls) {
+        super(cls, false);
+        this._unwrapSingle = null;
+    }
+
+    public abstract JsonSerializer<?> _withResolved(BeanProperty beanProperty, Boolean bool);
+
+    public abstract void acceptContentVisitor(JsonArrayFormatVisitor jsonArrayFormatVisitor) throws JsonMappingException;
+
+    @Override // com.fasterxml.jackson.databind.ser.std.StdSerializer, com.fasterxml.jackson.databind.JsonSerializer, com.fasterxml.jackson.databind.jsonFormatVisitors.JsonFormatVisitable
+    public void acceptJsonFormatVisitor(JsonFormatVisitorWrapper jsonFormatVisitorWrapper, JavaType javaType) throws JsonMappingException {
+        acceptContentVisitor(jsonFormatVisitorWrapper.expectArrayFormat(javaType));
+    }
+
+    public abstract JsonNode contentSchema();
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:12:0x0023  */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x002a  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0033  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x003d  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0047  */
+    @Override // com.fasterxml.jackson.databind.ser.ContextualSerializer
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+        To view partially-correct code enable 'Show inconsistent code' option in preferences
+    */
+    public com.fasterxml.jackson.databind.JsonSerializer<?> createContextual(com.fasterxml.jackson.databind.SerializerProvider r6, com.fasterxml.jackson.databind.BeanProperty r7) throws com.fasterxml.jackson.databind.JsonMappingException {
+        /*
+            r5 = this;
+            r0 = 0
+            if (r7 == 0) goto L18
+            com.fasterxml.jackson.databind.AnnotationIntrospector r1 = r6.getAnnotationIntrospector()
+            com.fasterxml.jackson.databind.introspect.AnnotatedMember r2 = r7.getMember()
+            if (r2 == 0) goto L18
+            java.lang.Object r1 = r1.findContentSerializer(r2)
+            if (r1 == 0) goto L18
+            com.fasterxml.jackson.databind.JsonSerializer r1 = r6.serializerInstance(r2, r1)
+            goto L19
+        L18:
+            r1 = r0
+        L19:
+            java.lang.Class r2 = r5.handledType()
+            com.fasterxml.jackson.annotation.JsonFormat$Value r2 = r5.findFormatOverrides(r6, r7, r2)
+            if (r2 == 0) goto L2a
+            com.fasterxml.jackson.annotation.JsonFormat$Feature r3 = com.fasterxml.jackson.annotation.JsonFormat.Feature.WRITE_SINGLE_ELEM_ARRAYS_UNWRAPPED
+            java.lang.Boolean r2 = r2.getFeature(r3)
+            goto L2b
+        L2a:
+            r2 = r0
+        L2b:
+            com.fasterxml.jackson.databind.JsonSerializer r1 = r5.findContextualConvertingSerializer(r6, r7, r1)
+            java.lang.Class<java.lang.String> r3 = java.lang.String.class
+            if (r1 != 0) goto L37
+            com.fasterxml.jackson.databind.JsonSerializer r1 = r6.findValueSerializer(r3, r7)
+        L37:
+            boolean r4 = r5.isDefaultSerializer(r1)
+            if (r4 == 0) goto L47
+            java.lang.Boolean r6 = r5._unwrapSingle
+            if (r2 != r6) goto L42
+            return r5
+        L42:
+            com.fasterxml.jackson.databind.JsonSerializer r6 = r5._withResolved(r7, r2)
+            return r6
+        L47:
+            com.fasterxml.jackson.databind.ser.std.CollectionSerializer r7 = new com.fasterxml.jackson.databind.ser.std.CollectionSerializer
+            com.fasterxml.jackson.databind.JavaType r6 = r6.constructType(r3)
+            r2 = 1
+            r7.<init>(r6, r2, r0, r1)
+            return r7
+        */
+        throw new UnsupportedOperationException("Method not decompiled: com.fasterxml.jackson.databind.ser.std.StaticListSerializerBase.createContextual(com.fasterxml.jackson.databind.SerializerProvider, com.fasterxml.jackson.databind.BeanProperty):com.fasterxml.jackson.databind.JsonSerializer");
+    }
+
+    @Override // com.fasterxml.jackson.databind.ser.std.StdSerializer, com.fasterxml.jackson.databind.jsonschema.SchemaAware
+    public JsonNode getSchema(SerializerProvider serializerProvider, Type type) {
+        return createSchemaNode("array", true).set(FirebaseAnalytics.Param.ITEMS, contentSchema());
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // com.fasterxml.jackson.databind.JsonSerializer
+    public /* bridge */ /* synthetic */ boolean isEmpty(SerializerProvider serializerProvider, Object obj) {
+        return isEmpty(serializerProvider, (SerializerProvider) ((Collection) obj));
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // com.fasterxml.jackson.databind.JsonSerializer
+    public /* bridge */ /* synthetic */ void serializeWithType(Object obj, JsonGenerator jsonGenerator, SerializerProvider serializerProvider, TypeSerializer typeSerializer) throws IOException {
+        serializeWithType((StaticListSerializerBase<T>) ((Collection) obj), jsonGenerator, serializerProvider, typeSerializer);
+    }
+
+    public abstract void serializeWithType(T t, JsonGenerator jsonGenerator, SerializerProvider serializerProvider, TypeSerializer typeSerializer) throws IOException;
+
+    public boolean isEmpty(SerializerProvider serializerProvider, T t) {
+        return t == null || t.size() == 0;
+    }
+
+    public StaticListSerializerBase(StaticListSerializerBase<?> staticListSerializerBase, Boolean bool) {
+        super(staticListSerializerBase);
+        this._unwrapSingle = bool;
+    }
+}

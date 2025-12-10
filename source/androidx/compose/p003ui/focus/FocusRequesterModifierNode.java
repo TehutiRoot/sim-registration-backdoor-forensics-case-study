@@ -1,0 +1,10 @@
+package androidx.compose.p003ui.focus;
+
+import androidx.compose.p003ui.node.DelegatableNode;
+import kotlin.Metadata;
+
+@Metadata(m28851d1 = {"\u0000\n\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\bf\u0018\u00002\u00020\u0001ø\u0001\u0000\u0082\u0002\u0006\n\u0004\b!0\u0001¨\u0006\u0002À\u0006\u0001"}, m28850d2 = {"Landroidx/compose/ui/focus/FocusRequesterModifierNode;", "Landroidx/compose/ui/node/DelegatableNode;", "ui_release"}, m28849k = 1, m28848mv = {1, 8, 0}, m28846xi = 48)
+/* renamed from: androidx.compose.ui.focus.FocusRequesterModifierNode */
+/* loaded from: classes2.dex */
+public interface FocusRequesterModifierNode extends DelegatableNode {
+}
