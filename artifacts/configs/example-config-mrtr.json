@@ -1,0 +1,14 @@
+{
+  "flowType": "MRTR_MASS_PRODUCTION",
+  "numberPoolId": "SIMPOOL-XXXX",
+  "isNumberingPooling": true,
+  "maxBatchSize": 100,
+  "requiredImagesPerBatch": [
+    "ID_FRONT"
+  ],
+  "optionalImagesPerBatch": [
+    "FACE"
+  ],
+  "allowCamera": true,
+  "notes": "Multi-SIM registration enabled; one identity can activate many SIMs in a single batch."
+}
