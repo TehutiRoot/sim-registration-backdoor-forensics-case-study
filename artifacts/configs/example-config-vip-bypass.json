@@ -1,0 +1,15 @@
+{
+  "flowType": "NORMAL_REGISTRATION",
+  "userProfile": {
+    "dealerId": "DEALER-XXXX",
+    "profileType": "VIP_TEST"
+  },
+  "flags": {
+    "byPass": true,
+    "dummyFlag": true
+  },
+  "requiredImages": [],
+  "optionalImages": [],
+  "allowCamera": false,
+  "notes": "VIP/test profile; biometric checks bypassed according to server-controlled flags."
+}
