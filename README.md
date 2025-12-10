@@ -50,3 +50,7 @@ All sensitive details (brands, domains, phone numbers, personal data) are **reda
 4. Consult `docs/tools-and-evidence.md` to understand which artefacts prove each claim.
 
 This repository is intended as a reference for digital forensics practitioners, security engineers, and regulators who need concrete, technical evidence of how SIM registration systems can be subverted from the inside.
+
+For detailed narrative and methodology, start with  
+`docs/case-study-overview.md` and `docs/forensic-methodology.md`.
+
