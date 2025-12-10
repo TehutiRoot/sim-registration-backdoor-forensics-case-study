@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent">
+    <include android:id="@+id/oneBuyDolToolbar" layout="@layout/one_toolbar"/>
+    <FrameLayout android:id="@+id/oneBuyDolTrueCompanyContainer" android:background="@color/white" android:visibility="gone" android:layout_width="match_parent" android:layout_height="0dp" app:layout_behavior="@string/appbar_scrolling_view_behavior" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintTop_toBottomOf="@+id/oneBuyDolToolbar"/>
+    <androidx.constraintlayout.widget.ConstraintLayout android:orientation="vertical" android:id="@+id/oneBuyDolDtacCompanyLayout" android:layout_width="match_parent" android:layout_height="0dp" app:layout_behavior="@string/appbar_scrolling_view_behavior" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintTop_toBottomOf="@+id/oneBuyDolToolbar">
+        <androidx.cardview.widget.CardView android:id="@+id/oneBuyDolStepCardView" android:layout_width="match_parent" android:layout_height="wrap_content" app:cardCornerRadius="@dimen/cardview_default_radius" app:cardElevation="@dimen/dp4" app:layout_constraintTop_toTopOf="0">
+            <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center_horizontal" android:id="@+id/oneBuyDolStepImageView" android:layout_width="match_parent" android:layout_height="match_parent" android:adjustViewBounds="true"/>
+        </androidx.cardview.widget.CardView>
+        <FrameLayout android:id="@+id/oneBuyDolDtacCompanyContainer" android:background="@color/white" android:layout_width="match_parent" android:layout_height="0dp" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintTop_toBottomOf="@+id/oneBuyDolStepCardView"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

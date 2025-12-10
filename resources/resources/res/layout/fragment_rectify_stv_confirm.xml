@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:background="@android:color/white" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+    <RelativeLayout android:orientation="vertical" android:id="@+id/rootLayout" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="18sp" android:gravity="center" android:id="@+id/tvSimR" android:padding="@dimen/dp8" android:layout_width="match_parent" android:layout_height="wrap_content" style="@style/TextViewBlack"/>
+        <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="18sp" android:gravity="center" android:id="@+id/message_infomation" android:background="#908c9d" android:layout_width="match_parent" android:layout_height="50dp" android:layout_marginTop="@dimen/dp8" android:text="@string/please_verify_and_confirm_information" android:layout_below="@+id/tvSimR" style="@style/TextViewWhite"/>
+        <LinearLayout android:id="@+id/rectify_llv_confirm_subscriber_number" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:layout_below="@+id/message_infomation" android:layout_alignLeft="@+id/confirm_details_description" android:layout_alignStart="@+id/confirm_details_description">
+            <ImageView android:layout_gravity="center_vertical" android:layout_width="48dp" android:layout_height="48dp" android:layout_marginRight="@dimen/margin_top_bottom" android:tint="@color/colorBlue" android:contentDescription="@string/content_icon_phone" android:layout_marginEnd="@dimen/margin_top_bottom" app:srcCompat="@drawable/ic_phone"/>
+            <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="18sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/mobile_number" style="@style/TextViewGrayishBrown"/>
+                <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="20sp" android:id="@+id/tvRectifyPhoneNumber" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" style="@style/TextViewBlue"/>
+            </LinearLayout>
+        </LinearLayout>
+        <RelativeLayout android:id="@+id/confirm_details_description" android:layout_width="250dp" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:layout_below="@+id/rectify_llv_confirm_subscriber_number" android:layout_centerHorizontal="true">
+            <ImageView android:layout_gravity="center" android:id="@+id/ivRectifyType" android:layout_width="48dp" android:layout_height="48dp" android:layout_marginRight="@dimen/margin_top_bottom" android:src="@drawable/banner_stv_permission" android:layout_alignTop="@+id/rectifyTypeBox" android:contentDescription="@string/content_icon_bath" android:layout_marginEnd="@dimen/margin_top_bottom"/>
+            <LinearLayout android:orientation="vertical" android:id="@+id/rectifyTypeBox" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@+id/ivRectifyType" android:layout_toEndOf="@+id/ivRectifyType">
+                <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="18sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ประเภทรายการ" style="@style/TextViewGrayishBrown"/>
+                <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="18sp" android:id="@+id/tvRectifyType" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rectify_stv_type" style="@style/TextViewBlue"/>
+                <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:id="@+id/tvRectifyDescription" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/TextViewBlue"/>
+            </LinearLayout>
+        </RelativeLayout>
+        <LinearLayout android:id="@+id/confirm_details_amount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:layout_below="@+id/confirm_details_description" android:layout_alignLeft="@+id/confirm_details_description" android:layout_alignStart="@+id/confirm_details_description">
+            <ImageView android:layout_gravity="center" android:background="@drawable/z_oval_blue" android:layout_width="48dp" android:layout_height="48dp" android:layout_marginRight="@dimen/margin_top_bottom" android:contentDescription="@string/content_icon_bath" android:layout_marginEnd="@dimen/margin_top_bottom" app:srcCompat="@drawable/ic_attach_money"/>
+            <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="18sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rectify_amount" style="@style/TextViewGrayishBrown"/>
+                <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="20sp" android:id="@+id/tvRectifyAmount" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/TextViewBlue"/>
+            </LinearLayout>
+        </LinearLayout>
+        <th.p047co.dtac.android.dtacone.widget.view.DtacClearableEditText android:textSize="18sp" android:id="@+id/rectify_edt_confirm_pin" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/dp20" android:hint="@string/please_enter_pin_code" android:maxLength="4" android:layout_below="@+id/confirm_details_amount" android:layout_centerHorizontal="true" android:inputType="numberPassword" android:imeOptions="actionDone" app:showClearButton="false" style="@style/EditTextPin">
+            <requestFocus/>
+        </th.p047co.dtac.android.dtacone.widget.view.DtacClearableEditText>
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>

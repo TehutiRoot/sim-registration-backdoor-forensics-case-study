@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:paddingTop="@dimen/dp_4" android:paddingBottom="@dimen/dp_4" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/dp16" android:paddingEnd="@dimen/dp16">
+    <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent" android:layout_height="match_parent">
+        <th.p047co.dtac.android.dtacone.app_one.widget.OneFontTextView android:textColor="@color/grayishBrown48" android:id="@+id/titleItemTextView" android:layout_width="wrap_content" android:layout_height="wrap_content" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0" style="@style/OneTextViewNormal.16"/>
+        <th.p047co.dtac.android.dtacone.app_one.widget.OneFontTextView android:textStyle="bold" android:textColor="@color/niceBlueFive" android:gravity="end" android:id="@+id/summaryItemTextView" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="@dimen/dp16" app:layout_constraintEnd_toEndOf="0" app:layout_constraintHorizontal_bias="1" app:layout_constraintStart_toEndOf="@+id/titleItemTextView" app:layout_constraintTop_toTopOf="@+id/titleItemTextView" style="@style/OneTextViewNormal.16"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

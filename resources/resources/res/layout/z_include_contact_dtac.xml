@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/first_page_ll_text_helper" android:background="@android:color/transparent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="12dp" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true">
+    <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="14sp" android:background="@android:color/transparent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="0dp" android:text="@string/want_to_help_me" style="@style/TextViewBlack"/>
+    <LinearLayout android:id="@+id/contact_dtac" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:contentDescription="@string/content_contact_dtac">
+        <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="14sp" android:textStyle="bold" android:background="@android:color/transparent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="4dp" android:text="@string/help_dtac" android:layout_marginStart="4dp" style="@style/TextViewBlue"/>
+        <ImageView android:background="@android:color/transparent" android:layout_width="18dp" android:layout_height="18dp" android:layout_marginLeft="4dp" android:scaleType="fitCenter" android:tint="@color/colorBlue" android:contentDescription="@string/content_icon_dtac" android:layout_marginStart="4dp" app:srcCompat="@drawable/ic_phone"/>
+    </LinearLayout>
+</LinearLayout>

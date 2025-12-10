@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:background="@color/white" android:layout_width="match_parent" android:layout_height="match_parent">
+    <androidx.core.widget.NestedScrollView android:layout_width="match_parent" android:layout_height="wrap_content" android:fillViewport="true">
+        <androidx.appcompat.widget.LinearLayoutCompat android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <RelativeLayout android:id="@+id/summaryContainer" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <include android:id="@+id/incBuyDolSummary" layout="@layout/inc_buy_dol_summary"/>
+            </RelativeLayout>
+            <View android:id="@+id/aline" android:background="@color/alto" android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginTop="17dp"/>
+            <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
+                <th.p047co.dtac.android.dtacone.widget.view.DtacTabLayout android:id="@+id/tabLayout" android:layout_width="match_parent" android:layout_height="wrap_content" app:tabBackground="@drawable/z_selector_tab" app:tabIndicatorColor="@color/colorBlue" app:tabIndicatorHeight="4dp" app:tabSelectedTextColor="@android:color/black" app:tabTextColor="@color/warmGrey"/>
+                <th.p047co.dtac.android.dtacone.widget.view.DtacViewPager android:id="@+id/viewPager" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_below="@+id/tabLayout"/>
+            </RelativeLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

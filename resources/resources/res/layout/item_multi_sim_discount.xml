@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="horizontal" android:id="@+id/layout_discount" android:paddingTop="@dimen/dp_4" android:paddingBottom="@dimen/dp_4" android:layout_width="match_parent" android:layout_height="wrap_content" android:weightSum="3">
+    <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="12sp" android:id="@+id/tvDisCountLabel" android:layout_width="0dp" android:layout_height="wrap_content" android:text="@string/res_0x7f1403da_mrtr_payment_sim_discount" android:layout_weight="1" style="@style/TextViewBaseGrayishBrown"/>
+    <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="12sp" android:gravity="end" android:id="@+id/tvDisCountNumber" android:layout_width="0dp" android:layout_height="wrap_content" android:text="@string/multi_sim_payment_column_count" android:layout_weight="1" style="@style/TextViewBaseGrayishBrown"/>
+    <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="12sp" android:gravity="end" android:id="@+id/tvDisCountValue" android:layout_width="0dp" android:layout_height="wrap_content" android:text="@string/res_0x7f1403dc_mrtr_payment_sim_price" android:layout_weight="1" style="@style/TextViewBaseGrayishBrown"/>
+</LinearLayout>

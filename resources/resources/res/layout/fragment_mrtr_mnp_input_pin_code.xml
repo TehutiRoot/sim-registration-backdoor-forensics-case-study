@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:background="@color/white" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+    <LinearLayout android:orientation="vertical" android:id="@+id/rootLayout" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <androidx.cardview.widget.CardView android:id="@+id/cardview" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp4" android:layout_marginTop="@dimen/dp8" android:layout_marginRight="@dimen/dp4" android:layout_marginBottom="@dimen/dp8" android:layout_marginStart="@dimen/dp4" android:layout_marginEnd="@dimen/dp4" app:cardCornerRadius="@dimen/cardview_default_radius" app:cardElevation="@dimen/cardview_default_elevation">
+            <LinearLayout android:orientation="vertical" android:background="@android:color/white" android:padding="@dimen/dp12" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <th.p047co.dtac.android.dtacone.widget.view.DtacClearableEditText android:id="@+id/mnp_edt_pin" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="@dimen/dp8" android:hint="@string/mrtr_mnp_hit_pin_code" android:maxLength="8" android:drawableLeft="@drawable/ic_pin" android:inputType="number" android:drawableStart="@drawable/ic_pin" style="@style/InputOtpEditText">
+                    <requestFocus/>
+                </th.p047co.dtac.android.dtacone.widget.view.DtacClearableEditText>
+                <LinearLayout android:orientation="vertical" android:id="@+id/layoutPrefix" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp8" android:layout_marginRight="@dimen/dp8" android:layout_marginStart="@dimen/dp8" android:layout_marginEnd="@dimen/dp8">
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp16">
+                        <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="14sp" android:gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/mrtr_mnp_sim_fix" style="@style/TextViewGray"/>
+                        <ImageView android:layout_width="@dimen/dp24" android:layout_height="@dimen/dp24" app:srcCompat="0x7f080558"/>
+                    </LinearLayout>
+                    <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="14sp" android:gravity="start" android:id="@+id/mnpTvPrefix" android:layout_width="match_parent" android:layout_height="wrap_content" style="@style/TextViewGray"/>
+                </LinearLayout>
+                <th.p047co.dtac.android.dtacone.widget.view.DtacFontButton android:id="@+id/btnNext" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp16" android:layout_marginBottom="@dimen/dp4" android:text="@string/next" style="@style/ButtonDarkBlue"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

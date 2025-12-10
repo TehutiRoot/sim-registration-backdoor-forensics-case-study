@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <LinearLayout android:layout_gravity="center_horizontal" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp40">
+        <ImageView android:layout_gravity="center" android:layout_width="@dimen/dp56" android:layout_height="@dimen/dp56" android:src="0x7f08054d"/>
+        <th.p047co.dtac.android.dtacone.app_one.widget.OneFontTextView android:textSize="@dimen/sp16" android:textColor="@color/greyishBrown" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp24" android:text="@string/one_transaction_history_recycler_empty_label" android:lineSpacingExtra="8sp"/>
+    </LinearLayout>
+</FrameLayout>

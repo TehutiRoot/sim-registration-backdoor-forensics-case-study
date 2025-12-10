@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+    <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="16sp" android:textColor="@color/greyishBrown" android:gravity="center" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp24" android:text="@string/dtac_at_home_choose_flow_title"/>
+    <LinearLayout android:gravity="top|center_horizontal" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="match_parent" android:baselineAligned="false">
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@+id/btnGotoPrepaid" android:background="@drawable/background_white_round_corner_with_shadow" android:paddingTop="6dp" android:paddingBottom="@dimen/dp12" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp12" android:layout_marginTop="@dimen/dp24" android:layout_marginRight="@dimen/dp12" android:elevation="@dimen/dp_8">
+            <ImageView android:layout_width="@dimen/dp48" android:layout_height="@dimen/dp48" android:layout_marginLeft="@dimen/dp32" android:layout_marginRight="@dimen/dp32" android:src="@drawable/ic_home_prepaid"/>
+            <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="16sp" android:textColor="@color/greyishBrown" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/dtac_at_home_choose_flow_prepaid_title"/>
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@+id/btnGotoPostpaid" android:background="@drawable/background_white_round_corner_with_shadow" android:paddingTop="6dp" android:paddingBottom="@dimen/dp12" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp12" android:layout_marginTop="@dimen/dp24" android:layout_marginRight="@dimen/dp12" android:elevation="@dimen/dp_8">
+            <ImageView android:layout_width="@dimen/dp48" android:layout_height="@dimen/dp48" android:layout_marginLeft="@dimen/dp32" android:layout_marginRight="@dimen/dp32" android:src="@drawable/ic_home_postpaid"/>
+            <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="16sp" android:textColor="@color/greyishBrown" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/dtac_at_home_choose_flow_postpaid_title"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

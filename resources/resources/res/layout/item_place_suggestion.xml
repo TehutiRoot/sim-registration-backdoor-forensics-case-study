@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:id="@+id/layoutPlaceSuggestion" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <LinearLayout android:orientation="horizontal" android:id="@+id/layoutPlaceWord" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp16" android:layout_marginTop="@dimen/dp20" android:layout_marginRight="@dimen/dp16" android:layout_marginBottom="@dimen/dp24">
+        <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="14sp" android:textColor="@color/grayishBrown48" android:ellipsize="end" android:gravity="start|center_vertical" android:id="@+id/tvPrePlaceSuggestion" android:layout_width="wrap_content" android:layout_height="wrap_content" android:lines="1"/>
+        <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="14sp" android:textColor="@color/warmGrey" android:ellipsize="end" android:gravity="start|center_vertical" android:id="@+id/tvMidPlaceSuggestion" android:layout_width="wrap_content" android:layout_height="wrap_content" android:lines="1"/>
+        <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="14sp" android:textColor="@color/grayishBrown48" android:ellipsize="end" android:gravity="start|center_vertical" android:id="@+id/tvPostPlaceSuggestion" android:layout_width="wrap_content" android:layout_height="wrap_content" android:lines="1"/>
+    </LinearLayout>
+    <View android:background="@color/alto" android:layout_width="match_parent" android:layout_height="@dimen/dp1" android:layout_marginLeft="@dimen/dp16" android:layout_marginRight="@dimen/dp16" android:layout_below="@+id/layoutPlaceWord"/>
+</RelativeLayout>

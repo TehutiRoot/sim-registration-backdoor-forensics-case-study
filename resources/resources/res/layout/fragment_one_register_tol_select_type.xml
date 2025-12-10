@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android/tools" android:gravity="center_horizontal" android:orientation="vertical" android:paddingLeft="16dp" android:paddingRight="16dp" android:layout_width="match_parent" android:layout_height="match_parent" tools:context=".view.appOne.postpaid_registration.fragment.true_company.OneTOLSelectTypeFragment">
+    <th.p047co.dtac.android.dtacone.app_one.widget.OneFontTextView android:textSize="20sp" android:textColor="@color/grayishBrown48" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="33dp" android:layout_marginBottom="28dp" android:text="@string/one_tol_options_title" android:textAlignment="center"/>
+    <FrameLayout android:id="@+id/standAloneLayout" android:background="@drawable/button_one_red_stroke_rounded" android:layout_width="match_parent" android:layout_height="48dp" android:layout_marginBottom="16dp">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="match_parent">
+            <th.p047co.dtac.android.dtacone.app_one.widget.OneFontTextView android:textSize="16sp" android:textStyle="bold" android:textColor="@color/red5" android:gravity="center_vertical" android:layout_width="104dp" android:layout_height="wrap_content" android:text="@string/one_tol_stand_alone" android:layout_marginStart="28dp"/>
+            <View android:background="@color/red5" android:layout_width="1dp" android:layout_height="32dp" android:layout_margin="8dp"/>
+            <ImageView android:layout_gravity="center_vertical" android:layout_width="40dp" android:layout_height="40dp" android:src="@drawable/ic_tol" android:adjustViewBounds="true" tools:ignore="ContentDescription"/>
+        </LinearLayout>
+    </FrameLayout>
+    <FrameLayout android:id="@+id/twoPLayout" android:background="@drawable/button_one_red_stroke_rounded" android:layout_width="match_parent" android:layout_height="48dp" android:layout_marginBottom="16dp">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="match_parent">
+            <th.p047co.dtac.android.dtacone.app_one.widget.OneFontTextView android:textSize="16sp" android:textStyle="bold" android:textColor="@color/red5" android:gravity="center_vertical" android:layout_width="104dp" android:layout_height="wrap_content" android:text="@string/one_tol_2p" android:layout_marginStart="28dp"/>
+            <View android:background="@color/red5" android:layout_width="1dp" android:layout_height="32dp" android:layout_margin="8dp"/>
+            <ImageView android:layout_gravity="center_vertical" android:layout_width="40dp" android:layout_height="40dp" android:src="@drawable/ic_tol" android:adjustViewBounds="true" tools:ignore="ContentDescription"/>
+            <th.p047co.dtac.android.dtacone.app_one.widget.OneFontTextView android:textSize="14sp" android:textColor="@color/red5" android:gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_marginRight="8dp" android:text="+"/>
+            <ImageView android:layout_gravity="center_vertical" android:layout_width="40dp" android:layout_height="40dp" android:src="@drawable/ic_tmh" android:adjustViewBounds="true" tools:ignore="ContentDescription"/>
+        </LinearLayout>
+    </FrameLayout>
+    <FrameLayout android:id="@+id/threePOTTLayout" android:background="@drawable/button_one_red_stroke_rounded" android:layout_width="match_parent" android:layout_height="48dp" android:layout_marginBottom="16dp">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="match_parent">
+            <th.p047co.dtac.android.dtacone.app_one.widget.OneFontTextView android:textSize="16sp" android:textStyle="bold" android:textColor="@color/red5" android:gravity="center_vertical" android:layout_width="104dp" android:layout_height="wrap_content" android:text="@string/one_tol_3pott" android:layout_marginStart="28dp"/>
+            <View android:background="@color/red5" android:layout_width="1dp" android:layout_height="32dp" android:layout_margin="8dp"/>
+            <ImageView android:layout_gravity="center_vertical" android:layout_width="40dp" android:layout_height="40dp" android:src="@drawable/ic_tol" android:adjustViewBounds="true" tools:ignore="ContentDescription"/>
+            <th.p047co.dtac.android.dtacone.app_one.widget.OneFontTextView android:textSize="14sp" android:textColor="@color/red5" android:gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_marginRight="8dp" android:text="+"/>
+            <ImageView android:layout_gravity="center_vertical" android:layout_width="40dp" android:layout_height="40dp" android:src="@drawable/ic_true_id_tv" android:adjustViewBounds="true" tools:ignore="ContentDescription"/>
+        </LinearLayout>
+    </FrameLayout>
+    <FrameLayout android:id="@+id/fourPOTTLayout" android:background="@drawable/button_one_red_stroke_rounded" android:layout_width="match_parent" android:layout_height="48dp" android:layout_marginBottom="16dp">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="match_parent">
+            <th.p047co.dtac.android.dtacone.app_one.widget.OneFontTextView android:textSize="16sp" android:textStyle="bold" android:textColor="@color/red5" android:gravity="center_vertical" android:layout_width="104dp" android:layout_height="wrap_content" android:text="@string/one_tol_4pott" android:layout_marginStart="28dp"/>
+            <View android:background="@color/red5" android:layout_width="1dp" android:layout_height="32dp" android:layout_margin="8dp"/>
+            <ImageView android:layout_gravity="center_vertical" android:layout_width="40dp" android:layout_height="40dp" android:src="@drawable/ic_tol" android:adjustViewBounds="true" tools:ignore="ContentDescription"/>
+            <th.p047co.dtac.android.dtacone.app_one.widget.OneFontTextView android:textSize="14sp" android:textColor="@color/red5" android:gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_marginRight="8dp" android:text="+"/>
+            <ImageView android:layout_gravity="center_vertical" android:layout_width="40dp" android:layout_height="40dp" android:src="@drawable/ic_tmh" android:adjustViewBounds="true" tools:ignore="ContentDescription"/>
+            <th.p047co.dtac.android.dtacone.app_one.widget.OneFontTextView android:textSize="14sp" android:textColor="@color/red5" android:gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_marginRight="8dp" android:text="+"/>
+            <ImageView android:layout_gravity="center_vertical" android:layout_width="40dp" android:layout_height="40dp" android:src="@drawable/ic_true_id_tv" android:adjustViewBounds="true" tools:ignore="ContentDescription"/>
+        </LinearLayout>
+    </FrameLayout>
+    <FrameLayout android:id="@+id/checkboxLayout" android:layout_width="match_parent" android:layout_height="48dp">
+        <th.p047co.dtac.android.dtacone.app_one.widget.OneCheckBox android:textColor="@color/jet_back" android:id="@+id/checkBoxFixedLinePlus" android:background="?attr/selectableItemBackground" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@drawable/one_selector_checkbox_red" android:text="@string/one_tol_checkbox_flp" android:paddingStart="8dp"/>
+    </FrameLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"/>
+    <th.p047co.dtac.android.dtacone.app_one.widget.OneFontButton android:textSize="16sp" android:textColor="@color/white" android:id="@+id/nextButton" android:background="@drawable/background_one_button_red" android:layout_width="match_parent" android:layout_height="50dp" android:layout_marginBottom="33dp" android:text="@string/next"/>
+</LinearLayout>

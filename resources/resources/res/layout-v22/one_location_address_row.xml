@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="0dp" android:animateLayoutChanges="true">
+    <th.p047co.dtac.android.dtacone.app_one.widget.OneFontTextView android:textSize="14sp" android:gravity="center_vertical" android:id="@+id/z_tv_location_addres" android:paddingLeft="@dimen/dp12" android:paddingTop="@dimen/dp10" android:paddingRight="@dimen/dp12" android:paddingBottom="@dimen/dp10" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/dp12" android:paddingEnd="@dimen/dp12" android:paddingVertical="@dimen/dp10" style="@style/OneTextViewNormal.16"/>
+</LinearLayout>

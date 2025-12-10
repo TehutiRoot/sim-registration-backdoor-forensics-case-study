@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ID Document OCR</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>OCR for ID Document</h1>
+<p>This is a simple HTML page for OCR processing of ID documents.</p>
+<script>
+    // JavaScript code can be added here for OCR processing
+    console.log("OCR processing script loaded.");
+    function gotoErrorPage() {
+        // Logic to handle error page redirection
+        console.log("Redirecting to error page...");
+        window.location.href = "error_page.html";
+    }
+    function gotoSuccessPage() {
+        // Logic to handle success page redirection
+        console.log("Redirecting to success page...");
+        window.location.href = "success_page.html";
+    }
+</script>
+<button id="btn-error-page" onclick="gotoErrorPage()">Error Page</button>
+<button id="btn-success-page" onclick="gotoSuccessPage()">Success Page</button>
+</body>
+</html>

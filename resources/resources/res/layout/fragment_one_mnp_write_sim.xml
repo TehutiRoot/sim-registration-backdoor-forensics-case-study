@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:background="@color/white" android:focusable="true" android:clickable="true" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+        <include android:id="@+id/btnOpenSmartCard" layout="@layout/one_include_switch_mode_camera"/>
+        <com.inthecheesefactory.thecheeselibrary.widget.AdjustableImageView android:id="@+id/ivInsertSimCard" android:layout_width="150dp" android:layout_height="wrap_content" android:src="@drawable/ic_one_write_sim" android:adjustViewBounds="true" android:layout_centerInParent="true"/>
+        <th.p047co.dtac.android.dtacone.app_one.widget.OneFontTextView android:textSize="18sp" android:gravity="center" android:id="@+id/tvWarning" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp24" android:text="@string/one_mnp_write_sim_status" android:maxLines="2" android:layout_below="@+id/ivInsertSimCard" android:layout_centerHorizontal="true" app:animationTextChange="true" style="@style/TextViewGrayishBrown"/>
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>

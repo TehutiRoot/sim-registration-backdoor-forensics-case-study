@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <androidx.constraintlayout.widget.ConstraintLayout android:focusable="true" android:clickable="true" android:layout_width="match_parent" android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/selectAddressHeaderLayout" android:padding="@dimen/dp18" android:layout_width="match_parent" android:layout_height="wrap_content" app:layout_constraintBottom_toTopOf="@+id/addressBottomLine" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0">
+            <androidx.appcompat.widget.AppCompatImageView android:id="@+id/backButtonImageView" android:layout_width="@dimen/dp24" android:layout_height="@dimen/dp24" android:src="@drawable/ic_icon_back" android:layout_marginEnd="@dimen/dp16" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0"/>
+            <th.p047co.dtac.android.dtacone.app_one.widget.OneFontTextView android:textSize="@dimen/sp16" android:textColor="@color/jet_back" android:id="@+id/selectAddressTitleTextView" android:layout_width="wrap_content" android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0"/>
+            <androidx.appcompat.widget.AppCompatImageView android:id="@+id/closeButtonImageView" android:layout_width="@dimen/dp24" android:layout_height="@dimen/dp24" android:src="@drawable/ic_icon_close" android:adjustViewBounds="true" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintEnd_toEndOf="0" app:layout_constraintTop_toTopOf="0"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <View android:id="@+id/addressBottomLine" android:background="@color/line_platinum" android:layout_width="match_parent" android:layout_height="@dimen/dp1" app:layout_constraintTop_toBottomOf="@+id/selectAddressHeaderLayout"/>
+        <FrameLayout android:layout_width="match_parent" android:layout_height="0dp" app:layout_behavior="@string/appbar_scrolling_view_behavior" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintTop_toBottomOf="@+id/addressBottomLine">
+            <th.p047co.dtac.android.dtacone.widget.view.WrapContentViewPager android:id="@+id/oneAddressViewPager" android:layout_width="match_parent" android:layout_height="match_parent"/>
+        </FrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

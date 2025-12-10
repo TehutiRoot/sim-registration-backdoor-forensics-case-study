@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:background="@drawable/transparent" android:layout_width="match_parent" android:layout_height="match_parent">
+    <FrameLayout android:background="@color/colorBlack" android:layout_width="match_parent" android:layout_height="match_parent">
+        <androidx.percentlayout.widget.PercentRelativeLayout android:background="@color/bgColorPreviewPhoto" android:layout_width="match_parent" android:layout_height="match_parent">
+            <FrameLayout android:id="@+id/topFrameLayout" android:layout_width="match_parent" android:layout_height="0dp" app:layout_heightPercent="9%"/>
+            <FrameLayout android:id="@+id/centerFrameLayout" android:layout_width="match_parent" android:layout_height="0dp" android:layout_below="@+id/topFrameLayout" app:layout_heightPercent="70%">
+                <com.inthecheesefactory.thecheeselibrary.widget.AdjustableImageView android:id="@+id/previewImageView" android:saveEnabled="true" android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" android:adjustViewBounds="true" android:layout_marginStart="@dimen/dp24" android:layout_marginEnd="@dimen/dp24"/>
+            </FrameLayout>
+            <LinearLayout android:orientation="horizontal" android:id="@+id/bottomLayout" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp24" android:weightSum="2" android:layout_below="@+id/centerFrameLayout" android:layout_alignParentBottom="true" android:layout_marginStart="@dimen/dp24" android:layout_marginEnd="@dimen/dp24" app:layout_heightPercent="20%">
+                <th.p047co.dtac.android.dtacone.app_one.widget.OneFontButton android:textSize="18sp" android:textColor="@android:color/white" android:gravity="start" android:id="@+id/retakePhotoButton" android:background="?attr/selectableItemBackground" android:paddingTop="@dimen/dp14" android:paddingBottom="@dimen/dp14" android:layout_width="0dp" android:layout_height="wrap_content" android:text="@string/res_0x7f140821_prepaid_registration_camera_preview_button_retake" android:layout_weight="1" android:paddingVertical="@dimen/dp14"/>
+                <th.p047co.dtac.android.dtacone.app_one.widget.OneFontButton android:textSize="18sp" android:textColor="@android:color/white" android:gravity="end" android:id="@+id/photoOkButton" android:background="?attr/selectableItemBackground" android:paddingTop="@dimen/dp14" android:paddingBottom="@dimen/dp14" android:layout_width="0dp" android:layout_height="wrap_content" android:text="@string/res_0x7f140820_prepaid_registration_camera_preview_button_ok" android:layout_weight="1" android:paddingVertical="@dimen/dp14"/>
+            </LinearLayout>
+        </androidx.percentlayout.widget.PercentRelativeLayout>
+        <include android:id="@+id/toolbarLayout" layout="@layout/one_transparent_toolbar"/>
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

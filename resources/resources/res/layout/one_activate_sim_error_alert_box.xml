@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:background="@drawable/one_dialog_shape_round_corner" android:layout_width="wrap_content" android:layout_height="wrap_content">
+    <th.p047co.dtac.android.dtacone.app_one.widget.OneFontTextView android:textSize="16sp" android:textStyle="normal" android:textColor="@color/jet_back" android:gravity="center_horizontal" android:id="@+id/alert_message" android:paddingTop="@dimen/dp8" android:paddingBottom="@dimen/dp8" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:layout_centerHorizontal="true" android:lineSpacingExtra="8sp" android:layout_marginStart="24dp" android:layout_marginEnd="24dp"/>
+    <LinearLayout android:gravity="center_horizontal" android:id="@+id/layoutButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_below="@+id/alert_message">
+        <th.p047co.dtac.android.dtacone.app_one.widget.OneFontButton android:textStyle="bold" android:layout_gravity="center" android:id="@+id/alert_box_button" android:layout_width="168dp" android:layout_height="48dp" android:layout_marginTop="16dp" android:layout_marginBottom="16dp" android:text="@string/ok" android:contentDescription="@string/content_confirm" style="@style/OneButtonActivateSimPermisssionError"/>
+    </LinearLayout>
+</RelativeLayout>

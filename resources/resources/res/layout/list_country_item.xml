@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:gravity="center_vertical" android:orientation="horizontal" android:id="@+id/list_item_view" android:background="?attr/selectableItemBackground" android:layout_width="match_parent" android:layout_height="@dimen/list_item_small_height">
+    <TextView android:id="@+id/text_item_title" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="@dimen/medium_margin" android:layout_marginEnd="@dimen/medium_margin" style="?android:attr/itemTextAppearance"/>
+</LinearLayout>

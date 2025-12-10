@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:fitsSystemWindows="true" android:layout_width="match_parent" android:layout_height="match_parent">
+    <include android:id="@+id/toolbar" layout="@layout/z_toolbar"/>
+    <androidx.core.widget.NestedScrollView android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true" app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@+id/rootLayout" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="22dp" android:text="@string/staff_registration" style="@style/TextViewGrayishBrown"/>
+            <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="16sp" android:gravity="center_horizontal" android:id="@+id/forgot_password_tv_password_length_description" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/please_set_password_be_4_or_6_length" style="@style/TextViewGrayishBrown"/>
+            <th.p047co.dtac.android.dtacone.widget.view.DtacClearableEditText android:id="@+id/new_staff_edt_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="22dp" android:hint="@string/staff_name" android:maxLength="15" android:inputType="text" android:imeOptions="actionNext" style="@style/PersonEditText">
+                <requestFocus/>
+            </th.p047co.dtac.android.dtacone.widget.view.DtacClearableEditText>
+            <th.p047co.dtac.android.dtacone.widget.view.DtacClearableEditText android:id="@+id/new_staff_edt_phone_number" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:hint="@string/phone_number" android:imeOptions="actionNext" style="@style/PhoneEditText"/>
+            <th.p047co.dtac.android.dtacone.widget.view.DtacClearableEditText android:id="@+id/new_staff_edt_new_password" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:hint="@string/password" android:imeOptions="actionNext" style="@style/PasswordEditText"/>
+            <th.p047co.dtac.android.dtacone.widget.view.DtacClearableEditText android:id="@+id/new_staff_edt_confirm_new_password" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:hint="@string/confirm_password" android:imeOptions="actionDone" style="@style/PasswordEditText"/>
+            <th.p047co.dtac.android.dtacone.widget.view.DtacFontButton android:id="@+id/btn_confirm" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp12" android:text="@string/ok" android:contentDescription="@string/content_confirm" style="@style/ButtonBlue"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

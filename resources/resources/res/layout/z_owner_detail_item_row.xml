@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/box_owner_profile" android:layout_width="match_parent" android:layout_height="wrap_content" app:cardCornerRadius="@dimen/cardview_default_radius" app:cardElevation="@dimen/card_elevation">
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@+id/iv_owner_detail" android:layout_width="56dp" android:layout_height="56dp" android:layout_marginTop="13dp" android:layout_centerHorizontal="true" android:contentDescription="@null" app:srcCompat="@drawable/ic_owner_detail"/>
+        <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="@dimen/txt_owner_detail_phone_number" android:textStyle="bold" android:id="@+id/tv_phone_number_owner_detail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp8" android:layout_below="@+id/iv_owner_detail" android:layout_centerHorizontal="true" app:animationTextChange="true" style="@style/TextViewBlue"/>
+        <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="@dimen/txt_prepaid_terms_condition_detail" android:id="@+id/tv_owner_detail_time_register" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="8.5dp" android:layout_below="@+id/tv_phone_number_owner_detail" android:layout_centerHorizontal="true" app:animationTextChange="true"/>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

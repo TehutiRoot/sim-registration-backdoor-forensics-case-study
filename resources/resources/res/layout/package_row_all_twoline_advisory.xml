@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <androidx.cardview.widget.CardView android:layout_gravity="center" android:id="@+id/cardView" android:layout_width="match_parent" android:layout_height="match_parent" app:cardBackgroundColor="@android:color/white" app:cardElevation="0dp">
+        <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:ellipsize="end" android:gravity="start" android:id="@+id/packageItem" android:padding="16dp" android:layout_width="match_parent" android:layout_height="match_parent" android:maxLines="2" android:drawableStart="0x7f080521" android:drawableEnd="@mipmap/icon_arrow_right" style="@style/CustomTextCardView"/>
+    </androidx.cardview.widget.CardView>
+    <View android:id="@+id/view" android:background="#ebebeb" android:layout_width="match_parent" android:layout_height="1dp" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toBottomOf="@+id/cardView"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:id="@+id/constraint" android:focusableInTouchMode="true" android:descendantFocusability="beforeDescendants" android:layout_width="match_parent" android:layout_height="match_parent" android:animateLayoutChanges="true">
+    <th.p047co.dtac.android.dtacone.widget.view.DtacToolbar android:id="@+id/toolbar" android:background="@color/white" android:layout_width="match_parent" android:layout_height="?android:attr/actionBarSize" app:contentInsetLeft="0dp" app:contentInsetStart="0dp" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0" app:popupTheme="@style/AppTheme.PopupOverlay" app:theme="@style/OneSearViewRipple">
+        <th.p047co.dtac.android.dtacone.app_one.widget.OneFontTextView android:textStyle="normal" android:gravity="center" android:layout_gravity="center" android:id="@+id/tv_toolbar_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" style="@style/OneTextViewNormal.16"/>
+    </th.p047co.dtac.android.dtacone.widget.view.DtacToolbar>
+    <FrameLayout android:id="@+id/contentLayout" android:layout_width="match_parent" android:layout_height="0dp" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toBottomOf="@+id/toolbar">
+        <th.p047co.dtac.android.dtacone.widget.view.WrapContentViewPager android:id="@+id/viewPager" android:layout_width="match_parent" android:layout_height="match_parent"/>
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

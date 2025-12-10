@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:background="@color/white" android:focusable="true" android:clickable="true" android:layout_width="match_parent" android:layout_height="match_parent">
+    <androidx.core.widget.NestedScrollView android:id="@+id/nestedScrollView" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+        <RelativeLayout android:paddingBottom="@dimen/dp24" android:layout_width="match_parent" android:layout_height="match_parent">
+            <include android:id="@+id/layoutHeader" layout="@layout/include_one_header_true_campaign_detail"/>
+            <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/layoutDescription" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp16" android:layout_below="@+id/layoutHeader" android:paddingStart="@dimen/dp24" android:paddingEnd="@dimen/dp24">
+                <LinearLayout android:orientation="horizontal" android:id="@+id/layoutDescriptionHeader" android:layout_width="match_parent" android:layout_height="wrap_content" app:layout_constraintTop_toTopOf="0">
+                    <ImageView android:layout_width="@dimen/dp32" android:layout_height="@dimen/dp32" android:src="@drawable/ic_campaign_detail_title" android:layout_marginEnd="@dimen/dp_8"/>
+                    <th.p047co.dtac.android.dtacone.app_one.widget.OneFontTextView android:textSize="18sp" android:textStyle="bold" android:textColor="@color/jet_back" android:gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="match_parent" android:text="@string/campaign_detail_image_detail_title"/>
+                </LinearLayout>
+                <th.p047co.dtac.android.dtacone.app_one.widget.OneFontTextView android:textSize="@dimen/sp14" android:textColor="@color/jet_back" android:id="@+id/tvDescriptionValue" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_8" android:text="@string/campaign_detail_image_detail_title" app:layout_constraintTop_toBottomOf="@+id/layoutDescriptionHeader"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

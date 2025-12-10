@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:background="?android:attr/windowBackground" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/large_padding" android:paddingTop="@dimen/xlarge_padding" android:paddingRight="@dimen/large_padding" android:paddingBottom="@dimen/xlarge_padding" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/large_padding" android:paddingEnd="@dimen/large_padding">
+        <ImageView android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/large_margin" android:src="0x7f080573"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/xlarge_margin" android:text="@string/fpx_info_text"/>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/xlarge_margin" android:text="@string/label_email" style="?attr/editTextLabelStyle"/>
+        <co.omise.android.p009ui.OmiseEditText android:id="@+id/edit_email" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/small_margin" android:inputType="textEmailAddress" android:imeOptions="actionDone" android:nextFocusForward="@+id/button_submit" style="?android:attr/editTextStyle"/>
+        <Button android:enabled="true" android:id="@+id/button_submit" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/medium_margin" android:text="@string/button_next" style="?android:attr/buttonStyle"/>
+    </LinearLayout>
+</ScrollView>

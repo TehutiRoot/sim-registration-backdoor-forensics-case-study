@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.appbar.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:theme="@style/AppTheme.Transparent.New" android:id="@+id/appBarTransparentLayout" android:layout_width="match_parent" android:layout_height="wrap_content" app:elevation="0dp">
+    <th.p047co.dtac.android.dtacone.widget.view.DtacToolbar android:id="@+id/toolbarTransparent" android:layout_width="match_parent" android:layout_height="?attr/actionBarSize" app:elevation="0dp">
+        <th.p047co.dtac.android.dtacone.app_one.widget.OneFontTextView android:textSize="@dimen/toolbar_font_one" android:textStyle="bold" android:gravity="center" android:layout_gravity="center" android:id="@+id/tvToolbarTransparentTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:fontWeight="500" app:fontWeight="500"/>
+        <ImageView android:layout_gravity="end" android:id="@+id/toolbar_right_button" android:padding="8dp" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="match_parent" android:src="@drawable/ic_close" android:adjustViewBounds="true" app:tint="@color/white"/>
+    </th.p047co.dtac.android.dtacone.widget.view.DtacToolbar>
+</com.google.android.material.appbar.AppBarLayout>

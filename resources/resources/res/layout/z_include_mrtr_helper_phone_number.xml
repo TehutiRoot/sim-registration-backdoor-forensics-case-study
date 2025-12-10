@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+    <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textColor="@color/grayishBrown" android:ellipsize="end" android:gravity="center_horizontal" android:id="@+id/tvHelper" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp16" android:text="@string/telephone_number" android:maxLines="1" style="@style/TextViewBlack"/>
+    <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="18sp" android:textStyle="bold" android:gravity="center_horizontal" android:id="@+id/tvPhoneNumber" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp8" android:layout_marginBottom="@dimen/dp16" style="@style/TextViewBlue"/>
+    <View android:background="@drawable/background_gradient_azure_to_sky" android:layout_width="match_parent" android:layout_height="@dimen/dp3"/>
+</LinearLayout>

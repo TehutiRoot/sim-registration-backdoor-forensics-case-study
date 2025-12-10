@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent">
+    <com.google.android.material.appbar.AppBarLayout android:theme="@style/AppTheme.AppBarOverlay" android:id="@+id/layoutToolbar" android:layout_width="match_parent" android:layout_height="wrap_content" app:alignContent="2" app:alignItems="2">
+        <th.p047co.dtac.android.dtacone.widget.view.DtacToolbar android:id="@+id/toolbar" android:background="@drawable/background_one_toolbar_blue" android:layout_width="match_parent" android:layout_height="?attr/actionBarSize" app:contentInsetLeft="0dp" app:contentInsetStart="0dp" app:popupTheme="@style/AppTheme.PopupOverlay">
+            <th.p047co.dtac.android.dtacone.app_one.widget.OneFontTextView android:textSize="18sp" android:textStyle="bold" android:gravity="center" android:layout_gravity="center" android:id="@+id/tv_toolbar_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" style="@style/TextViewWhite"/>
+            <ImageView android:layout_gravity="end" android:id="@+id/toolbar_right_button" android:padding="8dp" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="match_parent" android:src="@drawable/ic_close" android:adjustViewBounds="true" app:tint="@color/white"/>
+        </th.p047co.dtac.android.dtacone.widget.view.DtacToolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+    <FrameLayout android:id="@+id/contentLayout" android:layout_width="match_parent" android:layout_height="match_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

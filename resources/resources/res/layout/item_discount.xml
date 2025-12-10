@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="horizontal" android:id="@+id/layout_discount" android:paddingTop="@dimen/dp_4" android:paddingBottom="@dimen/dp_4" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="12sp" android:id="@+id/tvDisCountLabel" android:layout_width="0dp" android:layout_height="wrap_content" android:text="@string/res_0x7f1403da_mrtr_payment_sim_discount" android:layout_weight="1" style="@style/TextViewBaseGrayishBrown"/>
+    <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="12sp" android:id="@+id/tvDisCountValue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/res_0x7f1403dc_mrtr_payment_sim_price" style="@style/TextViewBaseGrayishBrown"/>
+</LinearLayout>

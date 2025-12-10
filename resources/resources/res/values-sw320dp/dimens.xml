@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="add_staff">12sp</dimen>
+    <dimen name="bath_size">12sp</dimen>
+    <dimen name="dp12">8dp</dimen>
+    <dimen name="dp18">12dp</dimen>
+    <dimen name="dp20">16dp</dimen>
+    <dimen name="dp8">4dp</dimen>
+    <dimen name="image_size_news_feed">200dp</dimen>
+    <dimen name="margin_button_ok_cancel">25dp</dimen>
+    <dimen name="rectify_amount_size">16sp</dimen>
+    <dimen name="rectify_image_item">32dp</dimen>
+    <dimen name="staff_detail">12sp</dimen>
+    <dimen name="staff_list">12sp</dimen>
+    <dimen name="staff_manage">12sp</dimen>
+    <dimen name="staff_title">14sp</dimen>
+    <dimen name="summary_income">30sp</dimen>
+    <dimen name="text_phone_number_size">16sp</dimen>
+    <dimen name="text_rectify_type_size">12sp</dimen>
+    <dimen name="toolbar_font">16sp</dimen>
+    <dimen name="toolbar_font_one">18sp</dimen>
+    <dimen name="what_new_image">280dp</dimen>
+</resources>

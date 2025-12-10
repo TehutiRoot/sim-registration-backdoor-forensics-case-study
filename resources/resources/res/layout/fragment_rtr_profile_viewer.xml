@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<th.p047co.dtac.android.dtacone.widget.loading.DtacSwipeRefresh xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/swipeRefreshRtrProfile" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <androidx.core.widget.NestedScrollView android:background="@color/white" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+        <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+            <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                <ImageView android:layout_width="50dp" android:layout_height="50dp" android:layout_marginTop="16dp" android:src="@drawable/ic_rtr_profile" android:layout_centerHorizontal="true" android:contentDescription="@null"/>
+                <ImageView android:id="@+id/ivEditProfile" android:visibility="gone" android:layout_width="32dp" android:layout_height="32dp" android:layout_marginTop="16dp" android:layout_marginRight="16dp" android:layout_alignParentRight="true" android:contentDescription="@null" android:layout_marginEnd="16dp" android:layout_alignParentEnd="true" app:srcCompat="@drawable/ic_edit"/>
+            </RelativeLayout>
+            <include android:id="@+id/incDivider" android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginTop="16dp" android:layout_marginStart="16dp" android:layout_marginEnd="16dp" layout="@layout/z_divider"/>
+            <include android:id="@+id/incRtrProfileContact" layout="@layout/z_include_rtr_profile_contact"/>
+            <LinearLayout android:orientation="horizontal" android:id="@+id/editRtr" android:background="@color/colorRtrProfileSpace" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="16sp" android:gravity="center_vertical" android:paddingLeft="16dp" android:paddingTop="16dp" android:paddingRight="16dp" android:paddingBottom="16dp" android:layout_width="0dp" android:layout_height="wrap_content" android:text="@string/res_0x7f1408cc_rtr_profile_rtr_info" android:drawableLeft="@drawable/ic_shop" android:drawablePadding="8dp" android:layout_weight="1" android:drawableStart="@drawable/ic_shop" android:paddingStart="16dp" android:paddingEnd="16dp" style="@style/TextViewGrayishBrown"/>
+                <ImageView android:gravity="center_vertical" android:layout_gravity="end|center_vertical" android:id="@+id/ivEditRtrAddress" android:visibility="gone" android:layout_width="32dp" android:layout_height="32dp" android:layout_marginRight="16dp" android:contentDescription="@null" android:layout_marginEnd="16dp" app:srcCompat="@drawable/ic_edit"/>
+            </LinearLayout>
+            <include android:id="@+id/include_rtr_profile" layout="@layout/z_include_rtr_profile"/>
+            <LinearLayout android:orientation="horizontal" android:background="@color/colorRtrProfileSpace" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <ImageView android:layout_gravity="center_vertical" android:layout_width="32dp" android:layout_height="32dp" android:layout_marginLeft="16dp" android:src="0x7f08034e" android:contentDescription="@null" android:layout_marginStart="16dp"/>
+                <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="16sp" android:gravity="center_vertical" android:paddingLeft="4dp" android:paddingTop="16dp" android:paddingRight="16dp" android:paddingBottom="16dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/res_0x7f1408b3_rtr_profile_commission_info" android:paddingStart="4dp" android:paddingEnd="16dp" style="@style/TextViewGrayishBrown"/>
+            </LinearLayout>
+            <include android:id="@+id/include_rtr_profile_commission" layout="@layout/z_include_rtr_profile_commission"/>
+            <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="16sp" android:gravity="center_vertical" android:background="@color/colorRtrProfileSpace" android:paddingLeft="16dp" android:paddingTop="16dp" android:paddingRight="16dp" android:paddingBottom="16dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/res_0x7f1408bc_rtr_profile_manager" android:drawableLeft="@drawable/ic_user_report" android:drawablePadding="8dp" android:drawableStart="@drawable/ic_user_report" android:paddingStart="16dp" android:paddingEnd="16dp" style="@style/TextViewGrayishBrown"/>
+            <include android:id="@+id/include_rtr_profile_area_manager" layout="@layout/z_include_rtr_profile_area_manager"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</th.p047co.dtac.android.dtacone.widget.loading.DtacSwipeRefresh>

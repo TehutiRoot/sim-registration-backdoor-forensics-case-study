@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioGroup xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/rdbGroupPrice" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <th.p047co.dtac.android.dtacone.widget.view.DtacRadioButton android:textColor="@drawable/z_color_button_epin" android:gravity="center" android:layout_gravity="center" android:id="@+id/rdbPrice" android:background="@drawable/z_selector_button_white_stroke" android:saveEnabled="true" android:layout_width="match_parent" android:layout_height="52dp" android:layout_marginLeft="4dp" android:layout_marginRight="4dp" android:button="@null" android:maxLines="1" android:layout_marginStart="4dp" android:layout_marginEnd="4dp" app:layout_widthPercent="50%" style="@style/TextViewGrayishBrown"/>
+</RadioGroup>

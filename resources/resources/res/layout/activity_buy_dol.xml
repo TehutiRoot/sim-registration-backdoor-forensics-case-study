@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent">
+    <include android:id="@+id/toolbar" layout="@layout/z_toolbar"/>
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <androidx.cardview.widget.CardView android:id="@+id/cardView" android:background="#f6f6f6" android:layout_width="match_parent" android:layout_height="wrap_content" app:cardCornerRadius="@dimen/cardview_default_radius" app:cardElevation="@dimen/dp4">
+            <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center_horizontal" android:id="@+id/ivBuyDolStep" android:layout_width="wrap_content" android:layout_height="@dimen/step_buy_dol_height" android:layout_marginTop="@dimen/dp12" android:layout_marginBottom="@dimen/dp8" android:adjustViewBounds="true"/>
+        </androidx.cardview.widget.CardView>
+        <FrameLayout android:id="@+id/contentContainer" android:background="@color/white" android:layout_width="match_parent" android:layout_height="match_parent"/>
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

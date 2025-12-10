@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="wrap_content" android:elevation="@dimen/dp_4" app:cardCornerRadius="@dimen/dp_8">
+    <androidx.appcompat.widget.LinearLayoutCompat android:orientation="vertical" android:background="@color/white" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <androidx.appcompat.widget.LinearLayoutCompat android:gravity="start" android:orientation="horizontal" android:id="@+id/layoutGroupService" android:background="@color/iceBlue" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <View android:layout_gravity="center_vertical" android:id="@+id/vHeaderTheme" android:background="@color/niceBlueFive" android:layout_width="@dimen/dp3" android:layout_height="@dimen/dp16" android:layout_marginStart="@dimen/dp_12" android:layout_marginEnd="@dimen/dp_4"/>
+            <th.p047co.dtac.android.dtacone.app_one.widget.OneFontTextView android:textSize="14sp" android:textStyle="bold" android:textColor="@color/niceBlueFive" android:id="@+id/tvGroupServiceTitle" android:paddingTop="@dimen/dp_8" android:paddingBottom="@dimen/dp_8" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <androidx.recyclerview.widget.RecyclerView android:id="@+id/recyclerViewService" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.cardview.widget.CardView>

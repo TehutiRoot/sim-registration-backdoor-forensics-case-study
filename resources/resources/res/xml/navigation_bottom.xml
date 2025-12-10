@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab icon="@drawable/ic_menu_home" id="@+id/menu_service" title="@string/service_text"/>
+    <tab icon="@drawable/ic_menu_news" id="@+id/menu_news_feed" title="@string/news_feed"/>
+    <tab icon="@drawable/ic_menu_online_store" id="@+id/menu_online_store" title="@string/online_store_menu"/>
+    <tab icon="@drawable/ic_menu_report" id="@+id/menu_reports" title="@string/reports"/>
+    <tab icon="@drawable/ic_menu_others" id="@+id/menu_other" title="@string/more_text"/>
+</tabs>

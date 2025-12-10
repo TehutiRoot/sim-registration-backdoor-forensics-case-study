@@ -1,0 +1,22 @@
+{
+  "rtrName": "ศิรินครโฟน",
+  "rtrCode": "71332229",
+  "dtrCode": "50002185",
+  "dtrName": "บริษัท ฟิวเจอร์ช็อป แอนด์ คอมมูนิเคชั่น จำกัด",
+  "areaSaleManagerSaleSim": null,
+  "areaSaleManagerSaleRefill": {
+    "code": "71332229",
+    "name": "ขวัญฤทัย พัฒนจันทร์",
+    "mobileNumber": "66816919823"
+  },
+  "contactPerson": {
+    "name": "คุณอาริตา",
+    "mobileNumber": "66869653207"
+  },
+  "bankAccount": "7512248625",
+  "bankAccountName": "นางอาริตา ฐาปนาชัยนุกูล",
+  "bankName": "ธนาคารไทยพาณิชย์ จำกัด (มหาชน)",
+  "beneficiaryMobileNumber": null,
+  "commissionType": "PAY_TYPE_CASH",
+  "rtrAddress": "66 ถ.ท่าทอง ตลาด เมืองสุราษฎร์ธานี สุราษฎร์ธานี 84000"
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <androidx.cardview.widget.CardView android:id="@+id/card" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/dp16" app:cardCornerRadius="@dimen/dp8" app:cardElevation="8dp">
+        <androidx.appcompat.widget.LinearLayoutCompat android:orientation="vertical" android:id="@+id/content" android:layout_width="match_parent" android:layout_height="50dp" android:layout_marginTop="@dimen/dp10" android:layout_marginStart="@dimen/dp10" android:layout_marginEnd="@dimen/dp10">
+            <androidx.appcompat.widget.LinearLayoutCompat android:gravity="bottom" android:orientation="horizontal" android:id="@+id/layoutHeader" android:paddingTop="@dimen/dp2" android:paddingBottom="@dimen/dp8" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="@dimen/sp18" android:ellipsize="middle" android:id="@+id/tvTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/register" android:singleLine="true" android:layout_weight="1" android:layout_marginStart="@dimen/dp_12" style="@style/TextViewGrayishBrown48"/>
+                <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="@dimen/sp24" android:id="@+id/tvCountSub" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="@dimen/dp4" android:layout_marginEnd="@dimen/dp4" style="@style/TextViewSkyBlueDtac"/>
+                <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="@dimen/sp18" android:id="@+id/tvLabelNumber" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/number" style="@style/TextViewSkyBlueDtac"/>
+                <ImageView android:id="@+id/arrow" android:visibility="gone" android:layout_width="@dimen/dp24" android:layout_height="match_parent" android:layout_marginStart="@dimen/dp8" app:srcCompat="0x7f0800ff"/>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <androidx.appcompat.widget.LinearLayoutCompat android:orientation="vertical" android:id="@+id/layoutContent" android:layout_width="match_parent" android:layout_height="wrap_content" android:animateLayoutChanges="true">
+                <View android:id="@+id/line" android:background="@color/warmGreyTen" android:visibility="gone" android:layout_width="match_parent" android:layout_height="@dimen/dp1" android:layout_marginStart="@dimen/dp_12" android:layout_marginEnd="@dimen/dp_12" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintTop_toBottomOf="@+id/tvItemSubscriberValue"/>
+                <androidx.recyclerview.widget.RecyclerView android:id="@+id/subList" android:layout_width="match_parent" android:layout_height="wrap_content" android:nestedScrollingEnabled="false"/>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.cardview.widget.CardView>
+</FrameLayout>

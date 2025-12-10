@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:background="@drawable/z_dialog_shape_round_corner" android:padding="@dimen/dp16" android:layout_width="match_parent" android:layout_height="match_parent">
+    <ImageView android:id="@+id/icon_dtac" android:layout_width="40dp" android:layout_height="40dp" android:layout_marginTop="@dimen/dp8" android:layout_marginBottom="@dimen/dp8" android:src="@drawable/ic_dtac" android:layout_centerHorizontal="true" android:contentDescription="@null"/>
+    <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="@dimen/txt_prepaid_terms_condition" android:gravity="center_horizontal" android:id="@+id/tvTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp8" android:layout_marginBottom="@dimen/dp8" android:text="@string/res_0x7f14083f_prepaid_registration_terms_and_conditions_title" android:layout_below="@+id/icon_dtac" style="@style/TextViewGrayishBrownRegular"/>
+    <androidx.core.widget.NestedScrollView android:id="@+id/scrollView" android:layout_width="match_parent" android:layout_height="@dimen/prepaid_terms_condition" android:layout_marginTop="@dimen/dp8" android:layout_marginBottom="@dimen/dp8" android:layout_below="@+id/tvTitle">
+        <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="@dimen/txt_prepaid_terms_condition_detail" android:autoLink="web" android:linksClickable="true" android:id="@+id/tvTermsCondition" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    </androidx.core.widget.NestedScrollView>
+    <LinearLayout android:orientation="vertical" android:padding="4dp" android:layout_width="match_parent" android:layout_height="58dp" android:layout_below="@+id/scrollView">
+        <th.p047co.dtac.android.dtacone.widget.view.DtacFontButton android:id="@+id/btn_ok" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="42dp" android:text="@string/res_0x7f14079c_perpaid_registration_terms_and_conditions_button" android:contentDescription="@string/content_confirm" style="@style/ButtonBlue"/>
+    </LinearLayout>
+</RelativeLayout>

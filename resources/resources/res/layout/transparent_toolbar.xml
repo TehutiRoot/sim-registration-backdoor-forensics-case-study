@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.appbar.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/appBarLayout" android:background="@color/color_transparent" android:layout_width="match_parent" android:layout_height="wrap_content" app:elevation="0dp">
+    <th.p047co.dtac.android.dtacone.widget.view.DtacToolbar android:id="@+id/toolbar" android:layout_width="match_parent" android:layout_height="?attr/actionBarSize" app:elevation="0dp" app:popupTheme="@style/ThemeOverlay.AppCompat.Light" style="@style/Widget.Dtac.Toolbar.Transparent">
+        <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="@dimen/toolbar_font" android:textStyle="normal" android:gravity="center" android:layout_gravity="center" android:id="@+id/tv_toolbar_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" style="@style/TextViewWhite"/>
+    </th.p047co.dtac.android.dtacone.widget.view.DtacToolbar>
+</com.google.android.material.appbar.AppBarLayout>

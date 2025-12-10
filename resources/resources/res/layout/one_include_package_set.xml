@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+    <th.p047co.dtac.android.dtacone.app_one.widget.OneFontTextView android:textSize="14sp" android:textColor="@color/grayishBrown48" android:gravity="center_horizontal" android:id="@+id/tvPackageTitle" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp18" android:text="@string/res_0x7f1403a9_mnp_packages_subtitle"/>
+    <LinearLayout android:orientation="vertical" android:id="@+id/contentList" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="@dimen/dp12" android:animateLayoutChanges="true">
+        <th.p047co.dtac.android.dtacone.app_one.widget.OneTabLayout android:id="@+id/tabLayout" android:layout_width="match_parent" android:layout_height="wrap_content" app:tabBackground="@drawable/one_selector_package_tab" app:tabGravity="0" app:tabIndicatorColor="@color/niceBlueFive" app:tabMaxWidth="0dp" app:tabMode="0" app:tabSelectedTextColor="@color/niceBlueFive" app:tabTextColor="@color/grayishBrown48"/>
+        <androidx.viewpager.widget.ViewPager android:id="@+id/viewPager" android:layout_width="match_parent" android:layout_height="match_parent"/>
+    </LinearLayout>
+</LinearLayout>

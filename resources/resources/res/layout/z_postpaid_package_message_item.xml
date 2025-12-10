@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<th.p047co.dtac.android.dtacone.widget.view.DtacCardView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/cardView" android:clickable="false" android:layout_width="match_parent" android:layout_height="wrap_content" app:cardCornerRadius="0dp" app:cardElevation="0dp">
+    <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+        <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="14sp" android:textStyle="normal" android:id="@+id/tvPackageMessage" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="16dp" android:layout_marginTop="16dp" android:layout_marginRight="16dp" android:layout_marginBottom="16dp" android:minLines="5" android:layout_marginStart="16dp" android:layout_marginEnd="16dp" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0" style="@style/TextViewGray"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</th.p047co.dtac.android.dtacone.widget.view.DtacCardView>

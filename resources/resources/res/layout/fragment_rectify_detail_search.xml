@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/rootLayout" android:background="@android:color/white" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:id="@+id/phoneNumberBox" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:layout_centerHorizontal="true">
+        <ImageView android:layout_gravity="center_vertical" android:layout_width="50dp" android:layout_height="50dp" android:layout_marginRight="@dimen/margin_top_bottom" android:contentDescription="@string/content_icon_phone" android:layout_marginEnd="@dimen/margin_top_bottom" app:srcCompat="@drawable/ic_phone"/>
+        <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="20sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/mobile_number" style="@style/TextViewGrayishBrown"/>
+            <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="20sp" android:id="@+id/tvResultPhoneNumber" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/TextViewBlue"/>
+        </LinearLayout>
+    </LinearLayout>
+    <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="18sp" android:gravity="center" android:id="@+id/message" android:background="@color/purpleyGrey" android:layout_width="match_parent" android:layout_height="50dp" android:layout_marginTop="@dimen/dp12" android:text="@string/choose_rectify_item" android:layout_below="@+id/phoneNumberBox" android:layout_centerHorizontal="true" style="@style/TextViewWhite"/>
+    <th.p047co.dtac.android.dtacone.widget.loading.DtacSwipeRefresh android:id="@+id/swipeRefreshRectify" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_below="@+id/message">
+        <th.p047co.dtac.android.dtacone.widget.view.DtacRecyclerView android:id="@+id/rectify_list" android:layout_width="match_parent" android:layout_height="match_parent"/>
+    </th.p047co.dtac.android.dtacone.widget.loading.DtacSwipeRefresh>
+</RelativeLayout>

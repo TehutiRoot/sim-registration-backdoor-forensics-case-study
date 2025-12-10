@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <androidx.cardview.widget.CardView android:id="@+id/cvRectify" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/dp16" app:cardCornerRadius="8dp" app:cardElevation="8dp" app:cardPreventCornerOverlap="false">
+        <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <FrameLayout android:id="@+id/layoutTitle" android:background="@drawable/background_one_history_summary_dtac" android:paddingTop="@dimen/dp_8" android:paddingBottom="@dimen/dp_8" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingVertical="@dimen/dp_8">
+                <th.p047co.dtac.android.dtacone.app_one.widget.OneFontTextView android:textSize="@dimen/sp14" android:textStyle="bold" android:textColor="@color/white" android:layout_gravity="center" android:id="@+id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/one_transaction_history_recycler_header_total"/>
+            </FrameLayout>
+            <FrameLayout android:paddingLeft="@dimen/dp16" android:paddingRight="@dimen/dp16" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp8" android:paddingHorizontal="@dimen/dp16">
+                <th.p047co.dtac.android.dtacone.app_one.widget.OneFontTextView android:textSize="@dimen/sp14" android:textColor="@color/jet_back" android:layout_gravity="start|center_vertical" android:id="@+id/listTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/one_transaction_history_recycler_header_total"/>
+                <th.p047co.dtac.android.dtacone.app_one.widget.OneFontTextView android:textSize="@dimen/sp14" android:textStyle="bold" android:textColor="@color/niceBlueFive" android:layout_gravity="end|center_vertical" android:id="@+id/listValue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0"/>
+            </FrameLayout>
+            <FrameLayout android:paddingLeft="@dimen/dp16" android:paddingRight="@dimen/dp16" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp4" android:layout_marginBottom="@dimen/dp_8" android:paddingHorizontal="@dimen/dp16">
+                <th.p047co.dtac.android.dtacone.app_one.widget.OneFontTextView android:textSize="@dimen/sp14" android:textColor="@color/jet_back" android:layout_gravity="start|center_vertical" android:id="@+id/totalTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/one_transaction_history_recycler_header_total"/>
+                <th.p047co.dtac.android.dtacone.app_one.widget.OneFontTextView android:textSize="@dimen/sp14" android:textStyle="bold" android:textColor="@color/niceBlueFive" android:layout_gravity="end|center_vertical" android:id="@+id/totalValue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0"/>
+            </FrameLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <View android:id="@+id/vSeparateHeader" android:background="@color/line_platinum" android:layout_width="match_parent" android:layout_height="@dimen/dp1"/>
+</androidx.appcompat.widget.LinearLayoutCompat>

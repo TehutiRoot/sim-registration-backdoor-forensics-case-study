@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@+id/rootLayout" android:padding="4dp" android:layout_width="match_parent" android:layout_height="match_parent">
+        <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textColor="@color/grayishBrown" android:gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/register_confirm_otp_description" style="@style/TextViewBlack"/>
+        <th.p047co.dtac.android.dtacone.widget.view.DtacEditText android:enabled="false" android:id="@+id/register_tv_phone_number" android:focusable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp24" style="@style/PhoneEditText"/>
+        <th.p047co.dtac.android.dtacone.widget.view.DtacClearableEditText android:ellipsize="end" android:id="@+id/register_edt_otp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:hint="@string/input_otp_from_sms" android:maxLines="1" android:maxLength="4" android:imeOptions="actionDone" style="@style/PasswordEditText">
+            <requestFocus/>
+        </th.p047co.dtac.android.dtacone.widget.view.DtacClearableEditText>
+        <th.p047co.dtac.android.dtacone.widget.view.DtacFontButton android:id="@+id/register_btn_request_new_otp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp16" android:text="@string/request_new_otp" android:contentDescription="@string/content_request_otp" style="@style/ButtonBlack"/>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

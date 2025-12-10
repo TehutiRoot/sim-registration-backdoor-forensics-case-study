@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab icon="@drawable/ic_menu_home" id="@+id/menu_service" title="@string/service_text"/>
+    <tab icon="@drawable/ic_menu_news" id="@+id/menu_news_feed" title="@string/news_feed"/>
+    <tab icon="@drawable/ic_menu_others" id="@+id/menu_other" title="@string/more_text"/>
+</tabs>

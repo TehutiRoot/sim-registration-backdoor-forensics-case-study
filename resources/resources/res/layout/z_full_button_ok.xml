@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_gravity="center_horizontal" android:id="@+id/lnl_container_button_ok_cancel" android:layout_width="wrap_content" android:layout_height="56dp" android:layout_marginLeft="@dimen/dp16" android:layout_marginTop="@dimen/margin_top_bottom" android:layout_marginRight="@dimen/dp16" android:layout_marginBottom="@dimen/margin_top_bottom" android:layout_below="@+id/lnl_container_button" android:layout_centerHorizontal="true" android:layout_marginStart="@dimen/dp16" android:layout_marginEnd="@dimen/dp16">
+    <th.p047co.dtac.android.dtacone.widget.view.DtacFontButton android:id="@+id/btn_confirm" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/confirm_text" android:contentDescription="@string/content_confirm" style="@style/ButtonBlue"/>
+</LinearLayout>

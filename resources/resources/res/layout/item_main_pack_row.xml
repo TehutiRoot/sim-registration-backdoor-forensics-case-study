@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:id="@+id/itemLayout" android:layout_width="match_parent" android:layout_height="wrap_content" android:foreground="?android:attr/selectableItemBackground">
+    <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="14sp" android:gravity="center_vertical" android:id="@+id/tvMainPackName" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/dp16"/>
+    <View android:background="@color/lightAlto" android:layout_width="match_parent" android:layout_height="0.5dp"/>
+</LinearLayout>

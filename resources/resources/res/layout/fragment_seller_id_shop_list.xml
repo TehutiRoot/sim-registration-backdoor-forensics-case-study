@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/rootLayout" android:focusable="true" android:focusableInTouchMode="true" android:visibility="visible" android:clickable="true" android:layout_width="match_parent" android:layout_height="match_parent">
+    <com.google.android.material.appbar.AppBarLayout android:id="@+id/appBarShopList" android:background="@null" android:layout_width="match_parent" android:layout_height="wrap_content" app:elevation="@dimen/dp0">
+        <com.google.android.material.appbar.CollapsingToolbarLayout android:id="@+id/cToolbar" android:layout_width="match_parent" android:layout_height="wrap_content" app:layout_scrollFlags="0x13">
+            <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <include layout="@layout/include_layout_current_shop"/>
+                <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="12sp" android:id="@+id/tvSearchShopListTitle" android:paddingLeft="@dimen/dp24" android:paddingRight="@dimen/dp24" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/seller_id_shop_list_search_shop_list_title" style="@style/TextViewWhite"/>
+            </LinearLayout>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+        <LinearLayout android:orientation="vertical" android:id="@+id/layoutSearchBar" android:paddingLeft="@dimen/dp24" android:paddingTop="@dimen/dp16" android:paddingRight="@dimen/dp24" android:paddingBottom="@dimen/dp16" android:layout_width="match_parent" android:layout_height="match_parent" app:layout_scrollFlags="0x9">
+            <include layout="@layout/include_search_bar_edittext"/>
+        </LinearLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+    <LinearLayout android:orientation="vertical" android:id="@+id/contentLayout" android:layout_width="match_parent" android:layout_height="match_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <androidx.core.widget.NestedScrollView android:id="@+id/layoutScrollView" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+            <LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/dp24" android:paddingRight="@dimen/dp24" android:paddingBottom="@dimen/dp16" android:layout_width="match_parent" android:layout_height="match_parent">
+                <LinearLayout android:orientation="vertical" android:id="@+id/historyListLayout" android:background="@drawable/background_white_corner_radius" android:paddingLeft="@dimen/dp12" android:paddingTop="@dimen/dp16" android:paddingRight="@dimen/dp12" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp16">
+                    <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="@dimen/sp12" android:textColor="@color/greyishBrown" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/dp16" android:text="@string/seller_id_shop_list_history_title"/>
+                    <androidx.recyclerview.widget.RecyclerView android:id="@+id/historyListRecycler" android:scrollbars="none" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                </LinearLayout>
+                <LinearLayout android:orientation="vertical" android:id="@+id/searchListLayout" android:background="@drawable/background_white_corner_radius" android:paddingLeft="@dimen/dp12" android:paddingTop="@dimen/dp16" android:paddingRight="@dimen/dp12" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp16">
+                    <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="@dimen/sp12" android:textColor="@color/greyishBrown" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/dp16" android:text="@string/seller_id_shop_list_search_title"/>
+                    <androidx.recyclerview.widget.RecyclerView android:id="@+id/searchListRecycler" android:scrollbars="none" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                </LinearLayout>
+                <LinearLayout android:orientation="vertical" android:id="@+id/layoutWarning" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp24">
+                    <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="18sp" android:id="@+id/tvWarningTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/seller_id_shop_list_not_found_shop_title" style="@style/TextViewWhite"/>
+                    <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="14sp" android:id="@+id/tvWarningDetail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/seller_id_shop_list_not_found_shop_detail" style="@style/TextViewWhite"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+        <include layout="@layout/include_layout_error_current_shop"/>
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

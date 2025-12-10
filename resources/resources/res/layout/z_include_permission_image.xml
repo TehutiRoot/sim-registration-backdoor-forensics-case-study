@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <HorizontalScrollView android:scrollbarSize="@dimen/dp8" android:id="@+id/horizontalScroll" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_below="@+id/staff_tv_total_sale_text" android:fadeScrollbars="false">
+        <LinearLayout android:orientation="horizontal" android:id="@+id/imagePermissionBox" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp12" android:layout_marginBottom="@dimen/dp12" android:animateLayoutChanges="true"/>
+    </HorizontalScrollView>
+</merge>

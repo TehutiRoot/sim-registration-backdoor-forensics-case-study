@@ -1,0 +1,44 @@
+{
+  "tabs": [
+    {
+      "tabName": "ส่วนลดค่า package",
+      "group": [
+        {
+          "groupName": "",
+          "packages": [
+            {
+              "packageCode": "P0001",
+              "packageDescription": [
+                "description 1",
+                "description 2",
+                "description 3",
+                "description 4"
+              ],
+              "voice": "150 นาที",
+              "data": "2.5 GB",
+              "wifi": "Unlimited",
+              "storage": "25 GB",
+              "marketPrice": "",
+              "billCycle": "12 bill cycles"
+            },
+            {
+              "packageCode": "P0001",
+              "packageDescription": [
+                "description 1",
+                "description 2",
+                "description 3",
+                "description 4"
+              ],
+              "voice": "150 นาที",
+              "data": "2.5 GB",
+              "wifi": "Unlimited",
+              "storage": "25 GB",
+              "marketPrice": "",
+              "billCycle": "12 bill cycles"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

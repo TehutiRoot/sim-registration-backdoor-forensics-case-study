@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:background="@color/white" android:focusable="true" android:clickable="true" android:layout_width="match_parent" android:layout_height="match_parent">
+    <th.p047co.dtac.android.dtacone.widget.loading.DtacSwipeRefresh android:id="@+id/swipeContainer" android:layout_width="match_parent" android:layout_height="match_parent">
+        <androidx.coordinatorlayout.widget.CoordinatorLayout android:id="@+id/rootLayout" android:focusable="true" android:clickable="true" android:layout_width="match_parent" android:layout_height="match_parent">
+            <com.google.android.material.appbar.AppBarLayout android:id="@+id/appBar" android:background="@android:color/white" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <com.google.android.material.appbar.CollapsingToolbarLayout android:layout_width="match_parent" android:layout_height="wrap_content" app:layout_scrollFlags="0x3">
+                    <include android:id="@+id/layoutHeader" layout="@layout/include_header_campaign_detail"/>
+                    <include android:id="@+id/layoutCurrentSummary" layout="@layout/include_campaign_current_summary"/>
+                    <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="@dimen/sp12" android:textStyle="normal" android:ellipsize="end" android:gravity="center" android:id="@+id/tvDisplayDate" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp16" android:layout_marginBottom="@dimen/dp16" android:maxLines="1"/>
+                </com.google.android.material.appbar.CollapsingToolbarLayout>
+            </com.google.android.material.appbar.AppBarLayout>
+            <LinearLayout android:orientation="vertical" android:id="@+id/contentList" android:background="@color/whiteThree" android:focusable="true" android:clickable="true" android:layout_width="match_parent" android:layout_height="match_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior">
+                <th.p047co.dtac.android.dtacone.widget.view.DtacTabLayout android:id="@+id/tabLayout" android:layout_width="match_parent" android:layout_height="wrap_content" app:tabBackground="@color/white" app:tabGravity="0" app:tabIndicatorColor="@color/colorBlack" app:tabMaxWidth="@dimen/tab_max_width" app:tabMinWidth="@dimen/tab_min_width" app:tabMode="1" app:tabSelectedTextColor="@android:color/black" app:tabTextColor="@color/warmGrey"/>
+                <androidx.core.widget.NestedScrollView android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+                    <androidx.viewpager.widget.ViewPager android:id="@+id/viewPager" android:layout_width="match_parent" android:layout_height="match_parent"/>
+                </androidx.core.widget.NestedScrollView>
+            </LinearLayout>
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </th.p047co.dtac.android.dtacone.widget.loading.DtacSwipeRefresh>
+</FrameLayout>

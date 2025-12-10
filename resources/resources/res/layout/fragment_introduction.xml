@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent">
+    <androidx.core.widget.NestedScrollView android:layout_width="match_parent" android:layout_height="match_parent">
+        <LinearLayout android:orientation="vertical" android:focusable="true" android:clickable="true" android:layout_width="match_parent" android:layout_height="match_parent">
+            <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp16">
+                <th.p047co.dtac.android.dtacone.app_one.widget.OneFontTextView android:textSize="14sp" android:textColor="@color/jet_back" android:id="@+id/tvAppOneVersion" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/dp24" android:text="@string/app_nickname" android:layout_alignParentRight="true" android:layout_marginEnd="@dimen/dp24" android:layout_alignParentEnd="true"/>
+            </RelativeLayout>
+            <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="@dimen/dp24" android:minHeight="400dp">
+                <include android:id="@+id/layoutEmptyIntroduction" layout="@layout/include_icon_keyword_layout"/>
+                <com.yarolegovich.discretescrollview.DiscreteScrollView android:id="@+id/itemPicker" android:visibility="invisible" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_8"/>
+            </RelativeLayout>
+            <LinearLayout android:id="@+id/layoutEnvAtRunTime" android:background="@color/white" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp24" android:layout_marginStart="@dimen/dp32" android:layout_marginEnd="@dimen/dp32">
+                <Spinner android:id="@+id/environmentDropDown" android:paddingTop="@dimen/dp16" android:paddingBottom="@dimen/dp16" android:layout_width="match_parent" android:layout_height="wrap_content" android:prompt="@string/please_select"/>
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp32" android:layout_marginTop="@dimen/dp24" android:layout_marginRight="@dimen/dp32">
+                <th.p047co.dtac.android.dtacone.app_one.widget.OneFontButton android:textSize="18sp" android:textStyle="bold" android:textColor="@color/red13" android:id="@+id/buttonRegister" android:background="@drawable/button_one_red_stroke_rounded" android:paddingTop="@dimen/dp_12" android:paddingBottom="@dimen/dp_12" android:layout_width="0dp" android:layout_height="wrap_content" android:text="@string/register" android:layout_weight="1"/>
+                <th.p047co.dtac.android.dtacone.app_one.widget.OneFontButton android:textSize="18sp" android:textStyle="bold" android:textColor="@color/white" android:id="@+id/buttonLogin" android:background="@drawable/one_bg_btn_sign_in" android:paddingTop="@dimen/dp_12" android:paddingBottom="@dimen/dp_12" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp16" android:text="@string/sign_in" android:layout_weight="1" android:layout_marginStart="@dimen/dp16"/>
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginLeft="@dimen/dp32" android:layout_marginTop="@dimen/dp_12" android:layout_marginRight="@dimen/dp32">
+                <th.p047co.dtac.android.dtacone.app_one.widget.OneFontButton android:id="@+id/buttonOnline" android:background="@color/color_transparent" android:paddingTop="@dimen/dp_12" android:paddingBottom="@dimen/dp_12" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/one_partner_register" style="@style/OneTextViewBold.16"/>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    <RelativeLayout android:id="@+id/layoutProgressBar" android:background="@color/color_transparent_black_80" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent">
+        <ProgressBar android:theme="@style/ProgressBarWhite" android:layout_width="@dimen/dp48" android:layout_height="@dimen/dp48" android:layout_centerInParent="true"/>
+    </RelativeLayout>
+</RelativeLayout>

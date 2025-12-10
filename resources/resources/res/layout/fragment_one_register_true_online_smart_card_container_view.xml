@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.fragment.app.FragmentContainerView xmlns:android="http://schemas.android.com/apk/res/android" android:name="th.p047co.dtac.android.dtacone.view.appOne.tol.fragment.OneRegisterTrueOnlineSmartCardFragment" android:id="@+id/fragmentOneRegisterTrueOnlineSmartCardContainerView" android:layout_width="match_parent" android:layout_height="match_parent"/>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<th.p047co.dtac.android.dtacone.app_one.widget.loading.OneSwipeRefresh xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/swipeRefreshLayout" android:layout_width="match_parent" android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/onePre2PostMainConstraintLayout" android:layout_width="match_parent" android:layout_height="match_parent">
+        <androidx.cardview.widget.CardView android:id="@+id/cardViewTitle" android:layout_width="match_parent" android:layout_height="wrap_content" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0">
+            <androidx.constraintlayout.widget.ConstraintLayout android:paddingTop="@dimen/dp_12" android:paddingBottom="@dimen/dp_12" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <th.p047co.dtac.android.dtacone.app_one.widget.OneFontTextView android:textSize="@dimen/sp14" android:textColor="@color/jet_back" android:id="@+id/tvTitle" android:background="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="@string/res_0x7f1407ca_postpaid_registration_default_package_title" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+        <include android:layout_width="match_parent" android:layout_height="0dp" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintTop_toBottomOf="@+id/cardViewTitle" layout="@layout/one_include_package_set"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</th.p047co.dtac.android.dtacone.app_one.widget.loading.OneSwipeRefresh>

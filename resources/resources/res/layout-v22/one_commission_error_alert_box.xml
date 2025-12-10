@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:background="@drawable/one_dialog_shape_round_corner" android:paddingLeft="24dp" android:paddingTop="24dp" android:paddingRight="24dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingHorizontal="24dp">
+    <th.p047co.dtac.android.dtacone.app_one.widget.OneFontTextView android:textSize="16sp" android:textStyle="normal" android:textColor="@color/jet_back" android:gravity="center_horizontal" android:id="@+id/alert_message" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:lineSpacingExtra="8sp"/>
+    <LinearLayout android:gravity="center_horizontal" android:id="@+id/layoutButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp24" android:layout_marginBottom="@dimen/dp24" android:layout_below="@+id/alert_message">
+        <th.p047co.dtac.android.dtacone.app_one.widget.OneFontButton android:textSize="@dimen/dp16" android:textStyle="bold" android:textColor="@color/white" android:layout_gravity="center" android:id="@+id/alert_box_button" android:background="@drawable/one_commission_button_error" android:layout_width="190dp" android:layout_height="48dp" android:text="@string/ok" android:contentDescription="@string/content_confirm"/>
+    </LinearLayout>
+</RelativeLayout>

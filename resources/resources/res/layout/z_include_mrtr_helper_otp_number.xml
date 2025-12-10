@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+    <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textColor="@color/grayishBrown" android:ellipsize="end" android:gravity="center_horizontal" android:id="@+id/tvHelper" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp40" android:text="@string/input_mrtr_otp_from_sms" android:maxLines="1" style="@style/TextViewBlack"/>
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <th.p047co.dtac.android.dtacone.widget.view.DtacEditText android:id="@+id/otpDigit1" app:autoFormat="true" style="@style/OTPEditText"/>
+        <th.p047co.dtac.android.dtacone.widget.view.DtacEditText android:id="@+id/otpDigit2" android:layout_marginStart="@dimen/dp16" style="@style/OTPEditText"/>
+        <th.p047co.dtac.android.dtacone.widget.view.DtacEditText android:id="@+id/otpDigit3" android:layout_marginStart="@dimen/dp16" style="@style/OTPEditText"/>
+        <th.p047co.dtac.android.dtacone.widget.view.DtacEditText android:id="@+id/otpDigit4" android:layout_marginStart="@dimen/dp16" style="@style/OTPEditText"/>
+    </LinearLayout>
+    <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="14sp" android:gravity="center_horizontal" android:id="@+id/btn_resend_otp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp24" android:layout_marginBottom="@dimen/dp12" android:text="@string/request_otp_again" style="@style/TextViewBlue"/>
+</LinearLayout>

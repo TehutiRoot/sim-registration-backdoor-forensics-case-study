@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<th.p047co.dtac.android.dtacone.widget.view.DtacCardView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/buyDolHistoryCardview" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_marginTop="8dp" android:layout_marginRight="8dp" android:layout_marginStart="8dp" android:layout_marginEnd="8dp">
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@+id/ivStatus" android:layout_width="22dp" android:layout_height="22dp" android:layout_marginLeft="8dp" android:layout_centerVertical="true" android:contentDescription="@null" android:layout_marginStart="8dp"/>
+        <LinearLayout android:orientation="vertical" android:id="@+id/phoneNumberBox" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp12" android:layout_toRightOf="@+id/ivStatus" android:layout_marginStart="@dimen/dp12" android:layout_toEndOf="@+id/ivStatus">
+            <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="16sp" android:id="@+id/tvPhoneNumber" android:saveEnabled="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" style="@style/TextViewGray"/>
+            <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="12sp" android:id="@+id/tvDisplayDateTime" android:saveEnabled="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp4" android:layout_marginBottom="8dp" style="@style/TextViewGray"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:layout_alignParentEnd="true">
+            <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="18sp" android:id="@+id/tvPrice" android:saveEnabled="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/dp8" android:layout_marginEnd="@dimen/dp8" style="@style/TextViewGray"/>
+            <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="12sp" android:id="@+id/tvUnit" android:saveEnabled="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="0dp" android:layout_marginRight="@dimen/dp16" android:text="@string/bath_text" android:layout_marginEnd="@dimen/dp16" style="@style/TextViewGray"/>
+            <ImageView android:id="@+id/ivMore" android:layout_width="18dp" android:layout_height="18dp" android:layout_marginLeft="8dp" android:tint="@color/colorGray" android:contentDescription="@null" android:layout_marginStart="8dp" app:srcCompat="@drawable/ic_arrow_right"/>
+        </LinearLayout>
+    </RelativeLayout>
+</th.p047co.dtac.android.dtacone.widget.view.DtacCardView>

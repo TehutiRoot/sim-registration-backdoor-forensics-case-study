@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+    <th.p047co.dtac.android.dtacone.widget.view.DtacFontButton android:id="@+id/mnp_btn_verify_otp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp8" android:layout_marginBottom="@dimen/dp4" android:text="@string/res_0x7f14039e_mnp_otp_verify_button" style="@style/ButtonBlue"/>
+    <th.p047co.dtac.android.dtacone.widget.view.DtacFontButton android:id="@+id/mnp_btn_resend_otp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp4" android:layout_marginBottom="@dimen/dp4" android:text="@string/res_0x7f1403a5_mnp_otp_verify_retry_otp" style="@style/ButtonBlack"/>
+</merge>

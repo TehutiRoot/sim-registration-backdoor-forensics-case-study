@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+    <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
+        <View android:background="@drawable/background_white_top_radius_round_corner" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="@dimen/dp40"/>
+        <androidx.constraintlayout.widget.ConstraintLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="@dimen/dp16">
+            <androidx.cardview.widget.CardView android:id="@+id/mainCardView" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp24" android:layout_marginRight="@dimen/dp24" app:cardCornerRadius="@dimen/dp8" app:cardElevation="@dimen/dp12" app:layout_constraintTop_toTopOf="0">
+                <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent" android:layout_height="match_parent">
+                    <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/retailerContactInfoHeaderLayout" android:background="@color/iceBlue" android:padding="@dimen/dp10" android:layout_width="match_parent" android:layout_height="wrap_content" app:layout_constraintTop_toTopOf="0">
+                        <androidx.appcompat.widget.AppCompatImageView android:id="@+id/retailerContactInfoImageView" android:layout_width="@dimen/dp26" android:layout_height="@dimen/dp26" android:src="@drawable/ic_blue_person" android:scaleType="centerCrop" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0"/>
+                        <th.p047co.dtac.android.dtacone.app_one.widget.OneFontTextView android:id="@+id/retailerContactInfoHeaderTextView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/one_retailer_profile_update_retailer_contact_info" android:layout_marginStart="@dimen/dp12" app:layout_constraintBottom_toBottomOf="@+id/retailerContactInfoImageView" app:layout_constraintStart_toEndOf="@+id/retailerContactInfoImageView" app:layout_constraintTop_toTopOf="@+id/retailerContactInfoImageView" style="@style/OneTextViewBlueBold.16"/>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <androidx.appcompat.widget.LinearLayoutCompat android:orientation="vertical" android:background="@color/white" android:layout_width="match_parent" android:layout_height="wrap_content" android:elevation="@dimen/dp_8" app:layout_constraintTop_toBottomOf="@+id/retailerContactInfoHeaderLayout">
+                        <th.p047co.dtac.android.dtacone.app_one.widget.OneTextInputLayoutText android:id="@+id/retailerFirstNameEditText" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="text" app:input_hint="@string/res_0x7f1408b7_rtr_profile_contact_name_edit"/>
+                        <View android:background="@color/line_platinum" android:layout_width="match_parent" android:layout_height="@dimen/dp1"/>
+                        <th.p047co.dtac.android.dtacone.app_one.widget.OneTextInputLayoutText android:id="@+id/retailerLastNameEditText" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="text" app:input_hint="@string/res_0x7f1408b5_rtr_profile_contact_last_name"/>
+                        <View android:background="@color/line_platinum" android:layout_width="match_parent" android:layout_height="@dimen/dp1"/>
+                        <th.p047co.dtac.android.dtacone.app_one.widget.OneTextInputLayoutPhone android:id="@+id/retailerPhoneNumberEditText" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="numberDecimal" android:imeOptions="actionDone" app:input_hint="@string/res_0x7f1408b8_rtr_profile_contact_phone_number"/>
+                        <View android:background="@color/line_platinum" android:layout_width="match_parent" android:layout_height="@dimen/dp1"/>
+                        <th.p047co.dtac.android.dtacone.app_one.widget.OneTextInputLayoutIDCard android:id="@+id/retailerIDCardEditText" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="numberDecimal" android:imeOptions="actionDone" app:input_hint="@string/res_0x7f1408bb_rtr_profile_id_card"/>
+                        <View android:background="@color/line_platinum" android:layout_width="match_parent" android:layout_height="@dimen/dp1"/>
+                        <androidx.cardview.widget.CardView android:id="@+id/retailerContactIDCardCardView" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/dp16" android:minHeight="200dp" app:cardCornerRadius="@dimen/dp5">
+                            <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="200dp">
+                                <com.inthecheesefactory.thecheeselibrary.widget.AdjustableImageView android:id="@+id/retailerContactIDCardImageView" android:layout_width="match_parent" android:layout_height="match_parent" android:src="0x7f0803a1" android:scaleType="centerCrop" android:adjustViewBounds="true"/>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </androidx.cardview.widget.CardView>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+            <th.p047co.dtac.android.dtacone.app_one.widget.OneFontButton android:textStyle="bold" android:textColor="@color/white" android:id="@+id/confirmUpdateRetailerContactInfoButton" android:background="@drawable/background_one_button_blue" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp30" android:layout_marginBottom="@dimen/dp16" android:text="@string/save_text" android:layout_marginStart="@dimen/dp24" android:layout_marginEnd="@dimen/dp24" app:layout_constraintTop_toBottomOf="@+id/mainCardView"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+</androidx.core.widget.NestedScrollView>

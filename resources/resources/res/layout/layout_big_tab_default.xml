@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="80dp">
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@+id/defaultTab1" android:background="@drawable/background_gray_rounded_left_corner" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1">
+        <ImageView android:id="@+id/iconTab1" android:layout_width="28dp" android:layout_height="28dp" android:src="@mipmap/logo_dtac"/>
+        <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:id="@+id/titleTab1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/changepackage_main_package_tab" android:layout_marginStart="8dp" style="@style/CustomTextParagraph"/>
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@+id/defaultTab2" android:background="@drawable/background_gray_rounded_right_corner" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1">
+        <ImageView android:id="@+id/iconTab2" android:layout_width="28dp" android:layout_height="28dp" android:src="@mipmap/ic_add_package_black"/>
+        <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:id="@+id/titleTab2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/changepackage_sub_package_tab" android:layout_marginStart="8dp" style="@style/CustomTextParagraph"/>
+    </LinearLayout>
+</LinearLayout>

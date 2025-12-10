@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/container" android:background="@android:color/white" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="@dimen/dp8">
+    <th.p047co.dtac.android.dtacone.widget.loading.DtacSwipeRefresh android:id="@+id/swipeRefresh" android:layout_width="match_parent" android:layout_height="match_parent">
+        <androidx.recyclerview.widget.RecyclerView android:id="@+id/sale_report_list" android:background="#f6f6f6" android:layout_width="match_parent" android:layout_height="match_parent"/>
+    </th.p047co.dtac.android.dtacone.widget.loading.DtacSwipeRefresh>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

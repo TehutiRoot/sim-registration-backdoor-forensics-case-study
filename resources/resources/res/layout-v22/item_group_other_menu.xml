@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="wrap_content" android:elevation="@dimen/dp_8" app:cardCornerRadius="@dimen/dp_8">
+    <androidx.appcompat.widget.LinearLayoutCompat android:orientation="vertical" android:background="@color/white" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <androidx.appcompat.widget.LinearLayoutCompat android:gravity="start" android:orientation="horizontal" android:id="@+id/layoutGroupMenu" android:background="@color/iceBlue" android:paddingLeft="@dimen/dp16" android:paddingRight="@dimen/dp16" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingHorizontal="@dimen/dp16">
+            <th.p047co.dtac.android.dtacone.app_one.widget.OneFontTextView android:textSize="14sp" android:textStyle="bold" android:textColor="@color/niceBlueFive" android:id="@+id/tvGroupMenuTitle" android:paddingTop="@dimen/dp_8" android:paddingBottom="@dimen/dp_8" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <androidx.recyclerview.widget.RecyclerView android:id="@+id/recyclerViewOtherMenu" android:scrollbars="none" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.cardview.widget.CardView>

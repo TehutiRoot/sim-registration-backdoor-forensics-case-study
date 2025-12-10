@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:background="@color/white" android:layout_width="match_parent" android:layout_height="match_parent">
+    <include android:id="@+id/btnOpenSmartCard" layout="@layout/one_include_switch_mode_camera"/>
+    <androidx.core.widget.NestedScrollView android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+        <LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="match_parent" android:layout_height="match_parent">
+            <include android:id="@+id/layout_bullet" layout="@layout/one_include_bullet_input_address_receipt"/>
+            <include android:id="@+id/layout_address_registrant" android:visibility="visible" layout="@layout/one_include_input_address_receipt"/>
+            <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/layout_address_other" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <th.p047co.dtac.android.dtacone.app_one.widget.OneTabLayout android:id="@+id/tabLayout" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="16dp" android:layout_marginTop="8dp" android:layout_marginRight="16dp" android:layout_marginStart="16dp" android:layout_marginEnd="16dp" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0" app:tabGravity="0" app:tabIndicatorColor="@android:color/transparent" app:tabIndicatorHeight="4dp" app:tabMaxWidth="@dimen/tab_max_width" app:tabMinWidth="@dimen/tab_min_width" app:tabMode="1" app:tabSelectedTextColor="@android:color/white" app:tabTextColor="@color/niceBlueFive"/>
+                <th.p047co.dtac.android.dtacone.widget.view.WrapContentViewPager android:id="@+id/viewPager" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toBottomOf="@+id/tabLayout"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.appcompat.widget.LinearLayoutCompat>

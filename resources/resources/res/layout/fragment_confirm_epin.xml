@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<th.p047co.dtac.android.dtacone.widget.loading.DtacSwipeRefresh xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/swipeRefresh" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <androidx.core.widget.NestedScrollView android:background="@android:color/white" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+        <LinearLayout android:orientation="vertical" android:id="@+id/rootLayout" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <include android:id="@+id/balance_box" layout="@layout/z_balance_box"/>
+            <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="18sp" android:gravity="center" android:id="@+id/tv_confirm_information_title" android:background="@drawable/z_background_black" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp8" android:text="@string/please_verify_and_confirm_information" style="@style/TextViewWhite"/>
+            <RelativeLayout android:background="@color/white" android:paddingBottom="@dimen/dp18" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <LinearLayout android:id="@+id/confirm_subscriber_number" android:paddingLeft="0dp" android:paddingRight="@dimen/dp20" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp12" android:layout_centerHorizontal="true" android:paddingStart="0dp" android:paddingEnd="@dimen/dp20">
+                    <ImageView android:layout_gravity="center_vertical" android:layout_width="42dp" android:layout_height="42dp" android:layout_marginRight="@dimen/margin_top_bottom" android:tint="@color/colorBlue" android:contentDescription="@string/content_icon_phone" android:layout_marginEnd="@dimen/margin_top_bottom" app:srcCompat="@drawable/ic_phone"/>
+                    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="18sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/mobile_number" style="@style/TextViewGrayishBrown"/>
+                        <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:id="@+id/tv_epin_confirm_subscriber_number" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/TextViewBlue"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout android:id="@+id/confirm_details" android:paddingLeft="0dp" android:paddingRight="@dimen/dp20" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:layout_below="@+id/confirm_subscriber_number" android:layout_alignLeft="@+id/confirm_subscriber_number" android:paddingStart="0dp" android:paddingEnd="@dimen/dp20" android:layout_alignStart="@+id/confirm_subscriber_number">
+                    <ImageView android:layout_gravity="center" android:background="@drawable/z_oval_blue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_top_bottom" android:contentDescription="@string/content_icon_bath" android:layout_marginEnd="@dimen/margin_top_bottom" app:srcCompat="@drawable/ic_attach_money"/>
+                    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="18sp" android:ellipsize="end" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/total_purchase" android:maxLines="1" style="@style/TextViewGrayishBrown"/>
+                        <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:id="@+id/tv_confirm_epin_amount" android:layout_width="wrap_content" android:layout_height="0dp" android:layout_weight="1" style="@style/TextViewBlue"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <th.p047co.dtac.android.dtacone.widget.view.DtacClearableEditText android:id="@+id/edtPin" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp24" android:layout_marginTop="@dimen/dp24" android:layout_marginRight="@dimen/dp24" android:layout_below="@+id/confirm_details" android:layout_centerHorizontal="true" android:layout_marginStart="@dimen/dp24" android:layout_marginEnd="@dimen/dp24" app:showClearButton="false" style="@style/EditTextPin">
+                    <requestFocus/>
+                </th.p047co.dtac.android.dtacone.widget.view.DtacClearableEditText>
+            </RelativeLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</th.p047co.dtac.android.dtacone.widget.loading.DtacSwipeRefresh>

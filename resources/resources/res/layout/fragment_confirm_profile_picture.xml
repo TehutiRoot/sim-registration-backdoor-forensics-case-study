@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:background="@color/colorBlack" android:layout_width="match_parent" android:layout_height="match_parent">
+    <com.isseiaoki.simplecropview.CropImageView android:id="@+id/mCropView" android:paddingLeft="16dp" android:paddingTop="16dp" android:paddingRight="16dp" android:paddingBottom="16dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="70dp" android:layout_marginBottom="@dimen/dp_12" android:layout_above="@+id/layoutButton" custom:scv_background_color="@color/colorBlack" custom:scv_crop_mode="9" custom:scv_frame_color="@color/colorAccent" custom:scv_frame_stroke_weight="1dp" custom:scv_guide_color="@color/colorAccent" custom:scv_guide_show_mode="3" custom:scv_guide_stroke_weight="1dp" custom:scv_handle_color="@color/colorAccent" custom:scv_handle_show_mode="1" custom:scv_handle_size="14dp" custom:scv_min_frame_size="50dp" custom:scv_overlay_color="@color/color_transparent_black_80" custom:scv_touch_padding="8dp"/>
+    <LinearLayout android:orientation="horizontal" android:id="@+id/layoutButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/dp24" android:baselineAligned="false" android:weightSum="2" android:layout_alignParentBottom="true">
+        <RelativeLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1">
+            <ImageView android:id="@+id/ivCancel" android:layout_width="@dimen/dp64" android:layout_height="@dimen/dp64" android:src="@drawable/ic_close_transparent" android:layout_centerHorizontal="true"/>
+        </RelativeLayout>
+        <RelativeLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1">
+            <ImageView android:id="@+id/ivSubmit" android:layout_width="@dimen/dp64" android:layout_height="@dimen/dp64" android:src="@drawable/ic_check_transparent" android:layout_centerHorizontal="true"/>
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:id="@+id/rootLayout" android:background="@android:color/white" android:layout_width="match_parent" android:layout_height="match_parent">
+    <th.p047co.dtac.android.dtacone.widget.view.DtacPhoneNumberEditText android:gravity="center_vertical" android:id="@+id/rectify_edt_phone_number" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp16" android:layout_marginTop="@dimen/dp8" android:layout_marginRight="@dimen/dp16" android:hint="@string/enter_subscriber_number" android:layout_marginStart="@dimen/dp16" android:layout_marginEnd="@dimen/dp16" style="@style/PhoneEditText">
+        <requestFocus/>
+    </th.p047co.dtac.android.dtacone.widget.view.DtacPhoneNumberEditText>
+    <th.p047co.dtac.android.dtacone.widget.view.DtacFontButton android:layout_gravity="center_horizontal" android:id="@+id/rectify_btn_search" android:layout_width="150dp" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp8" android:text="@string/search" android:contentDescription="@string/content_search" style="@style/ButtonBlue"/>
+    <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="16sp" android:gravity="center" android:id="@+id/message" android:background="@color/purpleyGrey" android:layout_width="match_parent" android:layout_height="52dp" android:layout_marginTop="@dimen/dp12" android:text="@string/choose_rectify_item" style="@style/TextViewWhite"/>
+    <th.p047co.dtac.android.dtacone.widget.loading.DtacSwipeRefresh android:id="@+id/swipeRefreshRectify" android:layout_width="match_parent" android:layout_height="match_parent">
+        <th.p047co.dtac.android.dtacone.widget.view.DtacRecyclerView android:id="@+id/rectify_list" android:layout_width="match_parent" android:layout_height="match_parent"/>
+    </th.p047co.dtac.android.dtacone.widget.loading.DtacSwipeRefresh>
+</LinearLayout>

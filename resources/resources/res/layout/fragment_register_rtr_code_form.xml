@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@+id/rootLayout" android:layout_width="match_parent" android:layout_height="match_parent" android:animateLayoutChanges="true">
+        <th.p047co.dtac.android.dtacone.widget.view.DtacClearableEditText android:id="@+id/register_edt_rtr_code" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="28dp" android:hint="@string/rtr_code_8_digit" android:maxLines="1" android:maxLength="8" android:drawableLeft="@drawable/ic_home" android:imeOptions="actionNext" android:drawableStart="@drawable/ic_home" style="@style/PhoneEditText">
+            <requestFocus/>
+        </th.p047co.dtac.android.dtacone.widget.view.DtacClearableEditText>
+        <th.p047co.dtac.android.dtacone.widget.view.DtacClearableEditText android:id="@+id/register_edt_msisdn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:hint="@string/phone_number" android:maxLines="1" android:imeOptions="actionDone" style="@style/PhoneEditText"/>
+        <th.p047co.dtac.android.dtacone.widget.view.DtacFontButton android:id="@+id/register_btn_request_otp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp8" android:layout_marginTop="@dimen/dp16" android:layout_marginRight="@dimen/dp8" android:text="@string/request_otp_from_sms" android:maxLines="1" android:contentDescription="@string/content_request_otp" android:layout_marginStart="@dimen/dp8" android:layout_marginEnd="@dimen/dp8" style="@style/ButtonBlue"/>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

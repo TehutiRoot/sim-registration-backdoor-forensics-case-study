@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_gravity="center" android:background="@drawable/background_white_round_corner_with_shadow" android:layout_width="300dp" android:layout_height="wrap_content" android:layout_marginLeft="-20dp" android:layout_marginRight="-20dp">
+    <com.makeramen.roundedimageview.RoundedImageView android:id="@+id/ivIntro" android:layout_width="300dp" android:layout_height="300dp" android:scaleType="centerCrop" android:layout_alignParentTop="true" android:layout_centerHorizontal="true" app:riv_corner_radius_top_left="@dimen/dp6" app:riv_corner_radius_top_right="@dimen/dp6"/>
+    <View android:id="@+id/vLineSeparate" android:background="@color/warmGreyFour" android:layout_width="match_parent" android:layout_height="@dimen/dp1" android:layout_below="@+id/ivIntro"/>
+    <LinearLayout android:orientation="vertical" android:padding="@dimen/dp_12" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_below="@+id/vLineSeparate">
+        <th.p047co.dtac.android.dtacone.app_one.widget.OneFontTextView android:textSize="18sp" android:textStyle="bold" android:textColor="@color/greyishBrown" android:ellipsize="end" android:id="@+id/tvTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:lines="1"/>
+        <th.p047co.dtac.android.dtacone.app_one.widget.OneFontTextView android:textSize="14sp" android:textColor="@color/greyishBrown" android:ellipsize="end" android:id="@+id/tvDescription" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp4" android:maxLines="2"/>
+    </LinearLayout>
+</RelativeLayout>

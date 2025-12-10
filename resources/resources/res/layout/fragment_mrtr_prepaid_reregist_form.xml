@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/scrollView" android:background="@android:color/white" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+        <include android:id="@+id/btnOpenSmartCard" layout="@layout/z_include_switch_mode_camera"/>
+        <include layout="@layout/include_mrtr_prepaid_reregist_form"/>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

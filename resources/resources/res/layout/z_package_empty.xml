@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/cvPackageList" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/space" android:layout_marginBottom="@dimen/space" app:cardPreventCornerOverlap="false">
+    <FrameLayout android:paddingTop="@dimen/dp24" android:paddingBottom="@dimen/dp24" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_margin="0dp" android:baselineAligned="false">
+        <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="16sp" android:textStyle="normal" android:ellipsize="end" android:layout_gravity="center" android:id="@+id/package_list_empty" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp18" android:layout_marginRight="@dimen/dp18" android:maxLines="2" style="@style/TextViewGrayishBrown"/>
+    </FrameLayout>
+</androidx.cardview.widget.CardView>

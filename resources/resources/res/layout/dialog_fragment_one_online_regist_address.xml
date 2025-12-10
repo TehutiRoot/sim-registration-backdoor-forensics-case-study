@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:background="@color/transparent60" android:layout_width="match_parent" android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout android:background="@drawable/background_white_top_radius_round_corner" android:focusable="true" android:clickable="true" android:layout_width="match_parent" android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/layoutTitle" android:padding="@dimen/dp18" android:layout_width="match_parent" android:layout_height="wrap_content" app:layout_constraintBottom_toTopOf="@+id/vSeparateLine" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0">
+            <th.p047co.dtac.android.dtacone.app_one.widget.OneFontTextView android:id="@+id/tvTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/loading" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0" style="@style/OneTextViewNormal.16"/>
+            <androidx.appcompat.widget.AppCompatImageView android:id="@+id/ivBtnClose" android:layout_width="@dimen/dp24" android:layout_height="@dimen/dp24" android:src="@drawable/ic_icon_close" android:tint="@color/jet_back" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintEnd_toEndOf="0" app:layout_constraintTop_toTopOf="0"/>
+            <androidx.appcompat.widget.AppCompatImageView android:id="@+id/ivBtnBack" android:visibility="gone" android:layout_width="@dimen/dp24" android:layout_height="@dimen/dp24" android:src="@drawable/ic_icon_back" android:scaleType="centerCrop" android:tint="@color/jet_back" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <View android:id="@+id/vSeparateLine" android:background="@color/line_platinum" android:layout_width="match_parent" android:layout_height="@dimen/dp1" app:layout_constraintTop_toBottomOf="@+id/layoutTitle"/>
+        <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent" android:layout_height="@dimen/dp0" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintTop_toBottomOf="@+id/vSeparateLine">
+            <FrameLayout android:id="@+id/contentLayoutSecond" android:background="@color/white" android:visibility="visible" android:layout_width="match_parent" android:layout_height="match_parent">
+                <androidx.recyclerview.widget.RecyclerView android:id="@+id/recyclerViewContentSecond" android:layout_width="match_parent" android:layout_height="match_parent"/>
+            </FrameLayout>
+            <FrameLayout android:id="@+id/contentLayout" android:background="@color/white" android:visibility="visible" android:layout_width="match_parent" android:layout_height="match_parent">
+                <androidx.recyclerview.widget.RecyclerView android:id="@+id/recyclerViewContent" android:layout_width="match_parent" android:layout_height="match_parent"/>
+            </FrameLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>

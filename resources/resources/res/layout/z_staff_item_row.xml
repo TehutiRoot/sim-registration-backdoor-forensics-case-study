@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<th.p047co.dtac.android.dtacone.widget.view.DtacCardView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/cardview_staff" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/space" android:layout_marginBottom="@dimen/dp12" app:cardElevation="1dp">
+    <RelativeLayout android:padding="@dimen/dp16" android:layout_width="match_parent" android:layout_height="wrap_content" android:animateLayoutChanges="true">
+        <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="@dimen/staff_title" android:id="@+id/staff_tv_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" style="@style/TextViewGrayishBrown"/>
+        <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="@dimen/staff_title" android:textStyle="normal" android:id="@+id/staff_user_id" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:layout_toRightOf="@+id/staff_tv_name" android:layout_alignBottom="@+id/staff_tv_name" android:layout_toEndOf="@+id/staff_tv_name" style="@style/TextViewGrayishBrown"/>
+        <ImageView android:id="@+id/ivNext" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignBottom="@+id/staff_user_id" android:layout_alignParentRight="true" android:contentDescription="@string/content_icon_arrow" android:layout_alignParentEnd="true" app:srcCompat="@drawable/ic_arrow_right"/>
+        <include layout="@layout/z_include_staff_capacity"/>
+        <include layout="@layout/z_include_permission_image"/>
+        <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_below="@+id/horizontalScroll" android:layout_centerHorizontal="true">
+            <include layout="@layout/z_include_manage_staff"/>
+        </LinearLayout>
+    </RelativeLayout>
+</th.p047co.dtac.android.dtacone.widget.view.DtacCardView>

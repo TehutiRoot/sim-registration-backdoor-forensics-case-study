@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:background="@color/white" android:layout_width="match_parent" android:layout_height="match_parent">
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout android:id="@+id/swipeToRefreshLayout" android:layout_width="match_parent" android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent" android:layout_height="match_parent">
+            <th.p047co.dtac.android.dtacone.app_one.widget.OneFontTextView android:id="@+id/ownerCountTitleTextView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/dp14" android:text="@string/one_owner_management_number_of_user_message" app:layout_constraintBottom_toBottomOf="@+id/ownerCountTextView" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="@+id/ownerCountTextView" style="@style/OneTextViewNormal.16"/>
+            <th.p047co.dtac.android.dtacone.app_one.widget.OneFontTextView android:textSize="@dimen/sp24" android:id="@+id/ownerCountTextView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/dp14" app:layout_constraintEnd_toEndOf="0" app:layout_constraintTop_toTopOf="0" style="@style/OneTextViewBlueBold"/>
+            <androidx.recyclerview.widget.RecyclerView android:id="@+id/ownerManagementRecyclerView" android:layout_width="match_parent" android:layout_height="0dp" android:layout_marginTop="@dimen/dp12" android:layout_marginBottom="@dimen/dp12" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintTop_toBottomOf="@+id/ownerCountTextView"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

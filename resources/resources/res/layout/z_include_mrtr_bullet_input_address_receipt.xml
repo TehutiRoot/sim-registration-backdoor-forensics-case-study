@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:id="@+id/root" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="16sp" android:gravity="start" android:id="@+id/tv_mailing_title" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp18" android:layout_marginTop="@dimen/dp16" android:text="@string/mrtr_payment_address_title" android:layout_marginStart="@dimen/dp18" style="@style/TextViewGrayishBrown"/>
+    <RadioGroup android:id="@+id/rdbGroupAddress" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp12" android:layout_marginTop="@dimen/dp8" android:layout_marginStart="@dimen/dp12">
+        <th.p047co.dtac.android.dtacone.widget.view.DtacRadioButton android:textSize="14sp" android:textColor="@drawable/selector_active_text_radio_button" android:id="@+id/rb_address_registrants" android:layout_width="240dp" android:layout_height="wrap_content" android:checked="true" android:text="@string/mrtr_payment_address_registrant" android:maxLines="1"/>
+        <th.p047co.dtac.android.dtacone.widget.view.DtacRadioButton android:textSize="14sp" android:textColor="@drawable/selector_active_text_radio_button" android:id="@+id/rb_address_other" android:layout_width="240dp" android:layout_height="wrap_content" android:text="@string/mrtr_payment_address_other" android:maxLines="1"/>
+    </RadioGroup>
+</LinearLayout>

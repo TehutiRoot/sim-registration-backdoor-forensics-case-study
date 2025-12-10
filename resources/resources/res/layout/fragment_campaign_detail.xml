@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:background="@android:color/white" android:layout_width="match_parent" android:layout_height="match_parent">
+    <androidx.core.widget.NestedScrollView android:id="@+id/nestedScrollView" android:layout_width="match_parent" android:layout_height="wrap_content" android:fillViewport="true">
+        <RelativeLayout android:paddingBottom="@dimen/dp24" android:layout_width="match_parent" android:layout_height="match_parent">
+            <include android:id="@+id/layoutHeader" layout="@layout/include_header_campaign_detail"/>
+            <RelativeLayout android:id="@+id/layoutReward" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp16" android:layout_below="@+id/layoutHeader">
+                <LinearLayout android:orientation="horizontal" android:id="@+id/layoutRewardHeader" android:paddingLeft="@dimen/dp12" android:paddingRight="@dimen/dp12" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <ImageView android:layout_width="@dimen/dp32" android:layout_height="@dimen/dp32" android:layout_marginRight="@dimen/dp8" android:src="0x7f080483" android:layout_marginEnd="@dimen/dp8"/>
+                    <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="18sp" android:gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="match_parent" android:text="@string/happy_point_detail_reward_tab_title"/>
+                </LinearLayout>
+                <com.makeramen.roundedimageview.RoundedImageView android:id="@+id/ivReward" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp24" android:layout_marginTop="@dimen/dp16" android:layout_marginRight="@dimen/dp24" android:src="@drawable/image_banner_default" android:scaleType="fitStart" android:adjustViewBounds="true" android:layout_below="@+id/layoutRewardHeader" app:riv_corner_radius="@dimen/dp8" app:riv_oval="false"/>
+            </RelativeLayout>
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

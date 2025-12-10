@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:background="@drawable/bg_round_radius_shadow" android:paddingLeft="@dimen/dp16" android:paddingTop="@dimen/dp24" android:paddingRight="@dimen/dp16" android:paddingBottom="@dimen/dp24" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="14sp" android:textColor="@color/greyishBrown" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@+id/tvMessage" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/dp8"/>
+    <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="12sp" android:textColor="@color/warmGrey" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@+id/tvTimestamp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+    <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="12sp" android:textColor="@color/warmGrey" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@+id/tvErrorCode" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/dp16"/>
+    <include layout="@layout/include_layout_confirm_cancel_azure_btn"/>
+</LinearLayout>

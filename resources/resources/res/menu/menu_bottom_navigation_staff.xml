@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/ic_bottom_bar_home_normal" android:enabled="true" android:id="@+id/item_home" android:title="@string/service_text"/>
+    <item android:icon="@drawable/ic_bottom_bar_news_normal" android:enabled="true" android:id="@+id/item_news" android:title="@string/news_feed"/>
+    <item android:icon="@drawable/ic_bottom_bar_other_normal" android:enabled="true" android:id="@+id/item_other" android:title="@string/more_text"/>
+</menu>

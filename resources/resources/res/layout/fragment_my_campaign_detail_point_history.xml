@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:background="@color/whiteThree" android:layout_width="match_parent" android:layout_height="match_parent">
+    <th.p047co.dtac.android.dtacone.widget.view.DtacRecyclerView android:id="@+id/recyclerPointHistory" android:layout_width="match_parent" android:layout_height="match_parent"/>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@+id/layoutEmptyPointHistory" android:paddingLeft="@dimen/dp8" android:paddingTop="@dimen/dp64" android:paddingRight="@dimen/dp8" android:paddingBottom="@dimen/dp64" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <ImageView android:layout_width="@dimen/dp56" android:layout_height="@dimen/dp56" android:src="0x7f08036b" android:scaleType="fitCenter" android:adjustViewBounds="true"/>
+        <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="14sp" android:textColor="@color/greyishBrown" android:gravity="center" android:id="@+id/tvEmptyPointHistory" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp16" android:text="@string/happy_point_detail_point_history_empty_detail"/>
+        <LinearLayout android:orientation="horizontal" android:id="@+id/btnRetry" android:background="@drawable/background_transparent_greyish_brown_border" android:padding="@dimen/dp8" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp24" android:foreground="?android:attr/selectableItemBackground">
+            <ImageView android:layout_gravity="center_vertical" android:layout_width="@dimen/dp16" android:layout_height="@dimen/dp16" android:src="0x7f0804a2" android:scaleType="fitCenter" android:adjustViewBounds="true"/>
+            <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="14sp" android:textColor="@color/greyishBrown" android:gravity="center" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp6" android:text="@string/happy_point_detail_point_history_refresh_text" android:layout_marginStart="@dimen/dp6"/>
+        </LinearLayout>
+    </LinearLayout>
+    <RelativeLayout android:id="@+id/layoutProgressBar" android:paddingTop="@dimen/dp64" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent">
+        <ProgressBar android:layout_width="@dimen/dp36" android:layout_height="@dimen/dp36" android:layout_centerHorizontal="true" style="@style/Widget.AppCompat.ProgressBar"/>
+    </RelativeLayout>
+</RelativeLayout>

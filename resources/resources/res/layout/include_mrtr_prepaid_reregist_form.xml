@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:id="@+id/rootLayout" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp8">
+        <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_margin="@dimen/dp12">
+            <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="14sp" android:textStyle="normal" android:gravity="center_horizontal" android:id="@+id/tvPhoneNumberRegister" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/res_0x7f140812_pre2post_sim_owner_information_msisdn_title" android:maxLines="1" style="@style/TextViewGrayishBrown"/>
+            <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="24sp" android:textStyle="bold" android:gravity="center_horizontal" android:id="@+id/tvPhoneNumber" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp4" android:maxLines="1" style="@style/TextViewBlue"/>
+            <th.p047co.dtac.android.dtacone.widget.view.DtacTabLayout android:id="@+id/tabLayout" android:layout_width="match_parent" android:layout_height="48dp" android:layout_marginTop="@dimen/dp8" app:tabGravity="0" app:tabIndicatorColor="@android:color/transparent" app:tabMaxWidth="0dp" app:tabSelectedTextColor="@color/white" app:tabTextColor="@color/colorBlue"/>
+            <th.p047co.dtac.android.dtacone.widget.view.WrapContentViewPager android:id="@+id/viewPager" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+            <FrameLayout android:id="@+id/contentButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp">
+                <include android:layout_width="match_parent" android:layout_height="64dp" layout="@layout/z_button_ok_cancel"/>
+            </FrameLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

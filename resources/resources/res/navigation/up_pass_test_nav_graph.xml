@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/up_pass_test_nav_graph" app:startDestination="@+id/up_pass_select_theme">
+    <fragment android:label="UpPassSelectTheme" android:name="th.co.dtac.android.dtacone.view.fragment.upPass.UpPassTestSelectThemeFragment" android:id="@+id/up_pass_select_theme">
+        <action android:id="@+id/action_select_theme_to_ocr" app:destination="@+id/up_pass_ocr">
+            <argument android:name="formType" android:defaultValue="Ocr" app:argType="th.co.dtac.android.dtacone.model.upPass.UpPassFormType"/>
+            <argument android:name="themeType" android:defaultValue="DtacOne" app:argType="th.co.dtac.android.dtacone.model.upPass.UpPassThemeType"/>
+        </action>
+    </fragment>
+    <fragment android:label="UpPass OCR" android:name="th.p047co.dtac.android.dtacone.view.fragment.upPass.UpPassFormFragment" android:id="@+id/up_pass_ocr">
+        <argument android:name="formType" android:defaultValue="Ocr" app:argType="th.co.dtac.android.dtacone.model.upPass.UpPassFormType"/>
+        <argument android:name="themeType" android:defaultValue="DtacOne" app:argType="th.co.dtac.android.dtacone.model.upPass.UpPassThemeType"/>
+    </fragment>
+</navigation>

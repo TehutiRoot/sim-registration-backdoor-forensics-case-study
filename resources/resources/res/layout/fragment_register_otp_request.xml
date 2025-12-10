@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@+id/rootLayout" android:layout_width="match_parent" android:layout_height="match_parent" android:animateLayoutChanges="true">
+        <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:gravity="center_horizontal" android:id="@+id/register_tv_header" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="22dp" style="@style/TextViewBlack"/>
+        <th.p047co.dtac.android.dtacone.widget.view.DtacClearableEditText android:id="@+id/register_edt_phone_number" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="28dp" android:imeOptions="actionDone" style="@style/PhoneEditText">
+            <requestFocus/>
+        </th.p047co.dtac.android.dtacone.widget.view.DtacClearableEditText>
+        <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:id="@+id/register_tv_phone_number_error_message" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp" style="@style/TextViewBlack"/>
+        <th.p047co.dtac.android.dtacone.widget.view.DtacFontButton android:id="@+id/register_btn_request_otp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp8" android:layout_marginTop="@dimen/dp16" android:layout_marginRight="@dimen/dp8" android:text="@string/request_otp_from_sms" android:maxLines="1" android:contentDescription="@string/content_request_otp" android:layout_marginStart="@dimen/dp8" android:layout_marginEnd="@dimen/dp8" style="@style/ButtonBlue"/>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

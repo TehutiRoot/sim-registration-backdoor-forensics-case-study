@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+        <th.p047co.dtac.android.dtacone.app_one.widget.OneFontTextView android:textSize="16sp" android:textColor="@color/grayishBrown48" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@+id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp16" android:text="@string/dialog_title_dol_ltwo" android:lineSpacingExtra="12dp"/>
+        <ImageView android:layout_gravity="end" android:id="@+id/close" android:layout_width="@dimen/dp32" android:layout_height="@dimen/dp32" android:layout_marginTop="@dimen/dp12" android:layout_marginEnd="@dimen/dp16" app:srcCompat="0x7f080344"/>
+    </FrameLayout>
+    <View android:background="@color/line_platinum" android:layout_width="match_parent" android:layout_height="@dimen/dp1" android:layout_marginTop="@dimen/dp12"/>
+    <androidx.recyclerview.widget.RecyclerView android:id="@+id/rvRtrAndPhone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp16" android:layout_marginRight="@dimen/dp16" android:layout_weight="1"/>
+    <th.p047co.dtac.android.dtacone.app_one.widget.OneButtonRed android:id="@+id/btnRequestOTP" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp24" android:layout_marginTop="@dimen/dp40" android:layout_marginRight="@dimen/dp24" android:layout_marginBottom="@dimen/dp24" android:text="@string/request_otp_from_sms" android:layout_below="@+id/layoutInputInfo"/>
+</androidx.appcompat.widget.LinearLayoutCompat>

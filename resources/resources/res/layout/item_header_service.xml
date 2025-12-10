@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:background="@color/white" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="13sp" android:textColor="@color/colorBlackTwo" android:gravity="center" android:id="@+id/tvGroupServiceTitle" android:background="@color/lightSky" android:paddingTop="@dimen/dp_8" android:paddingBottom="@dimen/dp_8" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+</LinearLayout>

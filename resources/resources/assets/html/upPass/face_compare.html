@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Face Compare</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Face Compare</h1>
+<p>This is a simple HTML page for face comparison.</p>
+<script>
+    // JavaScript code can be added here for face comparison processing
+    console.log("Face comparison script loaded.");
+    function gotoErrorPage() {
+        // Logic to handle error page redirection
+        console.log("Redirecting to error page...");
+        window.location.href = "error_page.html";
+    }
+    function gotoSuccessPage() {
+        // Logic to handle success page redirection
+        console.log("Redirecting to success page...");
+        window.location.href = "success_page.html";
+    }
+</script>
+<button id="btn-error-page" onclick="gotoErrorPage()">Error Page</button>
+<button id="btn-success-page" onclick="gotoSuccessPage()">Success Page</button>
+</body>
+</html>

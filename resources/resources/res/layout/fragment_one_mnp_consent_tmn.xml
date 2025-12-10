@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:orientation="vertical" android:background="@color/white" android:padding="@dimen/dp16" android:layout_width="match_parent" android:layout_height="match_parent">
+        <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+            <ImageView android:layout_gravity="center_horizontal" android:id="@+id/ivTMN" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp8" android:scaleType="fitCenter" app:srcCompat="@drawable/ic_one_tmn"/>
+            <th.p047co.dtac.android.dtacone.app_one.widget.OneTabLayout android:layout_gravity="end" android:id="@+id/tab_language" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="@dimen/dp30" app:tabGravity="1" app:tabIndicatorColor="@android:color/transparent" app:tabSelectedTextColor="@android:color/white" app:tabTextColor="@color/red5"/>
+        </FrameLayout>
+        <th.p047co.dtac.android.dtacone.app_one.widget.OneFontTextView android:gravity="center" android:id="@+id/tmn_title" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp24" android:layout_marginBottom="@dimen/dp16" android:lineSpacingExtra="@dimen/dp8" style="@style/OneTextViewRedBold.16"/>
+        <ScrollView android:id="@+id/scroll_view_nontelco" android:layout_width="match_parent" android:layout_height="0dp" android:layout_marginBottom="@dimen/dp16" android:layout_weight="1">
+            <LinearLayout android:orientation="vertical" android:id="@+id/contentScroll" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <th.p047co.dtac.android.dtacone.app_one.widget.OneFontTextView android:autoLink="web" android:id="@+id/tmn_detail" android:layout_width="match_parent" android:layout_height="wrap_content" android:lineSpacingExtra="12dp" style="@style/OneTextViewNormal.14"/>
+                <View android:id="@+id/spaceView" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </ScrollView>
+        <LinearLayout android:gravity="center_vertical" android:id="@+id/caution" android:background="@drawable/bg_border_white_three" android:layout_width="match_parent" android:layout_height="32dp" android:layout_marginBottom="16dp">
+            <ImageView android:id="@+id/infoImageView" android:layout_width="13.75dp" android:layout_height="13.75dp" android:layout_marginLeft="9dp" android:layout_marginRight="9dp" app:srcCompat="@drawable/info_caution"/>
+            <th.p047co.dtac.android.dtacone.app_one.widget.OneFontTextView android:textSize="14sp" android:textColor="@color/jet_back" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/one_postpaid_tmn_info"/>
+        </LinearLayout>
+        <th.p047co.dtac.android.dtacone.app_one.widget.OneFontButton android:textSize="18sp" android:textStyle="bold" android:textColor="@color/white" android:layout_gravity="bottom" android:id="@+id/btn_allow" android:background="@drawable/background_one_button_red" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <th.p047co.dtac.android.dtacone.app_one.widget.OneFontButton android:textSize="18sp" android:textStyle="bold" android:textColor="@color/red5" android:layout_gravity="bottom" android:id="@+id/btn_not_allow" android:background="@drawable/background_line_round_corner_red" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp16" android:animateLayoutChanges="true"/>
+    </LinearLayout>
+</FrameLayout>

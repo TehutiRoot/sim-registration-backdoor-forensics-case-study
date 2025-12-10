@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent">
+    <com.google.android.cameraview.CameraView android:id="@+id/cameraView" android:layout_width="match_parent" android:layout_height="match_parent" android:adjustViewBounds="true" android:keepScreenOn="true" app:aspectRatio="4:3" app:autoFocus="true" app:facing="0" app:flash="0"/>
+    <androidx.percentlayout.widget.PercentRelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
+        <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="18sp" android:textColor="@android:color/white" android:id="@+id/camera_view_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp18" android:layout_marginBottom="@dimen/dp24" android:layout_centerHorizontal="true"/>
+        <th.p047co.dtac.android.dtacone.widget.view.DtacTouchView android:id="@+id/viewFocus" android:background="@drawable/z_camera_focus" android:visibility="invisible" android:layout_width="40dp" android:layout_height="40dp"/>
+        <RelativeLayout android:id="@+id/circleTakePhoto" android:background="@drawable/z_custom_oval_white" android:focusable="true" android:clickable="true" android:layout_width="60dp" android:layout_height="60dp" android:layout_marginBottom="@dimen/dp48" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true">
+            <th.p047co.dtac.android.dtacone.widget.view.DtacFontButton android:id="@+id/btnTakePhoto" android:background="@drawable/z_selector_custom_camera" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_margin="@dimen/dp12" android:layout_centerInParent="true"/>
+        </RelativeLayout>
+    </androidx.percentlayout.widget.PercentRelativeLayout>
+</FrameLayout>

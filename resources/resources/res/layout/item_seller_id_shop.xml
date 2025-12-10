@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/layoutShop" android:layout_width="match_parent" android:layout_height="wrap_content" android:foreground="?android:attr/selectableItemBackground">
+    <View android:background="@color/alto" android:layout_width="match_parent" android:layout_height="@dimen/dp1"/>
+    <ImageView android:id="@+id/icLocation" android:layout_width="@dimen/dp32" android:layout_height="@dimen/dp32" android:layout_marginTop="@dimen/dp24" android:layout_marginBottom="@dimen/dp24" android:src="0x7f0803d0"/>
+    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp8" android:layout_toRightOf="@+id/icLocation" android:layout_centerVertical="true" android:layout_marginStart="@dimen/dp8" android:layout_toEndOf="@+id/icLocation">
+        <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="18sp" android:textColor="@color/grayishBrown48" android:ellipsize="end" android:gravity="start|center_vertical" android:id="@+id/tvItemShopName" android:layout_width="wrap_content" android:layout_height="wrap_content" android:lines="1"/>
+        <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="12sp" android:textColor="@color/grayishBrown48" android:ellipsize="end" android:gravity="start|center_vertical" android:id="@+id/tvItemShopCode" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="22222222" android:lines="1"/>
+    </LinearLayout>
+</RelativeLayout>

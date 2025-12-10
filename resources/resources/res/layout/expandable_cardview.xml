@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/card_layout" android:layout_width="wrap_content" android:layout_height="wrap_content" app:cardBackgroundColor="@color/colorPrimary" app:cardCornerRadius="8dp" app:cardElevation="0dp">
+    <LinearLayout android:orientation="vertical" android:id="@+id/card_container" android:layout_width="match_parent" android:layout_height="60dp">
+        <RelativeLayout android:gravity="center_vertical" android:id="@+id/card_header" android:layout_width="match_parent" android:layout_height="60dp">
+            <ImageButton android:id="@+id/card_icon" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="15dp"/>
+            <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:id="@+id/card_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/advisory_enquiry_customer_customer_data_usage" android:maxLines="1" android:maxLength="39" android:layout_centerInParent="true" style="@style/CustomTextHeaderTitle"/>
+            <ImageView android:id="@+id/card_arrow" android:background="?attr/selectableItemBackgroundBorderless" android:layout_width="11dp" android:layout_height="11dp" android:src="@mipmap/advisory_icon_arrow_right_white" android:layout_centerVertical="true" android:rotation="90" android:layout_marginEnd="20dp" android:layout_alignParentEnd="true"/>
+        </RelativeLayout>
+        <LinearLayout android:orientation="vertical" android:id="@+id/card_stub" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

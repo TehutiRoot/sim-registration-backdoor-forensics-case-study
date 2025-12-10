@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:background="@color/white" android:focusable="true" android:clickable="true" android:layout_width="match_parent" android:layout_height="match_parent">
+    <include android:id="@+id/switchModeToSmartCard" layout="@layout/z_include_switch_mode_camera"/>
+    <androidx.core.widget.NestedScrollView android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toBottomOf="@+id/switchModeToSmartCard">
+        <RelativeLayout android:id="@+id/registration_box" android:background="@color/white" android:layout_width="match_parent" android:layout_height="match_parent">
+            <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/dp16">
+                <include android:id="@+id/btnOpenSmartCard" layout="@layout/z_include_switch_mode_camera"/>
+                <th.p047co.dtac.android.dtacone.widget.view.DtacTabLayout android:id="@+id/tabLayout" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp24" android:layout_marginBottom="@dimen/dp12" android:layout_below="@+id/btnOpenSmartCard" android:layout_marginStart="@dimen/dp16" android:layout_marginEnd="@dimen/dp16" app:tabGravity="0" app:tabIndicatorColor="@android:color/transparent" app:tabIndicatorHeight="4dp" app:tabMaxWidth="@dimen/tab_max_width" app:tabMinWidth="@dimen/tab_min_width" app:tabMode="1" app:tabSelectedTextColor="@android:color/white" app:tabTextColor="@color/colorAccent"/>
+                <th.p047co.dtac.android.dtacone.widget.view.WrapContentViewPager android:id="@+id/viewPager" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_below="@+id/tabLayout"/>
+                <th.p047co.dtac.android.dtacone.widget.view.DtacFontButton android:textSize="18sp" android:textStyle="bold" android:id="@+id/btnOk" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp32" android:minWidth="16dp" android:text="@string/ok" android:layout_below="@+id/viewPager" android:layout_marginStart="@dimen/dp16" android:layout_marginEnd="@dimen/dp16" style="@style/ButtonDarkBlue2"/>
+            </RelativeLayout>
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

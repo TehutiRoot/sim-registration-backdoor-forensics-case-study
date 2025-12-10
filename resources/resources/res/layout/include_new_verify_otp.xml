@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:gravity="center_horizontal" android:orientation="vertical" android:id="@+id/rootLayout" android:background="@android:color/white" android:padding="@dimen/dp12" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <include android:id="@+id/incPhoneNumber" layout="@layout/z_include_helper_phone_number"/>
+    <th.p047co.dtac.android.dtacone.widget.view.DtacClearableEditText android:id="@+id/p2post_edt_otp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp8" android:hint="@string/res_0x7f14080a_pre2post_otp_verify_otp_placeholder" android:maxLength="4" android:inputType="number" style="@style/InputOtpEditText">
+        <requestFocus/>
+    </th.p047co.dtac.android.dtacone.widget.view.DtacClearableEditText>
+    <th.p047co.dtac.android.dtacone.widget.view.DtacFontButton android:id="@+id/pre2post_btn_resend_otp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp8" android:layout_marginBottom="@dimen/dp4" android:text="@string/res_0x7f1403a5_mnp_otp_verify_retry_otp" style="@style/ButtonBlack"/>
+</LinearLayout>

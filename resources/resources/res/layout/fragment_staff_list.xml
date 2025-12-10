@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+    <LinearLayout android:orientation="vertical" android:background="@android:color/white" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <FrameLayout android:background="@color/cerulean" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <FrameLayout android:id="@+id/staff_add_box" android:background="@android:color/white" android:clickable="true" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/dp8" android:foreground="?attr/selectableItemBackground" style="?android:attr/buttonStyle">
+                <th.p047co.dtac.android.dtacone.widget.view.DtacFontButton android:textSize="@dimen/add_staff" android:layout_gravity="center" android:id="@+id/staff_btn_add" android:padding="@dimen/dp4" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/staff_registration" android:drawableLeft="@drawable/ic_add" android:drawablePadding="@dimen/dp8" android:drawableStart="@drawable/ic_add" style="@style/ButtonWhite"/>
+            </FrameLayout>
+        </FrameLayout>
+        <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="@dimen/staff_list" android:id="@+id/staff_tv_staff_amount" android:background="#efefef" android:padding="@dimen/dp8" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/staff_list" style="@style/TextViewGrayishBrown"/>
+        <th.p047co.dtac.android.dtacone.widget.loading.DtacSwipeRefresh android:id="@+id/swipeRefresh" android:layout_width="match_parent" android:layout_height="match_parent">
+            <androidx.recyclerview.widget.RecyclerView android:id="@+id/rvStaffListRecycler" android:background="#efefef" android:scrollbars="vertical" android:layout_width="match_parent" android:layout_height="match_parent"/>
+        </th.p047co.dtac.android.dtacone.widget.loading.DtacSwipeRefresh>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

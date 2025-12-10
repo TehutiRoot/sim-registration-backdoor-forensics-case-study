@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="297" android:versionName="68.3" android:compileSdkVersion="35" android:compileSdkVersionCodename="15" android:requiredSplitTypes="base__abi,base__density" android:splitTypes="" package="th.co.dtac.android.dtacone" platformBuildVersionCode="35" platformBuildVersionName="15">
+    <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="35"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" android:usesPermissionFlags="0x10000"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permisson.READ_GSERVICES"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.WRITE_GSERVICES"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
+    <uses-permission android:name="android.permission.CAPTURE_VIDEO_OUTPUT"/>
+    <uses-permission android:name="android.permission.CAPTURE_AUDIO_OUTPUT"/>
+    <uses-permission android:name="android.permission.CAPTURE_SECURE_VIDEO_OUTPUT"/>
+    <uses-permission android:name="android.webkit.PermissionRequest"/>
+    <uses-permission android:name="android.webkit.resource.VIDEO_CAPTURE"/>
+    <queries>
+        <package android:name="com.kasikorn.retail.mbanking.wap"/>
+        <package android:name="com.scb.phone"/>
+        <package android:name="ktbcs.netbank"/>
+        <package android:name="com.krungsri.kma"/>
+        <intent>
+            <action android:name="android.intent.action.CREATE_DOCUMENT"/>
+            <data android:mimeType="*/*"/>
+        </intent>
+        <intent>
+            <action android:name="androidx.camera.extensions.action.VENDOR_ACTION"/>
+        </intent>
+        <package android:name="com.google.android.apps.maps"/>
+    </queries>
+    <uses-feature android:name="android.hardware.usb.accessory" android:required="false"/>
+    <uses-feature android:name="android.hardware.usb.host" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera" android:required="true"/>
+    <uses-feature android:name="android.hardware.camera2" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <uses-feature android:name="android.hardware.telephony" android:required="false"/>
+    <uses-feature android:name="android.hardware.bluetooth_le" android:required="false"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK" android:maxSdkVersion="25"/>
+    <uses-feature android:glEsVersion="0x20000" android:required="true"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="th.co.dtac.android.dtacone.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"/>
+    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE"/>
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <permission android:name="th.co.dtac.android.dtacone.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" android:protectionLevel="signature"/>
+    <application android:theme="@style/AppTheme" android:label="@string/app_name" android:icon="@mipmap/ic_app" android:name="th.p047co.dtac.android.dtacone.MobileRTRApplication" android:allowBackup="false" android:hardwareAccelerated="true" android:supportsRtl="true" android:extractNativeLibs="false" android:usesCleartextTraffic="true" android:networkSecurityConfig="@xml/network_security_config" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:requestLegacyExternalStorage="true" android:enableOnBackInvokedCallback="true">
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.upPass.UpPassDemoActivity" android:exported="false"/>
+        <activity android:name="th.co.dtac.android.dtacone.view.activity.upPass.UpPassTestActivity" android:exported="false"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.appOne.tol.activity.OneRegisterTrueOnlineActivity" android:exported="false" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.appOne.eSign.activity.OneConsentEsignActivity" android:exported="false"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.appOne.sellerID.activity.OneOtherShopListActivity" android:exported="false"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.appOne.sellerID.activity.OneShopListActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.appOne.device_sale.activity.OneDeviceSaleActivity" android:exported="false" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.appOne.deviceSaleTrueCompany.activity.OneDeviceSaleTrueActivity" android:exported="false" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.appOne.pre2post.activity.OnePre2PostActivity" android:exported="false" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.appOne.postpaid_registration.activity.OnePostpaidSearchPackageActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.appOne.postpaid_registration.activity.OnePostpaidRegistrationActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.appOne.onlineRegister.activity.OneOnlineRegistrationActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.appOne.about.activity.OneAboutActivity" android:exported="false"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.appOne.activateSim.activity.OneActivateSimActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.appOne.ownerManagement.activity.OneOwnerManagementActivity" android:exported="false"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.appOne.retailerProfileUpdate.activity.OneRetailerProfileCameraActivity" android:exported="false"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.appOne.retailerProfileUpdate.activity.OneRetailerProfileUpdateActivity" android:exported="false"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.appOne.buyDol.activity.OneBuyDolScbActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.appOne.buyDol.activity.OneBuyDol3DsActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.appOne.buyDol.activity.OneBuyDolActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.appOne.prepaid_registration.activity.OnePrepaidRegistrationActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.appOne.staff.activity.OneStaffPermissionActivity" android:exported="false" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan|stateVisible"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.appOne.rectify.activity.OneRectifyActivity" android:exported="false"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.appOne.staff.activity.OneAddNewStaffActivity" android:exported="false" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan|stateVisible"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.appOne.stvProSermOnline.activity.OneSTVProSermOnlineActivity" android:exported="false" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.appOne.change_password.activity.OneChangePasswordActivity" android:exported="false" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan|stateVisible"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.appOne.registration.activity.OneRegistrationActivity" android:exported="false" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan|stateVisible"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.appOne.forgot_password.activity.OneForgotPasswordActivity" android:exported="false" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan|stateVisible"/>
+        <activity android:theme="@style/Theme.OneHome" android:name="th.p047co.dtac.android.dtacone.view.appOne.home.activity.OneHomeActivity" android:exported="false" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan|stateVisible"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.eSIM.ESimActivity" android:exported="false" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan|stateVisible"/>
+        <meta-data android:name="io.fabric.ApiKey" android:value="01bc48fe74a39bbd1ece9f4529a3b0e20db87381"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="com.google.android.gms.vision.DEPENDENCIES" android:value="face"/>
+        <meta-data android:name="com.google.mlkit.vision.DEPENDENCIES" android:value="ocr"/>
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyB2KtdpY8jYppW7dNg7cgVHaMR9XzdGwvI"/>
+        <meta-data android:name="android.webkit.WebView.EnableSafeBrowsing" android:value="true"/>
+        <activity android:theme="@style/SplashTheme" android:name="th.p047co.dtac.android.dtacone.view.activity.introduction.splashScreen.SplashScreenActivity" android:exported="true" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.login.SigninActivity" android:exported="true" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.RegisterActivity" android:exported="false" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.home.HomeActivity" android:exported="false" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.staff.StaffRenameActivity" android:exported="false" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.staff.AddNewStaffActivity" android:exported="false" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.newsfeed.PostMoreImageDetailActivity" android:exported="false" android:screenOrientation="portrait"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.newsfeed.PostMoreDetailActivity" android:exported="false" android:screenOrientation="portrait"/>
+        <receiver android:name="th.p047co.dtac.android.dtacone.manager.cardreader.bluetooth.BluetoothReceiver" android:enabled="false" android:exported="true">
+            <intent-filter>
+                <action android:name="android.bluetooth.device.action.ACL_CONNECTED"/>
+                <action android:name="android.bluetooth.device.action.ACL_DISCONNECTED"/>
+                <action android:name="android.bluetooth.device.action.FOUND"/>
+                <action android:name="android.bluetooth.device.action.UUID"/>
+                <action android:name="android.bluetooth.device.action.ACL_DISCONNECT_REQUESTED"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="th.p047co.dtac.android.dtacone.manager.messaging.MessagingInstanceId" android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:name="th.p047co.dtac.android.dtacone.manager.messaging.MessagingReceiver" android:enabled="true" android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <meta-data android:name="com.google.firebase.messaging.default_notification_icon" android:resource="@drawable/ic_dtac"/>
+        <meta-data android:name="com.google.firebase.messaging.default_notification_color" android:resource="@color/colorGray"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.notification.NewsNotificationActivity" android:exported="true" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.appOne.notification.activity.OneNewsNotificationActivity" android:exported="true" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="OPEN_NEWS"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <receiver android:name="th.p047co.dtac.android.dtacone.manager.cardreader.usb.UsbBroadcastReceiver" android:exported="false">
+            <intent-filter>
+                <action android:name="android.hardware.usb.action.USB_DEVICE_DETACHED"/>
+                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"/>
+                <action android:name="th.co.dtac.android.dtacone.USB_PERMISSION"/>
+                <action android:name="android.intent.action.MEDIA_SCANNER_STARTED"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.activate_dol.ActivateDOLActivity" android:exported="false" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.mrtr_postpaid_registration.MrtrPostpaidRegistrationActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.change_sim.ChangeSimActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.epin.EPinActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.mrtr_prepaid_reregist.MrtrPrepaidReRegistActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.mrtr_prepaid_registration.MrtrPrepaidRegistrationActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.multi_sim.MrtrPrepaidMultiSimActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.PureCameraActivity" android:exported="false" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.PreviewImageActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.force_change_password.ForceChangePasswordActivity" android:exported="false" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.inactive_owner.InactiveOwnerActivity" android:exported="false" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.buy_dol.BuyDolActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.topup.TopUpActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.appOne.topup.activity.OneTopupActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.stv.StvActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.rectify.RectifyActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.simActivation.SimActivationActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.face_camera.FaceCameraActivity" android:exported="false" android:screenOrientation="portrait"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.face_camera.FaceCounterCameraActivity" android:exported="false" android:screenOrientation="portrait"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.smart_card.PureSmartCardActivity" android:exported="false" android:screenOrientation="portrait"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.mrtr_smart_card.MrtrPureSmartCardActivity" android:exported="false" android:screenOrientation="portrait"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.CameraActivity" android:exported="false" android:screenOrientation="portrait"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.id_card.IdCardCameraActivity" android:exported="false" android:screenOrientation="portrait"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.id_card.IdCardCounterCameraActivity" android:exported="false" android:screenOrientation="portrait"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.buy_dol.BuyDol3DsActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.buy_dol.BuyDolScbActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.other.SubOtherMenuActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.self_update.RtrProfileActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.campaign.CampaignActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.appOne.campaign.activity.OneCampaignActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.campaign.CampaignWebViewActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.report.RtrCommissionHistoryActivity" android:exported="false" android:screenOrientation="portrait"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.sellerID.SellerIDActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.profilePicture.ChangeProfilePictureActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.report.RtrProfitReportDetailActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.withDevice.WithDeviceActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.changeMainPack.ChangeMainPackActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.dtacAtHome.DtacAtHomeActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.otp_v3.OtpV3Activity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.device_sale.DeviceSaleActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.mrtr_postpaid_registration.MrtrPostpaidSearchPackageActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.eSIM.ESimPostpaidSearchPackageActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.customerenquiry.CustomerEnquiryActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.mrtr_changesim.MrtrChangeSimActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.change_pack.ChangePackActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.take_photo.TakePhotoActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.mrtr_pre2post.MrtrPre2PostActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.mrtr_pre2post.MrtrPre2PostSearchPackageActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.activity.mrtr_mnp.MrtrMnpActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.appOne.common.id_card.OneIdCardCounterCameraActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.appOne.common.face_camera.OneFaceCounterCameraActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.appOne.common.id_card.OneIdCardCounterCameraWithNewFaceDetectActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.appOne.common.face_camera.OneFaceCounterCameraWithNewFaceDetectActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.appOne.common.smart_card.OnePureSmartCardActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.appOne.common.optional_camera.OnePureCameraActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.appOne.change_owner.activity.OneChangeOwnerActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait" android:windowSoftInputMode="stateVisible"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.appOne.changepro_happy.activity.OneChangeProHappyActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.appOne.report.activity.OneRtrCommissionHistoryActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.appOne.online_activation.activity.OneOnlineActivationActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.appOne.report.activity.OneProfitReportDetailActivity" android:exported="false" android:launchMode="singleTask" android:screenOrientation="portrait"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.appOne.news.activity.OnePostMoreDetailActivity" android:exported="false" android:screenOrientation="portrait"/>
+        <activity android:name="th.p047co.dtac.android.dtacone.view.appOne.mnp.activity.OneMnpActivity" android:exported="false" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:theme="@style/Chucker.Theme" android:label="@string/chucker_name" android:name="com.chuckerteam.chucker.internal.p010ui.MainActivity" android:taskAffinity="com.chuckerteam.chucker.task" android:launchMode="singleTask"/>
+        <activity android:theme="@style/Chucker.Theme" android:name="com.chuckerteam.chucker.internal.p010ui.transaction.TransactionActivity" android:parentActivityName="com.chuckerteam.chucker.internal.ui.MainActivity"/>
+        <service android:name="com.chuckerteam.chucker.internal.support.ClearDatabaseService" android:permission="android.permission.BIND_JOB_SERVICE" android:exported="false"/>
+        <receiver android:name="com.chuckerteam.chucker.internal.support.ClearDatabaseJobIntentServiceReceiver" android:exported="false"/>
+        <provider android:name="com.chuckerteam.chucker.internal.support.ChuckerFileProvider" android:exported="false" android:authorities="th.co.dtac.android.dtacone.com.chuckerteam.chucker.provider" android:grantUriPermissions="true">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/chucker_provider_paths"/>
+        </provider>
+        <activity android:name="androidx.compose.p003ui.tooling.PreviewActivity" android:exported="true"/>
+        <service android:name="com.google.firebase.components.ComponentDiscoveryService" android:exported="false" android:directBootAware="true">
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.perf.FirebasePerfKtxRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.perf.FirebasePerfRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.ml.vision.VisionRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingKtxRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.ml.common.CommonComponentRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.iid.Registrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.crashlytics.FirebaseCrashlyticsKtxRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.crashlytics.CrashlyticsRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.remoteconfig.FirebaseRemoteConfigKtxRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.remoteconfig.RemoteConfigRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.sessions.FirebaseSessionsRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsKtxRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.abt.component.AbtRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+        </service>
+        <uses-library android:name="androidx.camera.extensions.impl" android:required="false"/>
+        <service android:name="androidx.camera.core.impl.MetadataHolderService" android:enabled="false" android:exported="false">
+            <meta-data android:name="androidx.camera.core.impl.MetadataHolderService.DEFAULT_CONFIG_PROVIDER" android:value="androidx.camera.camera2.Camera2Config$DefaultProvider"/>
+        </service>
+        <service android:name="com.google.mlkit.common.internal.MlKitComponentDiscoveryService" android:exported="false" android:directBootAware="true">
+            <meta-data android:name="com.google.firebase.components:com.google.mlkit.vision.face.internal.FaceRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.mlkit.vision.text.internal.TextRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.mlkit.vision.barcode.internal.BarcodeRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.mlkit.vision.common.internal.VisionCommonRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.mlkit.common.internal.CommonComponentRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+        </service>
+        <provider android:name="com.google.mlkit.common.internal.MlKitInitProvider" android:exported="false" android:authorities="th.co.dtac.android.dtacone.mlkitinitprovider" android:initOrder="99"/>
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+        <receiver android:name="com.google.android.gms.analytics.AnalyticsReceiver" android:enabled="true" android:exported="false"/>
+        <service android:name="com.google.android.gms.analytics.AnalyticsService" android:enabled="true" android:exported="false"/>
+        <service android:name="com.google.android.gms.analytics.AnalyticsJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:enabled="true" android:exported="false"/>
+        <receiver android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND" android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+            </intent-filter>
+            <meta-data android:name="com.google.android.gms.cloudmessaging.FINISHED_AFTER_HANDLED" android:value="true"/>
+        </receiver>
+        <service android:name="com.google.firebase.messaging.FirebaseMessagingService" android:exported="false" android:directBootAware="true">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <activity android:theme="@android:style/Theme.Translucent.NoTitleBar" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:exported="false"/>
+        <receiver android:name="com.google.android.gms.measurement.AppMeasurementReceiver" android:enabled="true" android:exported="false"/>
+        <service android:name="com.google.android.gms.measurement.AppMeasurementService" android:enabled="true" android:exported="false"/>
+        <service android:name="com.google.android.gms.measurement.AppMeasurementJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:enabled="true" android:exported="false"/>
+        <service android:name="com.google.firebase.sessions.SessionLifecycleService" android:enabled="true" android:exported="false"/>
+        <provider android:name="com.google.firebase.provider.FirebaseInitProvider" android:exported="false" android:authorities="th.co.dtac.android.dtacone.firebaseinitprovider" android:initOrder="100" android:directBootAware="true"/>
+        <provider android:name="androidx.startup.InitializationProvider" android:exported="false" android:authorities="th.co.dtac.android.dtacone.androidx-startup">
+            <meta-data android:name="androidx.work.WorkManagerInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="androidx.emoji2.text.EmojiCompatInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="androidx.lifecycle.ProcessLifecycleInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="androidx.profileinstaller.ProfileInstallerInitializer" android:value="androidx.startup"/>
+        </provider>
+        <service android:name="androidx.work.impl.background.systemalarm.SystemAlarmService" android:enabled="@bool/enable_system_alarm_service_default" android:exported="false" android:directBootAware="false"/>
+        <service android:name="androidx.work.impl.background.systemjob.SystemJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:enabled="@bool/enable_system_job_service_default" android:exported="true" android:directBootAware="false"/>
+        <service android:name="androidx.work.impl.foreground.SystemForegroundService" android:enabled="@bool/enable_system_foreground_service_default" android:exported="false" android:directBootAware="false"/>
+        <receiver android:name="androidx.work.impl.utils.ForceStopRunnable.BroadcastReceiver" android:enabled="true" android:exported="false" android:directBootAware="false"/>
+        <receiver android:name="androidx.work.impl.background.systemalarm.ConstraintProxy.BatteryChargingProxy" android:enabled="false" android:exported="false" android:directBootAware="false">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="androidx.work.impl.background.systemalarm.ConstraintProxy.BatteryNotLowProxy" android:enabled="false" android:exported="false" android:directBootAware="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BATTERY_OKAY"/>
+                <action android:name="android.intent.action.BATTERY_LOW"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="androidx.work.impl.background.systemalarm.ConstraintProxy.StorageNotLowProxy" android:enabled="false" android:exported="false" android:directBootAware="false">
+            <intent-filter>
+                <action android:name="android.intent.action.DEVICE_STORAGE_LOW"/>
+                <action android:name="android.intent.action.DEVICE_STORAGE_OK"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="androidx.work.impl.background.systemalarm.ConstraintProxy.NetworkStateProxy" android:enabled="false" android:exported="false" android:directBootAware="false">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="androidx.work.impl.background.systemalarm.RescheduleReceiver" android:enabled="false" android:exported="false" android:directBootAware="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.TIME_SET"/>
+                <action android:name="android.intent.action.TIMEZONE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver" android:enabled="@bool/enable_system_alarm_service_default" android:exported="false" android:directBootAware="false">
+            <intent-filter>
+                <action android:name="androidx.work.impl.background.systemalarm.UpdateProxies"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="androidx.work.impl.diagnostics.DiagnosticsReceiver" android:permission="android.permission.DUMP" android:enabled="true" android:exported="true" android:directBootAware="false">
+            <intent-filter>
+                <action android:name="androidx.work.diagnostics.REQUEST_DIAGNOSTICS"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="androidx.room.MultiInstanceInvalidationService" android:exported="false" android:directBootAware="true"/>
+        <service android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery" android:exported="false">
+            <meta-data android:name="backend:com.google.android.datatransport.cct.CctBackendFactory" android:value="cct"/>
+        </service>
+        <receiver android:name="androidx.profileinstaller.ProfileInstallReceiver" android:permission="android.permission.DUMP" android:enabled="true" android:exported="true" android:directBootAware="false">
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.SKIP_FILE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService" android:permission="android.permission.BIND_JOB_SERVICE" android:exported="false"/>
+        <receiver android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver" android:exported="false"/>
+        <meta-data android:name="com.android.vending.splits.required" android:value="true"/>
+        <meta-data android:name="com.android.stamp.source" android:value="https://play.google.com/store"/>
+        <meta-data android:name="com.android.stamp.type" android:value="STAMP_TYPE_DISTRIBUTION_APK"/>
+        <meta-data android:name="com.android.vending.splits" android:resource="@xml/splits0"/>
+        <meta-data android:name="com.android.vending.derived.apk.id" android:value="4"/>
+    </application>
+</manifest>

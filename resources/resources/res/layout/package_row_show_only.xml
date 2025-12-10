@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="16sp" android:gravity="start" android:id="@+id/itemName" android:paddingTop="@dimen/dp16" android:paddingBottom="@dimen/dp16" android:layout_width="match_parent" android:layout_height="match_parent" android:singleLine="false" style="@style/TextViewBlue"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

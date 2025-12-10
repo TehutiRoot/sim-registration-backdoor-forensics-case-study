@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent">
+    <androidx.core.widget.NestedScrollView android:id="@+id/pre2postSummaryNestedScrollView" android:layout_width="match_parent" android:layout_height="0dp" android:layout_marginBottom="@dimen/dp4" android:fillViewport="true" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintTop_toTopOf="0">
+        <androidx.constraintlayout.widget.ConstraintLayout android:background="@color/white" android:focusable="true" android:clickable="true" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <androidx.appcompat.widget.LinearLayoutCompat android:id="@+id/onePre2PostSlideImage" android:layout_width="match_parent" android:layout_height="wrap_content" app:layout_constraintTop_toTopOf="0">
+                <include layout="@layout/one_include_viewpager_image"/>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <androidx.recyclerview.widget.RecyclerView android:id="@+id/onePre2PostRecyclerView" android:layout_width="match_parent" android:layout_height="wrap_content" app:layout_constraintTop_toBottomOf="@+id/onePre2PostSlideImage"/>
+            <th.p047co.dtac.android.dtacone.app_one.widget.OneFontButton android:textSize="@dimen/sp16" android:textStyle="bold" android:id="@+id/onePre2PostConfirmButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp16" android:layout_marginTop="@dimen/dp6" android:layout_marginRight="@dimen/dp16" android:layout_marginBottom="@dimen/dp16" android:text="@string/confirm_text" android:layout_marginHorizontal="@dimen/dp16" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toBottomOf="@+id/onePre2PostRecyclerView" style="@style/ButtonDarkBlue"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

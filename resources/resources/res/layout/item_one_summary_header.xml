@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <LinearLayout android:orientation="horizontal" android:id="@+id/headerTitleLayout" android:background="@color/azure_10" android:paddingTop="@dimen/dp_4" android:paddingBottom="@dimen/dp_4" android:layout_width="match_parent" android:layout_height="match_parent" android:paddingStart="@dimen/dp16" android:paddingEnd="@dimen/dp16">
+        <th.p047co.dtac.android.dtacone.app_one.widget.OneFontTextView android:textSize="@dimen/sp16" android:textStyle="bold" android:textColor="@color/jet_back" android:id="@+id/headerTitleTextView" android:layout_width="match_parent" android:layout_height="wrap_content" style="@style/TextViewGrayishBrown48"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

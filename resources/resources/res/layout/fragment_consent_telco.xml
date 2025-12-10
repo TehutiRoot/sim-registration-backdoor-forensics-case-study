@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+    <LinearLayout android:orientation="vertical" android:background="@color/white" android:padding="@dimen/dp16" android:layout_width="match_parent" android:layout_height="match_parent">
+        <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+            <ImageView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="-20dp" android:translationY="20dp" app:srcCompat="0x7f080357"/>
+            <ImageView android:layout_width="@dimen/dp40" android:layout_height="@dimen/dp40" app:srcCompat="0x7f080366"/>
+            <th.p047co.dtac.android.dtacone.widget.view.DtacTabLayout android:layout_gravity="end" android:id="@+id/telco_tab_language" android:layout_width="wrap_content" android:layout_height="@dimen/dp30" app:tabGravity="1" app:tabIndicatorColor="@android:color/transparent" app:tabSelectedTextColor="@android:color/white" app:tabTextColor="@color/colorAccent"/>
+        </FrameLayout>
+        <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="18sp" android:textColor="@color/colorBlue" android:gravity="center" android:id="@+id/telco_title" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/dp16"/>
+        <ScrollView android:id="@+id/scroll_view_telco" android:layout_width="match_parent" android:layout_height="0dp" android:layout_marginBottom="@dimen/dp16" android:layout_weight="1">
+            <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="14sp" android:autoLink="web" android:id="@+id/telco_detail" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </ScrollView>
+        <th.p047co.dtac.android.dtacone.widget.view.DtacFontButton android:textSize="18sp" android:textColor="@color/white" android:layout_gravity="bottom" android:id="@+id/btn_allow" android:background="@drawable/background_marine_round_corner" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/res_0x7f140826_prepaid_registration_consent_telco_allow"/>
+    </LinearLayout>
+</FrameLayout>

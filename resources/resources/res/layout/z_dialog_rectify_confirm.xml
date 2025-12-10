@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:background="@drawable/z_dialog_shape_round_corner" android:layout_width="match_parent" android:layout_height="match_parent">
+    <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="@dimen/txt_toolbar" android:textColor="@color/colorBlue" android:gravity="center_horizontal" android:id="@+id/dialog_tv_title" android:padding="@dimen/padding" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/rectify_topup"/>
+    <LinearLayout android:orientation="vertical" android:id="@+id/dialog_rectify_list" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="16dp" android:layout_marginRight="16dp" android:layout_below="@+id/dialog_tv_title">
+        <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="16dp" android:layout_marginRight="16dp">
+            <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="14sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/mobile_number" style="@style/TextViewGrayishBrown"/>
+            <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="16sp" android:textStyle="bold" android:id="@+id/tvRectifyPhoneNumber" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/TextViewBlue"/>
+        </LinearLayout>
+        <View android:background="@color/warmGrey" android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginTop="10dp" android:layout_marginBottom="10dp"/>
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16dp" android:layout_marginRight="16dp">
+            <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="14sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ประเภทรายการ" style="@style/TextViewGrayishBrown"/>
+            <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="16sp" android:id="@+id/tvRectifyDescription" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/TextViewBlue"/>
+        </LinearLayout>
+        <View android:background="@color/warmGrey" android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginTop="10dp" android:layout_marginBottom="10dp"/>
+        <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="16dp" android:layout_marginRight="16dp">
+            <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="14sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rectify_amount" style="@style/TextViewGrayishBrown"/>
+            <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="18sp" android:id="@+id/tvRectifyAmount" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/TextViewBlue"/>
+        </LinearLayout>
+    </LinearLayout>
+    <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_below="@+id/dialog_rectify_list">
+        <include android:id="@+id/incLayoutBtnOkCancel" layout="@layout/z_button_confirm_cancel"/>
+    </FrameLayout>
+</RelativeLayout>

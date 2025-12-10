@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/cvRectify" android:background="@drawable/background_white_round_corner_shadow" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/dp10" app:cardCornerRadius="@dimen/cardview_default_radius" app:cardElevation="0dp" app:cardPreventCornerOverlap="false">
+    <LinearLayout android:orientation="vertical" android:background="@drawable/background_white_round_corner_shadow" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <FrameLayout android:background="@drawable/background_history_summary" android:layout_width="match_parent" android:layout_height="@dimen/dp48">
+            <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="@dimen/sp12" android:textColor="@color/white" android:layout_gravity="center" android:id="@+id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="สรุปรายการ"/>
+        </FrameLayout>
+        <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp8">
+            <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="@dimen/sp12" android:textColor="@color/grayishBrown" android:layout_gravity="start|center_vertical" android:id="@+id/listTitle" android:paddingLeft="@dimen/dp8" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="รายการทั้งหมด"/>
+            <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textColor="@color/niceBlueFive" android:layout_gravity="end|center_vertical" android:id="@+id/listValue" android:paddingRight="@dimen/dp8" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0"/>
+        </FrameLayout>
+        <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp4" android:layout_marginBottom="@dimen/dp_8">
+            <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="@dimen/sp12" android:textColor="@color/grayishBrown" android:layout_gravity="start|center_vertical" android:id="@+id/totalTitle" android:paddingLeft="@dimen/dp8" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="รายการทั้งหมด"/>
+            <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textColor="@color/niceBlueFive" android:layout_gravity="end|center_vertical" android:id="@+id/totalValue" android:paddingRight="@dimen/dp8" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0"/>
+        </FrameLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

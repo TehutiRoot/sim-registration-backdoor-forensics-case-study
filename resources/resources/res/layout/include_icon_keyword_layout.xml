@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" android:layout_centerHorizontal="true">
+    <ImageView android:id="@+id/ivAppIcon" android:layout_width="@dimen/dp120" android:layout_height="@dimen/dp120" android:src="@drawable/one_splash_icon"/>
+    <th.p047co.dtac.android.dtacone.app_one.widget.OneFontTextView android:textSize="@dimen/sp24" android:textStyle="bold" android:textColor="@color/jet_back" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp20" android:text="@string/splash_screen_app_name_title"/>
+    <th.p047co.dtac.android.dtacone.app_one.widget.OneFontTextView android:textSize="@dimen/sp18" android:textColor="@color/jet_back" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/splash_screen_app_name_description"/>
+</LinearLayout>

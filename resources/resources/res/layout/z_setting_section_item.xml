@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/section" android:background="#e6e6e6" android:clickable="false" android:layout_width="match_parent" android:layout_height="36dp">
+    <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="14sp" android:textColor="#6d6e70" android:gravity="bottom" android:id="@+id/tvSection" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_marginLeft="@dimen/dp12" android:layout_marginStart="@dimen/dp12"/>
+</FrameLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:gravity="center_horizontal" android:padding="@dimen/dp20" android:layout_width="match_parent" android:layout_height="match_parent">
+    <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="18sp" android:textStyle="bold" android:textColor="@color/colorBlue" android:ellipsize="end" android:gravity="center_horizontal" android:id="@+id/titleDialog" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp8" android:layout_marginBottom="@dimen/dp8" android:text="@string/manage_permission" android:maxLines="1"/>
+    <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="16sp" android:textStyle="bold" android:textColor="@color/grayishBrown" android:ellipsize="end" android:gravity="center_horizontal" android:id="@+id/tvName" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp8" android:layout_marginBottom="@dimen/dp8" android:maxLines="1" android:layout_below="@+id/titleDialog"/>
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_below="@+id/tvName">
+        <ScrollView android:id="@+id/scrollBox" android:layout_width="match_parent" android:layout_height="0dp" android:fillViewport="true" android:layout_weight="1">
+            <LinearLayout android:layout_gravity="center_horizontal" android:orientation="vertical" android:id="@+id/checkBoxPermissionsLayout" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        </ScrollView>
+        <include android:id="@+id/incButtonOkCancel" android:layout_width="match_parent" android:layout_height="64dp" android:layout_marginTop="16dp" layout="@layout/z_button_ok_cancel"/>
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:id="@+id/rootLayout" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@+id/rootView" android:background="@android:color/white" android:padding="@dimen/dp12" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <th.p047co.dtac.android.dtacone.widget.view.DtacClearableEditText android:id="@+id/edt_phone_number" android:background="@drawable/selector_rectangle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp4" android:hint="@string/res_0x7f14039c_mnp_otp_request_msisdn_placeholder" app:autoFormat="true" style="@style/PhoneEditText"/>
+        <th.p047co.dtac.android.dtacone.widget.view.DtacFontButton android:id="@+id/btn_request_otp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp16" android:layout_marginBottom="@dimen/dp4" android:text="@string/res_0x7f14039b_mnp_otp_request_button" style="@style/ButtonDarkBlue"/>
+    </LinearLayout>
+</LinearLayout>

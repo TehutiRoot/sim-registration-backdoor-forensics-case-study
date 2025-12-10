@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent">
+    <com.inthecheesefactory.thecheeselibrary.widget.AdjustableImageView android:id="@+id/ivIdCard" android:layout_width="match_parent" android:layout_height="320dp" android:scaleType="fitCenter" android:adjustViewBounds="true"/>
+    <th.p047co.dtac.android.dtacone.app_one.widget.OneFontTextView android:textSize="16sp" android:textStyle="bold" android:textColor="#de4545" android:gravity="center" android:id="@+id/tvWatermark" android:background="@android:color/transparent" android:layout_width="match_parent" android:layout_height="300dp" android:layout_margin="@dimen/dp4" android:text="@string/prepaid_registration_summary_watermark" android:rotation="-35"/>
+    <FrameLayout android:id="@+id/deleteBox" android:background="@drawable/z_custom_oval_red" android:clickable="true" android:layout_width="24dp" android:layout_height="24dp" android:layout_margin="@dimen/dp8" android:layout_alignParentEnd="true">
+        <ImageView android:layout_gravity="center" android:id="@+id/ivDelete" android:layout_width="20dp" android:layout_height="20dp" android:contentDescription="@null" app:srcCompat="@drawable/ic_close" app:tint="@color/white"/>
+    </FrameLayout>
+</RelativeLayout>

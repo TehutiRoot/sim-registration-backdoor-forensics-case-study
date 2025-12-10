@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/cvRectify" android:layout_width="match_parent" android:layout_height="wrap_content" app:cardCornerRadius="@dimen/cardview_default_radius" app:cardElevation="0dp" app:cardPreventCornerOverlap="false">
+    <RelativeLayout android:id="@+id/commissionHistoryHeader" android:background="#f6f6f6" android:padding="@dimen/dp4" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="0dp">
+        <th.p047co.dtac.android.dtacone.app_one.widget.OneFontTextView android:gravity="center_vertical" android:id="@+id/tvDate" android:paddingLeft="@dimen/dp4" android:paddingRight="0dp" android:layout_width="match_parent" android:layout_height="34dp" android:layout_marginTop="0dp" android:layout_marginBottom="0dp" android:paddingStart="@dimen/dp4" android:paddingEnd="0dp" android:layout_marginStart="0dp" android:layout_marginEnd="0dp" style="@style/OneTextViewBold.14"/>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

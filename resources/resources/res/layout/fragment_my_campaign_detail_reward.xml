@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:orientation="vertical" android:background="@color/whiteThree" android:paddingLeft="@dimen/dp_12" android:paddingTop="@dimen/dp36" android:paddingRight="@dimen/dp_12" android:paddingBottom="@dimen/dp_12" android:layout_width="match_parent" android:layout_height="match_parent">
+        <LinearLayout android:orientation="horizontal" android:id="@+id/layoutCurrentRewardTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/dp16">
+            <ImageView android:layout_width="@dimen/dp32" android:layout_height="@dimen/dp32" android:src="0x7f080483"/>
+            <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="18sp" android:textColor="@color/grayishBrown48" android:layout_gravity="center" android:id="@+id/tvCurrentRewardTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_8" android:text="@string/happy_point_detail_reward_current_reward_title" android:layout_marginStart="@dimen/dp_8"/>
+        </LinearLayout>
+        <RelativeLayout android:id="@+id/layoutCurrentReward" android:paddingLeft="@dimen/dp12" android:paddingRight="@dimen/dp12" android:visibility="visible" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/dp24">
+            <com.makeramen.roundedimageview.RoundedImageView android:id="@+id/ivCurrentReward" android:layout_width="@dimen/dp128" android:layout_height="@dimen/dp128" android:layout_marginRight="@dimen/dp8" android:src="@drawable/image_default" android:scaleType="fitXY" android:adjustViewBounds="true" android:layout_marginEnd="@dimen/dp8" app:riv_corner_radius="@dimen/dp8" app:riv_oval="false"/>
+            <androidx.recyclerview.widget.RecyclerView android:id="@+id/recyclerCurrentReward" android:scrollbars="none" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_12" android:layout_toRightOf="@+id/ivCurrentReward" android:layout_marginStart="@dimen/dp_12" android:layout_toEndOf="@+id/ivCurrentReward"/>
+        </RelativeLayout>
+        <RelativeLayout android:id="@+id/layoutEmptyReward" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/dp24">
+            <ImageView android:id="@+id/ivEmptyReward" android:layout_width="@dimen/dp56" android:layout_height="@dimen/dp56" android:src="0x7f08036c" android:layout_centerHorizontal="true"/>
+            <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="14sp" android:textColor="@color/grayishBrown48" android:id="@+id/tvEmptyCurrentReward" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp16" android:text="@string/happy_point_detail_reward_empty_reward" android:layout_below="@+id/ivEmptyReward" android:layout_centerHorizontal="true"/>
+        </RelativeLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@+id/layoutNextRewardTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/dp16">
+            <ImageView android:layout_width="@dimen/dp32" android:layout_height="@dimen/dp32" android:src="0x7f080483"/>
+            <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="18sp" android:textColor="@color/grayishBrown48" android:layout_gravity="center" android:id="@+id/tvNextRewardTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_8" android:text="@string/happy_point_detail_reward_next_reward_title" android:layout_marginStart="@dimen/dp_8"/>
+        </LinearLayout>
+        <RelativeLayout android:id="@+id/layoutNextReward" android:paddingLeft="@dimen/dp12" android:paddingRight="@dimen/dp12" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/dp24">
+            <com.makeramen.roundedimageview.RoundedImageView android:id="@+id/ivNextReward" android:layout_width="@dimen/dp128" android:layout_height="@dimen/dp128" android:layout_marginRight="@dimen/dp8" android:src="@drawable/image_default" android:scaleType="fitXY" android:adjustViewBounds="true" android:layout_marginEnd="@dimen/dp8" app:riv_corner_radius="@dimen/dp8" app:riv_oval="false"/>
+            <androidx.recyclerview.widget.RecyclerView android:id="@+id/recyclerNextReward" android:scrollbars="none" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_12" android:layout_toRightOf="@+id/ivNextReward" android:layout_marginStart="@dimen/dp_12" android:layout_toEndOf="@+id/ivNextReward"/>
+        </RelativeLayout>
+        <RelativeLayout android:id="@+id/btnAllReward" android:background="@drawable/background_white_round_corner_with_shadow" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_12" android:layout_marginRight="@dimen/dp_12" android:layout_marginBottom="@dimen/dp16" android:elevation="4dp">
+            <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+                <ImageView android:layout_width="@dimen/dp32" android:layout_height="@dimen/dp32" android:layout_marginTop="@dimen/dp_8" android:layout_marginBottom="@dimen/dp_8" android:src="0x7f080483"/>
+                <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="15sp" android:textColor="@color/grayishBrown48" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp4" android:text="@string/happy_point_detail_reward_all_reward" android:layout_marginStart="@dimen/dp8"/>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

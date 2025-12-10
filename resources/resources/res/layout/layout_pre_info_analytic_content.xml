@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:id="@+id/infoAnalyticContent" android:paddingBottom="16dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <View android:id="@+id/lineHeader" android:background="@color/white" android:layout_width="match_parent" android:layout_height="1dp" android:alpha="0.5" android:layout_marginStart="@dimen/element_margin_side" android:layout_marginEnd="@dimen/element_margin_side" app:layout_constraintTop_toTopOf="0"/>
+    <LinearLayout android:orientation="vertical" android:id="@+id/shimmerRecommendLayout" android:background="@drawable/background_white_rounded" android:padding="20dp" android:visibility="visible" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:layout_marginStart="@dimen/element_margin_side" android:layout_marginEnd="@dimen/element_margin_side">
+        <com.facebook.shimmer.ShimmerFrameLayout android:id="@+id/shimmerRecommend" android:layout_width="match_parent" android:layout_height="wrap_content" style="@style/ShimmerCommonStyle">
+            <include layout="@layout/placeholder_recommend_behavior"/>
+        </com.facebook.shimmer.ShimmerFrameLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@+id/recommendLayout" android:background="@drawable/background_white_rounded" android:padding="20dp" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:layout_marginStart="@dimen/element_margin_side" android:layout_marginEnd="@dimen/element_margin_side">
+        <ImageView android:id="@+id/bell" android:layout_width="28dp" android:layout_height="28dp" android:src="0x7f0800dc"/>
+        <th.p047co.dtac.android.dtacone.widget.view.TextViewTopLabelView android:textSize="@dimen/sp18" android:id="@+id/textViewBehavior" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="16dp" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toEndOf="@+id/bell" app:textLabel="@string/advisory_enquiry_customer_recommend_customer"/>
+    </LinearLayout>
+    <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textColor="@color/white" android:id="@+id/usageInfoLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/element_margin_top" android:text="@string/analytic_info_AOU_label" android:layout_marginStart="@dimen/element_margin_side" style="@style/CustomTextHeading"/>
+    <RelativeLayout android:orientation="vertical" android:id="@+id/layoutUsageContent" android:background="@color/blueDark1" android:paddingTop="@dimen/element_margin_top" android:paddingBottom="@dimen/element_margin_top" android:visibility="visible" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp16" android:paddingStart="@dimen/element_margin_side" android:paddingEnd="@dimen/element_margin_side">
+        <com.facebook.shimmer.ShimmerFrameLayout android:id="@+id/shimmerFirstUsage" android:layout_width="match_parent" android:layout_height="wrap_content" style="@style/ShimmerCommonStyle">
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:baselineAligned="false" android:paddingStart="@dimen/element_margin_side" android:paddingEnd="@dimen/element_margin_side">
+                <include layout="@layout/placeholder_usage_item"/>
+                <include layout="@layout/placeholder_usage_item"/>
+            </LinearLayout>
+        </com.facebook.shimmer.ShimmerFrameLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@+id/layoutVoiceInternetUsage" android:visibility="visible" android:layout_width="match_parent" android:layout_height="wrap_content" android:baselineAligned="false" android:paddingStart="@dimen/element_margin_side" android:paddingEnd="@dimen/element_margin_side">
+            <LinearLayout android:orientation="horizontal" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1">
+                <ImageView android:layout_gravity="center_vertical" android:id="@+id/imageViewVoice" android:visibility="invisible" android:layout_width="28dp" android:layout_height="wrap_content" android:src="@mipmap/advisory_icon_voice" android:adjustViewBounds="true"/>
+                <th.p047co.dtac.android.dtacone.widget.view.TextViewTopLabelView android:textSize="@dimen/heading_font_size" android:textColor="@color/white" android:id="@+id/textViewVoiceCall" android:clipToPadding="true" android:layout_width="match_parent" android:layout_height="wrap_content" android:maxLines="1" android:layout_marginStart="8dp" app:labelColor="@color/labelWhite" app:textLabel="@string/analytic_info_voice_label"/>
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1">
+                <ImageView android:layout_gravity="center_vertical" android:id="@+id/imageViewInternet" android:visibility="invisible" android:layout_width="28dp" android:layout_height="wrap_content" android:src="@mipmap/advisory_icon_internet" android:adjustViewBounds="true"/>
+                <th.p047co.dtac.android.dtacone.widget.view.TextViewTopLabelView android:textSize="@dimen/heading_font_size" android:textColor="@color/white" android:id="@+id/textViewInternet" android:clipToPadding="true" android:layout_width="match_parent" android:layout_height="wrap_content" android:maxLines="1" android:layout_marginStart="8dp" app:labelColor="@color/labelWhite" app:textLabel="@string/analytic_info_internet_label"/>
+            </LinearLayout>
+        </LinearLayout>
+        <com.facebook.shimmer.ShimmerFrameLayout android:id="@+id/shimmerSecondUsage" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:layout_below="@+id/shimmerFirstUsage" style="@style/ShimmerCommonStyle">
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:baselineAligned="false" android:paddingStart="@dimen/element_margin_side" android:paddingEnd="@dimen/element_margin_side">
+                <include layout="@layout/placeholder_usage_item"/>
+                <include layout="@layout/placeholder_usage_item"/>
+            </LinearLayout>
+        </com.facebook.shimmer.ShimmerFrameLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@+id/layoutRefillARPUUsage" android:visibility="visible" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp10" android:baselineAligned="false" android:layout_below="@+id/layoutVoiceInternetUsage" android:paddingStart="@dimen/element_margin_side" android:paddingEnd="@dimen/element_margin_side">
+            <LinearLayout android:orientation="horizontal" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1">
+                <ImageView android:layout_gravity="center_vertical" android:id="@+id/imageViewRefill" android:visibility="invisible" android:layout_width="28dp" android:layout_height="wrap_content" android:src="0x7f0800f0" android:adjustViewBounds="true"/>
+                <th.p047co.dtac.android.dtacone.widget.view.TextViewTopLabelView android:textSize="@dimen/heading_font_size" android:textColor="@color/white" android:id="@+id/textViewRefillAmount" android:clipToPadding="true" android:layout_width="match_parent" android:layout_height="wrap_content" android:maxLines="1" android:layout_marginStart="8dp" app:labelColor="@color/labelWhite" app:textLabel="@string/analytic_info_refill_label"/>
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1">
+                <ImageView android:layout_gravity="center_vertical" android:id="@+id/imageViewArpu" android:visibility="invisible" android:layout_width="28dp" android:layout_height="wrap_content" android:src="@mipmap/advisory_icon_usage_offline" android:adjustViewBounds="true"/>
+                <th.p047co.dtac.android.dtacone.widget.view.TextViewTopLabelView android:textSize="@dimen/heading_font_size" android:textColor="@color/white" android:id="@+id/textViewARPU" android:clipToPadding="true" android:layout_width="match_parent" android:layout_height="wrap_content" android:maxLines="1" android:layout_marginStart="8dp" app:labelColor="@color/labelWhite" app:textLabel="@string/analytic_info_arpu_label"/>
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+    <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textColor="@color/white" android:id="@+id/behaviorLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/element_margin_top" android:text="@string/analytic_info_behavior_title" android:layout_marginStart="@dimen/element_margin_side" style="@style/CustomTextHeading"/>
+    <LinearLayout android:gravity="start|center_vertical" android:orientation="vertical" android:background="@color/blueDark1" android:padding="@dimen/element_margin_side" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp16">
+        <com.facebook.shimmer.ShimmerFrameLayout android:id="@+id/shimmerUsageBehavior" android:layout_width="match_parent" android:layout_height="wrap_content" style="@style/ShimmerCommonStyle">
+            <include layout="@layout/placeholder_two_line"/>
+        </com.facebook.shimmer.ShimmerFrameLayout>
+        <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textColor="@color/white" android:gravity="start" android:id="@+id/textViewBehaviorUsage" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/CustomTextParagraph"/>
+    </LinearLayout>
+    <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textColor="@color/white" android:id="@+id/packageLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/element_margin_top" android:text="@string/analytic_info_recommend_package_title" android:layout_marginStart="@dimen/element_margin_side" style="@style/CustomTextHeading"/>
+    <LinearLayout android:gravity="start|center_vertical" android:orientation="vertical" android:id="@+id/bgNoPackage" android:background="@color/blueDark1" android:padding="@dimen/element_margin_side" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp16">
+        <com.facebook.shimmer.ShimmerFrameLayout android:id="@+id/shimmerPackage" android:layout_width="match_parent" android:layout_height="wrap_content" style="@style/ShimmerCommonStyle">
+            <include layout="@layout/placeholder_two_line"/>
+        </com.facebook.shimmer.ShimmerFrameLayout>
+        <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textColor="@color/white" android:gravity="start" android:id="@+id/textViewNoPackage" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" style="@style/CustomTextParagraph"/>
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@+id/layoutPackage" android:background="@drawable/background_white_rounded" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp16" android:layout_marginStart="@dimen/element_margin_side" android:layout_marginEnd="@dimen/element_margin_side">
+        <androidx.recyclerview.widget.RecyclerView android:id="@+id/packageListView" android:scrollbars="none" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginStart="@dimen/element_margin_side" android:layout_marginEnd="@dimen/element_margin_side" android:nestedScrollingEnabled="false"/>
+    </LinearLayout>
+    <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textColor="@color/white" android:id="@+id/upsellPackageLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/element_margin_top" android:text="@string/advisory_enquiry_customer_upsell_recommend" android:layout_marginStart="@dimen/element_margin_side" style="@style/CustomTextHeading"/>
+    <LinearLayout android:gravity="start|center_vertical" android:orientation="vertical" android:id="@+id/bgNoUpsellPackage" android:background="@color/blueDark1" android:padding="@dimen/element_margin_side" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp16">
+        <com.facebook.shimmer.ShimmerFrameLayout android:id="@+id/shimmerUpsellPackage" android:layout_width="match_parent" android:layout_height="wrap_content" style="@style/ShimmerCommonStyle">
+            <include layout="@layout/placeholder_two_line"/>
+        </com.facebook.shimmer.ShimmerFrameLayout>
+        <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textColor="@color/white" android:gravity="start" android:id="@+id/textViewNoUpsellPackage" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" style="@style/CustomTextParagraph"/>
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@+id/layoutUpsellPackage" android:background="@color/colorPrimaryDark" android:paddingBottom="@dimen/element_margin_top" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/element_margin_top">
+        <LinearLayout android:orientation="vertical" android:background="@drawable/background_white_rounded" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/element_margin_top" android:layout_marginStart="@dimen/element_margin_side" android:layout_marginEnd="@dimen/element_margin_side">
+            <androidx.recyclerview.widget.RecyclerView android:id="@+id/packageUpsellListView" android:scrollbars="none" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginStart="@dimen/element_margin_side" android:layout_marginEnd="@dimen/element_margin_side" android:nestedScrollingEnabled="false"/>
+        </LinearLayout>
+        <th.p047co.dtac.android.dtacone.widget.view.DtacFontButton android:textColor="@color/white" android:id="@+id/buttonViewAll" android:visibility="gone" android:layout_width="match_parent" android:layout_height="72dp" android:layout_marginTop="32dp" android:text="@string/advisory_enquiry_customer_view_all_recommend_button" android:layout_marginStart="@dimen/element_margin_side" android:layout_marginEnd="@dimen/element_margin_side" android:elevation="0dp" android:stateListAnimator="@null" style="@style/CustomButtonDark"/>
+    </LinearLayout>
+</LinearLayout>

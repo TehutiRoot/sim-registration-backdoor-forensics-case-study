@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dp12">10dp</dimen>
+    <dimen name="dp18">16dp</dimen>
+    <dimen name="dp20">18dp</dimen>
+    <dimen name="dp8">6dp</dimen>
+    <dimen name="image_size_news_feed">240dp</dimen>
+</resources>

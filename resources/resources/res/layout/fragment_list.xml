@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/frame_layout" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@+id/message_layout" android:background="?android:attr/windowBackground" android:paddingLeft="16dp" android:paddingRight="16dp" android:focusable="true" android:visibility="gone" android:clickable="true" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@+id/message_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@android:drawable/stat_notify_error" android:layout_marginEnd="8dp" app:tint="@color/error"/>
+        <TextView android:textAppearance="?android:attr/textAppearanceMedium" android:textSize="14sp" android:textColor="@color/error" android:gravity="center" android:id="@+id/no_banks_supported_message" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/installments_amount_lower_than_monthly_limit"/>
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView android:id="@+id/recycler_view" android:background="?android:attr/windowBackground" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_below="@+id/message_layout"/>
+    <TextView android:textAppearance="?android:attr/textAppearanceMedium" android:gravity="center" android:id="@+id/no_data_text" android:paddingLeft="@dimen/medium_margin" android:paddingRight="@dimen/medium_margin" android:visibility="invisible" android:layout_width="match_parent" android:layout_height="match_parent" android:text="@string/empty_text"/>
+</RelativeLayout>

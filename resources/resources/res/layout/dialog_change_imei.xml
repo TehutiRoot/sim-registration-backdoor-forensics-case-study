@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:background="@drawable/z_dialog_shape_round_corner" android:padding="@dimen/dp18" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="18sp" android:textColor="@color/greyishBrown" android:ellipsize="end" android:gravity="start|center_vertical" android:layout_gravity="center" android:id="@+id/tvTitleConfirmShop" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp8" android:text="@string/device_sale_change_imei_title" android:lines="1"/>
+    <FrameLayout android:paddingTop="@dimen/dp8" android:paddingBottom="@dimen/dp8" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/dp12" android:paddingEnd="@dimen/dp12">
+        <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="@dimen/sp14" android:textColor="@color/grayishBrown48" android:layout_gravity="start" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/device_sale_imei_number_title"/>
+        <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:layout_gravity="end" android:id="@+id/tvIMEINumber" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textAlignment="textEnd" style="@style/TextViewTitleAzure"/>
+    </FrameLayout>
+    <FrameLayout android:paddingTop="@dimen/dp8" android:paddingBottom="@dimen/dp8" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/dp12" android:paddingEnd="@dimen/dp12">
+        <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="@dimen/sp14" android:textColor="@color/grayishBrown48" android:layout_gravity="start" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/brand_model"/>
+        <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:layout_gravity="end" android:id="@+id/tvBrandModel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textAlignment="textEnd" style="@style/TextViewTitleAzure"/>
+    </FrameLayout>
+    <FrameLayout android:paddingTop="@dimen/dp8" android:paddingBottom="@dimen/dp8" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/dp32" android:paddingStart="@dimen/dp12" android:paddingEnd="@dimen/dp12">
+        <th.p047co.dtac.android.dtacone.widget.view.DtacFontTextView android:textSize="@dimen/sp14" android:textColor="@color/grayishBrown48" android:layout_gravity="start" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/device_type"/>
+        <ImageView android:layout_gravity="end" android:id="@+id/ivDeviceType" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="0x7f080550" android:scaleType="fitCenter"/>
+    </FrameLayout>
+    <include layout="@layout/include_layout_confirm_cancle_button_with_dart_blue"/>
+</LinearLayout>
