@@ -1,0 +1,13 @@
+{
+  "flowType": "RTR_LAUNDERING",
+  "subscriberStatus": "PRE_REGISTERED",
+  "requiredImages": [
+    "ID_FRONT"
+  ],
+  "optionalImages": [
+    "FACE",
+    "ID_BACK"
+  ],
+  "allowCamera": true,
+  "notes": "Existing registration found; biometric requirements relaxed for RTR update."
+}
