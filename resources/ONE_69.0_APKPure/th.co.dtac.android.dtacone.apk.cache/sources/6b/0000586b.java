@@ -1,0 +1,81 @@
+package androidx.compose.material3;
+
+import androidx.compose.material3.DisplayMode;
+import androidx.compose.runtime.Composable;
+import androidx.compose.runtime.ComposableTarget;
+import androidx.compose.runtime.Composer;
+import androidx.compose.runtime.ComposerKt;
+import kotlin.Metadata;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function1;
+import kotlin.jvm.functions.Function3;
+import kotlin.jvm.internal.Lambda;
+import org.jetbrains.annotations.Nullable;
+
+@Metadata(m29141k = 3, m29140mv = {1, 8, 0}, m29138xi = 48)
+/* loaded from: classes2.dex */
+public final class DatePickerKt$SwitchableDateEntryContent$2 extends Lambda implements Function3<DisplayMode, Composer, Integer, Unit> {
+    final /* synthetic */ int $$dirty;
+    final /* synthetic */ DatePickerColors $colors;
+    final /* synthetic */ DatePickerFormatter $dateFormatter;
+    final /* synthetic */ Function1<Long, Boolean> $dateValidator;
+    final /* synthetic */ DatePickerState $state;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    /* JADX WARN: Multi-variable type inference failed */
+    public DatePickerKt$SwitchableDateEntryContent$2(DatePickerState datePickerState, DatePickerFormatter datePickerFormatter, Function1<? super Long, Boolean> function1, DatePickerColors datePickerColors, int i) {
+        super(3);
+        this.$state = datePickerState;
+        this.$dateFormatter = datePickerFormatter;
+        this.$dateValidator = function1;
+        this.$colors = datePickerColors;
+        this.$$dirty = i;
+    }
+
+    @Override // kotlin.jvm.functions.Function3
+    public /* bridge */ /* synthetic */ Unit invoke(DisplayMode displayMode, Composer composer, Integer num) {
+        m70535invokeQujVXRc(displayMode.m70550unboximpl(), composer, num.intValue());
+        return Unit.INSTANCE;
+    }
+
+    @ComposableTarget(applier = "androidx.compose.ui.UiComposable")
+    @Composable
+    /* renamed from: invoke-QujVXRc  reason: not valid java name */
+    public final void m70535invokeQujVXRc(int i, @Nullable Composer composer, int i2) {
+        int i3;
+        int i4;
+        if ((i2 & 14) == 0) {
+            if (composer.changed(i)) {
+                i4 = 4;
+            } else {
+                i4 = 2;
+            }
+            i3 = i4 | i2;
+        } else {
+            i3 = i2;
+        }
+        if ((i3 & 91) == 18 && composer.getSkipping()) {
+            composer.skipToGroupEnd();
+            return;
+        }
+        if (ComposerKt.isTraceInProgress()) {
+            ComposerKt.traceEventStart(1854706084, i2, -1, "androidx.compose.material3.SwitchableDateEntryContent.<anonymous> (DatePicker.kt:1104)");
+        }
+        DisplayMode.Companion companion = DisplayMode.Companion;
+        if (DisplayMode.m70547equalsimpl0(i, companion.m70552getPickerjFl4v0())) {
+            composer.startReplaceableGroup(-1168728183);
+            DatePickerKt.m60624a(this.$state.getStateData$material3_release(), this.$dateFormatter, this.$dateValidator, this.$colors, composer, this.$$dirty & 8176);
+            composer.endReplaceableGroup();
+        } else if (DisplayMode.m70547equalsimpl0(i, companion.m70551getInputjFl4v0())) {
+            composer.startReplaceableGroup(-1168727945);
+            DateInputKt.DateInputContent(this.$state.getStateData$material3_release(), this.$dateFormatter, this.$dateValidator, composer, this.$$dirty & 1008);
+            composer.endReplaceableGroup();
+        } else {
+            composer.startReplaceableGroup(-1168727765);
+            composer.endReplaceableGroup();
+        }
+        if (ComposerKt.isTraceInProgress()) {
+            ComposerKt.traceEventEnd();
+        }
+    }
+}

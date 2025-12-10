@@ -1,0 +1,31 @@
+package androidx.compose.material3;
+
+import kotlin.Metadata;
+import kotlin.coroutines.Continuation;
+import kotlin.coroutines.jvm.internal.ContinuationImpl;
+import kotlin.coroutines.jvm.internal.DebugMetadata;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+@Metadata(m29141k = 3, m29140mv = {1, 8, 0}, m29138xi = 48)
+@DebugMetadata(m29093c = "androidx.compose.material3.SliderKt", m29092f = "Slider.kt", m29091i = {0}, m29090l = {1095}, m29089m = "awaitSlop-8vUncbI", m29088n = {"initialDelta"}, m29087s = {"L$0"})
+/* loaded from: classes2.dex */
+public final class SliderKt$awaitSlop$1 extends ContinuationImpl {
+    Object L$0;
+    int label;
+    /* synthetic */ Object result;
+
+    public SliderKt$awaitSlop$1(Continuation<? super SliderKt$awaitSlop$1> continuation) {
+        super(continuation);
+    }
+
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    @Nullable
+    public final Object invokeSuspend(@NotNull Object obj) {
+        Object m60496n;
+        this.result = obj;
+        this.label |= Integer.MIN_VALUE;
+        m60496n = SliderKt.m60496n(null, 0L, 0, this);
+        return m60496n;
+    }
+}

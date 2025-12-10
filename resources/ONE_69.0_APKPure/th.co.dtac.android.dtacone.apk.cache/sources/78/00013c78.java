@@ -1,0 +1,38 @@
+package th.p047co.dtac.android.dtacone.view.appOne.prepaid_registration.fragment.common;
+
+import kotlin.Metadata;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function0;
+import kotlin.jvm.functions.Function1;
+import kotlin.jvm.internal.Lambda;
+import th.p047co.dtac.android.dtacone.util.bitmap.BitmapUtil;
+import th.p047co.dtac.android.dtacone.view.appOne.prepaid_registration.activity.OnePrepaidRegistrationActivity;
+
+@Metadata(m29143d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n¢\u0006\u0002\b\u0004"}, m29142d2 = {"<anonymous>", "", "it", "", "invoke"}, m29141k = 3, m29140mv = {1, 8, 0}, m29138xi = 48)
+/* renamed from: th.co.dtac.android.dtacone.view.appOne.prepaid_registration.fragment.common.OnePrepaidNavigateToCommonFragment$clearImageCompare$1$1 */
+/* loaded from: classes10.dex */
+public final class OnePrepaidNavigateToCommonFragment$clearImageCompare$1$1 extends Lambda implements Function1<Boolean, Unit> {
+    final /* synthetic */ Function0<Unit> $deleted;
+    final /* synthetic */ OnePrepaidRegistrationActivity $this_apply;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public OnePrepaidNavigateToCommonFragment$clearImageCompare$1$1(OnePrepaidRegistrationActivity onePrepaidRegistrationActivity, Function0<Unit> function0) {
+        super(1);
+        this.$this_apply = onePrepaidRegistrationActivity;
+        this.$deleted = function0;
+    }
+
+    @Override // kotlin.jvm.functions.Function1
+    public /* bridge */ /* synthetic */ Unit invoke(Boolean bool) {
+        invoke(bool.booleanValue());
+        return Unit.INSTANCE;
+    }
+
+    public final void invoke(boolean z) {
+        this.$this_apply.deleteImage(BitmapUtil.IMAGE_COMPARE_WATERMARK);
+        Function0<Unit> function0 = this.$deleted;
+        if (function0 != null) {
+            function0.invoke();
+        }
+    }
+}

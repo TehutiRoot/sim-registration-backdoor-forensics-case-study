@@ -1,0 +1,28 @@
+package th.p047co.dtac.android.dtacone.view.appOne.device_sale.viewmodel;
+
+import kotlin.Metadata;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function1;
+import kotlin.jvm.internal.Lambda;
+import th.p047co.dtac.android.dtacone.model.appOne.device_sale.OneVerifyIDPinResponse;
+
+@Metadata(m29143d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u0010\u0000\u001a\u00020\u00012\u000e\u0010\u0002\u001a\n \u0004*\u0004\u0018\u00010\u00030\u0003H\n¢\u0006\u0002\b\u0005"}, m29142d2 = {"<anonymous>", "", "it", "Lth/co/dtac/android/dtacone/model/appOne/device_sale/OneVerifyIDPinResponse;", "kotlin.jvm.PlatformType", "invoke"}, m29141k = 3, m29140mv = {1, 8, 0}, m29138xi = 48)
+/* renamed from: th.co.dtac.android.dtacone.view.appOne.device_sale.viewmodel.OneDeviceSaleCampaignViewModel$callVerifyIDPin$5 */
+/* loaded from: classes10.dex */
+public final class OneDeviceSaleCampaignViewModel$callVerifyIDPin$5 extends Lambda implements Function1<OneVerifyIDPinResponse, Unit> {
+    public static final OneDeviceSaleCampaignViewModel$callVerifyIDPin$5 INSTANCE = new OneDeviceSaleCampaignViewModel$callVerifyIDPin$5();
+
+    public OneDeviceSaleCampaignViewModel$callVerifyIDPin$5() {
+        super(1);
+    }
+
+    /* renamed from: invoke  reason: avoid collision after fix types in other method */
+    public final void invoke2(OneVerifyIDPinResponse oneVerifyIDPinResponse) {
+    }
+
+    @Override // kotlin.jvm.functions.Function1
+    public /* bridge */ /* synthetic */ Unit invoke(OneVerifyIDPinResponse oneVerifyIDPinResponse) {
+        invoke2(oneVerifyIDPinResponse);
+        return Unit.INSTANCE;
+    }
+}

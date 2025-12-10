@@ -1,0 +1,28 @@
+package io.fotoapparat.selector;
+
+import kotlin.Metadata;
+import kotlin.collections.CollectionsKt;
+import kotlin.collections.CollectionsKt___CollectionsKt;
+import kotlin.jvm.functions.Function1;
+import kotlin.jvm.internal.FunctionReferenceImpl;
+import kotlin.jvm.internal.Intrinsics;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+@Metadata(m29141k = 3, m29140mv = {1, 8, 0}, m29138xi = 48)
+/* loaded from: classes5.dex */
+public /* synthetic */ class SelectorsKt$highest$1 extends FunctionReferenceImpl implements Function1<Iterable<? extends T>, T> {
+    public static final SelectorsKt$highest$1 INSTANCE = new SelectorsKt$highest$1();
+
+    public SelectorsKt$highest$1() {
+        super(1, CollectionsKt.class, "maxOrNull", "maxOrNull(Ljava/lang/Iterable;)Ljava/lang/Comparable;", 1);
+    }
+
+    /* JADX WARN: Incorrect return type in method signature: (Ljava/lang/Iterable<+TT;>;)TT; */
+    @Override // kotlin.jvm.functions.Function1
+    @Nullable
+    public final Comparable invoke(@NotNull Iterable p0) {
+        Intrinsics.checkNotNullParameter(p0, "p0");
+        return CollectionsKt___CollectionsKt.maxOrNull((Iterable<? extends Comparable>) p0);
+    }
+}

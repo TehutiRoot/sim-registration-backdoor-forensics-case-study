@@ -1,0 +1,50 @@
+package th.p047co.dtac.android.dtacone.databinding;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.viewbinding.ViewBinding;
+import th.p047co.dtac.android.dtacone.R;
+
+/* renamed from: th.co.dtac.android.dtacone.databinding.FragmentMrtrPostpaidInputImeiBinding */
+/* loaded from: classes7.dex */
+public final class FragmentMrtrPostpaidInputImeiBinding implements ViewBinding {
+
+    /* renamed from: a */
+    public final LinearLayout f83928a;
+
+    public FragmentMrtrPostpaidInputImeiBinding(LinearLayout linearLayout) {
+        this.f83928a = linearLayout;
+    }
+
+    @NonNull
+    public static FragmentMrtrPostpaidInputImeiBinding bind(@NonNull View view) {
+        if (view != null) {
+            return new FragmentMrtrPostpaidInputImeiBinding((LinearLayout) view);
+        }
+        throw new NullPointerException("rootView");
+    }
+
+    @NonNull
+    public static FragmentMrtrPostpaidInputImeiBinding inflate(@NonNull LayoutInflater layoutInflater) {
+        return inflate(layoutInflater, null, false);
+    }
+
+    @NonNull
+    public static FragmentMrtrPostpaidInputImeiBinding inflate(@NonNull LayoutInflater layoutInflater, @Nullable ViewGroup viewGroup, boolean z) {
+        View inflate = layoutInflater.inflate(R.layout.fragment_mrtr_postpaid_input_imei, viewGroup, false);
+        if (z) {
+            viewGroup.addView(inflate);
+        }
+        return bind(inflate);
+    }
+
+    @Override // androidx.viewbinding.ViewBinding
+    @NonNull
+    public LinearLayout getRoot() {
+        return this.f83928a;
+    }
+}

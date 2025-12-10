@@ -1,0 +1,143 @@
+package th.p047co.dtac.android.dtacone.adapter.campaign.myCampaign;
+
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+import androidx.compose.runtime.internal.StabilityInferred;
+import androidx.recyclerview.widget.RecyclerView;
+import ch.qos.logback.core.CoreConstants;
+import com.google.android.gms.analytics.ecommerce.Promotion;
+import com.google.firebase.analytics.FirebaseAnalytics;
+import com.tom_roush.pdfbox.contentstream.operator.OperatorName;
+import com.tom_roush.pdfbox.pdmodel.common.PDPageLabelRange;
+import java.util.List;
+import kotlin.Metadata;
+import kotlin.jvm.internal.DefaultConstructorMarker;
+import kotlin.jvm.internal.Intrinsics;
+import org.jetbrains.annotations.NotNull;
+import th.p047co.dtac.android.dtacone.R;
+import th.p047co.dtac.android.dtacone.model.campaign.detail.happyPoint.history.DisplayPointDetailItem;
+
+@StabilityInferred(parameters = 0)
+@Metadata(m29143d1 = {"\u00004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\n\n\u0002\u0010\u0002\n\u0002\b\t\b\u0007\u0018\u0000 \u001e2\b\u0012\u0004\u0012\u00020\u00020\u0001:\u0002\u001f\u001eB\u001d\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\f\u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005¢\u0006\u0004\b\b\u0010\tJ\u001f\u0010\u000e\u001a\u00020\u00022\u0006\u0010\u000b\u001a\u00020\n2\u0006\u0010\r\u001a\u00020\fH\u0016¢\u0006\u0004\b\u000e\u0010\u000fJ\u000f\u0010\u0010\u001a\u00020\fH\u0016¢\u0006\u0004\b\u0010\u0010\u0011J\u0017\u0010\u0013\u001a\u00020\f2\u0006\u0010\u0012\u001a\u00020\fH\u0016¢\u0006\u0004\b\u0013\u0010\u0014J\u001f\u0010\u0018\u001a\u00020\u00172\u0006\u0010\u0015\u001a\u00020\u00022\u0006\u0010\u0016\u001a\u00020\fH\u0016¢\u0006\u0004\b\u0018\u0010\u0019R\u0014\u0010\u0004\u001a\u00020\u00038\u0002X\u0082\u0004¢\u0006\u0006\n\u0004\b\u001a\u0010\u001bR\u001a\u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\u00060\u00058\u0002X\u0082\u0004¢\u0006\u0006\n\u0004\b\u001c\u0010\u001d¨\u0006 "}, m29142d2 = {"Lth/co/dtac/android/dtacone/adapter/campaign/myCampaign/HistoryDescriptionAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "Landroid/content/Context;", CoreConstants.CONTEXT_SCOPE_VALUE, "", "Lth/co/dtac/android/dtacone/model/campaign/detail/happyPoint/history/DisplayPointDetailItem;", "descriptionList", "<init>", "(Landroid/content/Context;Ljava/util/List;)V", "Landroid/view/ViewGroup;", "p0", "", "p1", "onCreateViewHolder", "(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "getItemCount", "()I", "position", "getItemViewType", "(I)I", "holder", FirebaseAnalytics.Param.INDEX, "", "onBindViewHolder", "(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V", PDPageLabelRange.STYLE_LETTERS_LOWER, "Landroid/content/Context;", OperatorName.CLOSE_FILL_NON_ZERO_AND_STROKE, "Ljava/util/List;", "Companion", "CampaignHistoryDescriptionItemViewHolder", "app_prodRelease"}, m29141k = 1, m29140mv = {1, 8, 0})
+/* renamed from: th.co.dtac.android.dtacone.adapter.campaign.myCampaign.HistoryDescriptionAdapter */
+/* loaded from: classes7.dex */
+public final class HistoryDescriptionAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+
+    /* renamed from: a */
+    public final Context f81138a;
+
+    /* renamed from: b */
+    public final List f81139b;
+    @NotNull
+    public static final Companion Companion = new Companion(null);
+    public static final int $stable = 8;
+
+    @Metadata(m29143d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\t\b\u0086\u0004\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0003\u001a\u00020\u0002¢\u0006\u0004\b\u0004\u0010\u0005R\u0017\u0010\n\u001a\u00020\u00028\u0006¢\u0006\f\n\u0004\b\u0006\u0010\u0007\u001a\u0004\b\b\u0010\tR\u0017\u0010\u0010\u001a\u00020\u000b8\u0006¢\u0006\f\n\u0004\b\f\u0010\r\u001a\u0004\b\u000e\u0010\u000fR\u0017\u0010\u0013\u001a\u00020\u000b8\u0006¢\u0006\f\n\u0004\b\u0011\u0010\r\u001a\u0004\b\u0012\u0010\u000f¨\u0006\u0014"}, m29142d2 = {"Lth/co/dtac/android/dtacone/adapter/campaign/myCampaign/HistoryDescriptionAdapter$CampaignHistoryDescriptionItemViewHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "Landroid/view/View;", Promotion.ACTION_VIEW, "<init>", "(Lth/co/dtac/android/dtacone/adapter/campaign/myCampaign/HistoryDescriptionAdapter;Landroid/view/View;)V", PDPageLabelRange.STYLE_LETTERS_LOWER, "Landroid/view/View;", "getVSeparateLine", "()Landroid/view/View;", "vSeparateLine", "Landroid/widget/TextView;", OperatorName.CLOSE_FILL_NON_ZERO_AND_STROKE, "Landroid/widget/TextView;", "getTvHistoryDescriptionTitle", "()Landroid/widget/TextView;", "tvHistoryDescriptionTitle", OperatorName.CURVE_TO, "getTvHistoryDescriptionValue", "tvHistoryDescriptionValue", "app_prodRelease"}, m29141k = 1, m29140mv = {1, 8, 0})
+    /* renamed from: th.co.dtac.android.dtacone.adapter.campaign.myCampaign.HistoryDescriptionAdapter$CampaignHistoryDescriptionItemViewHolder */
+    /* loaded from: classes7.dex */
+    public final class CampaignHistoryDescriptionItemViewHolder extends RecyclerView.ViewHolder {
+
+        /* renamed from: a */
+        public final View f81140a;
+
+        /* renamed from: b */
+        public final TextView f81141b;
+
+        /* renamed from: c */
+        public final TextView f81142c;
+
+        /* renamed from: d */
+        public final /* synthetic */ HistoryDescriptionAdapter f81143d;
+
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+        public CampaignHistoryDescriptionItemViewHolder(@NotNull HistoryDescriptionAdapter historyDescriptionAdapter, View view) {
+            super(view);
+            Intrinsics.checkNotNullParameter(view, "view");
+            this.f81143d = historyDescriptionAdapter;
+            View findViewById = view.findViewById(R.id.vSeparateLine);
+            Intrinsics.checkNotNull(findViewById, "null cannot be cast to non-null type android.view.View");
+            this.f81140a = findViewById;
+            View findViewById2 = view.findViewById(R.id.tvHistoryDescriptionTitle);
+            Intrinsics.checkNotNull(findViewById2, "null cannot be cast to non-null type android.widget.TextView");
+            this.f81141b = (TextView) findViewById2;
+            View findViewById3 = view.findViewById(R.id.tvHistoryDescriptionValue);
+            Intrinsics.checkNotNull(findViewById3, "null cannot be cast to non-null type android.widget.TextView");
+            this.f81142c = (TextView) findViewById3;
+        }
+
+        @NotNull
+        public final TextView getTvHistoryDescriptionTitle() {
+            return this.f81141b;
+        }
+
+        @NotNull
+        public final TextView getTvHistoryDescriptionValue() {
+            return this.f81142c;
+        }
+
+        @NotNull
+        public final View getVSeparateLine() {
+            return this.f81140a;
+        }
+    }
+
+    @Metadata(m29143d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002R\u000e\u0010\u0003\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0005"}, m29142d2 = {"Lth/co/dtac/android/dtacone/adapter/campaign/myCampaign/HistoryDescriptionAdapter$Companion;", "", "()V", "VIEW_TYPE_NORMAL", "", "app_prodRelease"}, m29141k = 1, m29140mv = {1, 8, 0}, m29138xi = 48)
+    /* renamed from: th.co.dtac.android.dtacone.adapter.campaign.myCampaign.HistoryDescriptionAdapter$Companion */
+    /* loaded from: classes7.dex */
+    public static final class Companion {
+        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
+            this();
+        }
+
+        public Companion() {
+        }
+    }
+
+    public HistoryDescriptionAdapter(@NotNull Context context, @NotNull List<DisplayPointDetailItem> descriptionList) {
+        Intrinsics.checkNotNullParameter(context, "context");
+        Intrinsics.checkNotNullParameter(descriptionList, "descriptionList");
+        this.f81138a = context;
+        this.f81139b = descriptionList;
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+    public int getItemCount() {
+        return this.f81139b.size();
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+    public int getItemViewType(int i) {
+        return 0;
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+    public void onBindViewHolder(@NotNull RecyclerView.ViewHolder holder, int i) {
+        int i2;
+        Intrinsics.checkNotNullParameter(holder, "holder");
+        DisplayPointDetailItem displayPointDetailItem = (DisplayPointDetailItem) this.f81139b.get(i);
+        if (holder instanceof CampaignHistoryDescriptionItemViewHolder) {
+            CampaignHistoryDescriptionItemViewHolder campaignHistoryDescriptionItemViewHolder = (CampaignHistoryDescriptionItemViewHolder) holder;
+            campaignHistoryDescriptionItemViewHolder.getTvHistoryDescriptionTitle().setText(displayPointDetailItem.getName());
+            campaignHistoryDescriptionItemViewHolder.getTvHistoryDescriptionValue().setText(displayPointDetailItem.getValue());
+            View vSeparateLine = campaignHistoryDescriptionItemViewHolder.getVSeparateLine();
+            if (i == this.f81139b.size() - 1) {
+                i2 = 8;
+            } else {
+                i2 = 0;
+            }
+            vSeparateLine.setVisibility(i2);
+        }
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+    @NotNull
+    public RecyclerView.ViewHolder onCreateViewHolder(@NotNull ViewGroup p0, int i) {
+        Intrinsics.checkNotNullParameter(p0, "p0");
+        View view = LayoutInflater.from(this.f81138a).inflate(R.layout.item_campaign_history_description, p0, false);
+        Intrinsics.checkNotNullExpressionValue(view, "view");
+        return new CampaignHistoryDescriptionItemViewHolder(this, view);
+    }
+}

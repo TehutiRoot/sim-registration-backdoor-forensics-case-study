@@ -1,0 +1,68 @@
+package p000;
+
+import android.content.Context;
+import java.io.File;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.nio.channels.FileChannel;
+import java.nio.channels.FileLock;
+import java.nio.channels.OverlappingFileLockException;
+
+/* renamed from: Pz */
+/* loaded from: classes4.dex */
+public class C1128Pz {
+
+    /* renamed from: a */
+    public final FileChannel f5083a;
+
+    /* renamed from: b */
+    public final FileLock f5084b;
+
+    public C1128Pz(FileChannel fileChannel, FileLock fileLock) {
+        this.f5083a = fileChannel;
+        this.f5084b = fileLock;
+    }
+
+    /* renamed from: a */
+    public static C1128Pz m66863a(Context context, String str) {
+        FileChannel fileChannel;
+        FileLock fileLock;
+        try {
+            fileChannel = new RandomAccessFile(new File(context.getFilesDir(), str), "rw").getChannel();
+            try {
+                fileLock = fileChannel.lock();
+                try {
+                    return new C1128Pz(fileChannel, fileLock);
+                } catch (IOException | Error | OverlappingFileLockException unused) {
+                    if (fileLock != null) {
+                        try {
+                            fileLock.release();
+                        } catch (IOException unused2) {
+                        }
+                    }
+                    if (fileChannel != null) {
+                        try {
+                            fileChannel.close();
+                        } catch (IOException unused3) {
+                        }
+                    }
+                    return null;
+                }
+            } catch (IOException | Error | OverlappingFileLockException unused4) {
+                fileLock = null;
+            }
+        } catch (IOException | Error | OverlappingFileLockException unused5) {
+            fileChannel = null;
+            fileLock = null;
+        }
+    }
+
+    /* renamed from: b */
+    public void m66862b() {
+        try {
+            this.f5084b.release();
+            this.f5083a.close();
+        } catch (IOException unused) {
+        }
+    }
+}

@@ -1,0 +1,36 @@
+package androidx.recyclerview.widget;
+
+import android.annotation.SuppressLint;
+import androidx.recyclerview.widget.TileList;
+
+/* loaded from: classes2.dex */
+public interface ThreadUtil {
+
+    /* loaded from: classes2.dex */
+    public interface BackgroundCallback<T> {
+        void loadTile(int i, int i2);
+
+        @SuppressLint({"UnknownNullness"})
+        void recycleTile(TileList.Tile<T> tile);
+
+        void refresh(int i);
+
+        void updateRange(int i, int i2, int i3, int i4, int i5);
+    }
+
+    /* loaded from: classes2.dex */
+    public interface MainThreadCallback<T> {
+        @SuppressLint({"UnknownNullness"})
+        void addTile(int i, TileList.Tile<T> tile);
+
+        void removeTile(int i, int i2);
+
+        void updateItemCount(int i, int i2);
+    }
+
+    /* renamed from: a */
+    MainThreadCallback mo52952a(MainThreadCallback mainThreadCallback);
+
+    /* renamed from: b */
+    BackgroundCallback mo52951b(BackgroundCallback backgroundCallback);
+}

@@ -1,0 +1,35 @@
+package th.p047co.dtac.android.dtacone.presenter.face;
+
+import kotlin.Metadata;
+import kotlin.Pair;
+import kotlin.jvm.functions.Function1;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Lambda;
+import org.jetbrains.annotations.NotNull;
+import th.p047co.dtac.android.dtacone.model.bitmap.BitmapCollection;
+import th.p047co.dtac.android.dtacone.presenter.face.FacePresenter;
+
+@Metadata(m29143d1 = {"\u0000\u0018\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u000b\n\u0000\u0010\u0000\u001a\n \u0002*\u0004\u0018\u00010\u00010\u00012\u0012\u0010\u0003\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00060\u0004H\n¢\u0006\u0002\b\u0007"}, m29142d2 = {"<anonymous>", "Lth/co/dtac/android/dtacone/presenter/face/FacePresenter$STATE_DETECT;", "kotlin.jvm.PlatformType", "it", "Lkotlin/Pair;", "Lth/co/dtac/android/dtacone/model/bitmap/BitmapCollection;", "", "invoke"}, m29141k = 3, m29140mv = {1, 8, 0}, m29138xi = 48)
+/* renamed from: th.co.dtac.android.dtacone.presenter.face.FacePresenter$faceDetectionMnpByBitmap$2 */
+/* loaded from: classes8.dex */
+public final class FacePresenter$faceDetectionMnpByBitmap$2 extends Lambda implements Function1<Pair<? extends BitmapCollection, ? extends Boolean>, FacePresenter.STATE_DETECT> {
+    public static final FacePresenter$faceDetectionMnpByBitmap$2 INSTANCE = new FacePresenter$faceDetectionMnpByBitmap$2();
+
+    public FacePresenter$faceDetectionMnpByBitmap$2() {
+        super(1);
+    }
+
+    @Override // kotlin.jvm.functions.Function1
+    public /* bridge */ /* synthetic */ FacePresenter.STATE_DETECT invoke(Pair<? extends BitmapCollection, ? extends Boolean> pair) {
+        return invoke2((Pair<BitmapCollection, Boolean>) pair);
+    }
+
+    /* renamed from: invoke  reason: avoid collision after fix types in other method */
+    public final FacePresenter.STATE_DETECT invoke2(@NotNull Pair<BitmapCollection, Boolean> it) {
+        Intrinsics.checkNotNullParameter(it, "it");
+        if (it.getSecond().booleanValue()) {
+            return FacePresenter.STATE_DETECT.DETECTED;
+        }
+        return FacePresenter.STATE_DETECT.NOT_FOND;
+    }
+}

@@ -1,0 +1,33 @@
+package th.p047co.dtac.android.dtacone.presenter.campaign.detail;
+
+import io.realm.CollectionUtils;
+import java.util.List;
+import kotlin.Metadata;
+import kotlin.jvm.functions.Function1;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Lambda;
+import org.jetbrains.annotations.NotNull;
+import th.p047co.dtac.android.dtacone.model.campaign.detail.happyPoint.history.CampaignDetailHistoryItem;
+import th.p047co.dtac.android.dtacone.model.campaign.detail.happyPoint.history.HistoryResponse;
+
+@Metadata(m29143d1 = {"\u0000\u0014\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\n \u0002*\u0004\u0018\u00010\u00010\u00012\f\u0010\u0003\u001a\b\u0012\u0004\u0012\u00020\u00050\u0004H\n¢\u0006\u0002\b\u0006"}, m29142d2 = {"<anonymous>", "Lth/co/dtac/android/dtacone/model/campaign/detail/happyPoint/history/HistoryResponse;", "kotlin.jvm.PlatformType", CollectionUtils.LIST_TYPE, "", "Lth/co/dtac/android/dtacone/model/campaign/detail/happyPoint/history/CampaignDetailHistoryItem;", "invoke"}, m29141k = 3, m29140mv = {1, 8, 0}, m29138xi = 48)
+/* renamed from: th.co.dtac.android.dtacone.presenter.campaign.detail.CampaignDetailPresenter$getCampaignDetail$1 */
+/* loaded from: classes8.dex */
+public final class CampaignDetailPresenter$getCampaignDetail$1 extends Lambda implements Function1<List<? extends CampaignDetailHistoryItem>, HistoryResponse> {
+    public static final CampaignDetailPresenter$getCampaignDetail$1 INSTANCE = new CampaignDetailPresenter$getCampaignDetail$1();
+
+    public CampaignDetailPresenter$getCampaignDetail$1() {
+        super(1);
+    }
+
+    @Override // kotlin.jvm.functions.Function1
+    public /* bridge */ /* synthetic */ HistoryResponse invoke(List<? extends CampaignDetailHistoryItem> list) {
+        return invoke2((List<CampaignDetailHistoryItem>) list);
+    }
+
+    /* renamed from: invoke  reason: avoid collision after fix types in other method */
+    public final HistoryResponse invoke2(@NotNull List<CampaignDetailHistoryItem> list) {
+        Intrinsics.checkNotNullParameter(list, "list");
+        return new HistoryResponse(Boolean.FALSE, list);
+    }
+}

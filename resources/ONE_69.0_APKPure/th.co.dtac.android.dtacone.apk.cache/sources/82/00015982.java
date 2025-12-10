@@ -1,0 +1,45 @@
+package th.p047co.dtac.android.dtacone.viewmodel.mrtr_pre2post;
+
+import androidx.lifecycle.MutableLiveData;
+import kotlin.Metadata;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function1;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Lambda;
+import org.jetbrains.annotations.NotNull;
+import th.p047co.dtac.android.dtacone.manager.service.MrtrErrorService;
+import th.p047co.dtac.android.dtacone.model.Resource;
+
+@Metadata(m29143d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u0003\n\u0000\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n¢\u0006\u0002\b\u0004"}, m29142d2 = {"<anonymous>", "", "it", "", "invoke"}, m29141k = 3, m29140mv = {1, 8, 0}, m29138xi = 48)
+/* renamed from: th.co.dtac.android.dtacone.viewmodel.mrtr_pre2post.MrtrPre2PostViewModel$recommendedPackage$5 */
+/* loaded from: classes9.dex */
+public final class MrtrPre2PostViewModel$recommendedPackage$5 extends Lambda implements Function1<Throwable, Unit> {
+    final /* synthetic */ MrtrPre2PostViewModel this$0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public MrtrPre2PostViewModel$recommendedPackage$5(MrtrPre2PostViewModel mrtrPre2PostViewModel) {
+        super(1);
+        this.this$0 = mrtrPre2PostViewModel;
+    }
+
+    @Override // kotlin.jvm.functions.Function1
+    public /* bridge */ /* synthetic */ Unit invoke(Throwable th2) {
+        invoke2(th2);
+        return Unit.INSTANCE;
+    }
+
+    /* renamed from: invoke  reason: avoid collision after fix types in other method */
+    public final void invoke2(@NotNull Throwable it) {
+        MutableLiveData m2174V;
+        MutableLiveData m2180P;
+        MrtrErrorService mrtrErrorService;
+        Intrinsics.checkNotNullParameter(it, "it");
+        m2174V = this.this$0.m2174V();
+        Resource.Companion companion = Resource.Companion;
+        m2174V.setValue(companion.error("", null, null));
+        m2180P = this.this$0.m2180P();
+        m2180P.setValue(Resource.Companion.error$default(companion, "", null, null, 4, null));
+        mrtrErrorService = this.this$0.f106615f;
+        mrtrErrorService.handleException(it, new MrtrErrorService.ExceptionHandler[0]);
+    }
+}

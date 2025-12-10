@@ -1,0 +1,137 @@
+package com.tom_roush.pdfbox.p019io;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+/* renamed from: com.tom_roush.pdfbox.io.RandomAccessFile */
+/* loaded from: classes5.dex */
+public class RandomAccessFile implements RandomAccess {
+
+    /* renamed from: a */
+    public final java.io.RandomAccessFile f59927a;
+
+    /* renamed from: b */
+    public boolean f59928b;
+
+    public RandomAccessFile(File file, String str) throws FileNotFoundException {
+        this.f59927a = new java.io.RandomAccessFile(file, str);
+    }
+
+    /* renamed from: b */
+    private void m32749b() {
+        if (!this.f59928b) {
+            return;
+        }
+        throw new IOException("RandomAccessFile already closed");
+    }
+
+    @Override // com.tom_roush.pdfbox.p019io.RandomAccessRead
+    public int available() throws IOException {
+        m32749b();
+        return (int) Math.min(this.f59927a.length() - getPosition(), 2147483647L);
+    }
+
+    @Override // com.tom_roush.pdfbox.p019io.RandomAccessWrite
+    public void clear() throws IOException {
+        m32749b();
+        this.f59927a.seek(0L);
+        this.f59927a.setLength(0L);
+    }
+
+    @Override // java.io.Closeable, java.lang.AutoCloseable
+    public void close() throws IOException {
+        this.f59927a.close();
+        this.f59928b = true;
+    }
+
+    @Override // com.tom_roush.pdfbox.p019io.RandomAccessRead
+    public long getPosition() throws IOException {
+        m32749b();
+        return this.f59927a.getFilePointer();
+    }
+
+    @Override // com.tom_roush.pdfbox.p019io.RandomAccessRead
+    public boolean isClosed() {
+        return this.f59928b;
+    }
+
+    @Override // com.tom_roush.pdfbox.p019io.RandomAccessRead
+    public boolean isEOF() throws IOException {
+        if (peek() == -1) {
+            return true;
+        }
+        return false;
+    }
+
+    @Override // com.tom_roush.pdfbox.p019io.RandomAccessRead
+    public long length() throws IOException {
+        m32749b();
+        return this.f59927a.length();
+    }
+
+    @Override // com.tom_roush.pdfbox.p019io.RandomAccessRead
+    public int peek() throws IOException {
+        int read = read();
+        if (read != -1) {
+            rewind(1);
+        }
+        return read;
+    }
+
+    @Override // com.tom_roush.pdfbox.p019io.RandomAccessRead
+    public int read() throws IOException {
+        m32749b();
+        return this.f59927a.read();
+    }
+
+    @Override // com.tom_roush.pdfbox.p019io.RandomAccessRead
+    public byte[] readFully(int i) throws IOException {
+        m32749b();
+        byte[] bArr = new byte[i];
+        this.f59927a.readFully(bArr);
+        return bArr;
+    }
+
+    @Override // com.tom_roush.pdfbox.p019io.RandomAccessRead
+    public void rewind(int i) throws IOException {
+        m32749b();
+        java.io.RandomAccessFile randomAccessFile = this.f59927a;
+        randomAccessFile.seek(randomAccessFile.getFilePointer() - i);
+    }
+
+    @Override // com.tom_roush.pdfbox.p019io.RandomAccessRead
+    public void seek(long j) throws IOException {
+        m32749b();
+        this.f59927a.seek(j);
+    }
+
+    @Override // com.tom_roush.pdfbox.p019io.RandomAccessWrite
+    public void write(byte[] bArr, int i, int i2) throws IOException {
+        m32749b();
+        this.f59927a.write(bArr, i, i2);
+    }
+
+    @Override // com.tom_roush.pdfbox.p019io.RandomAccessRead
+    public int read(byte[] bArr) throws IOException {
+        m32749b();
+        return this.f59927a.read(bArr);
+    }
+
+    @Override // com.tom_roush.pdfbox.p019io.RandomAccessWrite
+    public void write(byte[] bArr) throws IOException {
+        write(bArr, 0, bArr.length);
+    }
+
+    @Override // com.tom_roush.pdfbox.p019io.RandomAccessWrite
+    public void write(int i) throws IOException {
+        m32749b();
+        this.f59927a.write(i);
+    }
+
+    @Override // com.tom_roush.pdfbox.p019io.RandomAccessRead
+    public int read(byte[] bArr, int i, int i2) throws IOException {
+        m32749b();
+        return this.f59927a.read(bArr, i, i2);
+    }
+}

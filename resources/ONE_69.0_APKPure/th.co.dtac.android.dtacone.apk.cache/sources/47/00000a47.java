@@ -1,0 +1,67 @@
+package p000;
+
+import com.google.android.gms.internal.mlkit_vision_common.zzae;
+import com.google.android.gms.internal.mlkit_vision_common.zzkh;
+import com.google.firebase.encoders.FieldDescriptor;
+import com.google.firebase.encoders.ObjectEncoder;
+import com.google.firebase.encoders.ObjectEncoderContext;
+
+/* renamed from: Kq2 */
+/* loaded from: classes3.dex */
+public final class Kq2 implements ObjectEncoder {
+
+    /* renamed from: a */
+    public static final Kq2 f3420a = new Kq2();
+
+    /* renamed from: b */
+    public static final FieldDescriptor f3421b;
+
+    /* renamed from: c */
+    public static final FieldDescriptor f3422c;
+
+    /* renamed from: d */
+    public static final FieldDescriptor f3423d;
+
+    /* renamed from: e */
+    public static final FieldDescriptor f3424e;
+
+    /* renamed from: f */
+    public static final FieldDescriptor f3425f;
+
+    /* renamed from: g */
+    public static final FieldDescriptor f3426g;
+
+    static {
+        FieldDescriptor.Builder builder = FieldDescriptor.builder("detectorMode");
+        zzae zzaeVar = new zzae();
+        zzaeVar.zza(1);
+        f3421b = builder.withProperty(zzaeVar.zzb()).build();
+        FieldDescriptor.Builder builder2 = FieldDescriptor.builder("multipleObjectsEnabled");
+        zzae zzaeVar2 = new zzae();
+        zzaeVar2.zza(2);
+        f3422c = builder2.withProperty(zzaeVar2.zzb()).build();
+        FieldDescriptor.Builder builder3 = FieldDescriptor.builder("classificationEnabled");
+        zzae zzaeVar3 = new zzae();
+        zzaeVar3.zza(3);
+        f3423d = builder3.withProperty(zzaeVar3.zzb()).build();
+        FieldDescriptor.Builder builder4 = FieldDescriptor.builder("maxPerObjectLabelCount");
+        zzae zzaeVar4 = new zzae();
+        zzaeVar4.zza(4);
+        f3424e = builder4.withProperty(zzaeVar4.zzb()).build();
+        FieldDescriptor.Builder builder5 = FieldDescriptor.builder("classificationConfidenceThreshold");
+        zzae zzaeVar5 = new zzae();
+        zzaeVar5.zza(5);
+        f3425f = builder5.withProperty(zzaeVar5.zzb()).build();
+        FieldDescriptor.Builder builder6 = FieldDescriptor.builder("customLocalModelOptions");
+        zzae zzaeVar6 = new zzae();
+        zzaeVar6.zza(6);
+        f3426g = builder6.withProperty(zzaeVar6.zzb()).build();
+    }
+
+    @Override // com.google.firebase.encoders.ObjectEncoder
+    public final /* bridge */ /* synthetic */ void encode(Object obj, Object obj2) {
+        zzkh zzkhVar = (zzkh) obj;
+        ObjectEncoderContext objectEncoderContext = (ObjectEncoderContext) obj2;
+        throw null;
+    }
+}

@@ -1,0 +1,43 @@
+package th.p047co.dtac.android.dtacone.view.activity.mrtr_prepaid_registration;
+
+import kotlin.Metadata;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function0;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Lambda;
+import th.p047co.dtac.android.dtacone.model.upPass.UpPassFormType;
+import th.p047co.dtac.android.dtacone.viewmodel.mrtr_prepaid_registration.MrtrPrepaidValidateIdCardNumberViewModel;
+
+@Metadata(m29143d1 = {"\u0000\b\n\u0000\n\u0002\u0010\u0002\n\u0000\u0010\u0000\u001a\u00020\u0001H\n¢\u0006\u0002\b\u0002"}, m29142d2 = {"<anonymous>", "", "invoke"}, m29141k = 3, m29140mv = {1, 8, 0}, m29138xi = 48)
+/* renamed from: th.co.dtac.android.dtacone.view.activity.mrtr_prepaid_registration.MrtrPrepaidRegistrationActivity$dialogConfirmPopBack$1 */
+/* loaded from: classes10.dex */
+public final class MrtrPrepaidRegistrationActivity$dialogConfirmPopBack$1 extends Lambda implements Function0<Unit> {
+    final /* synthetic */ MrtrPrepaidRegistrationActivity this$0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public MrtrPrepaidRegistrationActivity$dialogConfirmPopBack$1(MrtrPrepaidRegistrationActivity mrtrPrepaidRegistrationActivity) {
+        super(0);
+        this.this$0 = mrtrPrepaidRegistrationActivity;
+    }
+
+    @Override // kotlin.jvm.functions.Function0
+    public /* bridge */ /* synthetic */ Unit invoke() {
+        invoke2();
+        return Unit.INSTANCE;
+    }
+
+    @Override // kotlin.jvm.functions.Function0
+    /* renamed from: invoke  reason: avoid collision after fix types in other method */
+    public final void invoke2() {
+        MrtrPrepaidValidateIdCardNumberViewModel mrtrPrepaidValidateIdCardNumberViewModel;
+        mrtrPrepaidValidateIdCardNumberViewModel = this.this$0.f87749n;
+        if (mrtrPrepaidValidateIdCardNumberViewModel == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("prepaidValidationViewModel");
+            mrtrPrepaidValidateIdCardNumberViewModel = null;
+        }
+        mrtrPrepaidValidateIdCardNumberViewModel.setCurrentFormType(new UpPassFormType.Ocr(null, this.this$0.getMrtrPrepaidViewModel().getAllowDocumentType(), false, this.this$0.getMrtrPrepaidViewModel().getOrderType(), 5, null));
+        this.this$0.getSupportFragmentManager().popBackStack("UpPassFormOcrFragment", 0);
+        this.this$0.getUpPassViewModel().resetFormState();
+        this.this$0.getUpPassViewModel().triggerRestart();
+    }
+}

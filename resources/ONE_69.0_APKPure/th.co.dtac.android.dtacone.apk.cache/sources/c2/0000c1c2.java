@@ -1,0 +1,95 @@
+package com.tom_roush.pdfbox.pdmodel.documentinterchange.prepress;
+
+import com.tom_roush.pdfbox.cos.COSArray;
+import com.tom_roush.pdfbox.cos.COSBase;
+import com.tom_roush.pdfbox.cos.COSDictionary;
+import com.tom_roush.pdfbox.cos.COSInteger;
+import com.tom_roush.pdfbox.cos.COSName;
+import com.tom_roush.pdfbox.pdmodel.common.COSObjectable;
+import com.tom_roush.pdfbox.pdmodel.graphics.PDLineDashPattern;
+import com.tom_roush.pdfbox.pdmodel.graphics.color.PDColor;
+import com.tom_roush.pdfbox.pdmodel.graphics.color.PDDeviceRGB;
+
+/* loaded from: classes5.dex */
+public class PDBoxStyle implements COSObjectable {
+    public static final String GUIDELINE_STYLE_DASHED = "D";
+    public static final String GUIDELINE_STYLE_SOLID = "S";
+
+    /* renamed from: a */
+    public final COSDictionary f60291a;
+
+    public PDBoxStyle() {
+        this.f60291a = new COSDictionary();
+    }
+
+    public PDColor getGuidelineColor() {
+        COSDictionary cOSDictionary = this.f60291a;
+        COSName cOSName = COSName.f59771C;
+        COSArray cOSArray = (COSArray) cOSDictionary.getDictionaryObject(cOSName);
+        if (cOSArray == null) {
+            cOSArray = new COSArray();
+            COSInteger cOSInteger = COSInteger.ZERO;
+            cOSArray.add((COSBase) cOSInteger);
+            cOSArray.add((COSBase) cOSInteger);
+            cOSArray.add((COSBase) cOSInteger);
+            this.f60291a.setItem(cOSName, (COSBase) cOSArray);
+        }
+        return new PDColor(cOSArray.toFloatArray(), PDDeviceRGB.INSTANCE);
+    }
+
+    public String getGuidelineStyle() {
+        return this.f60291a.getNameAsString(COSName.f59836S, "S");
+    }
+
+    public float getGuidelineWidth() {
+        return this.f60291a.getFloat(COSName.f59858W, 1.0f);
+    }
+
+    public PDLineDashPattern getLineDashPattern() {
+        COSDictionary cOSDictionary = this.f60291a;
+        COSName cOSName = COSName.f59782D;
+        COSArray cOSArray = (COSArray) cOSDictionary.getDictionaryObject(cOSName);
+        if (cOSArray == null) {
+            cOSArray = new COSArray();
+            cOSArray.add((COSBase) COSInteger.THREE);
+            this.f60291a.setItem(cOSName, (COSBase) cOSArray);
+        }
+        COSArray cOSArray2 = new COSArray();
+        cOSArray2.add((COSBase) cOSArray);
+        return new PDLineDashPattern(cOSArray2, 0);
+    }
+
+    public void setGuideLineColor(PDColor pDColor) {
+        COSArray cOSArray;
+        if (pDColor != null) {
+            cOSArray = pDColor.toCOSArray();
+        } else {
+            cOSArray = null;
+        }
+        this.f60291a.setItem(COSName.f59771C, (COSBase) cOSArray);
+    }
+
+    public void setGuidelineStyle(String str) {
+        this.f60291a.setName(COSName.f59836S, str);
+    }
+
+    public void setGuidelineWidth(float f) {
+        this.f60291a.setFloat(COSName.f59858W, f);
+    }
+
+    public void setLineDashPattern(COSArray cOSArray) {
+        if (cOSArray == null) {
+            cOSArray = null;
+        }
+        this.f60291a.setItem(COSName.f59782D, (COSBase) cOSArray);
+    }
+
+    @Override // com.tom_roush.pdfbox.pdmodel.common.COSObjectable
+    public COSDictionary getCOSObject() {
+        return this.f60291a;
+    }
+
+    public PDBoxStyle(COSDictionary cOSDictionary) {
+        this.f60291a = cOSDictionary;
+    }
+}

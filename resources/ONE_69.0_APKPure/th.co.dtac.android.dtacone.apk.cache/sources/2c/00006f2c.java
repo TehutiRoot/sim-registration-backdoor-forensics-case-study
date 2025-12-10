@@ -1,0 +1,48 @@
+package androidx.emoji2.text.flatbuffer;
+
+import java.nio.ByteBuffer;
+
+/* loaded from: classes2.dex */
+public class BaseVector {
+
+    /* renamed from: a */
+    public int f35301a;
+
+    /* renamed from: b */
+    public int f35302b;
+
+    /* renamed from: bb */
+    protected ByteBuffer f35303bb;
+
+    /* renamed from: c */
+    public int f35304c;
+
+    public int __element(int i) {
+        return this.f35301a + (i * this.f35304c);
+    }
+
+    public void __reset(int i, int i2, ByteBuffer byteBuffer) {
+        this.f35303bb = byteBuffer;
+        if (byteBuffer != null) {
+            this.f35301a = i;
+            this.f35302b = byteBuffer.getInt(i - 4);
+            this.f35304c = i2;
+            return;
+        }
+        this.f35301a = 0;
+        this.f35302b = 0;
+        this.f35304c = 0;
+    }
+
+    public int __vector() {
+        return this.f35301a;
+    }
+
+    public int length() {
+        return this.f35302b;
+    }
+
+    public void reset() {
+        __reset(0, 0, null);
+    }
+}

@@ -1,0 +1,6 @@
+package p000;
+
+/* renamed from: A4 */
+/* loaded from: classes3.dex */
+public abstract /* synthetic */ class AbstractC0005A4 {
+}

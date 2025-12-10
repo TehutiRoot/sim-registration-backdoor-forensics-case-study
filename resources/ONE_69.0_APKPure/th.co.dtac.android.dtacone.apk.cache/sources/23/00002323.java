@@ -1,0 +1,130 @@
+package androidx.compose.animation.core;
+
+import androidx.compose.animation.core.AnimationVector;
+import androidx.compose.runtime.internal.StabilityInferred;
+import androidx.exifinterface.media.ExifInterface;
+import com.tom_roush.pdfbox.contentstream.operator.OperatorName;
+import com.tom_roush.pdfbox.pdmodel.common.PDPageLabelRange;
+import kotlin.Deprecated;
+import kotlin.DeprecationLevel;
+import kotlin.Metadata;
+import kotlin.jvm.internal.DefaultConstructorMarker;
+import kotlin.jvm.internal.Intrinsics;
+import org.jetbrains.annotations.NotNull;
+
+@StabilityInferred(parameters = 0)
+@Metadata(m29143d1 = {"\u00004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\t\n\u0002\b\u0018\n\u0002\u0010\u000b\n\u0002\b\u0003\b\u0007\u0018\u0000*\b\b\u0000\u0010\u0002*\u00020\u00012\b\u0012\u0004\u0012\u00028\u00000\u0003B!\b\u0017\u0012\f\u0010\u0005\u001a\b\u0012\u0004\u0012\u00028\u00000\u0004\u0012\b\b\u0002\u0010\u0007\u001a\u00020\u0006¢\u0006\u0004\b\b\u0010\tB,\u0012\f\u0010\u0005\u001a\b\u0012\u0004\u0012\u00028\u00000\u0004\u0012\b\b\u0002\u0010\u0007\u001a\u00020\u0006\u0012\b\b\u0002\u0010\u000b\u001a\u00020\nø\u0001\u0000¢\u0006\u0004\b\b\u0010\fJ\u0017\u0010\u000f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\rH\u0002¢\u0006\u0004\b\u000f\u0010\u0010J/\u0010\u0014\u001a\u00028\u00002\u0006\u0010\u000e\u001a\u00020\r2\u0006\u0010\u0011\u001a\u00028\u00002\u0006\u0010\u0012\u001a\u00028\u00002\u0006\u0010\u0013\u001a\u00028\u0000H\u0002¢\u0006\u0004\b\u0014\u0010\u0015J/\u0010\u0019\u001a\u00028\u00002\u0006\u0010\u000e\u001a\u00020\r2\u0006\u0010\u0016\u001a\u00028\u00002\u0006\u0010\u0017\u001a\u00028\u00002\u0006\u0010\u0018\u001a\u00028\u0000H\u0016¢\u0006\u0004\b\u0019\u0010\u0015J/\u0010\u001a\u001a\u00028\u00002\u0006\u0010\u000e\u001a\u00020\r2\u0006\u0010\u0016\u001a\u00028\u00002\u0006\u0010\u0017\u001a\u00028\u00002\u0006\u0010\u0018\u001a\u00028\u0000H\u0016¢\u0006\u0004\b\u001a\u0010\u0015J'\u0010\u001b\u001a\u00020\r2\u0006\u0010\u0016\u001a\u00028\u00002\u0006\u0010\u0017\u001a\u00028\u00002\u0006\u0010\u0018\u001a\u00028\u0000H\u0016¢\u0006\u0004\b\u001b\u0010\u001cR\u001a\u0010\u0005\u001a\b\u0012\u0004\u0012\u00028\u00000\u00048\u0002X\u0082\u0004¢\u0006\u0006\n\u0004\b\u000f\u0010\u001dR\u0014\u0010\u0007\u001a\u00020\u00068\u0002X\u0082\u0004¢\u0006\u0006\n\u0004\b\u0014\u0010\u001eR\u001a\u0010#\u001a\u00020\r8\u0000X\u0080\u0004¢\u0006\f\n\u0004\b\u001f\u0010 \u001a\u0004\b!\u0010\"R\u0014\u0010%\u001a\u00020\r8\u0002X\u0082\u0004¢\u0006\u0006\n\u0004\b$\u0010 R\u0014\u0010'\u001a\u00020&8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b'\u0010(\u0082\u0002\u0004\n\u0002\b\u0019¨\u0006)"}, m29142d2 = {"Landroidx/compose/animation/core/VectorizedInfiniteRepeatableSpec;", "Landroidx/compose/animation/core/AnimationVector;", ExifInterface.GPS_MEASUREMENT_INTERRUPTED, "Landroidx/compose/animation/core/VectorizedAnimationSpec;", "Landroidx/compose/animation/core/VectorizedDurationBasedAnimationSpec;", "animation", "Landroidx/compose/animation/core/RepeatMode;", "repeatMode", "<init>", "(Landroidx/compose/animation/core/VectorizedDurationBasedAnimationSpec;Landroidx/compose/animation/core/RepeatMode;)V", "Landroidx/compose/animation/core/StartOffset;", "initialStartOffset", "(Landroidx/compose/animation/core/VectorizedDurationBasedAnimationSpec;Landroidx/compose/animation/core/RepeatMode;JLkotlin/jvm/internal/DefaultConstructorMarker;)V", "", "playTimeNanos", PDPageLabelRange.STYLE_LETTERS_LOWER, "(J)J", "start", "startVelocity", "end", OperatorName.CLOSE_FILL_NON_ZERO_AND_STROKE, "(JLandroidx/compose/animation/core/AnimationVector;Landroidx/compose/animation/core/AnimationVector;Landroidx/compose/animation/core/AnimationVector;)Landroidx/compose/animation/core/AnimationVector;", "initialValue", "targetValue", "initialVelocity", "getValueFromNanos", "getVelocityFromNanos", "getDurationNanos", "(Landroidx/compose/animation/core/AnimationVector;Landroidx/compose/animation/core/AnimationVector;Landroidx/compose/animation/core/AnimationVector;)J", "Landroidx/compose/animation/core/VectorizedDurationBasedAnimationSpec;", "Landroidx/compose/animation/core/RepeatMode;", OperatorName.CURVE_TO, OperatorName.SET_LINE_CAPSTYLE, "getDurationNanos$animation_core_release", "()J", "durationNanos", "d", "initialOffsetNanos", "", "isInfinite", "()Z", "animation-core_release"}, m29141k = 1, m29140mv = {1, 8, 0})
+/* loaded from: classes.dex */
+public final class VectorizedInfiniteRepeatableSpec<V extends AnimationVector> implements VectorizedAnimationSpec<V> {
+    public static final int $stable = 8;
+
+    /* renamed from: a */
+    public final VectorizedDurationBasedAnimationSpec f12742a;
+
+    /* renamed from: b */
+    public final RepeatMode f12743b;
+
+    /* renamed from: c */
+    public final long f12744c;
+
+    /* renamed from: d */
+    public final long f12745d;
+
+    public /* synthetic */ VectorizedInfiniteRepeatableSpec(VectorizedDurationBasedAnimationSpec vectorizedDurationBasedAnimationSpec, RepeatMode repeatMode, long j, DefaultConstructorMarker defaultConstructorMarker) {
+        this(vectorizedDurationBasedAnimationSpec, repeatMode, j);
+    }
+
+    /* renamed from: a */
+    private final long m61613a(long j) {
+        long j2 = this.f12745d;
+        if (j + j2 <= 0) {
+            return 0L;
+        }
+        long j3 = j + j2;
+        long j4 = this.f12744c;
+        long j5 = j3 / j4;
+        if (this.f12743b != RepeatMode.Restart && j5 % 2 != 0) {
+            return ((j5 + 1) * j4) - j3;
+        }
+        Long.signum(j5);
+        return j3 - (j5 * j4);
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* renamed from: b */
+    private final AnimationVector m61612b(long j, AnimationVector animationVector, AnimationVector animationVector2, AnimationVector animationVector3) {
+        long j2 = this.f12745d;
+        long j3 = this.f12744c;
+        if (j + j2 > j3) {
+            return getVelocityFromNanos(j3 - j2, animationVector, animationVector2, animationVector3);
+        }
+        return animationVector2;
+    }
+
+    @Override // androidx.compose.animation.core.VectorizedAnimationSpec
+    public long getDurationNanos(@NotNull V initialValue, @NotNull V targetValue, @NotNull V initialVelocity) {
+        Intrinsics.checkNotNullParameter(initialValue, "initialValue");
+        Intrinsics.checkNotNullParameter(targetValue, "targetValue");
+        Intrinsics.checkNotNullParameter(initialVelocity, "initialVelocity");
+        return Long.MAX_VALUE;
+    }
+
+    public final long getDurationNanos$animation_core_release() {
+        return this.f12744c;
+    }
+
+    @Override // androidx.compose.animation.core.VectorizedAnimationSpec
+    public /* synthetic */ AnimationVector getEndVelocity(AnimationVector animationVector, AnimationVector animationVector2, AnimationVector animationVector3) {
+        return N12.m67298a(this, animationVector, animationVector2, animationVector3);
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // androidx.compose.animation.core.VectorizedAnimationSpec
+    @NotNull
+    public V getValueFromNanos(long j, @NotNull V initialValue, @NotNull V targetValue, @NotNull V initialVelocity) {
+        Intrinsics.checkNotNullParameter(initialValue, "initialValue");
+        Intrinsics.checkNotNullParameter(targetValue, "targetValue");
+        Intrinsics.checkNotNullParameter(initialVelocity, "initialVelocity");
+        return (V) this.f12742a.getValueFromNanos(m61613a(j), initialValue, targetValue, m61612b(j, initialValue, initialVelocity, targetValue));
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // androidx.compose.animation.core.VectorizedAnimationSpec
+    @NotNull
+    public V getVelocityFromNanos(long j, @NotNull V initialValue, @NotNull V targetValue, @NotNull V initialVelocity) {
+        Intrinsics.checkNotNullParameter(initialValue, "initialValue");
+        Intrinsics.checkNotNullParameter(targetValue, "targetValue");
+        Intrinsics.checkNotNullParameter(initialVelocity, "initialVelocity");
+        return (V) this.f12742a.getVelocityFromNanos(m61613a(j), initialValue, targetValue, m61612b(j, initialValue, initialVelocity, targetValue));
+    }
+
+    @Override // androidx.compose.animation.core.VectorizedAnimationSpec
+    public boolean isInfinite() {
+        return true;
+    }
+
+    public VectorizedInfiniteRepeatableSpec(VectorizedDurationBasedAnimationSpec animation, RepeatMode repeatMode, long j) {
+        Intrinsics.checkNotNullParameter(animation, "animation");
+        Intrinsics.checkNotNullParameter(repeatMode, "repeatMode");
+        this.f12742a = animation;
+        this.f12743b = repeatMode;
+        this.f12744c = (animation.getDelayMillis() + animation.getDurationMillis()) * 1000000;
+        this.f12745d = j * 1000000;
+    }
+
+    public /* synthetic */ VectorizedInfiniteRepeatableSpec(VectorizedDurationBasedAnimationSpec vectorizedDurationBasedAnimationSpec, RepeatMode repeatMode, long j, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this(vectorizedDurationBasedAnimationSpec, (i & 2) != 0 ? RepeatMode.Restart : repeatMode, (i & 4) != 0 ? StartOffset.m69467constructorimpl$default(0, 0, 2, null) : j, (DefaultConstructorMarker) null);
+    }
+
+    public /* synthetic */ VectorizedInfiniteRepeatableSpec(VectorizedDurationBasedAnimationSpec vectorizedDurationBasedAnimationSpec, RepeatMode repeatMode, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this(vectorizedDurationBasedAnimationSpec, (i & 2) != 0 ? RepeatMode.Restart : repeatMode);
+    }
+
+    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
+    @Deprecated(level = DeprecationLevel.HIDDEN, message = "This method has been deprecated in favor of the constructor that accepts start offset.")
+    public /* synthetic */ VectorizedInfiniteRepeatableSpec(VectorizedDurationBasedAnimationSpec animation, RepeatMode repeatMode) {
+        this(animation, repeatMode, StartOffset.m69467constructorimpl$default(0, 0, 2, null), (DefaultConstructorMarker) null);
+        Intrinsics.checkNotNullParameter(animation, "animation");
+        Intrinsics.checkNotNullParameter(repeatMode, "repeatMode");
+    }
+}

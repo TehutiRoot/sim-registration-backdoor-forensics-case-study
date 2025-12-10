@@ -1,0 +1,65 @@
+package androidx.compose.runtime;
+
+import android.annotation.SuppressLint;
+import android.os.Parcel;
+import android.os.Parcelable;
+import kotlin.Metadata;
+import kotlin.jvm.JvmField;
+import kotlin.jvm.internal.DefaultConstructorMarker;
+import kotlin.jvm.internal.Intrinsics;
+import org.jetbrains.annotations.NotNull;
+
+@Metadata(m29143d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0001\u0018\u0000 \r2\u00020\u00012\u00020\u0002:\u0001\rB\r\u0012\u0006\u0010\u0003\u001a\u00020\u0004¢\u0006\u0002\u0010\u0005J\b\u0010\u0006\u001a\u00020\u0007H\u0016J\u0018\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\u0007H\u0016¨\u0006\u000e"}, m29142d2 = {"Landroidx/compose/runtime/ParcelableSnapshotMutableLongState;", "Landroidx/compose/runtime/SnapshotMutableLongStateImpl;", "Landroid/os/Parcelable;", "value", "", "(J)V", "describeContents", "", "writeToParcel", "", "parcel", "Landroid/os/Parcel;", "flags", "Companion", "runtime_release"}, m29141k = 1, m29140mv = {1, 8, 0}, m29138xi = 48)
+@SuppressLint({"BanParcelableUsage"})
+/* loaded from: classes2.dex */
+public final class ParcelableSnapshotMutableLongState extends SnapshotMutableLongStateImpl implements Parcelable {
+    @NotNull
+    public static final Companion Companion = new Companion(null);
+    @JvmField
+    @NotNull
+    public static final Parcelable.Creator<ParcelableSnapshotMutableLongState> CREATOR = new Parcelable.Creator<ParcelableSnapshotMutableLongState>() { // from class: androidx.compose.runtime.ParcelableSnapshotMutableLongState$Companion$CREATOR$1
+        /* JADX WARN: Can't rename method to resolve collision */
+        @Override // android.os.Parcelable.Creator
+        @NotNull
+        public ParcelableSnapshotMutableLongState createFromParcel(@NotNull Parcel parcel) {
+            Intrinsics.checkNotNullParameter(parcel, "parcel");
+            return new ParcelableSnapshotMutableLongState(parcel.readLong());
+        }
+
+        /* JADX WARN: Can't rename method to resolve collision */
+        @Override // android.os.Parcelable.Creator
+        @NotNull
+        public ParcelableSnapshotMutableLongState[] newArray(int i) {
+            return new ParcelableSnapshotMutableLongState[i];
+        }
+    };
+
+    @Metadata(m29143d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002R\u001c\u0010\u0003\u001a\b\u0012\u0004\u0012\u00020\u00050\u00048\u0006X\u0087\u0004¢\u0006\b\n\u0000\u0012\u0004\b\u0006\u0010\u0002¨\u0006\u0007"}, m29142d2 = {"Landroidx/compose/runtime/ParcelableSnapshotMutableLongState$Companion;", "", "()V", "CREATOR", "Landroid/os/Parcelable$Creator;", "Landroidx/compose/runtime/ParcelableSnapshotMutableLongState;", "getCREATOR$annotations", "runtime_release"}, m29141k = 1, m29140mv = {1, 8, 0}, m29138xi = 48)
+    /* loaded from: classes2.dex */
+    public static final class Companion {
+        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
+            this();
+        }
+
+        public static /* synthetic */ void getCREATOR$annotations() {
+        }
+
+        public Companion() {
+        }
+    }
+
+    public ParcelableSnapshotMutableLongState(long j) {
+        super(j);
+    }
+
+    @Override // android.os.Parcelable
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override // android.os.Parcelable
+    public void writeToParcel(@NotNull Parcel parcel, int i) {
+        Intrinsics.checkNotNullParameter(parcel, "parcel");
+        parcel.writeLong(getLongValue());
+    }
+}

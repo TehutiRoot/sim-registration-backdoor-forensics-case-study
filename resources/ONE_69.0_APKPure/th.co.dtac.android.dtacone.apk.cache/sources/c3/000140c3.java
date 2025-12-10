@@ -1,0 +1,87 @@
+package th.p047co.dtac.android.dtacone.view.appOne.tol.model.campaign;
+
+import androidx.compose.runtime.internal.StabilityInferred;
+import com.google.firebase.analytics.FirebaseAnalytics;
+import com.tom_roush.pdfbox.pdmodel.common.PDPageLabelRange;
+import kotlin.Metadata;
+import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.jvm.internal.DefaultConstructorMarker;
+import kotlin.jvm.internal.Intrinsics;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import th.p047co.dtac.android.dtacone.view.appOne.nadOutbound.fragment.OneNadOutboundSearchFragment;
+
+@StabilityInferred(parameters = 0)
+@Metadata(m29143d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0007\b\u0087\b\u0018\u0000 \u00172\u00020\u0001:\u0001\u0017B\u000f\u0012\u0006\u0010\u0003\u001a\u00020\u0002¢\u0006\u0004\b\u0004\u0010\u0005J\u0010\u0010\u0006\u001a\u00020\u0002HÆ\u0003¢\u0006\u0004\b\u0006\u0010\u0007J\u001a\u0010\b\u001a\u00020\u00002\b\b\u0002\u0010\u0003\u001a\u00020\u0002HÆ\u0001¢\u0006\u0004\b\b\u0010\tJ\u0010\u0010\u000b\u001a\u00020\nHÖ\u0001¢\u0006\u0004\b\u000b\u0010\fJ\u0010\u0010\u000e\u001a\u00020\rHÖ\u0001¢\u0006\u0004\b\u000e\u0010\u000fJ\u001a\u0010\u0012\u001a\u00020\u00112\b\u0010\u0010\u001a\u0004\u0018\u00010\u0001HÖ\u0003¢\u0006\u0004\b\u0012\u0010\u0013R\u0017\u0010\u0003\u001a\u00020\u00028\u0006¢\u0006\f\n\u0004\b\u0014\u0010\u0015\u001a\u0004\b\u0016\u0010\u0007¨\u0006\u0018"}, m29142d2 = {"Lth/co/dtac/android/dtacone/view/appOne/tol/model/campaign/EntryFeeReasonResponse;", "", "Lth/co/dtac/android/dtacone/view/appOne/tol/model/campaign/Data;", "data", "<init>", "(Lth/co/dtac/android/dtacone/view/appOne/tol/model/campaign/Data;)V", "component1", "()Lth/co/dtac/android/dtacone/view/appOne/tol/model/campaign/Data;", "copy", "(Lth/co/dtac/android/dtacone/view/appOne/tol/model/campaign/Data;)Lth/co/dtac/android/dtacone/view/appOne/tol/model/campaign/EntryFeeReasonResponse;", "", "toString", "()Ljava/lang/String;", "", "hashCode", "()I", "other", "", "equals", "(Ljava/lang/Object;)Z", PDPageLabelRange.STYLE_LETTERS_LOWER, "Lth/co/dtac/android/dtacone/view/appOne/tol/model/campaign/Data;", "getData", "Companion", "app_prodRelease"}, m29141k = 1, m29140mv = {1, 8, 0})
+/* renamed from: th.co.dtac.android.dtacone.view.appOne.tol.model.campaign.EntryFeeReasonResponse */
+/* loaded from: classes10.dex */
+public final class EntryFeeReasonResponse {
+
+    /* renamed from: a */
+    public final Data f97957a;
+    @NotNull
+    public static final Companion Companion = new Companion(null);
+    public static final int $stable = 8;
+
+    @Metadata(m29143d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0006\u0010\u0003\u001a\u00020\u0004¨\u0006\u0005"}, m29142d2 = {"Lth/co/dtac/android/dtacone/view/appOne/tol/model/campaign/EntryFeeReasonResponse$Companion;", "", "()V", "mock", "Lth/co/dtac/android/dtacone/view/appOne/tol/model/campaign/EntryFeeReasonResponse;", "app_prodRelease"}, m29141k = 1, m29140mv = {1, 8, 0}, m29138xi = 48)
+    /* renamed from: th.co.dtac.android.dtacone.view.appOne.tol.model.campaign.EntryFeeReasonResponse$Companion */
+    /* loaded from: classes10.dex */
+    public static final class Companion {
+        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
+            this();
+        }
+
+        @NotNull
+        public final EntryFeeReasonResponse mock() {
+            return new EntryFeeReasonResponse(new Data(FirebaseAnalytics.Param.SUCCESS, CollectionsKt__CollectionsKt.listOf((Object[]) new EntryFeeDiscount[]{new EntryFeeDiscount("1", "ส่วนลดค่าเข้าร่วม"), new EntryFeeDiscount("2", "ส่วนลดค่าเข้าร่วม"), new EntryFeeDiscount("3", "ส่วนลดค่าเข้าร่วม"), new EntryFeeDiscount(OneNadOutboundSearchFragment.BILL_REMAINING_3_PLUS, "ส่วนลดค่าเข้าร่วม"), new EntryFeeDiscount("5", "ส่วนลดค่าเข้าร่วม"), new EntryFeeDiscount("6", "ส่วนลดค่าเข้าร่วม"), new EntryFeeDiscount("7", "ส่วนลดค่าเข้าร่วม"), new EntryFeeDiscount("8", "ส่วนลดค่าเข้าร่วม"), new EntryFeeDiscount("9", "ส่วนลดค่าเข้าร่วม"), new EntryFeeDiscount("10", "ส่วนลดค่าเข้าร่วม")})));
+        }
+
+        public Companion() {
+        }
+    }
+
+    public EntryFeeReasonResponse(@NotNull Data data) {
+        Intrinsics.checkNotNullParameter(data, "data");
+        this.f97957a = data;
+    }
+
+    public static /* synthetic */ EntryFeeReasonResponse copy$default(EntryFeeReasonResponse entryFeeReasonResponse, Data data, int i, Object obj) {
+        if ((i & 1) != 0) {
+            data = entryFeeReasonResponse.f97957a;
+        }
+        return entryFeeReasonResponse.copy(data);
+    }
+
+    @NotNull
+    public final Data component1() {
+        return this.f97957a;
+    }
+
+    @NotNull
+    public final EntryFeeReasonResponse copy(@NotNull Data data) {
+        Intrinsics.checkNotNullParameter(data, "data");
+        return new EntryFeeReasonResponse(data);
+    }
+
+    public boolean equals(@Nullable Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        return (obj instanceof EntryFeeReasonResponse) && Intrinsics.areEqual(this.f97957a, ((EntryFeeReasonResponse) obj).f97957a);
+    }
+
+    @NotNull
+    public final Data getData() {
+        return this.f97957a;
+    }
+
+    public int hashCode() {
+        return this.f97957a.hashCode();
+    }
+
+    @NotNull
+    public String toString() {
+        Data data = this.f97957a;
+        return "EntryFeeReasonResponse(data=" + data + ")";
+    }
+}

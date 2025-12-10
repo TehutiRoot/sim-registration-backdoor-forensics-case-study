@@ -1,0 +1,312 @@
+package th.p047co.dtac.android.dtacone.model.appOne.postpaid.true_company;
+
+import androidx.compose.runtime.internal.StabilityInferred;
+import com.google.gson.annotations.SerializedName;
+import java.util.List;
+import kotlin.Metadata;
+import kotlin.jvm.internal.DefaultConstructorMarker;
+import kotlin.jvm.internal.Intrinsics;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import th.p047co.dtac.android.dtacone.util.Constant;
+
+@StabilityInferred(parameters = 0)
+@Metadata(m29143d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\b\u0016\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0003\b\u0087\b\u0018\u00002\u00020\u0001:\u0001%B_\u0012\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u0006\u0012\n\b\u0002\u0010\u0007\u001a\u0004\u0018\u00010\u0003\u0012\u0010\b\u0002\u0010\b\u001a\n\u0012\u0004\u0012\u00020\u0003\u0018\u00010\t\u0012\n\b\u0002\u0010\n\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u000b\u001a\u0004\u0018\u00010\u0003¢\u0006\u0002\u0010\fJ\u000b\u0010\u0017\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010\u0018\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010\u0019\u001a\u0004\u0018\u00010\u0006HÆ\u0003J\u000b\u0010\u001a\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u0011\u0010\u001b\u001a\n\u0012\u0004\u0012\u00020\u0003\u0018\u00010\tHÆ\u0003J\u000b\u0010\u001c\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010\u001d\u001a\u0004\u0018\u00010\u0003HÆ\u0003Jc\u0010\u001e\u001a\u00020\u00002\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u00062\n\b\u0002\u0010\u0007\u001a\u0004\u0018\u00010\u00032\u0010\b\u0002\u0010\b\u001a\n\u0012\u0004\u0012\u00020\u0003\u0018\u00010\t2\n\b\u0002\u0010\n\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u000b\u001a\u0004\u0018\u00010\u0003HÆ\u0001J\u0013\u0010\u001f\u001a\u00020 2\b\u0010!\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010\"\u001a\u00020#HÖ\u0001J\t\u0010$\u001a\u00020\u0003HÖ\u0001R\u0018\u0010\u0002\u001a\u0004\u0018\u00010\u00038\u0006X\u0087\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000eR\u0018\u0010\u0004\u001a\u0004\u0018\u00010\u00038\u0006X\u0087\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u000eR\u0018\u0010\u0005\u001a\u0004\u0018\u00010\u00068\u0006X\u0087\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u0018\u0010\u0007\u001a\u0004\u0018\u00010\u00038\u0006X\u0087\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u000eR\u001e\u0010\b\u001a\n\u0012\u0004\u0012\u00020\u0003\u0018\u00010\t8\u0006X\u0087\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0014R\u0018\u0010\n\u001a\u0004\u0018\u00010\u00038\u0006X\u0087\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u000eR\u0018\u0010\u000b\u001a\u0004\u0018\u00010\u00038\u0006X\u0087\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\u000e¨\u0006&"}, m29142d2 = {"Lth/co/dtac/android/dtacone/model/appOne/postpaid/true_company/OneCampaignSaleTypeResponse;", "", "code", "", "codeType", "data", "Lth/co/dtac/android/dtacone/model/appOne/postpaid/true_company/OneCampaignSaleTypeResponse$Data;", "desc", "replaceMessage", "", "responseDateTime", "systemMessage", "(Ljava/lang/String;Ljava/lang/String;Lth/co/dtac/android/dtacone/model/appOne/postpaid/true_company/OneCampaignSaleTypeResponse$Data;Ljava/lang/String;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)V", "getCode", "()Ljava/lang/String;", "getCodeType", "getData", "()Lth/co/dtac/android/dtacone/model/appOne/postpaid/true_company/OneCampaignSaleTypeResponse$Data;", "getDesc", "getReplaceMessage", "()Ljava/util/List;", "getResponseDateTime", "getSystemMessage", "component1", "component2", "component3", "component4", "component5", "component6", "component7", "copy", "equals", "", "other", "hashCode", "", "toString", Constant.BenefitName.Data, "app_prodRelease"}, m29141k = 1, m29140mv = {1, 8, 0}, m29138xi = 48)
+/* renamed from: th.co.dtac.android.dtacone.model.appOne.postpaid.true_company.OneCampaignSaleTypeResponse */
+/* loaded from: classes8.dex */
+public final class OneCampaignSaleTypeResponse {
+    public static final int $stable = 8;
+    @SerializedName("code")
+    @Nullable
+    private final String code;
+    @SerializedName("codeType")
+    @Nullable
+    private final String codeType;
+    @SerializedName("data")
+    @Nullable
+    private final Data data;
+    @SerializedName("desc")
+    @Nullable
+    private final String desc;
+    @SerializedName("replaceMessage")
+    @Nullable
+    private final List<String> replaceMessage;
+    @SerializedName("responseDateTime")
+    @Nullable
+    private final String responseDateTime;
+    @SerializedName("systemMessage")
+    @Nullable
+    private final String systemMessage;
+
+    @StabilityInferred(parameters = 0)
+    @Metadata(m29143d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0010\u000e\n\u0002\b\r\n\u0002\u0010\b\n\u0002\b\u0002\b\u0087\b\u0018\u00002\u00020\u0001B/\u0012\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u0003\u0012\u0010\b\u0002\u0010\u0005\u001a\n\u0012\u0004\u0012\u00020\u0007\u0018\u00010\u0006¢\u0006\u0002\u0010\bJ\u0010\u0010\r\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010\tJ\u0010\u0010\u000e\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010\tJ\u0011\u0010\u000f\u001a\n\u0012\u0004\u0012\u00020\u0007\u0018\u00010\u0006HÆ\u0003J8\u0010\u0010\u001a\u00020\u00002\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u00032\u0010\b\u0002\u0010\u0005\u001a\n\u0012\u0004\u0012\u00020\u0007\u0018\u00010\u0006HÆ\u0001¢\u0006\u0002\u0010\u0011J\u0013\u0010\u0012\u001a\u00020\u00032\b\u0010\u0013\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010\u0014\u001a\u00020\u0015HÖ\u0001J\t\u0010\u0016\u001a\u00020\u0007HÖ\u0001R\u001a\u0010\u0002\u001a\u0004\u0018\u00010\u00038\u0006X\u0087\u0004¢\u0006\n\n\u0002\u0010\n\u001a\u0004\b\u0002\u0010\tR\u001a\u0010\u0004\u001a\u0004\u0018\u00010\u00038\u0006X\u0087\u0004¢\u0006\n\n\u0002\u0010\n\u001a\u0004\b\u0004\u0010\tR\u001e\u0010\u0005\u001a\n\u0012\u0004\u0012\u00020\u0007\u0018\u00010\u00068\u0006X\u0087\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\f¨\u0006\u0017"}, m29142d2 = {"Lth/co/dtac/android/dtacone/model/appOne/postpaid/true_company/OneCampaignSaleTypeResponse$Data;", "", "isAllowCampaignSaleType", "", "isChangePricePlan", "saleType", "", "", "(Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;)V", "()Ljava/lang/Boolean;", "Ljava/lang/Boolean;", "getSaleType", "()Ljava/util/List;", "component1", "component2", "component3", "copy", "(Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;)Lth/co/dtac/android/dtacone/model/appOne/postpaid/true_company/OneCampaignSaleTypeResponse$Data;", "equals", "other", "hashCode", "", "toString", "app_prodRelease"}, m29141k = 1, m29140mv = {1, 8, 0}, m29138xi = 48)
+    /* renamed from: th.co.dtac.android.dtacone.model.appOne.postpaid.true_company.OneCampaignSaleTypeResponse$Data */
+    /* loaded from: classes8.dex */
+    public static final class Data {
+        public static final int $stable = 8;
+        @SerializedName("isAllowCampaignSaleType")
+        @Nullable
+        private final Boolean isAllowCampaignSaleType;
+        @SerializedName("isChangePricePlan")
+        @Nullable
+        private final Boolean isChangePricePlan;
+        @SerializedName("saleType")
+        @Nullable
+        private final List<String> saleType;
+
+        public Data() {
+            this(null, null, null, 7, null);
+        }
+
+        /* JADX WARN: Multi-variable type inference failed */
+        public static /* synthetic */ Data copy$default(Data data, Boolean bool, Boolean bool2, List list, int i, Object obj) {
+            if ((i & 1) != 0) {
+                bool = data.isAllowCampaignSaleType;
+            }
+            if ((i & 2) != 0) {
+                bool2 = data.isChangePricePlan;
+            }
+            if ((i & 4) != 0) {
+                list = data.saleType;
+            }
+            return data.copy(bool, bool2, list);
+        }
+
+        @Nullable
+        public final Boolean component1() {
+            return this.isAllowCampaignSaleType;
+        }
+
+        @Nullable
+        public final Boolean component2() {
+            return this.isChangePricePlan;
+        }
+
+        @Nullable
+        public final List<String> component3() {
+            return this.saleType;
+        }
+
+        @NotNull
+        public final Data copy(@Nullable Boolean bool, @Nullable Boolean bool2, @Nullable List<String> list) {
+            return new Data(bool, bool2, list);
+        }
+
+        public boolean equals(@Nullable Object obj) {
+            if (this == obj) {
+                return true;
+            }
+            if (obj instanceof Data) {
+                Data data = (Data) obj;
+                return Intrinsics.areEqual(this.isAllowCampaignSaleType, data.isAllowCampaignSaleType) && Intrinsics.areEqual(this.isChangePricePlan, data.isChangePricePlan) && Intrinsics.areEqual(this.saleType, data.saleType);
+            }
+            return false;
+        }
+
+        @Nullable
+        public final List<String> getSaleType() {
+            return this.saleType;
+        }
+
+        public int hashCode() {
+            Boolean bool = this.isAllowCampaignSaleType;
+            int hashCode = (bool == null ? 0 : bool.hashCode()) * 31;
+            Boolean bool2 = this.isChangePricePlan;
+            int hashCode2 = (hashCode + (bool2 == null ? 0 : bool2.hashCode())) * 31;
+            List<String> list = this.saleType;
+            return hashCode2 + (list != null ? list.hashCode() : 0);
+        }
+
+        @Nullable
+        public final Boolean isAllowCampaignSaleType() {
+            return this.isAllowCampaignSaleType;
+        }
+
+        @Nullable
+        public final Boolean isChangePricePlan() {
+            return this.isChangePricePlan;
+        }
+
+        @NotNull
+        public String toString() {
+            Boolean bool = this.isAllowCampaignSaleType;
+            Boolean bool2 = this.isChangePricePlan;
+            List<String> list = this.saleType;
+            return "Data(isAllowCampaignSaleType=" + bool + ", isChangePricePlan=" + bool2 + ", saleType=" + list + ")";
+        }
+
+        public Data(@Nullable Boolean bool, @Nullable Boolean bool2, @Nullable List<String> list) {
+            this.isAllowCampaignSaleType = bool;
+            this.isChangePricePlan = bool2;
+            this.saleType = list;
+        }
+
+        public /* synthetic */ Data(Boolean bool, Boolean bool2, List list, int i, DefaultConstructorMarker defaultConstructorMarker) {
+            this((i & 1) != 0 ? null : bool, (i & 2) != 0 ? null : bool2, (i & 4) != 0 ? null : list);
+        }
+    }
+
+    public OneCampaignSaleTypeResponse() {
+        this(null, null, null, null, null, null, null, 127, null);
+    }
+
+    public static /* synthetic */ OneCampaignSaleTypeResponse copy$default(OneCampaignSaleTypeResponse oneCampaignSaleTypeResponse, String str, String str2, Data data, String str3, List list, String str4, String str5, int i, Object obj) {
+        if ((i & 1) != 0) {
+            str = oneCampaignSaleTypeResponse.code;
+        }
+        if ((i & 2) != 0) {
+            str2 = oneCampaignSaleTypeResponse.codeType;
+        }
+        String str6 = str2;
+        if ((i & 4) != 0) {
+            data = oneCampaignSaleTypeResponse.data;
+        }
+        Data data2 = data;
+        if ((i & 8) != 0) {
+            str3 = oneCampaignSaleTypeResponse.desc;
+        }
+        String str7 = str3;
+        List<String> list2 = list;
+        if ((i & 16) != 0) {
+            list2 = oneCampaignSaleTypeResponse.replaceMessage;
+        }
+        List list3 = list2;
+        if ((i & 32) != 0) {
+            str4 = oneCampaignSaleTypeResponse.responseDateTime;
+        }
+        String str8 = str4;
+        if ((i & 64) != 0) {
+            str5 = oneCampaignSaleTypeResponse.systemMessage;
+        }
+        return oneCampaignSaleTypeResponse.copy(str, str6, data2, str7, list3, str8, str5);
+    }
+
+    @Nullable
+    public final String component1() {
+        return this.code;
+    }
+
+    @Nullable
+    public final String component2() {
+        return this.codeType;
+    }
+
+    @Nullable
+    public final Data component3() {
+        return this.data;
+    }
+
+    @Nullable
+    public final String component4() {
+        return this.desc;
+    }
+
+    @Nullable
+    public final List<String> component5() {
+        return this.replaceMessage;
+    }
+
+    @Nullable
+    public final String component6() {
+        return this.responseDateTime;
+    }
+
+    @Nullable
+    public final String component7() {
+        return this.systemMessage;
+    }
+
+    @NotNull
+    public final OneCampaignSaleTypeResponse copy(@Nullable String str, @Nullable String str2, @Nullable Data data, @Nullable String str3, @Nullable List<String> list, @Nullable String str4, @Nullable String str5) {
+        return new OneCampaignSaleTypeResponse(str, str2, data, str3, list, str4, str5);
+    }
+
+    public boolean equals(@Nullable Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj instanceof OneCampaignSaleTypeResponse) {
+            OneCampaignSaleTypeResponse oneCampaignSaleTypeResponse = (OneCampaignSaleTypeResponse) obj;
+            return Intrinsics.areEqual(this.code, oneCampaignSaleTypeResponse.code) && Intrinsics.areEqual(this.codeType, oneCampaignSaleTypeResponse.codeType) && Intrinsics.areEqual(this.data, oneCampaignSaleTypeResponse.data) && Intrinsics.areEqual(this.desc, oneCampaignSaleTypeResponse.desc) && Intrinsics.areEqual(this.replaceMessage, oneCampaignSaleTypeResponse.replaceMessage) && Intrinsics.areEqual(this.responseDateTime, oneCampaignSaleTypeResponse.responseDateTime) && Intrinsics.areEqual(this.systemMessage, oneCampaignSaleTypeResponse.systemMessage);
+        }
+        return false;
+    }
+
+    @Nullable
+    public final String getCode() {
+        return this.code;
+    }
+
+    @Nullable
+    public final String getCodeType() {
+        return this.codeType;
+    }
+
+    @Nullable
+    public final Data getData() {
+        return this.data;
+    }
+
+    @Nullable
+    public final String getDesc() {
+        return this.desc;
+    }
+
+    @Nullable
+    public final List<String> getReplaceMessage() {
+        return this.replaceMessage;
+    }
+
+    @Nullable
+    public final String getResponseDateTime() {
+        return this.responseDateTime;
+    }
+
+    @Nullable
+    public final String getSystemMessage() {
+        return this.systemMessage;
+    }
+
+    public int hashCode() {
+        String str = this.code;
+        int hashCode = (str == null ? 0 : str.hashCode()) * 31;
+        String str2 = this.codeType;
+        int hashCode2 = (hashCode + (str2 == null ? 0 : str2.hashCode())) * 31;
+        Data data = this.data;
+        int hashCode3 = (hashCode2 + (data == null ? 0 : data.hashCode())) * 31;
+        String str3 = this.desc;
+        int hashCode4 = (hashCode3 + (str3 == null ? 0 : str3.hashCode())) * 31;
+        List<String> list = this.replaceMessage;
+        int hashCode5 = (hashCode4 + (list == null ? 0 : list.hashCode())) * 31;
+        String str4 = this.responseDateTime;
+        int hashCode6 = (hashCode5 + (str4 == null ? 0 : str4.hashCode())) * 31;
+        String str5 = this.systemMessage;
+        return hashCode6 + (str5 != null ? str5.hashCode() : 0);
+    }
+
+    @NotNull
+    public String toString() {
+        String str = this.code;
+        String str2 = this.codeType;
+        Data data = this.data;
+        String str3 = this.desc;
+        List<String> list = this.replaceMessage;
+        String str4 = this.responseDateTime;
+        String str5 = this.systemMessage;
+        return "OneCampaignSaleTypeResponse(code=" + str + ", codeType=" + str2 + ", data=" + data + ", desc=" + str3 + ", replaceMessage=" + list + ", responseDateTime=" + str4 + ", systemMessage=" + str5 + ")";
+    }
+
+    public OneCampaignSaleTypeResponse(@Nullable String str, @Nullable String str2, @Nullable Data data, @Nullable String str3, @Nullable List<String> list, @Nullable String str4, @Nullable String str5) {
+        this.code = str;
+        this.codeType = str2;
+        this.data = data;
+        this.desc = str3;
+        this.replaceMessage = list;
+        this.responseDateTime = str4;
+        this.systemMessage = str5;
+    }
+
+    public /* synthetic */ OneCampaignSaleTypeResponse(String str, String str2, Data data, String str3, List list, String str4, String str5, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this((i & 1) != 0 ? null : str, (i & 2) != 0 ? null : str2, (i & 4) != 0 ? null : data, (i & 8) != 0 ? null : str3, (i & 16) != 0 ? null : list, (i & 32) != 0 ? null : str4, (i & 64) != 0 ? null : str5);
+    }
+}

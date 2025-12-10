@@ -1,0 +1,59 @@
+package th.p047co.dtac.android.dtacone.presenter.change_sim;
+
+import com.google.android.gms.analytics.ecommerce.Promotion;
+import kotlin.Metadata;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function1;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Lambda;
+import org.jetbrains.annotations.NotNull;
+import th.p047co.dtac.android.dtacone.manager.service.ServerErrorService;
+import th.p047co.dtac.android.dtacone.presenter.change_sim.ChangeSimReasonPresenter;
+
+@Metadata(m29143d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u0003\n\u0000\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n¢\u0006\u0002\b\u0004"}, m29142d2 = {"<anonymous>", "", "it", "", "invoke"}, m29141k = 3, m29140mv = {1, 8, 0}, m29138xi = 48)
+/* renamed from: th.co.dtac.android.dtacone.presenter.change_sim.ChangeSimReasonPresenter$getAuthorizationByRTR$1 */
+/* loaded from: classes8.dex */
+public final class ChangeSimReasonPresenter$getAuthorizationByRTR$1 extends Lambda implements Function1<Throwable, Unit> {
+    final /* synthetic */ ChangeSimReasonPresenter this$0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ChangeSimReasonPresenter$getAuthorizationByRTR$1(ChangeSimReasonPresenter changeSimReasonPresenter) {
+        super(1);
+        this.this$0 = changeSimReasonPresenter;
+    }
+
+    @Override // kotlin.jvm.functions.Function1
+    public /* bridge */ /* synthetic */ Unit invoke(Throwable th2) {
+        invoke2(th2);
+        return Unit.INSTANCE;
+    }
+
+    /* renamed from: invoke  reason: avoid collision after fix types in other method */
+    public final void invoke2(@NotNull Throwable it) {
+        ChangeSimReasonPresenter.View view;
+        ServerErrorService serverErrorService;
+        Intrinsics.checkNotNullParameter(it, "it");
+        view = this.this$0.f85666h;
+        if (view == null) {
+            Intrinsics.throwUninitializedPropertyAccessException(Promotion.ACTION_VIEW);
+            view = null;
+        }
+        view.dismissLoading();
+        serverErrorService = this.this$0.f85661c;
+        final ChangeSimReasonPresenter changeSimReasonPresenter = this.this$0;
+        serverErrorService.handleException(it, new ServerErrorService.ExceptionHandler() { // from class: th.co.dtac.android.dtacone.presenter.change_sim.ChangeSimReasonPresenter$getAuthorizationByRTR$1.1
+            @Override // th.p047co.dtac.android.dtacone.manager.service.ServerErrorService.ExceptionHandler
+            public void handle(@NotNull Throwable e) {
+                ServerErrorService serverErrorService2;
+                Intrinsics.checkNotNullParameter(e, "e");
+                serverErrorService2 = ChangeSimReasonPresenter.this.f85661c;
+                serverErrorService2.handleException(e, new ServerErrorService.ExceptionHandler[0]);
+            }
+
+            @Override // th.p047co.dtac.android.dtacone.manager.service.ServerErrorService.ExceptionHandler
+            public boolean supportHttpCode(int i) {
+                return i != 401;
+            }
+        });
+    }
+}

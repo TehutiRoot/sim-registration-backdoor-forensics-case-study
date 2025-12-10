@@ -1,0 +1,29 @@
+package io.reactivex.internal.operators.observable;
+
+import io.reactivex.Observable;
+import io.reactivex.Observer;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Action;
+import io.reactivex.functions.Consumer;
+import io.reactivex.internal.observers.DisposableLambdaObserver;
+
+/* loaded from: classes5.dex */
+public final class ObservableDoOnLifecycle<T> extends AbstractC11078a {
+
+    /* renamed from: a */
+    public final Consumer f65292a;
+
+    /* renamed from: b */
+    public final Action f65293b;
+
+    public ObservableDoOnLifecycle(Observable<T> observable, Consumer<? super Disposable> consumer, Action action) {
+        super(observable);
+        this.f65292a = consumer;
+        this.f65293b = action;
+    }
+
+    @Override // io.reactivex.Observable
+    public void subscribeActual(Observer<? super T> observer) {
+        this.source.subscribe(new DisposableLambdaObserver(observer, this.f65292a, this.f65293b));
+    }
+}

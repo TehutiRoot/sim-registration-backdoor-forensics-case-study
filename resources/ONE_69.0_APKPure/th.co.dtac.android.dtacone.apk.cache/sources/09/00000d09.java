@@ -1,0 +1,13 @@
+package p000;
+
+import android.text.PrecomputedText;
+import android.text.TextPaint;
+
+/* renamed from: Nm1  reason: case insensitive filesystem */
+/* loaded from: classes2.dex */
+public abstract /* synthetic */ class AbstractC18166Nm1 {
+    /* renamed from: a */
+    public static /* synthetic */ PrecomputedText.Params.Builder m67200a(TextPaint textPaint) {
+        return new PrecomputedText.Params.Builder(textPaint);
+    }
+}

@@ -1,0 +1,55 @@
+package th.p047co.dtac.android.dtacone.presenter.bitmap;
+
+import android.graphics.Bitmap;
+import io.reactivex.Observable;
+import io.reactivex.ObservableSource;
+import java.util.concurrent.Callable;
+import kotlin.Metadata;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function1;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Lambda;
+import org.jetbrains.annotations.NotNull;
+import th.p047co.dtac.android.dtacone.model.bitmap.BitmapCollection;
+import th.p047co.dtac.android.dtacone.util.bitmap.BitmapUtil;
+
+@Metadata(m29143d1 = {"\u0000\u0014\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a*\u0012\u000e\b\u0001\u0012\n \u0003*\u0004\u0018\u00010\u00020\u0002 \u0003*\u0014\u0012\u000e\b\u0001\u0012\n \u0003*\u0004\u0018\u00010\u00020\u0002\u0018\u00010\u00010\u00012\u0006\u0010\u0004\u001a\u00020\u0005H\n¢\u0006\u0002\b\u0006"}, m29142d2 = {"<anonymous>", "Lio/reactivex/ObservableSource;", "", "kotlin.jvm.PlatformType", "it", "Landroid/graphics/Bitmap;", "invoke"}, m29141k = 3, m29140mv = {1, 8, 0}, m29138xi = 48)
+/* renamed from: th.co.dtac.android.dtacone.presenter.bitmap.SaveBitmapPresenter$saveCustomerBitmap$2 */
+/* loaded from: classes8.dex */
+public final class SaveBitmapPresenter$saveCustomerBitmap$2 extends Lambda implements Function1<Bitmap, ObservableSource<? extends Unit>> {
+    final /* synthetic */ BitmapCollection $bitmap;
+    final /* synthetic */ SaveBitmapPresenter this$0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public SaveBitmapPresenter$saveCustomerBitmap$2(SaveBitmapPresenter saveBitmapPresenter, BitmapCollection bitmapCollection) {
+        super(1);
+        this.this$0 = saveBitmapPresenter;
+        this.$bitmap = bitmapCollection;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit invoke$lambda$0(SaveBitmapPresenter this$0, Bitmap it, BitmapCollection bitmap) {
+        BitmapUtil bitmapUtil;
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        Intrinsics.checkNotNullParameter(it, "$it");
+        Intrinsics.checkNotNullParameter(bitmap, "$bitmap");
+        bitmapUtil = this$0.f85316b;
+        bitmapUtil.saveInternalImage(it, bitmap.getName());
+        return Unit.INSTANCE;
+    }
+
+    @Override // kotlin.jvm.functions.Function1
+    public final ObservableSource<? extends Unit> invoke(@NotNull final Bitmap it) {
+        Intrinsics.checkNotNullParameter(it, "it");
+        final SaveBitmapPresenter saveBitmapPresenter = this.this$0;
+        final BitmapCollection bitmapCollection = this.$bitmap;
+        return Observable.fromCallable(new Callable() { // from class: th.co.dtac.android.dtacone.presenter.bitmap.j
+            @Override // java.util.concurrent.Callable
+            public final Object call() {
+                Unit invoke$lambda$0;
+                invoke$lambda$0 = SaveBitmapPresenter$saveCustomerBitmap$2.invoke$lambda$0(SaveBitmapPresenter.this, it, bitmapCollection);
+                return invoke$lambda$0;
+            }
+        });
+    }
+}

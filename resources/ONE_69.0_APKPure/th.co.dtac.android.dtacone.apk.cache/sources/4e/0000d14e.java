@@ -1,0 +1,364 @@
+package io.reactivex.internal.operators.observable;
+
+import io.reactivex.Observable;
+import io.reactivex.ObservableSource;
+import io.reactivex.Observer;
+import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.exceptions.Exceptions;
+import io.reactivex.functions.Function;
+import io.reactivex.internal.disposables.DisposableHelper;
+import io.reactivex.internal.functions.ObjectHelper;
+import io.reactivex.internal.queue.SpscLinkedArrayQueue;
+import io.reactivex.internal.util.AtomicThrowable;
+import io.reactivex.plugins.RxJavaPlugins;
+import java.util.Collection;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.concurrent.Callable;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
+
+/* loaded from: classes5.dex */
+public final class ObservableBufferBoundary<T, U extends Collection<? super T>, Open, Close> extends AbstractC11078a {
+
+    /* renamed from: a */
+    public final Callable f65107a;
+
+    /* renamed from: b */
+    public final ObservableSource f65108b;
+
+    /* renamed from: c */
+    public final Function f65109c;
+
+    /* loaded from: classes5.dex */
+    public static final class BufferBoundaryObserver<T, C extends Collection<? super T>, Open, Close> extends AtomicInteger implements Observer<T>, Disposable {
+        private static final long serialVersionUID = -8466418554264089604L;
+        final Function<? super Open, ? extends ObservableSource<? extends Close>> bufferClose;
+        final ObservableSource<? extends Open> bufferOpen;
+        final Callable<C> bufferSupplier;
+        volatile boolean cancelled;
+        volatile boolean done;
+        final Observer<? super C> downstream;
+        long index;
+        final SpscLinkedArrayQueue<C> queue = new SpscLinkedArrayQueue<>(Observable.bufferSize());
+        final CompositeDisposable observers = new CompositeDisposable();
+        final AtomicReference<Disposable> upstream = new AtomicReference<>();
+        Map<Long, C> buffers = new LinkedHashMap();
+        final AtomicThrowable errors = new AtomicThrowable();
+
+        /* loaded from: classes5.dex */
+        public static final class BufferOpenObserver<Open> extends AtomicReference<Disposable> implements Observer<Open>, Disposable {
+            private static final long serialVersionUID = -8498650778633225126L;
+            final BufferBoundaryObserver<?, ?, Open, ?> parent;
+
+            public BufferOpenObserver(BufferBoundaryObserver<?, ?, Open, ?> bufferBoundaryObserver) {
+                this.parent = bufferBoundaryObserver;
+            }
+
+            @Override // io.reactivex.disposables.Disposable
+            public void dispose() {
+                DisposableHelper.dispose(this);
+            }
+
+            @Override // io.reactivex.disposables.Disposable
+            public boolean isDisposed() {
+                if (get() == DisposableHelper.DISPOSED) {
+                    return true;
+                }
+                return false;
+            }
+
+            @Override // io.reactivex.Observer
+            public void onComplete() {
+                lazySet(DisposableHelper.DISPOSED);
+                this.parent.openComplete(this);
+            }
+
+            @Override // io.reactivex.Observer
+            public void onError(Throwable th2) {
+                lazySet(DisposableHelper.DISPOSED);
+                this.parent.boundaryError(this, th2);
+            }
+
+            @Override // io.reactivex.Observer
+            public void onNext(Open open) {
+                this.parent.open(open);
+            }
+
+            @Override // io.reactivex.Observer
+            public void onSubscribe(Disposable disposable) {
+                DisposableHelper.setOnce(this, disposable);
+            }
+        }
+
+        public BufferBoundaryObserver(Observer<? super C> observer, ObservableSource<? extends Open> observableSource, Function<? super Open, ? extends ObservableSource<? extends Close>> function, Callable<C> callable) {
+            this.downstream = observer;
+            this.bufferSupplier = callable;
+            this.bufferOpen = observableSource;
+            this.bufferClose = function;
+        }
+
+        public void boundaryError(Disposable disposable, Throwable th2) {
+            DisposableHelper.dispose(this.upstream);
+            this.observers.delete(disposable);
+            onError(th2);
+        }
+
+        public void close(BufferCloseObserver<T, C> bufferCloseObserver, long j) {
+            boolean z;
+            this.observers.delete(bufferCloseObserver);
+            if (this.observers.size() == 0) {
+                DisposableHelper.dispose(this.upstream);
+                z = true;
+            } else {
+                z = false;
+            }
+            synchronized (this) {
+                try {
+                    Map<Long, C> map = this.buffers;
+                    if (map == null) {
+                        return;
+                    }
+                    this.queue.offer(map.remove(Long.valueOf(j)));
+                    if (z) {
+                        this.done = true;
+                    }
+                    drain();
+                } catch (Throwable th2) {
+                    throw th2;
+                }
+            }
+        }
+
+        @Override // io.reactivex.disposables.Disposable
+        public void dispose() {
+            if (DisposableHelper.dispose(this.upstream)) {
+                this.cancelled = true;
+                this.observers.dispose();
+                synchronized (this) {
+                    this.buffers = null;
+                }
+                if (getAndIncrement() != 0) {
+                    this.queue.clear();
+                }
+            }
+        }
+
+        public void drain() {
+            boolean z;
+            if (getAndIncrement() != 0) {
+                return;
+            }
+            Observer<? super C> observer = this.downstream;
+            SpscLinkedArrayQueue<C> spscLinkedArrayQueue = this.queue;
+            int i = 1;
+            while (!this.cancelled) {
+                boolean z2 = this.done;
+                if (z2 && this.errors.get() != null) {
+                    spscLinkedArrayQueue.clear();
+                    observer.onError(this.errors.terminate());
+                    return;
+                }
+                C poll = spscLinkedArrayQueue.poll();
+                if (poll == null) {
+                    z = true;
+                } else {
+                    z = false;
+                }
+                if (z2 && z) {
+                    observer.onComplete();
+                    return;
+                } else if (z) {
+                    i = addAndGet(-i);
+                    if (i == 0) {
+                        return;
+                    }
+                } else {
+                    observer.onNext(poll);
+                }
+            }
+            spscLinkedArrayQueue.clear();
+        }
+
+        @Override // io.reactivex.disposables.Disposable
+        public boolean isDisposed() {
+            return DisposableHelper.isDisposed(this.upstream.get());
+        }
+
+        @Override // io.reactivex.Observer
+        public void onComplete() {
+            this.observers.dispose();
+            synchronized (this) {
+                try {
+                    Map<Long, C> map = this.buffers;
+                    if (map == null) {
+                        return;
+                    }
+                    for (C c : map.values()) {
+                        this.queue.offer(c);
+                    }
+                    this.buffers = null;
+                    this.done = true;
+                    drain();
+                } catch (Throwable th2) {
+                    throw th2;
+                }
+            }
+        }
+
+        @Override // io.reactivex.Observer
+        public void onError(Throwable th2) {
+            if (this.errors.addThrowable(th2)) {
+                this.observers.dispose();
+                synchronized (this) {
+                    this.buffers = null;
+                }
+                this.done = true;
+                drain();
+                return;
+            }
+            RxJavaPlugins.onError(th2);
+        }
+
+        @Override // io.reactivex.Observer
+        public void onNext(T t) {
+            synchronized (this) {
+                try {
+                    Map<Long, C> map = this.buffers;
+                    if (map == null) {
+                        return;
+                    }
+                    for (C c : map.values()) {
+                        c.add(t);
+                    }
+                } catch (Throwable th2) {
+                    throw th2;
+                }
+            }
+        }
+
+        @Override // io.reactivex.Observer
+        public void onSubscribe(Disposable disposable) {
+            if (DisposableHelper.setOnce(this.upstream, disposable)) {
+                BufferOpenObserver bufferOpenObserver = new BufferOpenObserver(this);
+                this.observers.add(bufferOpenObserver);
+                this.bufferOpen.subscribe(bufferOpenObserver);
+            }
+        }
+
+        /* JADX WARN: Multi-variable type inference failed */
+        public void open(Open open) {
+            try {
+                Collection collection = (Collection) ObjectHelper.requireNonNull(this.bufferSupplier.call(), "The bufferSupplier returned a null Collection");
+                ObservableSource observableSource = (ObservableSource) ObjectHelper.requireNonNull(this.bufferClose.apply(open), "The bufferClose returned a null ObservableSource");
+                long j = this.index;
+                this.index = 1 + j;
+                synchronized (this) {
+                    try {
+                        Map<Long, C> map = this.buffers;
+                        if (map == 0) {
+                            return;
+                        }
+                        map.put(Long.valueOf(j), collection);
+                        BufferCloseObserver bufferCloseObserver = new BufferCloseObserver(this, j);
+                        this.observers.add(bufferCloseObserver);
+                        observableSource.subscribe(bufferCloseObserver);
+                    } catch (Throwable th2) {
+                        throw th2;
+                    }
+                }
+            } catch (Throwable th3) {
+                Exceptions.throwIfFatal(th3);
+                DisposableHelper.dispose(this.upstream);
+                onError(th3);
+            }
+        }
+
+        public void openComplete(BufferOpenObserver<Open> bufferOpenObserver) {
+            this.observers.delete(bufferOpenObserver);
+            if (this.observers.size() == 0) {
+                DisposableHelper.dispose(this.upstream);
+                this.done = true;
+                drain();
+            }
+        }
+    }
+
+    /* loaded from: classes5.dex */
+    public static final class BufferCloseObserver<T, C extends Collection<? super T>> extends AtomicReference<Disposable> implements Observer<Object>, Disposable {
+        private static final long serialVersionUID = -8498650778633225126L;
+        final long index;
+        final BufferBoundaryObserver<T, C, ?, ?> parent;
+
+        public BufferCloseObserver(BufferBoundaryObserver<T, C, ?, ?> bufferBoundaryObserver, long j) {
+            this.parent = bufferBoundaryObserver;
+            this.index = j;
+        }
+
+        @Override // io.reactivex.disposables.Disposable
+        public void dispose() {
+            DisposableHelper.dispose(this);
+        }
+
+        @Override // io.reactivex.disposables.Disposable
+        public boolean isDisposed() {
+            if (get() == DisposableHelper.DISPOSED) {
+                return true;
+            }
+            return false;
+        }
+
+        @Override // io.reactivex.Observer
+        public void onComplete() {
+            Disposable disposable = get();
+            DisposableHelper disposableHelper = DisposableHelper.DISPOSED;
+            if (disposable != disposableHelper) {
+                lazySet(disposableHelper);
+                this.parent.close(this, this.index);
+            }
+        }
+
+        @Override // io.reactivex.Observer
+        public void onError(Throwable th2) {
+            Disposable disposable = get();
+            DisposableHelper disposableHelper = DisposableHelper.DISPOSED;
+            if (disposable != disposableHelper) {
+                lazySet(disposableHelper);
+                this.parent.boundaryError(this, th2);
+                return;
+            }
+            RxJavaPlugins.onError(th2);
+        }
+
+        @Override // io.reactivex.Observer
+        public void onNext(Object obj) {
+            Disposable disposable = get();
+            DisposableHelper disposableHelper = DisposableHelper.DISPOSED;
+            if (disposable != disposableHelper) {
+                lazySet(disposableHelper);
+                disposable.dispose();
+                this.parent.close(this, this.index);
+            }
+        }
+
+        @Override // io.reactivex.Observer
+        public void onSubscribe(Disposable disposable) {
+            DisposableHelper.setOnce(this, disposable);
+        }
+    }
+
+    public ObservableBufferBoundary(ObservableSource<T> observableSource, ObservableSource<? extends Open> observableSource2, Function<? super Open, ? extends ObservableSource<? extends Close>> function, Callable<U> callable) {
+        super(observableSource);
+        this.f65108b = observableSource2;
+        this.f65109c = function;
+        this.f65107a = callable;
+    }
+
+    @Override // io.reactivex.Observable
+    public void subscribeActual(Observer<? super U> observer) {
+        BufferBoundaryObserver bufferBoundaryObserver = new BufferBoundaryObserver(observer, this.f65108b, this.f65109c, this.f65107a);
+        observer.onSubscribe(bufferBoundaryObserver);
+        this.source.subscribe(bufferBoundaryObserver);
+    }
+}

@@ -1,0 +1,32 @@
+package th.p047co.dtac.android.dtacone.viewmodel.login_mrtr;
+
+import io.reactivex.SingleSource;
+import kotlin.Metadata;
+import kotlin.jvm.functions.Function1;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Lambda;
+import org.jetbrains.annotations.NotNull;
+import th.p047co.dtac.android.dtacone.model.appOne.login.OneLoginResponse;
+import th.p047co.dtac.android.dtacone.model.login_mrtr.LoginMrtrRequest;
+import th.p047co.dtac.android.dtacone.repository.login.LoginRepository;
+
+@Metadata(m29143d1 = {"\u0000\u0014\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a*\u0012\u000e\b\u0001\u0012\n \u0003*\u0004\u0018\u00010\u00020\u0002 \u0003*\u0014\u0012\u000e\b\u0001\u0012\n \u0003*\u0004\u0018\u00010\u00020\u0002\u0018\u00010\u00010\u00012\u0006\u0010\u0004\u001a\u00020\u0005H\n¢\u0006\u0002\b\u0006"}, m29142d2 = {"<anonymous>", "Lio/reactivex/SingleSource;", "Lth/co/dtac/android/dtacone/model/appOne/login/OneLoginResponse;", "kotlin.jvm.PlatformType", "it", "Lth/co/dtac/android/dtacone/model/login_mrtr/LoginMrtrRequest;", "invoke"}, m29141k = 3, m29140mv = {1, 8, 0}, m29138xi = 48)
+/* renamed from: th.co.dtac.android.dtacone.viewmodel.login_mrtr.LoginMrtrViewModel$callOneLoginApi$3 */
+/* loaded from: classes9.dex */
+public final class LoginMrtrViewModel$callOneLoginApi$3 extends Lambda implements Function1<LoginMrtrRequest, SingleSource<? extends OneLoginResponse>> {
+    final /* synthetic */ LoginMrtrViewModel this$0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public LoginMrtrViewModel$callOneLoginApi$3(LoginMrtrViewModel loginMrtrViewModel) {
+        super(1);
+        this.this$0 = loginMrtrViewModel;
+    }
+
+    @Override // kotlin.jvm.functions.Function1
+    public final SingleSource<? extends OneLoginResponse> invoke(@NotNull LoginMrtrRequest it) {
+        LoginRepository loginRepository;
+        Intrinsics.checkNotNullParameter(it, "it");
+        loginRepository = this.this$0.f106145b;
+        return loginRepository.oneLogin(it);
+    }
+}

@@ -1,0 +1,49 @@
+package androidx.compose.material3;
+
+import androidx.compose.material3.tokens.ListTokens;
+import androidx.compose.runtime.Composable;
+import androidx.compose.runtime.Composer;
+import androidx.compose.runtime.ComposerKt;
+import kotlin.Metadata;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function2;
+import kotlin.jvm.internal.Lambda;
+import org.jetbrains.annotations.Nullable;
+
+@Metadata(m29141k = 3, m29140mv = {1, 8, 0}, m29138xi = 48)
+/* loaded from: classes2.dex */
+public final class ListItemKt$ListItem$decoratedHeadlineContent$1 extends Lambda implements Function2<Composer, Integer, Unit> {
+    final /* synthetic */ int $$dirty;
+    final /* synthetic */ ListItemColors $colors;
+    final /* synthetic */ Function2<Composer, Integer, Unit> $headlineContent;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    /* JADX WARN: Multi-variable type inference failed */
+    public ListItemKt$ListItem$decoratedHeadlineContent$1(ListItemColors listItemColors, int i, Function2<? super Composer, ? super Integer, Unit> function2) {
+        super(2);
+        this.$colors = listItemColors;
+        this.$$dirty = i;
+        this.$headlineContent = function2;
+    }
+
+    @Override // kotlin.jvm.functions.Function2
+    public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
+        invoke(composer, num.intValue());
+        return Unit.INSTANCE;
+    }
+
+    @Composable
+    public final void invoke(@Nullable Composer composer, int i) {
+        if ((i & 11) == 2 && composer.getSkipping()) {
+            composer.skipToGroupEnd();
+            return;
+        }
+        if (ComposerKt.isTraceInProgress()) {
+            ComposerKt.traceEventStart(-403249643, i, -1, "androidx.compose.material3.ListItem.<anonymous> (ListItem.kt:84)");
+        }
+        ListItemKt.m60578c(this.$colors.headlineColor$material3_release(true, composer, ((this.$$dirty >> 15) & 112) | 6).getValue().m71929unboximpl(), ListTokens.INSTANCE.getListItemLabelTextFont(), this.$headlineContent, composer, ((this.$$dirty << 6) & 896) | 48);
+        if (ComposerKt.isTraceInProgress()) {
+            ComposerKt.traceEventEnd();
+        }
+    }
+}

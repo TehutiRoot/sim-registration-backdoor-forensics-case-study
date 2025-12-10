@@ -1,0 +1,163 @@
+package th.p047co.dtac.android.dtacone.app_one.widget;
+
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.res.TypedArray;
+import android.util.AttributeSet;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import androidx.compose.runtime.internal.StabilityInferred;
+import ch.qos.logback.core.CoreConstants;
+import com.google.android.gms.analytics.ecommerce.Promotion;
+import com.tom_roush.pdfbox.contentstream.operator.OperatorName;
+import com.tom_roush.pdfbox.pdmodel.common.PDPageLabelRange;
+import kotlin.Metadata;
+import kotlin.jvm.internal.Intrinsics;
+import org.bouncycastle.i18n.TextBundle;
+import org.jetbrains.annotations.NotNull;
+import th.p047co.dtac.android.dtacone.R;
+
+@StabilityInferred(parameters = 0)
+@Metadata(m29143d1 = {"\u0000N\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0007\u0018\u00002\u00020\u0001B\u0011\b\u0016\u0012\u0006\u0010\u0003\u001a\u00020\u0002¢\u0006\u0004\b\u0004\u0010\u0005B\u0019\b\u0016\u0012\u0006\u0010\u0003\u001a\u00020\u0002\u0012\u0006\u0010\u0007\u001a\u00020\u0006¢\u0006\u0004\b\u0004\u0010\bB!\b\u0016\u0012\u0006\u0010\u0003\u001a\u00020\u0002\u0012\u0006\u0010\u0007\u001a\u00020\u0006\u0012\u0006\u0010\n\u001a\u00020\t¢\u0006\u0004\b\u0004\u0010\u000bJ\u0015\u0010\u000f\u001a\u00020\u000e2\u0006\u0010\r\u001a\u00020\f¢\u0006\u0004\b\u000f\u0010\u0010J\u000f\u0010\u0011\u001a\u00020\u000eH\u0002¢\u0006\u0004\b\u0011\u0010\u0012R\u0016\u0010\u0015\u001a\u00020\u00138\u0002@\u0002X\u0082.¢\u0006\u0006\n\u0004\b\u0011\u0010\u0014R\u0014\u0010\u0019\u001a\u00020\u00168\u0002X\u0082\u0004¢\u0006\u0006\n\u0004\b\u0017\u0010\u0018R\u0014\u0010\u001d\u001a\u00020\u001a8\u0002X\u0082\u0004¢\u0006\u0006\n\u0004\b\u001b\u0010\u001cR\u0016\u0010!\u001a\u00020\u001e8\u0002@\u0002X\u0082.¢\u0006\u0006\n\u0004\b\u001f\u0010 ¨\u0006\""}, m29142d2 = {"Lth/co/dtac/android/dtacone/app_one/widget/OneButtonWhite;", "Landroid/widget/FrameLayout;", "Landroid/content/Context;", CoreConstants.CONTEXT_SCOPE_VALUE, "<init>", "(Landroid/content/Context;)V", "Landroid/util/AttributeSet;", "attrs", "(Landroid/content/Context;Landroid/util/AttributeSet;)V", "", "defStyleAttr", "(Landroid/content/Context;Landroid/util/AttributeSet;I)V", "", TextBundle.TEXT_ENTRY, "", "setText", "(Ljava/lang/String;)V", PDPageLabelRange.STYLE_LETTERS_LOWER, "()V", "Landroid/content/res/TypedArray;", "Landroid/content/res/TypedArray;", "attributes", "Landroid/view/LayoutInflater;", OperatorName.CLOSE_FILL_NON_ZERO_AND_STROKE, "Landroid/view/LayoutInflater;", "inflater", "Landroid/view/View;", OperatorName.CURVE_TO, "Landroid/view/View;", Promotion.ACTION_VIEW, "Lth/co/dtac/android/dtacone/app_one/widget/OneFontTextView;", "d", "Lth/co/dtac/android/dtacone/app_one/widget/OneFontTextView;", "tvBtn", "app_prodRelease"}, m29141k = 1, m29140mv = {1, 8, 0})
+@SuppressLint({"CustomViewStyleable"})
+/* renamed from: th.co.dtac.android.dtacone.app_one.widget.OneButtonWhite */
+/* loaded from: classes7.dex */
+public final class OneButtonWhite extends FrameLayout {
+    public static final int $stable = 8;
+
+    /* renamed from: a */
+    public TypedArray f82846a;
+
+    /* renamed from: b */
+    public final LayoutInflater f82847b;
+
+    /* renamed from: c */
+    public final View f82848c;
+
+    /* renamed from: d */
+    public OneFontTextView f82849d;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public OneButtonWhite(@NotNull Context context) {
+        super(context);
+        Intrinsics.checkNotNullParameter(context, "context");
+        Object systemService = getContext().getSystemService("layout_inflater");
+        Intrinsics.checkNotNull(systemService, "null cannot be cast to non-null type android.view.LayoutInflater");
+        LayoutInflater layoutInflater = (LayoutInflater) systemService;
+        this.f82847b = layoutInflater;
+        View inflate = layoutInflater.inflate(R.layout.one_white_button, (ViewGroup) null);
+        Intrinsics.checkNotNullExpressionValue(inflate, "inflater.inflate(R.layout.one_white_button, null)");
+        this.f82848c = inflate;
+        m20083a();
+    }
+
+    /* renamed from: a */
+    public final void m20083a() {
+        View findViewById = this.f82848c.findViewById(R.id.tvBtn);
+        Intrinsics.checkNotNullExpressionValue(findViewById, "view.findViewById(R.id.tvBtn)");
+        this.f82849d = (OneFontTextView) findViewById;
+        TypedArray typedArray = this.f82846a;
+        TypedArray typedArray2 = null;
+        if (typedArray == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("attributes");
+            typedArray = null;
+        }
+        if (typedArray.hasValue(R.styleable.OneButton_android_text)) {
+            OneFontTextView oneFontTextView = this.f82849d;
+            if (oneFontTextView == null) {
+                Intrinsics.throwUninitializedPropertyAccessException("tvBtn");
+                oneFontTextView = null;
+            }
+            Context context = getContext();
+            TypedArray typedArray3 = this.f82846a;
+            if (typedArray3 == null) {
+                Intrinsics.throwUninitializedPropertyAccessException("attributes");
+                typedArray3 = null;
+            }
+            oneFontTextView.setText(context.getText(typedArray3.getResourceId(R.styleable.OneButton_android_text, 0)));
+        }
+        TypedArray typedArray4 = this.f82846a;
+        if (typedArray4 == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("attributes");
+            typedArray4 = null;
+        }
+        if (typedArray4.hasValue(R.styleable.OneButton_android_textSize)) {
+            OneFontTextView oneFontTextView2 = this.f82849d;
+            if (oneFontTextView2 == null) {
+                Intrinsics.throwUninitializedPropertyAccessException("tvBtn");
+                oneFontTextView2 = null;
+            }
+            TypedArray typedArray5 = this.f82846a;
+            if (typedArray5 == null) {
+                Intrinsics.throwUninitializedPropertyAccessException("attributes");
+                typedArray5 = null;
+            }
+            oneFontTextView2.setTextSize(typedArray5.getDimension(R.styleable.OneButton_android_textSize, 0.0f));
+        }
+        TypedArray typedArray6 = this.f82846a;
+        if (typedArray6 == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("attributes");
+            typedArray6 = null;
+        }
+        if (typedArray6.hasValue(R.styleable.OneButton_android_textColor)) {
+            OneFontTextView oneFontTextView3 = this.f82849d;
+            if (oneFontTextView3 == null) {
+                Intrinsics.throwUninitializedPropertyAccessException("tvBtn");
+                oneFontTextView3 = null;
+            }
+            TypedArray typedArray7 = this.f82846a;
+            if (typedArray7 == null) {
+                Intrinsics.throwUninitializedPropertyAccessException("attributes");
+            } else {
+                typedArray2 = typedArray7;
+            }
+            oneFontTextView3.setTextColor(typedArray2.getColor(R.styleable.OneButton_android_textColor, 0));
+        }
+        addView(this.f82848c);
+    }
+
+    public final void setText(@NotNull String text) {
+        Intrinsics.checkNotNullParameter(text, "text");
+        OneFontTextView oneFontTextView = this.f82849d;
+        if (oneFontTextView == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("tvBtn");
+            oneFontTextView = null;
+        }
+        oneFontTextView.setText(text);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public OneButtonWhite(@NotNull Context context, @NotNull AttributeSet attrs) {
+        super(context, attrs);
+        Intrinsics.checkNotNullParameter(context, "context");
+        Intrinsics.checkNotNullParameter(attrs, "attrs");
+        Object systemService = getContext().getSystemService("layout_inflater");
+        Intrinsics.checkNotNull(systemService, "null cannot be cast to non-null type android.view.LayoutInflater");
+        LayoutInflater layoutInflater = (LayoutInflater) systemService;
+        this.f82847b = layoutInflater;
+        View inflate = layoutInflater.inflate(R.layout.one_white_button, (ViewGroup) null);
+        Intrinsics.checkNotNullExpressionValue(inflate, "inflater.inflate(R.layout.one_white_button, null)");
+        this.f82848c = inflate;
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attrs, R.styleable.OneButton);
+        Intrinsics.checkNotNullExpressionValue(obtainStyledAttributes, "context.obtainStyledAttr…s, R.styleable.OneButton)");
+        this.f82846a = obtainStyledAttributes;
+        m20083a();
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public OneButtonWhite(@NotNull Context context, @NotNull AttributeSet attrs, int i) {
+        super(context, attrs, i);
+        Intrinsics.checkNotNullParameter(context, "context");
+        Intrinsics.checkNotNullParameter(attrs, "attrs");
+        Object systemService = getContext().getSystemService("layout_inflater");
+        Intrinsics.checkNotNull(systemService, "null cannot be cast to non-null type android.view.LayoutInflater");
+        LayoutInflater layoutInflater = (LayoutInflater) systemService;
+        this.f82847b = layoutInflater;
+        View inflate = layoutInflater.inflate(R.layout.one_white_button, (ViewGroup) null);
+        Intrinsics.checkNotNullExpressionValue(inflate, "inflater.inflate(R.layout.one_white_button, null)");
+        this.f82848c = inflate;
+        m20083a();
+    }
+}

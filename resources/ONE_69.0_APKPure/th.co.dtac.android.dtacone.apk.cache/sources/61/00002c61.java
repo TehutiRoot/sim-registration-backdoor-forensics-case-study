@@ -1,0 +1,36 @@
+package androidx.compose.material;
+
+import androidx.compose.runtime.Composer;
+import androidx.compose.runtime.RecomposeScopeImplKt;
+import kotlin.Metadata;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function2;
+import kotlin.jvm.internal.Lambda;
+import org.jetbrains.annotations.Nullable;
+
+@Metadata(m29141k = 3, m29140mv = {1, 8, 0}, m29138xi = 48)
+/* loaded from: classes.dex */
+public final class SnackbarKt$OneRowSnackbar$3 extends Lambda implements Function2<Composer, Integer, Unit> {
+    final /* synthetic */ int $$changed;
+    final /* synthetic */ Function2<Composer, Integer, Unit> $action;
+    final /* synthetic */ Function2<Composer, Integer, Unit> $text;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    /* JADX WARN: Multi-variable type inference failed */
+    public SnackbarKt$OneRowSnackbar$3(Function2<? super Composer, ? super Integer, Unit> function2, Function2<? super Composer, ? super Integer, Unit> function22, int i) {
+        super(2);
+        this.$text = function2;
+        this.$action = function22;
+        this.$$changed = i;
+    }
+
+    @Override // kotlin.jvm.functions.Function2
+    public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
+        invoke(composer, num.intValue());
+        return Unit.INSTANCE;
+    }
+
+    public final void invoke(@Nullable Composer composer, int i) {
+        SnackbarKt.m60758b(this.$text, this.$action, composer, RecomposeScopeImplKt.updateChangedFlags(this.$$changed | 1));
+    }
+}

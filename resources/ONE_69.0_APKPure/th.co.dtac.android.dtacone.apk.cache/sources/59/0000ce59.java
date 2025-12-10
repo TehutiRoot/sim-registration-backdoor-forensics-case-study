@@ -1,0 +1,82 @@
+package io.reactivex.internal.observers;
+
+import io.reactivex.CompletableObserver;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.exceptions.Exceptions;
+import io.reactivex.exceptions.OnErrorNotImplementedException;
+import io.reactivex.functions.Action;
+import io.reactivex.functions.Consumer;
+import io.reactivex.internal.disposables.DisposableHelper;
+import io.reactivex.observers.LambdaConsumerIntrospection;
+import io.reactivex.plugins.RxJavaPlugins;
+import java.util.concurrent.atomic.AtomicReference;
+
+/* loaded from: classes5.dex */
+public final class CallbackCompletableObserver extends AtomicReference<Disposable> implements CompletableObserver, Disposable, Consumer<Throwable>, LambdaConsumerIntrospection {
+    private static final long serialVersionUID = -4361286194466301354L;
+    final Action onComplete;
+    final Consumer<? super Throwable> onError;
+
+    public CallbackCompletableObserver(Action action) {
+        this.onError = this;
+        this.onComplete = action;
+    }
+
+    @Override // io.reactivex.disposables.Disposable
+    public void dispose() {
+        DisposableHelper.dispose(this);
+    }
+
+    @Override // io.reactivex.observers.LambdaConsumerIntrospection
+    public boolean hasCustomOnError() {
+        if (this.onError != this) {
+            return true;
+        }
+        return false;
+    }
+
+    @Override // io.reactivex.disposables.Disposable
+    public boolean isDisposed() {
+        if (get() == DisposableHelper.DISPOSED) {
+            return true;
+        }
+        return false;
+    }
+
+    @Override // io.reactivex.CompletableObserver
+    public void onComplete() {
+        try {
+            this.onComplete.run();
+        } catch (Throwable th2) {
+            Exceptions.throwIfFatal(th2);
+            RxJavaPlugins.onError(th2);
+        }
+        lazySet(DisposableHelper.DISPOSED);
+    }
+
+    @Override // io.reactivex.CompletableObserver
+    public void onError(Throwable th2) {
+        try {
+            this.onError.accept(th2);
+        } catch (Throwable th3) {
+            Exceptions.throwIfFatal(th3);
+            RxJavaPlugins.onError(th3);
+        }
+        lazySet(DisposableHelper.DISPOSED);
+    }
+
+    @Override // io.reactivex.CompletableObserver
+    public void onSubscribe(Disposable disposable) {
+        DisposableHelper.setOnce(this, disposable);
+    }
+
+    @Override // io.reactivex.functions.Consumer
+    public void accept(Throwable th2) {
+        RxJavaPlugins.onError(new OnErrorNotImplementedException(th2));
+    }
+
+    public CallbackCompletableObserver(Consumer<? super Throwable> consumer, Action action) {
+        this.onError = consumer;
+        this.onComplete = action;
+    }
+}

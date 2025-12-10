@@ -1,0 +1,31 @@
+package retrofit2;
+
+import kotlin.Metadata;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function1;
+import kotlin.jvm.internal.Lambda;
+import org.jetbrains.annotations.Nullable;
+
+@Metadata(m29144bv = {1, 0, 3}, m29143d1 = {"\u0000\u0016\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0003\n\u0002\b\u0002\u0010\u0000\u001a\u00020\u0001\"\b\b\u0000\u0010\u0002*\u00020\u00032\b\u0010\u0004\u001a\u0004\u0018\u00010\u0005H\n¢\u0006\u0002\b\u0006¨\u0006\u0007"}, m29142d2 = {"<anonymous>", "", "T", "", "it", "", "invoke", "retrofit2/KotlinExtensions$await$2$1"}, m29141k = 3, m29140mv = {1, 1, 15})
+/* renamed from: retrofit2.KotlinExtensions$await$$inlined$suspendCancellableCoroutine$lambda$1 */
+/* loaded from: classes5.dex */
+public final class C13271x19835f10 extends Lambda implements Function1<Throwable, Unit> {
+    final /* synthetic */ Call $this_await$inlined;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public C13271x19835f10(Call call) {
+        super(1);
+        this.$this_await$inlined = call;
+    }
+
+    @Override // kotlin.jvm.functions.Function1
+    public /* bridge */ /* synthetic */ Unit invoke(Throwable th2) {
+        invoke2(th2);
+        return Unit.INSTANCE;
+    }
+
+    /* renamed from: invoke  reason: avoid collision after fix types in other method */
+    public final void invoke2(@Nullable Throwable th2) {
+        this.$this_await$inlined.cancel();
+    }
+}

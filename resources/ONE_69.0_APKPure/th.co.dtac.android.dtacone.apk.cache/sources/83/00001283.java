@@ -1,0 +1,17 @@
+package p000;
+
+import org.bson.json.Converter;
+import org.bson.json.StrictJsonWriter;
+import org.bson.types.ObjectId;
+
+/* renamed from: TT */
+/* loaded from: classes4.dex */
+public class C1371TT implements Converter {
+    @Override // org.bson.json.Converter
+    /* renamed from: a */
+    public void convert(ObjectId objectId, StrictJsonWriter strictJsonWriter) {
+        strictJsonWriter.writeStartObject();
+        strictJsonWriter.writeString("$oid", objectId.toHexString());
+        strictJsonWriter.writeEndObject();
+    }
+}

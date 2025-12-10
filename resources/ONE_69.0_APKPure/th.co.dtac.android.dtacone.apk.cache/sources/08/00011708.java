@@ -1,0 +1,92 @@
+package th.p047co.dtac.android.dtacone.databinding;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
+import com.github.barteksc.pdfviewer.PDFView;
+import th.p047co.dtac.android.dtacone.R;
+import th.p047co.dtac.android.dtacone.app_one.widget.OneFontTextView;
+
+/* renamed from: th.co.dtac.android.dtacone.databinding.FragmentRtrOneCompensationPreviewBinding */
+/* loaded from: classes7.dex */
+public final class FragmentRtrOneCompensationPreviewBinding implements ViewBinding {
+
+    /* renamed from: a */
+    public final ConstraintLayout f84279a;
+    @NonNull
+    public final ConstraintLayout btnCompensationPdf;
+    @NonNull
+    public final ConstraintLayout btnHoldingTaxPdf;
+    @NonNull
+    public final OneFontTextView dtacFontTextView10;
+    @NonNull
+    public final OneIncRetryReloadBinding incReload;
+    @NonNull
+    public final ImageView ivDownload;
+    @NonNull
+    public final PDFView pdfView;
+
+    public FragmentRtrOneCompensationPreviewBinding(ConstraintLayout constraintLayout, ConstraintLayout constraintLayout2, ConstraintLayout constraintLayout3, OneFontTextView oneFontTextView, OneIncRetryReloadBinding oneIncRetryReloadBinding, ImageView imageView, PDFView pDFView) {
+        this.f84279a = constraintLayout;
+        this.btnCompensationPdf = constraintLayout2;
+        this.btnHoldingTaxPdf = constraintLayout3;
+        this.dtacFontTextView10 = oneFontTextView;
+        this.incReload = oneIncRetryReloadBinding;
+        this.ivDownload = imageView;
+        this.pdfView = pDFView;
+    }
+
+    @NonNull
+    public static FragmentRtrOneCompensationPreviewBinding bind(@NonNull View view) {
+        View findChildViewById;
+        int i = R.id.btnCompensationPdf;
+        ConstraintLayout constraintLayout = (ConstraintLayout) ViewBindings.findChildViewById(view, i);
+        if (constraintLayout != null) {
+            i = R.id.btnHoldingTaxPdf;
+            ConstraintLayout constraintLayout2 = (ConstraintLayout) ViewBindings.findChildViewById(view, i);
+            if (constraintLayout2 != null) {
+                i = R.id.dtacFontTextView10;
+                OneFontTextView oneFontTextView = (OneFontTextView) ViewBindings.findChildViewById(view, i);
+                if (oneFontTextView != null && (findChildViewById = ViewBindings.findChildViewById(view, (i = R.id.incReload))) != null) {
+                    OneIncRetryReloadBinding bind = OneIncRetryReloadBinding.bind(findChildViewById);
+                    i = R.id.ivDownload;
+                    ImageView imageView = (ImageView) ViewBindings.findChildViewById(view, i);
+                    if (imageView != null) {
+                        i = R.id.pdfView;
+                        PDFView pDFView = (PDFView) ViewBindings.findChildViewById(view, i);
+                        if (pDFView != null) {
+                            return new FragmentRtrOneCompensationPreviewBinding((ConstraintLayout) view, constraintLayout, constraintLayout2, oneFontTextView, bind, imageView, pDFView);
+                        }
+                    }
+                }
+            }
+        }
+        throw new NullPointerException("Missing required view with ID: ".concat(view.getResources().getResourceName(i)));
+    }
+
+    @NonNull
+    public static FragmentRtrOneCompensationPreviewBinding inflate(@NonNull LayoutInflater layoutInflater) {
+        return inflate(layoutInflater, null, false);
+    }
+
+    @NonNull
+    public static FragmentRtrOneCompensationPreviewBinding inflate(@NonNull LayoutInflater layoutInflater, @Nullable ViewGroup viewGroup, boolean z) {
+        View inflate = layoutInflater.inflate(R.layout.fragment_rtr_one_compensation_preview, viewGroup, false);
+        if (z) {
+            viewGroup.addView(inflate);
+        }
+        return bind(inflate);
+    }
+
+    @Override // androidx.viewbinding.ViewBinding
+    @NonNull
+    public ConstraintLayout getRoot() {
+        return this.f84279a;
+    }
+}

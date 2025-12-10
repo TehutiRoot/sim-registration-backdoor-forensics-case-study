@@ -1,0 +1,27 @@
+package th.p047co.dtac.android.dtacone.app_one.widget.composable;
+
+import androidx.compose.foundation.layout.RowScope;
+import androidx.compose.runtime.Composer;
+import androidx.compose.runtime.internal.ComposableLambdaKt;
+import kotlin.Metadata;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function3;
+import org.jetbrains.annotations.NotNull;
+
+@Metadata(m29141k = 3, m29140mv = {1, 8, 0}, m29138xi = 48)
+/* renamed from: th.co.dtac.android.dtacone.app_one.widget.composable.ComposableSingletons$OneSearchBoxKt */
+/* loaded from: classes7.dex */
+public final class ComposableSingletons$OneSearchBoxKt {
+    @NotNull
+    public static final ComposableSingletons$OneSearchBoxKt INSTANCE = new ComposableSingletons$OneSearchBoxKt();
+    @NotNull
+
+    /* renamed from: lambda-1  reason: not valid java name */
+    public static Function3<RowScope, Composer, Integer, Unit> f109630lambda1 = ComposableLambdaKt.composableLambdaInstance(-1811343231, false, ComposableSingletons$OneSearchBoxKt$lambda1$1.INSTANCE);
+
+    @NotNull
+    /* renamed from: getLambda-1$app_prodRelease  reason: not valid java name */
+    public final Function3<RowScope, Composer, Integer, Unit> m75126getLambda1$app_prodRelease() {
+        return f109630lambda1;
+    }
+}

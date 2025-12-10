@@ -1,0 +1,125 @@
+package io.reactivex.internal.operators.observable;
+
+import io.reactivex.Observable;
+import io.reactivex.ObservableSource;
+import io.reactivex.Observer;
+import io.reactivex.Single;
+import io.reactivex.SingleObserver;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.BiConsumer;
+import io.reactivex.internal.disposables.DisposableHelper;
+import io.reactivex.internal.disposables.EmptyDisposable;
+import io.reactivex.internal.functions.ObjectHelper;
+import io.reactivex.internal.fuseable.FuseToObservable;
+import io.reactivex.plugins.RxJavaPlugins;
+import java.util.concurrent.Callable;
+
+/* loaded from: classes5.dex */
+public final class ObservableCollectSingle<T, U> extends Single<U> implements FuseToObservable<U> {
+
+    /* renamed from: a */
+    public final ObservableSource f65183a;
+
+    /* renamed from: b */
+    public final Callable f65184b;
+
+    /* renamed from: c */
+    public final BiConsumer f65185c;
+
+    /* renamed from: io.reactivex.internal.operators.observable.ObservableCollectSingle$a */
+    /* loaded from: classes5.dex */
+    public static final class C10968a implements Observer, Disposable {
+
+        /* renamed from: a */
+        public final SingleObserver f65186a;
+
+        /* renamed from: b */
+        public final BiConsumer f65187b;
+
+        /* renamed from: c */
+        public final Object f65188c;
+
+        /* renamed from: d */
+        public Disposable f65189d;
+
+        /* renamed from: e */
+        public boolean f65190e;
+
+        public C10968a(SingleObserver singleObserver, Object obj, BiConsumer biConsumer) {
+            this.f65186a = singleObserver;
+            this.f65187b = biConsumer;
+            this.f65188c = obj;
+        }
+
+        @Override // io.reactivex.disposables.Disposable
+        public void dispose() {
+            this.f65189d.dispose();
+        }
+
+        @Override // io.reactivex.disposables.Disposable
+        public boolean isDisposed() {
+            return this.f65189d.isDisposed();
+        }
+
+        /* JADX WARN: Multi-variable type inference failed */
+        @Override // io.reactivex.Observer
+        public void onComplete() {
+            if (this.f65190e) {
+                return;
+            }
+            this.f65190e = true;
+            this.f65186a.onSuccess(this.f65188c);
+        }
+
+        @Override // io.reactivex.Observer
+        public void onError(Throwable th2) {
+            if (this.f65190e) {
+                RxJavaPlugins.onError(th2);
+                return;
+            }
+            this.f65190e = true;
+            this.f65186a.onError(th2);
+        }
+
+        @Override // io.reactivex.Observer
+        public void onNext(Object obj) {
+            if (this.f65190e) {
+                return;
+            }
+            try {
+                this.f65187b.accept(this.f65188c, obj);
+            } catch (Throwable th2) {
+                this.f65189d.dispose();
+                onError(th2);
+            }
+        }
+
+        @Override // io.reactivex.Observer
+        public void onSubscribe(Disposable disposable) {
+            if (DisposableHelper.validate(this.f65189d, disposable)) {
+                this.f65189d = disposable;
+                this.f65186a.onSubscribe(this);
+            }
+        }
+    }
+
+    public ObservableCollectSingle(ObservableSource<T> observableSource, Callable<? extends U> callable, BiConsumer<? super U, ? super T> biConsumer) {
+        this.f65183a = observableSource;
+        this.f65184b = callable;
+        this.f65185c = biConsumer;
+    }
+
+    @Override // io.reactivex.internal.fuseable.FuseToObservable
+    public Observable<U> fuseToObservable() {
+        return RxJavaPlugins.onAssembly(new ObservableCollect(this.f65183a, this.f65184b, this.f65185c));
+    }
+
+    @Override // io.reactivex.Single
+    public void subscribeActual(SingleObserver<? super U> singleObserver) {
+        try {
+            this.f65183a.subscribe(new C10968a(singleObserver, ObjectHelper.requireNonNull(this.f65184b.call(), "The initialSupplier returned a null value"), this.f65185c));
+        } catch (Throwable th2) {
+            EmptyDisposable.error(th2, singleObserver);
+        }
+    }
+}

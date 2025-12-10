@@ -1,0 +1,57 @@
+package th.p047co.dtac.android.dtacone.databinding;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.webkit.WebView;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
+import th.p047co.dtac.android.dtacone.R;
+
+/* renamed from: th.co.dtac.android.dtacone.databinding.FragmentCampaignDetailWebViewBinding */
+/* loaded from: classes7.dex */
+public final class FragmentCampaignDetailWebViewBinding implements ViewBinding {
+
+    /* renamed from: a */
+    public final ConstraintLayout f83760a;
+    @NonNull
+    public final WebView webView;
+
+    public FragmentCampaignDetailWebViewBinding(ConstraintLayout constraintLayout, WebView webView) {
+        this.f83760a = constraintLayout;
+        this.webView = webView;
+    }
+
+    @NonNull
+    public static FragmentCampaignDetailWebViewBinding bind(@NonNull View view) {
+        int i = R.id.webView;
+        WebView webView = (WebView) ViewBindings.findChildViewById(view, i);
+        if (webView != null) {
+            return new FragmentCampaignDetailWebViewBinding((ConstraintLayout) view, webView);
+        }
+        throw new NullPointerException("Missing required view with ID: ".concat(view.getResources().getResourceName(i)));
+    }
+
+    @NonNull
+    public static FragmentCampaignDetailWebViewBinding inflate(@NonNull LayoutInflater layoutInflater) {
+        return inflate(layoutInflater, null, false);
+    }
+
+    @NonNull
+    public static FragmentCampaignDetailWebViewBinding inflate(@NonNull LayoutInflater layoutInflater, @Nullable ViewGroup viewGroup, boolean z) {
+        View inflate = layoutInflater.inflate(R.layout.fragment_campaign_detail_web_view, viewGroup, false);
+        if (z) {
+            viewGroup.addView(inflate);
+        }
+        return bind(inflate);
+    }
+
+    @Override // androidx.viewbinding.ViewBinding
+    @NonNull
+    public ConstraintLayout getRoot() {
+        return this.f83760a;
+    }
+}

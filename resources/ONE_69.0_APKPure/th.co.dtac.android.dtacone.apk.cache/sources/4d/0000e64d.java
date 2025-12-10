@@ -1,0 +1,35 @@
+package kotlinx.coroutines.flow;
+
+import kotlin.Metadata;
+import kotlin.coroutines.Continuation;
+import kotlin.coroutines.jvm.internal.ContinuationImpl;
+import kotlin.coroutines.jvm.internal.DebugMetadata;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+@Metadata(m29141k = 3, m29140mv = {1, 8, 0}, m29138xi = 48)
+@DebugMetadata(m29093c = "kotlinx.coroutines.flow.SharedFlowImpl", m29092f = "SharedFlow.kt", m29091i = {0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2}, m29090l = {372, 379, 382}, m29089m = "collect$suspendImpl", m29088n = {"$this", "collector", "slot", "$this", "collector", "slot", "collectorJob", "$this", "collector", "slot", "collectorJob"}, m29087s = {"L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3"})
+/* loaded from: classes6.dex */
+public final class SharedFlowImpl$collect$1<T> extends ContinuationImpl {
+    Object L$0;
+    Object L$1;
+    Object L$2;
+    Object L$3;
+    int label;
+    /* synthetic */ Object result;
+    final /* synthetic */ SharedFlowImpl<T> this$0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public SharedFlowImpl$collect$1(SharedFlowImpl<T> sharedFlowImpl, Continuation<? super SharedFlowImpl$collect$1> continuation) {
+        super(continuation);
+        this.this$0 = sharedFlowImpl;
+    }
+
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    @Nullable
+    public final Object invokeSuspend(@NotNull Object obj) {
+        this.result = obj;
+        this.label |= Integer.MIN_VALUE;
+        return SharedFlowImpl.m27188d(this.this$0, null, this);
+    }
+}

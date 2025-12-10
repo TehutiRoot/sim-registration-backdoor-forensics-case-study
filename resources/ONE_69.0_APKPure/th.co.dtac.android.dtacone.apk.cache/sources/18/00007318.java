@@ -1,0 +1,190 @@
+package androidx.recyclerview.widget;
+
+import android.util.Pair;
+import android.view.ViewGroup;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+/* loaded from: classes2.dex */
+public final class ConcatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+
+    /* renamed from: a */
+    public final C4934c f36697a;
+
+    /* loaded from: classes2.dex */
+    public static final class Config {
+        @NonNull
+        public static final Config DEFAULT = new Config(true, StableIdMode.NO_STABLE_IDS);
+        public final boolean isolateViewTypes;
+        @NonNull
+        public final StableIdMode stableIdMode;
+
+        /* loaded from: classes2.dex */
+        public static final class Builder {
+
+            /* renamed from: a */
+            public boolean f36698a;
+
+            /* renamed from: b */
+            public StableIdMode f36699b;
+
+            public Builder() {
+                Config config = Config.DEFAULT;
+                this.f36698a = config.isolateViewTypes;
+                this.f36699b = config.stableIdMode;
+            }
+
+            @NonNull
+            public Config build() {
+                return new Config(this.f36698a, this.f36699b);
+            }
+
+            @NonNull
+            public Builder setIsolateViewTypes(boolean z) {
+                this.f36698a = z;
+                return this;
+            }
+
+            @NonNull
+            public Builder setStableIdMode(@NonNull StableIdMode stableIdMode) {
+                this.f36699b = stableIdMode;
+                return this;
+            }
+        }
+
+        /* loaded from: classes2.dex */
+        public enum StableIdMode {
+            NO_STABLE_IDS,
+            ISOLATED_STABLE_IDS,
+            SHARED_STABLE_IDS
+        }
+
+        public Config(boolean z, StableIdMode stableIdMode) {
+            this.isolateViewTypes = z;
+            this.stableIdMode = stableIdMode;
+        }
+    }
+
+    @SafeVarargs
+    public ConcatAdapter(@NonNull RecyclerView.Adapter<? extends RecyclerView.ViewHolder>... adapterArr) {
+        this(Config.DEFAULT, adapterArr);
+    }
+
+    /* renamed from: a */
+    public void m53607a(RecyclerView.Adapter.StateRestorationPolicy stateRestorationPolicy) {
+        super.setStateRestorationPolicy(stateRestorationPolicy);
+    }
+
+    public boolean addAdapter(@NonNull RecyclerView.Adapter<? extends RecyclerView.ViewHolder> adapter) {
+        return this.f36697a.m53008h(adapter);
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+    public int findRelativeAdapterPositionIn(@NonNull RecyclerView.Adapter<? extends RecyclerView.ViewHolder> adapter, @NonNull RecyclerView.ViewHolder viewHolder, int i) {
+        return this.f36697a.m52999q(adapter, viewHolder, i);
+    }
+
+    @NonNull
+    public List<? extends RecyclerView.Adapter<? extends RecyclerView.ViewHolder>> getAdapters() {
+        return Collections.unmodifiableList(this.f36697a.m53002n());
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+    public int getItemCount() {
+        return this.f36697a.m52998r();
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+    public long getItemId(int i) {
+        return this.f36697a.m53001o(i);
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+    public int getItemViewType(int i) {
+        return this.f36697a.m53000p(i);
+    }
+
+    @NonNull
+    public Pair<RecyclerView.Adapter<? extends RecyclerView.ViewHolder>, Integer> getWrappedAdapterAndPosition(int i) {
+        return this.f36697a.m52997s(i);
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+    public void onAttachedToRecyclerView(@NonNull RecyclerView recyclerView) {
+        this.f36697a.m52992x(recyclerView);
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
+        this.f36697a.m52991y(viewHolder, i);
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+    @NonNull
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+        return this.f36697a.m52990z(viewGroup, i);
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+    public void onDetachedFromRecyclerView(@NonNull RecyclerView recyclerView) {
+        this.f36697a.m53016A(recyclerView);
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+    public boolean onFailedToRecycleView(@NonNull RecyclerView.ViewHolder viewHolder) {
+        return this.f36697a.m53015B(viewHolder);
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+    public void onViewAttachedToWindow(@NonNull RecyclerView.ViewHolder viewHolder) {
+        this.f36697a.m53014C(viewHolder);
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+    public void onViewDetachedFromWindow(@NonNull RecyclerView.ViewHolder viewHolder) {
+        this.f36697a.m53013D(viewHolder);
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+    public void onViewRecycled(@NonNull RecyclerView.ViewHolder viewHolder) {
+        this.f36697a.m53012E(viewHolder);
+    }
+
+    public boolean removeAdapter(@NonNull RecyclerView.Adapter<? extends RecyclerView.ViewHolder> adapter) {
+        return this.f36697a.m53010G(adapter);
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+    public void setHasStableIds(boolean z) {
+        throw new UnsupportedOperationException("Calling setHasStableIds is not allowed on the ConcatAdapter. Use the Config object passed in the constructor to control this behavior");
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+    public void setStateRestorationPolicy(@NonNull RecyclerView.Adapter.StateRestorationPolicy stateRestorationPolicy) {
+        throw new UnsupportedOperationException("Calling setStateRestorationPolicy is not allowed on the ConcatAdapter. This value is inferred from added adapters");
+    }
+
+    @SafeVarargs
+    public ConcatAdapter(@NonNull Config config, @NonNull RecyclerView.Adapter<? extends RecyclerView.ViewHolder>... adapterArr) {
+        this(config, Arrays.asList(adapterArr));
+    }
+
+    public boolean addAdapter(int i, @NonNull RecyclerView.Adapter<? extends RecyclerView.ViewHolder> adapter) {
+        return this.f36697a.m53009g(i, adapter);
+    }
+
+    public ConcatAdapter(@NonNull List<? extends RecyclerView.Adapter<? extends RecyclerView.ViewHolder>> list) {
+        this(Config.DEFAULT, list);
+    }
+
+    public ConcatAdapter(@NonNull Config config, @NonNull List<? extends RecyclerView.Adapter<? extends RecyclerView.ViewHolder>> list) {
+        this.f36697a = new C4934c(this, config);
+        for (RecyclerView.Adapter<? extends RecyclerView.ViewHolder> adapter : list) {
+            addAdapter(adapter);
+        }
+        super.setHasStableIds(this.f36697a.m52995u());
+    }
+}

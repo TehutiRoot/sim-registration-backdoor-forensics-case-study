@@ -1,0 +1,11 @@
+package kotlinx.serialization.internal;
+
+import kotlin.Deprecated;
+import kotlin.DeprecationLevel;
+import kotlin.Metadata;
+
+@Deprecated(level = DeprecationLevel.HIDDEN, message = "Inserted into generated code and should not be used directly")
+@Metadata(m29143d1 = {"\u0000\n\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\b\u0007\u0018\u00002\u00020\u0001¨\u0006\u0002"}, m29142d2 = {"Lkotlinx/serialization/internal/SerializationConstructorMarker;", "", "kotlinx-serialization-core"}, m29141k = 1, m29140mv = {1, 9, 0})
+/* loaded from: classes6.dex */
+public final class SerializationConstructorMarker {
+}

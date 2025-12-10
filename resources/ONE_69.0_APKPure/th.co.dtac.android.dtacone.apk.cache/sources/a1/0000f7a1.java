@@ -1,0 +1,24 @@
+package org.bouncycastle.crypto.params;
+
+import org.bouncycastle.crypto.DerivationParameters;
+
+/* loaded from: classes6.dex */
+public class KDFParameters implements DerivationParameters {
+
+    /* renamed from: iv */
+    byte[] f75304iv;
+    byte[] shared;
+
+    public KDFParameters(byte[] bArr, byte[] bArr2) {
+        this.shared = bArr;
+        this.f75304iv = bArr2;
+    }
+
+    public byte[] getIV() {
+        return this.f75304iv;
+    }
+
+    public byte[] getSharedSecret() {
+        return this.shared;
+    }
+}

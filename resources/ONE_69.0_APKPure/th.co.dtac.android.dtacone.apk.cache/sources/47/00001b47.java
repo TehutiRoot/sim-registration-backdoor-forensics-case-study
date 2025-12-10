@@ -1,0 +1,35 @@
+package androidx.annotation;
+
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import kotlin.Metadata;
+import kotlin.annotation.AnnotationRetention;
+import org.jetbrains.annotations.NotNull;
+import th.p047co.dtac.android.dtacone.util.constant.mixpanel.top_up.TopUpMixpanel;
+
+@Metadata(m29143d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u001b\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\b\u0087\u0002\u0018\u0000 \u00052\u00020\u0001:\u0001\u0005B\n\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003R\u000f\u0010\u0002\u001a\u00020\u0003¢\u0006\u0006\u001a\u0004\b\u0002\u0010\u0004¨\u0006\u0006"}, m29142d2 = {"Landroidx/annotation/VisibleForTesting;", "", "otherwise", "", "()I", "Companion", "annotation"}, m29141k = 1, m29140mv = {1, 8, 0}, m29138xi = 48)
+@Retention(RetentionPolicy.CLASS)
+@kotlin.annotation.Retention(AnnotationRetention.BINARY)
+/* loaded from: classes.dex */
+public @interface VisibleForTesting {
+    @NotNull
+    public static final Companion Companion = Companion.f8870a;
+    public static final int NONE = 5;
+    public static final int PACKAGE_PRIVATE = 3;
+    public static final int PRIVATE = 2;
+    public static final int PROTECTED = 4;
+
+    @Metadata(m29143d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0004\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002R\u000e\u0010\u0003\u001a\u00020\u0004X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0005\u001a\u00020\u0004X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0004X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0004X\u0086T¢\u0006\u0002\n\u0000¨\u0006\b"}, m29142d2 = {"Landroidx/annotation/VisibleForTesting$Companion;", "", "()V", TopUpMixpanel.OFFER_NONE, "", "PACKAGE_PRIVATE", "PRIVATE", "PROTECTED", "annotation"}, m29141k = 1, m29140mv = {1, 8, 0}, m29138xi = 48)
+    /* loaded from: classes.dex */
+    public static final class Companion {
+        public static final int NONE = 5;
+        public static final int PACKAGE_PRIVATE = 3;
+        public static final int PRIVATE = 2;
+        public static final int PROTECTED = 4;
+
+        /* renamed from: a */
+        public static final /* synthetic */ Companion f8870a = new Companion();
+    }
+
+    int otherwise() default 2;
+}

@@ -1,0 +1,29 @@
+package com.google.android.material.shape;
+
+import androidx.annotation.NonNull;
+
+/* loaded from: classes4.dex */
+public final class MarkerEdgeTreatment extends EdgeTreatment {
+
+    /* renamed from: a */
+    public final float f50643a;
+
+    public MarkerEdgeTreatment(float f) {
+        this.f50643a = f - 0.001f;
+    }
+
+    @Override // com.google.android.material.shape.EdgeTreatment
+    /* renamed from: a */
+    public boolean mo44192a() {
+        return true;
+    }
+
+    @Override // com.google.android.material.shape.EdgeTreatment
+    public void getEdgePath(float f, float f2, float f3, @NonNull ShapePath shapePath) {
+        float sqrt = (float) ((this.f50643a * Math.sqrt(2.0d)) / 2.0d);
+        float sqrt2 = (float) Math.sqrt(Math.pow(this.f50643a, 2.0d) - Math.pow(sqrt, 2.0d));
+        shapePath.reset(f2 - sqrt, ((float) (-((this.f50643a * Math.sqrt(2.0d)) - this.f50643a))) + sqrt2);
+        shapePath.lineTo(f2, (float) (-((this.f50643a * Math.sqrt(2.0d)) - this.f50643a)));
+        shapePath.lineTo(f2 + sqrt, ((float) (-((this.f50643a * Math.sqrt(2.0d)) - this.f50643a))) + sqrt2);
+    }
+}

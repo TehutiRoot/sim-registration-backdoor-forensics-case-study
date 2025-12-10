@@ -1,0 +1,24 @@
+package p000;
+
+/* renamed from: NX */
+/* loaded from: classes6.dex */
+public abstract /* synthetic */ class AbstractC0939NX {
+    /* renamed from: a */
+    public static /* synthetic */ long m67227a(long j, long j2) {
+        boolean z;
+        long j3 = j + j2;
+        boolean z2 = false;
+        if ((j2 ^ j) < 0) {
+            z = true;
+        } else {
+            z = false;
+        }
+        if ((j ^ j3) >= 0) {
+            z2 = true;
+        }
+        if (z | z2) {
+            return j3;
+        }
+        throw new ArithmeticException();
+    }
+}

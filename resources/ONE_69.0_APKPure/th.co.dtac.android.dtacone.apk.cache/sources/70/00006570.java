@@ -1,0 +1,103 @@
+package androidx.compose.p003ui.text.input;
+
+import androidx.compose.p003ui.text.AnnotatedString;
+import androidx.compose.runtime.internal.StabilityInferred;
+import ch.qos.logback.core.CoreConstants;
+import com.tom_roush.pdfbox.contentstream.operator.OperatorName;
+import com.tom_roush.pdfbox.pdmodel.common.PDPageLabelRange;
+import kotlin.Metadata;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.ranges.AbstractC11695c;
+import org.bouncycastle.i18n.TextBundle;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+@StabilityInferred(parameters = 0)
+@Metadata(m29143d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u000f\b\u0007\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0002\u0012\u0006\u0010\u0005\u001a\u00020\u0004¢\u0006\u0004\b\u0006\u0010\u0007B\u0019\b\u0016\u0012\u0006\u0010\t\u001a\u00020\b\u0012\u0006\u0010\u0005\u001a\u00020\u0004¢\u0006\u0004\b\u0006\u0010\nJ\u0017\u0010\u000e\u001a\u00020\r2\u0006\u0010\f\u001a\u00020\u000bH\u0016¢\u0006\u0004\b\u000e\u0010\u000fJ\u001a\u0010\u0013\u001a\u00020\u00122\b\u0010\u0011\u001a\u0004\u0018\u00010\u0010H\u0096\u0002¢\u0006\u0004\b\u0013\u0010\u0014J\u000f\u0010\u0015\u001a\u00020\u0004H\u0016¢\u0006\u0004\b\u0015\u0010\u0016J\u000f\u0010\u0017\u001a\u00020\bH\u0016¢\u0006\u0004\b\u0017\u0010\u0018R\u0017\u0010\u0003\u001a\u00020\u00028\u0006¢\u0006\f\n\u0004\b\u0019\u0010\u001a\u001a\u0004\b\u001b\u0010\u001cR\u0017\u0010\u0005\u001a\u00020\u00048\u0006¢\u0006\f\n\u0004\b\u001d\u0010\u001e\u001a\u0004\b\u001f\u0010\u0016R\u0011\u0010\t\u001a\u00020\b8F¢\u0006\u0006\u001a\u0004\b \u0010\u0018¨\u0006!"}, m29142d2 = {"Landroidx/compose/ui/text/input/SetComposingTextCommand;", "Landroidx/compose/ui/text/input/EditCommand;", "Landroidx/compose/ui/text/AnnotatedString;", "annotatedString", "", "newCursorPosition", "<init>", "(Landroidx/compose/ui/text/AnnotatedString;I)V", "", TextBundle.TEXT_ENTRY, "(Ljava/lang/String;I)V", "Landroidx/compose/ui/text/input/EditingBuffer;", "buffer", "", "applyTo", "(Landroidx/compose/ui/text/input/EditingBuffer;)V", "", "other", "", "equals", "(Ljava/lang/Object;)Z", "hashCode", "()I", "toString", "()Ljava/lang/String;", PDPageLabelRange.STYLE_LETTERS_LOWER, "Landroidx/compose/ui/text/AnnotatedString;", "getAnnotatedString", "()Landroidx/compose/ui/text/AnnotatedString;", OperatorName.CLOSE_FILL_NON_ZERO_AND_STROKE, "I", "getNewCursorPosition", "getText", "ui-text_release"}, m29141k = 1, m29140mv = {1, 8, 0})
+/* renamed from: androidx.compose.ui.text.input.SetComposingTextCommand */
+/* loaded from: classes2.dex */
+public final class SetComposingTextCommand implements EditCommand {
+    public static final int $stable = 0;
+
+    /* renamed from: a */
+    public final AnnotatedString f31523a;
+
+    /* renamed from: b */
+    public final int f31524b;
+
+    public SetComposingTextCommand(@NotNull AnnotatedString annotatedString, int i) {
+        Intrinsics.checkNotNullParameter(annotatedString, "annotatedString");
+        this.f31523a = annotatedString;
+        this.f31524b = i;
+    }
+
+    @Override // androidx.compose.p003ui.text.input.EditCommand
+    public void applyTo(@NotNull EditingBuffer buffer) {
+        int length;
+        Intrinsics.checkNotNullParameter(buffer, "buffer");
+        if (buffer.hasComposition$ui_text_release()) {
+            int compositionStart$ui_text_release = buffer.getCompositionStart$ui_text_release();
+            buffer.replace$ui_text_release(buffer.getCompositionStart$ui_text_release(), buffer.getCompositionEnd$ui_text_release(), getText());
+            if (getText().length() > 0) {
+                buffer.setComposition$ui_text_release(compositionStart$ui_text_release, getText().length() + compositionStart$ui_text_release);
+            }
+        } else {
+            int selectionStart$ui_text_release = buffer.getSelectionStart$ui_text_release();
+            buffer.replace$ui_text_release(buffer.getSelectionStart$ui_text_release(), buffer.getSelectionEnd$ui_text_release(), getText());
+            if (getText().length() > 0) {
+                buffer.setComposition$ui_text_release(selectionStart$ui_text_release, getText().length() + selectionStart$ui_text_release);
+            }
+        }
+        int cursor$ui_text_release = buffer.getCursor$ui_text_release();
+        int i = this.f31524b;
+        if (i > 0) {
+            length = (cursor$ui_text_release + i) - 1;
+        } else {
+            length = (cursor$ui_text_release + i) - getText().length();
+        }
+        buffer.setCursor$ui_text_release(AbstractC11695c.coerceIn(length, 0, buffer.getLength$ui_text_release()));
+    }
+
+    public boolean equals(@Nullable Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof SetComposingTextCommand)) {
+            return false;
+        }
+        SetComposingTextCommand setComposingTextCommand = (SetComposingTextCommand) obj;
+        if (Intrinsics.areEqual(getText(), setComposingTextCommand.getText()) && this.f31524b == setComposingTextCommand.f31524b) {
+            return true;
+        }
+        return false;
+    }
+
+    @NotNull
+    public final AnnotatedString getAnnotatedString() {
+        return this.f31523a;
+    }
+
+    public final int getNewCursorPosition() {
+        return this.f31524b;
+    }
+
+    @NotNull
+    public final String getText() {
+        return this.f31523a.getText();
+    }
+
+    public int hashCode() {
+        return (getText().hashCode() * 31) + this.f31524b;
+    }
+
+    @NotNull
+    public String toString() {
+        return "SetComposingTextCommand(text='" + getText() + "', newCursorPosition=" + this.f31524b + CoreConstants.RIGHT_PARENTHESIS_CHAR;
+    }
+
+    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
+    public SetComposingTextCommand(@NotNull String text, int i) {
+        this(new AnnotatedString(text, null, null, 6, null), i);
+        Intrinsics.checkNotNullParameter(text, "text");
+    }
+}
